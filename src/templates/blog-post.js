@@ -1,18 +1,16 @@
-import React from "react"
-import Navbar from '../components/Navbar';
+import React from 'react';
 
 export default ({ data }) => {
-  const post = data.markdownRemark
+  const post = data.markdownRemark;
   return (
-    <div>
-      <Navbar />
+    <div className="col-lg-6">
       <h1>
         {post.frontmatter.title}
       </h1>
       <div dangerouslySetInnerHTML={{ __html: post.html }} />
     </div>
-  )
-}
+  );
+};
 
 export const query = graphql`
   query BlogPostQuery($slug: String!) {
@@ -23,4 +21,4 @@ export const query = graphql`
       }
     }
   }
-`
+`;

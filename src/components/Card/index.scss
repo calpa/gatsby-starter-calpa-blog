@@ -2,21 +2,16 @@ $white: #ebebeb;
 $gray: #bfbfbf;
 $black: #404040;
 $blue: #0085a1;
-$anotherBlue: #337ab7;
+$another-blue: #337ab7;
 $pink: #ff7e79;
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
-.wrapper {
-  background-color: $white;
-  min-height: 32rem;
-  position: relative;
-  overflow: hidden;
-  box-shadow: 0 19px 38px rgba($black, 0.3), 0 15px 12px rgba($black, 0.2);
-  display: block;
-  text-decoration: none;
-
-  &:hover {
-    .data {
-      transform: translateY(0);
-    }
-  }
+.card {
+  max-width: 40em;
+  margin: 1em;
 }

@@ -1,47 +1,27 @@
 import React from 'react';
-
-const pages = [];
+import Link from 'gatsby-link';
 
 const Navbar = () => (
-  <nav className="navbar navbar-default navbar-custom navbar-fixed-top" id="nav-top">
-    <div className="container-fluid">
-      <div className="navbar-header page-scroll">
-        <button type="button" className="navbar-toggle">
-          <span className="sr-only">Toggle navigation</span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-          <span className="icon-bar"></span>
-        </button>
-        <a className="navbar-brand animated pulse" href="/">
-          <span className="brand-logo">Calpa</span><span className="brand-blog">'s Blog</span>
-        </a>
-      </div>
+  <nav className="navbar navbar-expand-sm navbar-light bg-light">
+    <Link className="navbar-brand" to="/">Calpa's Blog</Link>
+    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span className="navbar-toggler-icon" />
+    </button>
 
-      <div id="huxblog_navbar">
-        <div className="navbar-collapse">
-          <ul className="nav navbar-nav navbar-center title-calpa display-none">
-            <li><a href="/">Home</a></li>
-          </ul>
-          <ul className="nav navbar-nav navbar-right">
-            <li>
-              <a href="/">Home</a>
-            </li>
-            {
-              pages.forEach(function(page){
-                if(page.title){
-                  if (page.title !== '404') {
-                    <li>
-                      <a href="<%= config.root %><%= page.path.replace('index.html', '') %>">
-                        {page.title}
-                      </a>
-                    </li>
-                  }
-                }
-              })
-            }
-          </ul>
-        </div>
-      </div>
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul className="navbar-nav mr-auto">
+        <li className="nav-item active">
+          <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+        </li>
+      </ul>
+
+      <form
+        className="form-inline my-2 my-lg-0"
+        action="/search"
+      >
+        <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" />
+        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
     </div>
   </nav>
 );

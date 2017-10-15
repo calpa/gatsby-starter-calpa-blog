@@ -1,30 +1,35 @@
-import React, { Component } from 'react';
-import Link from 'gatsby-link';
+import React from 'react';
 
 import moment from 'moment';
-import Card from '../components/Card'
-import Navbar from '../components/Navbar';
+import Card from '../components/Card';
 
-const parseDate = (date) => (
-  moment(date).format('YYYY/MM/DD')
-)
+import './index.scss';
 
-const HomePage = ({data}) => (
-      <div>
-        <Navbar />
-        <h2>博客文章</h2>
-        {data.allMarkdownRemark.edges.map(({ node }, i) => (
-          <Card
-            title={node.frontmatter.title}
-            date={parseDate(node.frontmatter.date)}
-            url={node.frontmatter.parent}
-            headerSize={node.frontmatter.headerSize}
-            headerImage={node.frontmatter.headerSize}
-            headerBackgroundColor={node.frontmatter.headerBackgroundColor}
-            key={i}/>
-        ))}
-      </div>
-    );
+const parseDate = date =>
+  moment(date).format('YYYY/MM/DD');
+
+
+const HomePage = ({ data }) => (
+  <div className="
+    col-xl-8
+    col-lg-8
+    col-md-12
+    col-xs-12
+    "
+  >
+    {data.allMarkdownRemark.edges.map(({ node }, i) => (
+      <Card
+        title={node.frontmatter.title}
+        date={parseDate(node.frontmatter.date)}
+        url={node.frontmatter.parent}
+        headerSize={node.frontmatter.headerSize}
+        headerImage={node.frontmatter.headerImage}
+        headerBackgroundColor={node.frontmatter.headerBackgroundColor}
+        key={i}
+      />
+    ))}
+  </div>
+);
 
 export default HomePage;
 
