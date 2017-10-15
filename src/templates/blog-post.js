@@ -42,18 +42,20 @@ class BlogPost extends Component {
     return (
       <div className="row">
 
-        <Sidebar />
+        <Sidebar post />
 
         <div className="col-lg-8 col-sm-8 post-container">
-          <h1>
-            {post.frontmatter.title}
-          </h1>
           <ReactMarkdown source={getBody(post.internal.content)} />
-          <div id="gitalk-container" />
+          <hr />
         </div>
+
         <div className="col-lg-2 col-sm-4">
           <ReactMarkdown source={post.tableOfContents} className="toc-wrap" />
         </div>
+
+        <div id="gitalk-container" className="col-sm-12 order-12" />
+
+
       </div>
     );
   }

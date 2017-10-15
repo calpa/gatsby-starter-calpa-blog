@@ -11,10 +11,8 @@ const Layout = ({ children }) => (
     <Head />
     <Navbar />
 
-    <div className="container-fluid">
-      <div className="row">
-        {children()}
-      </div>
+    <div className="container">
+      {children()}
     </div>
   </div>
 );

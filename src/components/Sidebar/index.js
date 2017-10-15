@@ -3,12 +3,13 @@ import LazyLoad from 'react-lazyload';
 
 import './index.scss';
 
-const Sidebar = () => (
-  <header className="
+const Sidebar = ({ post = false }) => (
+  <header className={`
     intro-header
     col-lg-2
     col-xs-12
-    "
+    ${post === true ? 'order-11' : 'order-1'}
+    `}
   >
     <div className="site-heading text-center">
       <div className="about-me">
