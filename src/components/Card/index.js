@@ -5,7 +5,7 @@ import LazyLoad from 'react-lazyload';
 import './index.scss';
 
 const parseUrl = (date, rawUrl) => (
-  `${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}`
+  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}`
 );
 
 const getDefaultPicture = () => (

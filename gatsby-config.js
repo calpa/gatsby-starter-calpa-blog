@@ -1,22 +1,23 @@
 module.exports = {
+  pathPrefix: '/blog',
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: 'Gatsby Default Starter',
   },
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sass`,
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-sass',
     {
       resolve: 'gatsby-source-filesystem',
       options: {
         name: 'posts',
-        path: `${__dirname}/content/_posts/`
-      }
+        path: `${__dirname}/content/_posts/`,
+      },
     },
     {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [],
       },
-    }
+    },
   ],
-}
+};

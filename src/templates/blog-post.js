@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 
 import 'gitalk/dist/gitalk.css';
-import Gitalk from 'gitalk';
 
 import ReactMarkdown from 'react-markdown';
 
@@ -9,6 +8,9 @@ import Sidebar from '../components/Sidebar';
 
 import './blog-post.scss';
 import './toc.scss';
+
+const isBrowser = typeof window !== 'undefined';
+const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 const getBody = (mdFile) => {
   // As Gastby's markdownRemark add '---' at the beginnings
@@ -30,7 +32,7 @@ class BlogPost extends Component {
     const gitalk = new Gitalk({
       clientID: '18255f031b5e11edd98a',
       clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-      repo: 'calpa.github.io',
+      repo: 'blog',
       owner: 'calpa',
       admin: ['calpa'],
       distractionFreeMode: true,
