@@ -1,0 +1,133 @@
+---
+title: 簡單易用的開源 JavaScript 動畫圖標庫 -- Titanic
+tags:
+  - JavaScript
+  - Library
+date: 2017-07-06 11:00:00
+header-img: bLmxAZ3.gif
+header-size: contain;
+header-bg-color: 022e2f
+background-position-y: 50%
+---
+
+如果你用過 Font Awesome 等圖標，你可能會覺得它們很好看，用起來很很方便。但是，在用戶點擊這些圖標的時候，它們是不會有反應的。如果有這些圖標會動的話，那就更加好。Titanic 提供一系列的動畫圖標，以及以 JavaScript 的調用圖標動畫的方法。
+
+如果你想要看 Hello, World 的版本的話，你可以到我的 [Codepen](https://codepen.io/calpa/pen/xrzPxx) 裡面，測試一下。
+
+![Preview](https://i.imgur.com/bLmxAZ3.gif)
+
+## 安裝方法
+
+你可以使用 CDN 或者 npm 來安裝 Titanic。
+
+### CDN
+
+直接在 HTML head 裡面加進下面的字符。
+```html
+<script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>
+```
+
+然後在 body 的部分初始化 Titanic。
+
+```html
+<script>
+    var titanic = new Titanic();
+</script>
+```
+
+你可以透過這種標籤來加上 Titanic 圖標。
+
+```html
+<div class='titanic titanic_chat'></div>
+```
+
+![All icons](https://i.imgur.com/aiG4BYo.png)
+
+你可以透過[這裡](https://rawgit.com/icons8/titanic/master/demo/index.html)查找 Titanic 所支持的圖標，把 chat 換成以下的字詞：
+* caps
+* chat
+* checkbox
+* expand
+* cheap
+* expensive
+* idea
+* mailbox
+* mic
+* no-mic
+* online
+* pause
+* power
+* shopping
+* smile
+* stop
+* unlock
+* zoom
+
+### npm
+
+```
+npm install titanic-icons --save
+```
+
+鏈接：[titanic-icons - npmjs](https://www.npmjs.com/package/titanic-icons)
+
+### 使用你自己的備份
+
+如果你喜歡在自己的伺服器，而不是 rawgit 去使用 Titanic 的話，你只需要把 base URL 傳進 init() 裡面。
+
+```javascript
+titanic.begin('/my/base/directory/');
+```
+然後，當你有一個div，id="chat" 的時候，Titanic 會自動檢測所有在 /my/base/directory/chat.json 裡面的圖標。
+
+## API
+
+* `titanic.isInitialized()` -- 返回 true / false
+* `titanic.items` -- 返回包含所有 titanic 圖標的一個 Array
+* `titanic.items[index].on(), titanic.items[index].off(), titanic.items[index].play()` -- 調整動畫 by index
+* `titanic.on(token), titanic.off(token), titanic.play(token)` -- 調整動畫 by token (name)
+
+## 例子
+
+```html
+<head>
+    <!--Inserting the scripts once for the whole page-->
+    <script src="https://cdn.rawgit.com/icons8/titanic/master/dist/js/titanic.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/4.5.9/bodymovin.min.js"></script>
+</head>
+<body>
+    <!--Inserting an icon-->
+    <div class='titanic titanic-checkbox'></div>
+
+    <!--Initializing-->
+    <script>
+        var titanic = new Titanic({
+          hover: true, // auto animated on hover (default true)
+          click: true  // auto animated on click/tap (default false)
+        });
+    </script>
+
+    <!--Clicking turns this icon on-->
+    <button onclick="titanic.on(getElementById('checkbox').value)">On</button>
+</body>
+```
+
+## 原作者的話
+> JavaScript is basically [bodymovin](https://github.com/bodymovin/bodymovin) plus few lines of my code. It's a solid library with an awesome name. Thank you, guys.
+
+> Icons are created by [Margarita Ivanchikova](https://dribbble.com/imargarita) from [Icons8](https://icons8.com/). She has many more awesome animations in her portfolio.
+
+> The code rewritten by [Denis Alexanov](https://github.com/dhilt), my teacher and guru. Thank you!
+
+> Project is produced by Icons8, author of the famous icon library, [IconPharm](https://iconpharm.com), and [Sleek Logos](https://sleeklogos.design).
+
+> The code is created by Icons8
+
+![Magritte](https://i.imgur.com/p8Xoj9l.gif)
+
+Github Repo: [icons 8 / titanic](https://github.com/icons8/titanic)
+
+## 感想
+
+我覺得這個很炫酷，我應該可以用在現有的前端開發項目，比如說博客，還有在做的一個在線學習編程平台上。如果你希望看到我如何應用 Titanic 的話，你可以打個星，關注一下我的博客。
