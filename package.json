@@ -15,7 +15,8 @@
     "jquery": "^3.2.1",
     "moment": "^2.19.1",
     "react-lazyload": "^2.2.7",
-    "react-markdown": "^2.5.0"
+    "react-markdown": "^2.5.0",
+    "rimraf": "^2.6.2"
   },
   "keywords": [
     "gatsby"
@@ -23,9 +24,10 @@
   "license": "MIT",
   "main": "n/a",
   "scripts": {
-    "build": "gatsby build",
+    "build": "gatsby build --prefix-paths",
+    "postbuild": "rimraf public/**/*.map",
     "develop": "gatsby develop",
-    "deploy": "gatsby build --prefix-paths && gh-pages -d public",
+    "deploy": "npm run build && gh-pages -d public",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
