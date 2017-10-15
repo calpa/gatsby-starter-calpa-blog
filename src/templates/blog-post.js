@@ -7,6 +7,7 @@ import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
 
+import './blog-post.scss';
 import './toc.scss';
 
 const getBody = (mdFile) => {
@@ -40,16 +41,20 @@ class BlogPost extends Component {
   render() {
     const post = this.data.markdownRemark;
     return (
-      <div className="row">
+      <div className="row blog-post">
+
+        <div className="col-sm-12">
+          <h1>{post.frontmatter.title}</h1>
+        </div>
 
         <Sidebar post />
 
-        <div className="col-lg-8 col-sm-8 post-container">
+        <div className="col-lg-8 col-sm-8 post-container order-md-2">
           <ReactMarkdown source={getBody(post.internal.content)} />
           <hr />
         </div>
 
-        <div className="col-lg-2 col-sm-4">
+        <div className="col-lg-2 col-sm-4 order-md-3">
           <ReactMarkdown source={post.tableOfContents} className="toc-wrap" />
         </div>
 

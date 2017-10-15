@@ -11,7 +11,7 @@ const parseDate = date =>
 
 
 const HomePage = ({ data }) => (
-  <div>
+  <div className="row">
     <Sidebar />
 
     <div className="
@@ -19,6 +19,7 @@ const HomePage = ({ data }) => (
       col-lg-8
       col-md-12
       col-xs-12
+      order-2
       "
     >
       {data.allMarkdownRemark.edges.map(({ node }, i) => (

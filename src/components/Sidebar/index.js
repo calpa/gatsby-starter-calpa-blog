@@ -8,7 +8,8 @@ const Sidebar = ({ post = false }) => (
     intro-header
     col-lg-2
     col-xs-12
-    ${post === true ? 'order-11' : 'order-1'}
+    order-lg-1
+    ${post === true ? 'order-md-10 order-10' : 'order-1'}
     `}
   >
     <div className="site-heading text-center">
