@@ -1,6 +1,6 @@
 ---
 title: Hexo優化之為外部鏈接添加nofollow屬性
-date: 2017-02﹣25 22:00
+date: 2017-02-25 22:00
 tags:
   - Hexo
   - SEO

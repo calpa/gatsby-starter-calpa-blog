@@ -1,7 +1,12 @@
 import React, { Component } from 'react';
 import Link from 'gatsby-link';
 
+import moment from 'moment';
 import Card from '../components/Card'
+
+const parseDate = (date) => (
+  moment(date).format('YYYY/MM/DD')
+)
 
 const HomePage = ({data}) => (
       <div>
@@ -9,7 +14,8 @@ const HomePage = ({data}) => (
         {data.allMarkdownRemark.edges.map(({ node }, i) => (
           <Card
             title={node.frontmatter.title}
-            date={node.frontmatter.date}
+            date={parseDate(node.frontmatter.date)}
+            url={node.frontmatter.parent}
             key={i}/>
         ))}
       </div>
@@ -28,6 +34,7 @@ export const pageQuery = graphql`
           frontmatter {
             title
             date
+            parent
           }
         }
       }
