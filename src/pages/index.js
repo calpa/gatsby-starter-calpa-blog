@@ -19,7 +19,10 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query getAllPosts {
-    allMarkdownRemark(sort: {order: DESC, fields: [frontmatter___date]}) {
+    allMarkdownRemark(
+      sort: {order: DESC, fields: [frontmatter___date]}
+      limit: 5
+    ) {
       edges {
         node {
           frontmatter {
