@@ -6,8 +6,7 @@ import './index.scss';
 const Sidebar = () => (
   <header className="
     intro-header
-    col-xl-4
-    col-lg-4
+    col-lg-2
     col-xs-12
     "
   >
