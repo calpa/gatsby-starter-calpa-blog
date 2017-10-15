@@ -8,6 +8,10 @@ const parseUrl = (date, rawUrl) => (
   `${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}`
 );
 
+const getDefaultPicture = () => (
+  Math.random() > 0.5 ? 'kkKoV4d.jpg' : 'YexhzBP.jpg'
+);
+
 const Card = ({
   title, date, url, headerImage, headerBackgroundColor,
 }) => (
@@ -16,8 +20,8 @@ const Card = ({
       <LazyLoad height={200}>
         <img
           className="card-img-top"
-          src={`https://i.imgur.com/${headerImage}`}
-          alt="Calpa"
+          src={`https://i.imgur.com/${headerImage || getDefaultPicture()}:`}
+          alt={`${title}`}
         />
       </LazyLoad>
       <div className="card-body">

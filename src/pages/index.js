@@ -1,5 +1,7 @@
 import React from 'react';
 
+import LazyLoad from 'react-lazyload';
+
 import moment from 'moment';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
@@ -22,16 +24,17 @@ const HomePage = ({ data }) => (
       order-2
       "
     >
-      {data.allMarkdownRemark.edges.map(({ node }, i) => (
-        <Card
-          title={node.frontmatter.title}
-          date={parseDate(node.frontmatter.date)}
-          url={node.frontmatter.parent}
-          headerSize={node.frontmatter.headerSize}
-          headerImage={node.frontmatter.headerImage}
-          headerBackgroundColor={node.frontmatter.headerBackgroundColor}
-          key={i}
-        />
+      {data.allMarkdownRemark.edges.map(({ node }) => (
+        <LazyLoad height={200} once key={node.frontmatter.title}>
+          <Card
+            title={node.frontmatter.title}
+            date={parseDate(node.frontmatter.date)}
+            url={node.frontmatter.parent}
+            headerSize={node.frontmatter.headerSize}
+            headerImage={node.frontmatter.headerImage}
+            headerBackgroundColor={node.frontmatter.headerBackgroundColor}
+          />
+        </LazyLoad>
       ))}
     </div>
   </div>
@@ -43,7 +46,6 @@ export const pageQuery = graphql`
     query getAllPosts {
       allMarkdownRemark(
         sort: {order: DESC, fields: [frontmatter___date]}
-        limit: 5
     ) {
       edges {
         node {

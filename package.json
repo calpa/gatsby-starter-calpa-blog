@@ -1,8 +1,8 @@
 {
-  "name": "gatsby-starter-default",
-  "description": "Gatsby default starter",
+  "name": "blog",
+  "description": "Calpa's Blog",
   "version": "1.0.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Calpa Liu <calpaliu@gmail.com>",
   "dependencies": {
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "gatsby": "^1.9.63",

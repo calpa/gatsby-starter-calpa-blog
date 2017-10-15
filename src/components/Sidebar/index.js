@@ -14,7 +14,7 @@ const Sidebar = ({ post = false }) => (
   >
     <div className="site-heading text-center">
       <div className="about-me">
-        <LazyLoad>
+        <LazyLoad height={200}>
           <img
             className="avatar"
             src="https://calpa.me/img/profile.png"
