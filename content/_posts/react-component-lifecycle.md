@@ -1,6 +1,6 @@
 ---
 title: React 組件生命週期 - 加載組件
-# header-img: "LEYYumy.jpg"
+# headerImage: "LEYYumy.jpg"
 tags:
   - React
   - Web

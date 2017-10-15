@@ -1,6 +1,6 @@
 ---
 title: Redux push()是怎樣寫的？
-header-img: 'eySAMI1.jpg'
+headerImage: 'eySAMI1.jpg'
 date: 2017-05-03 23:20
 tags:
   - JavaScript

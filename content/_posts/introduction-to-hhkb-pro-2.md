@@ -3,8 +3,8 @@ title: 神兵利器 -- HHKB Pro 2 開箱文
 tags:
   - KeyBoard
 date: 2017-07-02 20:16:00
-header-img: AbKpx2P.jpg
-background-position-y: 50%
+headerImage: AbKpx2P.jpg
+backgroundPositionY: 50%
 ---
 
 {% img https://i.imgur.com/AVN6eaJ.jpg 500 %}

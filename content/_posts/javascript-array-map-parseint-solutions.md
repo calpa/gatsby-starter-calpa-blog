@@ -1,6 +1,6 @@
 ---
 title: JavaScript Array.map(parseInt) 錯誤解決方案
-header-img: KMksHxZ.png
+headerImage: KMksHxZ.png
 tags:
   - JavaScript
 date: 2017-05-31 11:06:00

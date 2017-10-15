@@ -9,9 +9,16 @@ const parseUrl = (date, rawUrl) => (
 
 const Card = ({title, date, url}) => (
   <Link to={parseUrl(date, url)}>
-    <div className="card">
-      <h2 className="card-title">{title}</h2>
-      <p className="card-date">{date}</p>
+    <div className="wrapper">
+      <div
+        className="card-header"
+      />
+      <div className="data">
+        <div className="content">
+          <div className="stats"><span className="date">{date}</span></div>
+          <h1 className="title">{title}</h1>
+        </div>
+      </div>
     </div>
   </Link>
 );

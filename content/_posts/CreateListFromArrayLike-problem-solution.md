@@ -1,6 +1,6 @@
 ---
 title: CreateListFromArrayLike called on non-object 報錯的解決方法
-header-img: 'eySAMI1.jpg'
+headerImage: 'eySAMI1.jpg'
 date: 2017-05-01 22:50
 tags:
   - JavaScript

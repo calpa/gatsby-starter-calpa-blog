@@ -3,15 +3,15 @@ title: React 應用輕量化（一）Source Map
 date: 2017-08-27 10:03:00
 tags:
   - React
-header-size: contain;
-header-bg-color: fff
+headerSize: contain;
+headerBackgroundColor: fff
 theme: white
 # translator: Calpa
 # author:
 background-position-x: 50%
 
 magic: false
-header-img: IYhTVXU.png
+headerImage: IYhTVXU.png
 share-img: https://i.imgur.com/UtbKsLJ.jpg
 juejin: 59a2419a51882524481c9309
 ---

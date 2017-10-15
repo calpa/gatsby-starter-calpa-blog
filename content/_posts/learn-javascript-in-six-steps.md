@@ -1,6 +1,6 @@
 ---
 title: 打好 JavaScript 基礎的6個步驟
-header-img: KMksHxZ.png
+headerImage: KMksHxZ.png
 date: 2017-05-21 20:00
 tags:
   - JavaScript

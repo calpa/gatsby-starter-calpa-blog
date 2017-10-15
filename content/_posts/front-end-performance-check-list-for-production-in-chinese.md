@@ -5,13 +5,13 @@ tags:
   - Performance
   - Production
   - Check-list
-header-img: Vb56RuU.jpg
-header-size: contain;
-header-bg-color: 00d8e4
+headerImage: Vb56RuU.jpg
+headerSize: contain;
+headerBackgroundColor: 00d8e4
 translator: Calpa
 author: Youssouf El Azizi
 date: 2017-06-19 20:00:00
-background-position-y: 50%
+backgroundPositionY: 50%
 ---
 
 在網頁開發的世界裡，尤其是前端開發，我們會用很多時間尋找最好的設計，以及最好的內容。雖然這是沒有錯的，但是，我們會忘記去優化我們的網頁。。。這會讓用戶需要很久的時間，比如說，瀏覽器需要六秒到十秒以上才能完成整個渲染過程。。。

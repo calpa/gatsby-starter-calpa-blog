@@ -1,9 +1,9 @@
 ---
 title: 前端程序員的必備工具清單（MacOS）
-header-img: Vb56RuU.jpg
-header-size: contain
-header-bg-color: 00d8e4
-background-position-y: 50%
+headerImage: Vb56RuU.jpg
+headerSize: contain
+headerBackgroundColor: 00d8e4
+backgroundPositionY: 50%
 # theme: white
 magic: true
 date: 2017-10-02 21:53:00

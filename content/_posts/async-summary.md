@@ -1,9 +1,9 @@
 ---
 title: 異步操作見聞錄
-header-img: KMksHxZ.png
-header-size: contain
-header-bg-color: f0db51
-background-position-y: 50%
+headerImage: KMksHxZ.png
+headerSize: contain
+headerBackgroundColor: f0db51
+backgroundPositionY: 50%
 theme: white
 magic: true
 tags:

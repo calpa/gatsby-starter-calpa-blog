@@ -3,7 +3,7 @@ title: 【多圖】2017 年香港開源年會後記
 tags:
   - Conference
   - Open Source
-header-img: 1tRwQTX.jpg
+headerImage: 1tRwQTX.jpg
 date: 2017-06-14 09:28:00
 ---
 

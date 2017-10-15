@@ -1,7 +1,7 @@
 ---
 title: hackUST 2017後記
 date: 2017-04-23 20:44
-header-img: IJPUhSJ.jpg
+headerImage: IJPUhSJ.jpg
 tags:
   - Hackathon
 ---

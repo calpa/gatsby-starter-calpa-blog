@@ -1,6 +1,6 @@
 ---
 title: 5分鐘製作 Markdown PowerPoint
-# header-img: RqSfyCG.jpg # 好難配圖。。。
+# headerImage: RqSfyCG.jpg # 好難配圖。。。
 tags:
   - Markdown
 date: 2017-06-01 17:00:00

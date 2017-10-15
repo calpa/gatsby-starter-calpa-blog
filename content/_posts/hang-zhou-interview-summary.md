@@ -1,9 +1,9 @@
 ---
 title: 【圖多】《遠征成功﹣﹣一個香港人北上杭州豬場的前端面試之路》
-header-img: pbvqpjs.png
-# header-size: contain
-header-bg-color: 2f383a
-background-position-y: 50%
+headerImage: pbvqpjs.png
+# headerSize: contain
+headerBackgroundColor: 2f383a
+backgroundPositionY: 50%
 # theme: white
 magic: true
 tags:

@@ -1,9 +1,9 @@
 ---
 title: 項目代碼調試：提問前要做的六個步驟
 date: 2017-07-24 21:00
-header-img: ERjLSMf.jpg
-header-size: contain;
-header-bg-color: 0b0b0b
+headerImage: ERjLSMf.jpg
+headerSize: contain;
+headerBackgroundColor: 0b0b0b
 tags:
   - 思考
 ---

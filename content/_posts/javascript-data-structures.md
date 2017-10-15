@@ -1,6 +1,6 @@
 ---
 title: 利用 ECMAScript 学习如何判断数据类型
-header-img: KMksHxZ.png
+headerImage: KMksHxZ.png
 date: 2017-05-18 14:00
 tags:
   - JavaScript

@@ -1,9 +1,11 @@
 import React from "react"
+import Navbar from '../components/Navbar';
 
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
     <div>
+      <Navbar />
       <h1>
         {post.frontmatter.title}
       </h1>

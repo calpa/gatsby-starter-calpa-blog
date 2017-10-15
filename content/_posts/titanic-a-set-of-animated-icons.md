@@ -4,10 +4,10 @@ tags:
   - JavaScript
   - Library
 date: 2017-07-06 11:00:00
-header-img: bLmxAZ3.gif
-header-size: contain;
-header-bg-color: 022e2f
-background-position-y: 50%
+headerImage: bLmxAZ3.gif
+headerSize: contain;
+headerBackgroundColor: 022e2f
+backgroundPositionY: 50%
 ---
 
 如果你用過 Font Awesome 等圖標，你可能會覺得它們很好看，用起來很很方便。但是，在用戶點擊這些圖標的時候，它們是不會有反應的。如果有這些圖標會動的話，那就更加好。Titanic 提供一系列的動畫圖標，以及以 JavaScript 的調用圖標動畫的方法。

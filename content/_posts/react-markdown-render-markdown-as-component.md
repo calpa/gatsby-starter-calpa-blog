@@ -4,15 +4,15 @@ date: 2017-08-31 14:25:00
 tags:
   - React
   - Markdown
-header-size: contain;
-header-bg-color: fff
+headerSize: contain;
+headerBackgroundColor: fff
 theme: white
 # translator: Calpa
 # author:
 background-position-x: 50%
 
 magic: false
-header-img: IYhTVXU.png
+headerImage: IYhTVXU.png
 share-img: https://i.imgur.com/UtbKsLJ.jpg
 # juejin: 59a2419a51882524481c9309
 # imgur: https://imgur.com/a/BiUy9

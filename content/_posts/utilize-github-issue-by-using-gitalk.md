@@ -3,12 +3,12 @@ title: 善用 Github Issue 的開源評論插件 -- Gitalk
 tags:
   - Front End
   - Blog
-header-bg-color: fff
-header-img: phH7Jc4.png;
-header-size: contain;
+headerBackgroundColor: fff
+headerImage: phH7Jc4.png;
+headerSize: contain;
 share-img: https://i.imgur.com/w6B3yom.png
 date: 2017-08-04 20:00:00
-background-position-y: 50%
+backgroundPositionY: 50%
 magic: false
 ---
 
