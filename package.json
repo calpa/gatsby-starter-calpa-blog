@@ -14,6 +14,7 @@
     "gitalk": "^1.1.4",
     "jquery": "^3.2.1",
     "moment": "^2.19.1",
+    "react-ga": "^2.3.5",
     "react-lazyload": "^2.2.7",
     "react-markdown": "^2.5.0",
     "rimraf": "^2.6.2"
