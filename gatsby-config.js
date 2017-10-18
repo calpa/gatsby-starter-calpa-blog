@@ -1,7 +1,7 @@
 module.exports = {
   pathPrefix: '/blog',
   siteMetadata: {
-    title: 'Gatsby Default Starter',
+    title: 'Calpa&apos;s Blog',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
@@ -17,6 +17,12 @@ module.exports = {
       resolve: 'gatsby-transformer-remark',
       options: {
         plugins: [],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-84737574-3',
       },
     },
   ],
