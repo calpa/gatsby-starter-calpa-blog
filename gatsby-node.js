@@ -30,7 +30,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve, reject) => {
     graphql(`
       {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {fields:[frontmatter___date], order: DESC}) {
           edges {
             node {
               fields {
@@ -45,7 +45,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       }
     `).then((result) => {
       result.data.allMarkdownRemark.edges.map(({ node }) => {
-        let date = node.frontmatter.date;
+        let { date } = node.frontmatter;
         date = moment(date).format('YYYY/MM/DD');
         createPage({
           path: date + node.fields.slug,

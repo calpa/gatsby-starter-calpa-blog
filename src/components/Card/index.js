@@ -1,6 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
-import LazyLoad from 'react-lazyload';
+import { navigateTo } from 'gatsby-link';
 
 import './index.scss';
 
@@ -15,21 +14,23 @@ const getDefaultPicture = () => (
 const Card = ({
   title, date, url, headerImage, headerBackgroundColor,
 }) => (
-  <Link to={parseUrl(date, url)}>
-    <div className="card">
-      <LazyLoad height={200}>
-        <img
-          className="card-img-top"
-          src={`https://i.imgur.com/${headerImage || getDefaultPicture()}:`}
-          alt={`${title}`}
-        />
-      </LazyLoad>
+  <div className="col-sm-6 pb-4">
+    <div
+      className="card text-black bg-light border-info"
+      onClick={() => navigateTo(parseUrl(date, url))}
+      role="button"
+    >
+      <img
+        className="card-img-top"
+        src={`https://i.imgur.com/${headerImage || getDefaultPicture()}:`}
+        alt={`${title}`}
+      />
       <div className="card-body">
         <h4 className="card-title">{title}</h4>
         <p className="card-text">{date}</p>
       </div>
     </div>
-  </Link>
+  </div>
 );
 
 export default Card;

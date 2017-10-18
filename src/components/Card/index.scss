@@ -12,6 +12,6 @@ $black: #000;
 $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
 .card {
-  max-width: 40em;
-  margin: 1em;
+  cursor: pointer;
+  min-height: 330px;
 }

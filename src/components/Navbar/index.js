@@ -8,7 +8,7 @@ const search = (e) => {
 };
 
 const Navbar = () => (
-  <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top">
+  <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top mb-3">
     <Link className="navbar-brand" to="/">Calpa's Blog</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
