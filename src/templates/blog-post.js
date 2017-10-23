@@ -1,4 +1,6 @@
+// Coponents
 import React, { Component } from 'react';
+import { Helmet } from 'react-helmet';
 
 import 'gitalk/dist/gitalk.css';
 
@@ -9,6 +11,9 @@ import Sidebar from '../components/Sidebar';
 import './blog-post.scss';
 import './toc.scss';
 
+import config from '../../config.json'; // eslint-disable-line
+
+// Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
@@ -44,7 +49,9 @@ class BlogPost extends Component {
     const post = this.data.markdownRemark;
     return (
       <div className="row blog-post">
-
+        <Helmet>
+          <title>{post.frontmatter.title}</title>
+        </Helmet>
         <div className="col-sm-12">
           <h1>{post.frontmatter.title}</h1>
         </div>
@@ -56,9 +63,12 @@ class BlogPost extends Component {
           <hr />
         </div>
 
-        <div className="col-lg-2 col-sm-4 order-md-3">
-          <ReactMarkdown source={post.tableOfContents} className="toc-wrap" />
-        </div>
+        {config.post.tableOfContents &&
+          <div className="col-lg-2 col-sm-4 order-md-3">
+            <ReactMarkdown source={post.tableOfContents} className="toc-wrap" />
+          </div>
+        }
+
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
 

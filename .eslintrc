@@ -6,7 +6,7 @@
     "import"
   ],
   "settings": {
-    "import/core-modules": ['react', 'config']
+    "import/core-modules": ['react', 'config', 'react-helmet']
   },
   "rules": {
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
