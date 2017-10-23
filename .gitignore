@@ -7,4 +7,4 @@ public/
 .DS_Store
 yarn-error.log
 
-config.json
+config.js

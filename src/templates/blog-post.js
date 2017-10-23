@@ -4,27 +4,19 @@ import { Helmet } from 'react-helmet';
 
 import 'gitalk/dist/gitalk.css';
 
-import ReactMarkdown from 'react-markdown';
+// import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
+import Content from '../components/Content';
 
 import './blog-post.scss';
 import './toc.scss';
 
-import config from '../../config.json'; // eslint-disable-line
+// import config from '../../data/config';
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
-
-const getBody = (mdFile) => {
-  // As Gastby's markdownRemark add '---' at the beginnings
-  // We need to extract the body part only
-  const secondHR = mdFile.indexOf('---', 4) + 3;
-  const body = mdFile.slice(secondHR);
-
-  return body;
-};
 
 class BlogPost extends Component {
   constructor(props) {
@@ -58,20 +50,9 @@ class BlogPost extends Component {
 
         <Sidebar post />
 
-        <div className="col-lg-8 col-sm-8 post-container order-md-2">
-          <ReactMarkdown source={getBody(post.internal.content)} />
-          <hr />
-        </div>
-
-        {config.post.tableOfContents &&
-          <div className="col-lg-2 col-sm-4 order-md-3">
-            <ReactMarkdown source={post.tableOfContents} className="toc-wrap" />
-          </div>
-        }
-
+        <Content post={post.internal.content} />
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
-
 
       </div>
     );
