@@ -44,7 +44,24 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then((result) => {
-      result.data.allMarkdownRemark.edges.map(({ node }) => {
+      const posts = result.data.allMarkdownRemark.edges;
+
+      const postInPage = 6;
+      const pages = Math.ceil(posts.length / postInPage);
+
+      for (let index = 1; index < pages; index += 1) {
+        createPage({
+          path: `page/${index}`,
+          component: path.resolve('./src/templates/page.js'),
+          context: {
+          // Data passed to context is available in page queries as GraphQL variables.
+            limit: postInPage,
+            skip: index * postInPage,
+          },
+        });
+      }
+
+      posts.map(({ node }) => {
         let { date } = node.frontmatter;
         date = moment(date).format('YYYY/MM/DD');
         createPage({
