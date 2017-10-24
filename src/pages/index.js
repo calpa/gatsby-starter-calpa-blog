@@ -4,14 +4,19 @@ import moment from 'moment';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 
+import BackPage from '../components/BackPage';
+import NextPage from '../components/NextPage';
+
 import './index.scss';
+
+import { maxPages } from '../../data/config';
 
 const parseDate = date =>
   moment(date).format('YYYY/MM/DD');
 
 
 const HomePage = ({ data }) => (
-  <div className="row">
+  <div className="row pb-5">
     <Sidebar />
 
     <div className="
@@ -35,6 +40,11 @@ const HomePage = ({ data }) => (
           />
         ))}
       </div>
+    </div>
+
+    <div className="row order-3 w-100 justify-content-around">
+      {window.location.pathname.indexOf('page') !== -1 && <BackPage /> }
+      {window.location.pathname.split('/')[2] !== maxPages && <NextPage />}
     </div>
   </div>
 );
