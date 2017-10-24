@@ -1,5 +1,9 @@
 {
   "assetsByChunkName": {
+    "path---page-5": [
+      "path---page-5-3f72d20e6c6de0089b2f.js",
+      "path---page-5-3f72d20e6c6de0089b2f.js.map"
+    ],
     "path---2017-04-11-react-native-run-android": [
       "path---2017-04-11-react-native-run-android-d83b0908109e8c0ba9e9.js",
       "path---2017-04-11-react-native-run-android-d83b0908109e8c0ba9e9.js.map"
@@ -8,13 +12,17 @@
       "path---2017-02-23-github-edcation-package-1f6546b7b477afadb0fd.js",
       "path---2017-02-23-github-edcation-package-1f6546b7b477afadb0fd.js.map"
     ],
+    "path---page-7": [
+      "path---page-7-1c75aa5de45090212bbc.js",
+      "path---page-7-1c75aa5de45090212bbc.js.map"
+    ],
     "path---2017-02-19-supercharger-hackathon": [
       "path---2017-02-19-supercharger-hackathon-56d02aa52d1368a44687.js",
       "path---2017-02-19-supercharger-hackathon-56d02aa52d1368a44687.js.map"
     ],
     "component---src-pages-index-js": [
-      "component---src-pages-index-js-5ea733fad7d2e10b39a4.js",
-      "component---src-pages-index-js-5ea733fad7d2e10b39a4.js.map"
+      "component---src-pages-index-js-fb981f4949996ab9603b.js",
+      "component---src-pages-index-js-fb981f4949996ab9603b.js.map"
     ],
     "path---2017-04-01-git-workflow": [
       "path---2017-04-01-git-workflow-a8935ff84098af3b3777.js",
@@ -60,6 +68,10 @@
       "path---2017-04-08-common-http-status-code-4c63ca97ec6187209e57.js",
       "path---2017-04-08-common-http-status-code-4c63ca97ec6187209e57.js.map"
     ],
+    "component---src-templates-page-js": [
+      "component---src-templates-page-js-1c6e17c77e730012104c.js",
+      "component---src-templates-page-js-1c6e17c77e730012104c.js.map"
+    ],
     "path---2017-04-25-coders-of-the-caribbean-review": [
       "path---2017-04-25-coders-of-the-caribbean-review-ca97efdf74c22fa6981b.js",
       "path---2017-04-25-coders-of-the-caribbean-review-ca97efdf74c22fa6981b.js.map"
@@ -69,8 +81,8 @@
       "path---2017-04-05-front-end-booklist-d7bfae01f4d180ca4a20.js.map"
     ],
     "component---src-templates-blog-post-js": [
-      "component---src-templates-blog-post-js-7e0379e9202d8d8552fe.js",
-      "component---src-templates-blog-post-js-7e0379e9202d8d8552fe.js.map"
+      "component---src-templates-blog-post-js-9f902fb5956e252c6287.js",
+      "component---src-templates-blog-post-js-9f902fb5956e252c6287.js.map"
     ],
     "path---2017-02-26-hexo-change-site-url": [
       "path---2017-02-26-hexo-change-site-url-4838cd16d2211264685f.js",
@@ -81,8 +93,8 @@
       "path---2017-06-14-hong-kong-open-sources-conference-remarks-d8c54800a8e9fa3f5421.js.map"
     ],
     "component---src-layouts-index-js": [
-      "component---src-layouts-index-js-78bd9755a9043e33439f.js",
-      "component---src-layouts-index-js-78bd9755a9043e33439f.js.map"
+      "component---src-layouts-index-js-b1a7f194ed8aa1d1ec9e.js",
+      "component---src-layouts-index-js-b1a7f194ed8aa1d1ec9e.js.map"
     ],
     "path---2017-02-25-hexo-seo-nofollow": [
       "path---2017-02-25-hexo-seo-nofollow-f41451995c4de9a0f049.js",
@@ -91,6 +103,10 @@
     "path---2017-04-21-bootstrap-code-analysis-1": [
       "path---2017-04-21-bootstrap-code-analysis-1-969dec75ffc0ba68aabe.js",
       "path---2017-04-21-bootstrap-code-analysis-1-969dec75ffc0ba68aabe.js.map"
+    ],
+    "path---page-2": [
+      "path---page-2-517349d0c37b9ed6cf41.js",
+      "path---page-2-517349d0c37b9ed6cf41.js.map"
     ],
     "path---index": [
       "path---index-8f70ce16ead5ebce5e59.js",
@@ -129,9 +145,9 @@
       "path---2017-06-20-front-end-performance-check-list-for-production-in-chinese-f2c9ab375eb2adc27319.js.map"
     ],
     "commons": [
-      "commons-d8657125f551ea8dd83f.js",
+      "commons-c042e317289800ceb772.js",
       "build-js-styles.css",
-      "commons-d8657125f551ea8dd83f.js.map",
+      "commons-c042e317289800ceb772.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-01-15-javascript-variable-hoisting": [
@@ -158,6 +174,10 @@
       "path---2017-04-27-n-ways-to-output-hello-world-20f2e8bb1edeead14e13.js",
       "path---2017-04-27-n-ways-to-output-hello-world-20f2e8bb1edeead14e13.js.map"
     ],
+    "path---page-4": [
+      "path---page-4-51edae8904a36254602a.js",
+      "path---page-4-51edae8904a36254602a.js.map"
+    ],
     "path---2017-06-13-hong-kong-open-data-from-zero-to-giveup": [
       "path---2017-06-13-hong-kong-open-data-from-zero-to-giveup-2c39a44d940a134957b2.js",
       "path---2017-06-13-hong-kong-open-data-from-zero-to-giveup-2c39a44d940a134957b2.js.map"
@@ -165,6 +185,10 @@
     "path---2017-07-03-introduction-to-hhkb-pro-2": [
       "path---2017-07-03-introduction-to-hhkb-pro-2-7e5d53a9fb1543cef6a7.js",
       "path---2017-07-03-introduction-to-hhkb-pro-2-7e5d53a9fb1543cef6a7.js.map"
+    ],
+    "path---page-6": [
+      "path---page-6-1beea84b8ac3f2509329.js",
+      "path---page-6-1beea84b8ac3f2509329.js.map"
     ],
     "path---2017-05-06-vertical-align-with-css": [
       "path---2017-05-06-vertical-align-with-css-1d8c38f51c994cd60ddb.js",
@@ -177,6 +201,10 @@
     "path---2017-07-24-six-steps-to-debug-before-directly-ask-question": [
       "path---2017-07-24-six-steps-to-debug-before-directly-ask-question-c1db92f2f6d458901ff9.js",
       "path---2017-07-24-six-steps-to-debug-before-directly-ask-question-c1db92f2f6d458901ff9.js.map"
+    ],
+    "path---page-3": [
+      "path---page-3-90c8408deea9a159ae0c.js",
+      "path---page-3-90c8408deea9a159ae0c.js.map"
     ],
     "path---2017-02-19-javascript-closure": [
       "path---2017-02-19-javascript-closure-3ef93cc482058ef85b10.js",
@@ -191,9 +219,9 @@
       "path---2017-01-21-using-javascript-to-create-web-storage-c57697cc947a81750b94.js.map"
     ],
     "app": [
-      "app-647d2ddfe081fe824318.js",
+      "app-66e0cb55392c0f8d7948.js",
       "build-js-styles.css",
-      "app-647d2ddfe081fe824318.js.map",
+      "app-66e0cb55392c0f8d7948.js.map",
       "build-js-styles.css.map"
     ],
     "path---2017-02-22-using-javascript-to-push-web-notification": [
@@ -227,6 +255,10 @@
     "path---2017-10-01-hang-zhou-interview-summary": [
       "path---2017-10-01-hang-zhou-interview-summary-7bb6c7d671dbc8dc5872.js",
       "path---2017-10-01-hang-zhou-interview-summary-7bb6c7d671dbc8dc5872.js.map"
+    ],
+    "path---page-1": [
+      "path---page-1-e78a7d9a1cb47be6e7bf.js",
+      "path---page-1-e78a7d9a1cb47be6e7bf.js.map"
     ],
     "path---2017-05-18-javascript-data-structures": [
       "path---2017-05-18-javascript-data-structures-aae0c06c75ac6725d762.js",
