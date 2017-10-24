@@ -12,10 +12,7 @@ const getBody = (mdFile) => {
 
   // Override the renderer methods
   const renderer = new marked.Renderer();
-  renderer.image = (href, title, text) => {
-    console.log(href, title, text);
-    return `<img src=${href} title=${title || text} text=${text}/>`;
-  };
+  renderer.image = (href, title, text) => `<img src=${href} title=${title || text} text=${text}/>`;
 
   const html = marked(body, { renderer });
   return html;
