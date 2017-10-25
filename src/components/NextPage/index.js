@@ -2,17 +2,19 @@ import React from 'react';
 
 import Link from 'gatsby-link';
 
-const maxPages = 8;
+import { getCurrentPage, getMaxPages } from '../../api';
 
 const addOnePage = (currentPage) => {
-  if (currentPage + 1 < maxPages) {
+  const maxPages = getMaxPages();
+
+  if (currentPage + 1 <= maxPages) {
     return currentPage + 1;
   }
   return 1;
 };
 
 const handleNextPage = () => {
-  const index = addOnePage(+window.location.pathname.split('/')[2]);
+  const index = addOnePage(getCurrentPage());
 
   return `/page/${index}`;
 };

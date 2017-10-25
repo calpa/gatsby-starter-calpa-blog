@@ -2,12 +2,14 @@ import React from 'react';
 
 import Link from 'gatsby-link';
 
+import { isPage, getCurrentPage } from '../../api';
+
 const back = () => {
-  if (window.location.pathname.indexOf('page') === -1) {
+  if (isPage()) {
     return '/';
   }
 
-  const currentPage = +window.location.pathname.split('/')[2];
+  const currentPage = getCurrentPage();
   const index = currentPage - 1;
 
   if (index === 0) {

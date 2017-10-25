@@ -1,19 +1,14 @@
 import React from 'react';
 
-import moment from 'moment';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 
 import BackPage from '../components/BackPage';
 import NextPage from '../components/NextPage';
 
+import { parseDate, isFirstPage, isLastPage } from '../api/';
+
 import './index.scss';
-
-import { maxPages } from '../../data/config';
-
-const parseDate = date =>
-  moment(date).format('YYYY/MM/DD');
-
 
 const HomePage = ({ data }) => (
   <div className="row pb-5">
@@ -28,7 +23,7 @@ const HomePage = ({ data }) => (
       "
     >
       <div className="row">
-        {data.allMarkdownRemark.edges.map(({ node }) => (
+        {data.allMarkdownRemark.edges.map(({ node }, index) => (
           <Card
             title={node.frontmatter.title}
             date={parseDate(node.frontmatter.date)}
@@ -37,14 +32,15 @@ const HomePage = ({ data }) => (
             headerImage={node.frontmatter.headerImage}
             headerBackgroundColor={node.frontmatter.headerBackgroundColor}
             key={node.frontmatter.title}
+            index={index}
           />
         ))}
       </div>
     </div>
 
     <div className="row order-3 w-100 justify-content-around">
-      {window.location.pathname.indexOf('page') !== -1 && <BackPage /> }
-      {window.location.pathname.split('/')[2] !== maxPages && <NextPage />}
+      {!isFirstPage() && <BackPage /> }
+      {!isLastPage() && <NextPage />}
     </div>
   </div>
 );
