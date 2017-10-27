@@ -1,15 +1,18 @@
+// s = Small Square (90×90)
+// b = Big Square (160×160)
+// t = Small Thumbnail (160×160)
+// m = Medium Thumbnail (320×320)
+// l = Large Thumbnail (640×640)
+// h = Huge Thumbnail (1024×1024)
+
 const getDefaultPicture = () => (
   Math.random() > 0.5 ? 'kkKoV4d.jpg' : 'YexhzBP.jpg'
 );
 
-const parseImgur = (headerImage = getDefaultPicture(), size = 'large') => {
+const parseImgur = (headerImage, size = 'large') => {
   let subfix;
-  // s = Small Square (90×90)
-  // b = Big Square (160×160)
-  // t = Small Thumbnail (160×160)
-  // m = Medium Thumbnail (320×320)
-  // l = Large Thumbnail (640×640)
-  // h = Huge Thumbnail (1024×1024)
+
+  headerImage = headerImage || getDefaultPicture(); // eslint-disable-line
 
   switch (size) {
     case 'small-square':
