@@ -14,6 +14,7 @@
     "gatsby-transformer-remark": "^1.7.15",
     "gitalk": "^1.1.4",
     "jquery": "^3.2.1",
+    "lozad": "^1.0.9",
     "marked": "^0.3.6",
     "moment": "^2.19.1",
     "react-lazyload": "^2.2.7",

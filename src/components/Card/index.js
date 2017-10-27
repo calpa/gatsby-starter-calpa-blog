@@ -1,5 +1,8 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { navigateTo } from 'gatsby-link';
+import PropTypes from 'prop-types';
+
+import lozad from 'lozad';
 
 import './index.scss';
 
@@ -47,27 +50,53 @@ const parseImgur = (headerImage, size = 'large') => {
   return `https://i.imgur.com/${resizedImage}`;
 };
 
-const Card = ({
-  title, date, url, headerImage, headerBackgroundColor, index,
-}) => (
-  <div className="col-sm-6 pb-4">
-    <div
-      className="card text-black bg-light border-info"
-      onClick={() => navigateTo(parseUrl(date, url))}
-      role="button"
-      tabIndex={index}
-    >
-      <img
-        className="card-img-top"
-        src={parseImgur(headerImage)}
-        alt={`${title}`}
-      />
-      <div className="card-body">
-        <h4 className="card-title">{title}</h4>
-        <p className="card-text">{date}</p>
+class Card extends Component {
+  constructor(props) {
+    super(props);
+    this.title = this.props.title;
+    this.date = this.props.date;
+    this.url = this.props.url;
+    this.headerImage = this.props.headerImage;
+    this.headerBackgroundColor = this.props.headerBackgroundColor;
+    this.index = this.props.index;
+  }
+
+  componentDidMount() {
+    const observer = lozad();
+    observer.observe();
+  }
+
+  render() {
+    return (
+      <div className="col-sm-6 pb-4">
+        <div
+          className="card text-black bg-light border-info"
+          onClick={() => navigateTo(parseUrl(this.date, this.url))}
+          role="button"
+          tabIndex={this.index}
+        >
+          <img
+            className="card-img-top lozad"
+            data-src={parseImgur(this.headerImage)}
+            alt={`${this.title}`}
+          />
+          <div className="card-body">
+            <h4 className="card-title">{this.title}</h4>
+            <p className="card-text">{this.date}</p>
+          </div>
+        </div>
       </div>
-    </div>
-  </div>
-);
+    );
+  }
+}
+
+Card.propTypes = {
+  title: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  headerImage: PropTypes.string.isRequired,
+  headerBackgroundColor: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};
 
 export default Card;
