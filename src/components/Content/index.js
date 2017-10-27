@@ -1,23 +1,9 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
 import lozad from 'lozad';
-import marked from 'marked';
 
+import { getBody } from '../../api/text';
 import config from '../../../data/config';
-
-const getBody = (mdFile) => {
-  // As Gastby's markdownRemark add '---' at the beginnings
-  // We need to extract the body part only
-  const secondHR = mdFile.indexOf('---', 4) + 3;
-  const body = mdFile.slice(secondHR);
-
-  // Override the renderer methods
-  const renderer = new marked.Renderer();
-  renderer.image = (href, title, text) => `<img class="lozad" data-src=${href} title=${title || text} />`;
-
-  const html = marked(body, { renderer });
-  return html;
-};
 
 class Content extends Component {
   constructor(props) {
@@ -34,9 +20,9 @@ class Content extends Component {
   render() {
     return (
       <div>
-        <div className="col-lg-8 col-sm-8 post-container order-md-2">
+        <div className="col-lg-12 col-sm-12 post-container order-md-2">
           <div
-            dangerouslySetInnerHTML={{ __html: getBody(this.post) }}
+            dangerouslySetInnerHTML={{ __html: getBody(this.post) }} // eslint-disable-line
           />
           <hr />
         </div>
@@ -49,5 +35,8 @@ class Content extends Component {
   }
 }
 
+Content.propTypes = {
+  post: PropTypes.string.isRequired,
+};
 
 export default Content;
