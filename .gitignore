@@ -6,5 +6,3 @@ node_modules
 public/
 .DS_Store
 yarn-error.log
-
-config.js
