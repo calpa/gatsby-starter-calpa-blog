@@ -17,6 +17,3 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
-      - run:
-          name: Check Prettier, ESLint, Flow
-          command: yarn ci-check
