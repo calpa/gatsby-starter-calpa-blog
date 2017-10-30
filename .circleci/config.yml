@@ -12,8 +12,12 @@ jobs:
           - dependencies-
       - run:
           name: Install
-          command: yarn install
+          command: npm install
       - save_cache:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
+      - deployment:
+          production:
+            branch: master
+            commands: npm run deploy
