@@ -17,7 +17,5 @@ jobs:
           paths:
             - node_modules
           key: dependencies-{{ checksum "package.json" }}
-  deployment:
-    production:
-      branch: master
-        commands: npm run deploy
+      - deploy:
+          commands: npm run deploy
