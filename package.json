@@ -7,7 +7,6 @@
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "gatsby": "^1.9.63",
     "gatsby-link": "^1.6.21",
-    "gatsby-plugin-google-analytics": "^1.0.8",
     "gatsby-plugin-react-helmet": "^1.0.5",
     "gatsby-plugin-sass": "^1.0.12",
     "gatsby-source-filesystem": "^1.5.5",
@@ -17,6 +16,7 @@
     "lozad": "^1.0.9",
     "marked": "^0.3.6",
     "moment": "^2.19.1",
+    "react-ga": "^2.3.5",
     "react-lazyload": "^2.2.7",
     "react-markdown": "^2.5.0",
     "rimraf": "^2.6.2"

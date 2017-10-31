@@ -14,14 +14,7 @@ const HomePage = ({ data }) => (
   <div className="row pb-5">
     <Sidebar />
 
-    <div className="
-      col-xl-8
-      col-lg-8
-      col-md-12
-      col-xs-12
-      order-2
-      "
-    >
+    <div className="col-xl-8 col-lg-8 col-md-12 col-xs-12 order-2" >
       <div className="row">
         {data.allMarkdownRemark.edges.map(({ node }, index) => (
           <Card
