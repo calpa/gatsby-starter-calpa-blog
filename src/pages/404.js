@@ -1,10 +1,28 @@
-import React from 'react'
+import React from 'react';
 
-const NotFoundPage = () => (
+import Link from 'gatsby-link';
+
+const NotFoundPage = ({ data }) => (
   <div>
-    <h1>NOT FOUND</h1>
-    <p>You just hit a route that doesn&#39;t exist... the sadness.</p>
+    <h4>找不到你的網頁，本站所有頁面為：</h4>
+    {data.allSitePage.edges.map(page => (
+      <Link to={page.node.path} href={page.node.path}>
+        <li>{page.node.path}</li>
+      </Link>
+    ))}
   </div>
-)
+);
 
-export default NotFoundPage
+export const pageQuery = graphql`
+query getAllPages {
+  allSitePage {
+    edges {
+      node {
+        path
+      }
+    }
+  }
+}
+`;
+
+export default NotFoundPage;
