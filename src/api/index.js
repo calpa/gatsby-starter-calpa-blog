@@ -22,7 +22,7 @@ const getMaxPages = () => maxPages;
 
 const overflow = () => getCurrentPage() === getMaxPages();
 
-const parseDate = date => moment(date).format('YYYY/MM/DD');
+const parseDate = date => moment(date).utcOffset(8).format('YYYY/MM/DD');
 
 const isFirstPage = () => (isBrowser() ? isPage() : false);
 

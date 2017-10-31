@@ -63,7 +63,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       posts.map(({ node }) => {
         let { date } = node.frontmatter;
-        date = moment(date).format('YYYY/MM/DD');
+        date = moment(date).utcOffset(8).format('YYYY/MM/DD');
         createPage({
           path: date + node.fields.slug,
           component: path.resolve('./src/templates/blog-post.js'),
