@@ -8,10 +8,14 @@ import {
 
 import { parseDate } from '../api';
 
+const navigateToPost = (date, slug) => (
+  `/${parseDate(date)}/${slug}`
+);
+
 const Post = ({ hit }) => (
   <Link
-    to={`${parseDate(hit.date)}/${hit.slug}`}
-    href={`${parseDate(hit.date)}/${hit.slug}`}
+    to={navigateToPost(hit.date, hit.slug)}
+    href={navigateToPost(hit.date, hit.slug)}
   >
     <div style={{ marginTop: '10px' }}>
       <span className="hit-name">
