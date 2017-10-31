@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 import { navigateTo } from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-import lozad from 'lozad';
+// import lozad from 'lozad';
 
 import { parseImgur } from '../../api/images';
 
 import './index.scss';
 
 const parseUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}`
+  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
 );
 
 class Card extends Component {
@@ -22,12 +22,12 @@ class Card extends Component {
     this.headerBackgroundColor = this.props.headerBackgroundColor;
     this.index = this.props.index;
   }
-
+  /*
   componentDidMount() {
     const observer = lozad();
     observer.observe();
   }
-
+  */
   render() {
     return (
       <div className="col-sm-6 pb-4">
@@ -38,8 +38,8 @@ class Card extends Component {
           tabIndex={this.index}
         >
           <img
-            className="card-img-top lozad"
-            data-src={parseImgur(this.headerImage, 'large')}
+            className="card-img-top"
+            src={parseImgur(this.headerImage, 'large')}
             alt={`${this.title}`}
           />
           <div className="card-body">
