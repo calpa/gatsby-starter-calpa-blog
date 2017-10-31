@@ -1,17 +1,12 @@
 import React from 'react';
 import LazyLoad from 'react-lazyload';
 
+import PropTypes from 'prop-types';
+
 import './index.scss';
 
-const Sidebar = ({ post = false }) => (
-  <header className={`
-    intro-header
-    col-lg-2
-    col-xs-12
-    order-lg-1
-    ${post === true ? 'order-md-10 order-10' : 'order-1'}
-    `}
-  >
+const Sidebar = ({ post }) => (
+  <header className={`intro-header col-lg-2 col-xs-12 order-lg-1 ${post === true ? 'order-md-10 order-10' : 'order-1'}`} >
     <div className="site-heading text-center">
       <div className="about-me">
         <LazyLoad height={200}>
@@ -28,5 +23,13 @@ const Sidebar = ({ post = false }) => (
     </div>
   </header>
 );
+
+Sidebar.propTypes = {
+  post: PropTypes.bool,
+};
+
+Sidebar.defaultProps = {
+  post: false,
+};
 
 export default Sidebar;
