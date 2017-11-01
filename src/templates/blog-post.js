@@ -8,6 +8,7 @@ import 'gitalk/dist/gitalk.css';
 
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
+import Image from '../components/Image';
 
 import './blog-post.scss';
 import './toc.scss';
@@ -45,7 +46,11 @@ class BlogPost extends Component {
           <title>{post.frontmatter.title}</title>
         </Helmet>
         <div className="col-sm-12">
-          <h1>{post.frontmatter.title}</h1>
+          <h2>{post.frontmatter.title}</h2>
+          <Image
+            href={post.frontmatter.headerImage}
+            title={post.frontmatter.title}
+          />
         </div>
 
         <Sidebar post />
@@ -70,6 +75,7 @@ export const query = graphql`
       }
       frontmatter {
         title
+        headerImage
       }
     }
   }
