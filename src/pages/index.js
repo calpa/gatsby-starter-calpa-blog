@@ -7,6 +7,7 @@ import BackPage from '../components/BackPage';
 import NextPage from '../components/NextPage';
 
 import { parseDate, isFirstPage, isLastPage } from '../api/';
+import { getDefaultPicture } from '../api/images';
 
 import './index.scss';
 
@@ -22,8 +23,8 @@ const HomePage = ({ data }) => (
             date={parseDate(node.frontmatter.date)}
             url={node.frontmatter.parent}
             headerSize={node.frontmatter.headerSize}
-            headerImage={node.frontmatter.headerImage}
-            headerBackgroundColor={node.frontmatter.headerBackgroundColor}
+            headerImage={node.frontmatter.headerImage || getDefaultPicture()}
+            headerBackgroundColor={node.frontmatter.headerBackgroundColor || 'ededed'}
             key={node.frontmatter.title}
             index={index}
           />

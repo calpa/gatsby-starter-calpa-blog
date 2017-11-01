@@ -4,6 +4,7 @@ tags:
   - KeyBoard
 date: 2017-07-02 20:16:00
 headerImage: AbKpx2P.jpg
+headerBackgroundColor: ededed
 backgroundPositionY: 50%
 ---
 
