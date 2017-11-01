@@ -25,8 +25,6 @@ class Card extends Component {
     this.headerImage = this.props.headerImage;
     this.headerBackgroundColor = this.props.headerBackgroundColor;
     this.index = this.props.index;
-
-    console.log(this.headerImage, this.headerBackgroundColor);
   }
   /*
   componentDidMount() {
