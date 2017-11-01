@@ -41,21 +41,19 @@ class BlogPost extends Component {
   render() {
     const post = this.data.markdownRemark;
     return (
-      <div className="row blog-post">
+      <div className="row blog-post order-2">
         <Helmet>
           <title>{post.frontmatter.title}</title>
         </Helmet>
-        <div className="col-sm-12">
+        <Sidebar post />
+        <div className="col-sm-12 order-10">
           <h2>{post.frontmatter.title}</h2>
           <Image
             href={post.frontmatter.headerImage}
             title={post.frontmatter.title}
           />
+          <Content post={post.internal.content} />
         </div>
-
-        <Sidebar post />
-
-        <Content post={post.internal.content} />
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
 
