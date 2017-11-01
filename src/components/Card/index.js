@@ -12,6 +12,10 @@ const parseUrl = (date, rawUrl) => (
   `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
 );
 
+const imageStyle = (headerImage, color) => ({
+  background: `#${color} url(${parseImgur(headerImage, 'large')}) center/contain no-repeat`,
+});
+
 class Card extends Component {
   constructor(props) {
     super(props);
@@ -30,18 +34,19 @@ class Card extends Component {
   */
   render() {
     return (
-      <div className="col-sm-6 pb-4">
+      <div className="col-sm-12 pb-4">
         <div
           className="card text-black bg-light border-info"
           onClick={() => navigateTo(parseUrl(this.date, this.url))}
           role="button"
           tabIndex={this.index}
         >
-          <img
-            className="card-img-top"
-            src={parseImgur(this.headerImage, 'large')}
-            alt={`${this.title}`}
+          <div
+            className="img-resized"
+            style={imageStyle(this.headerImage, this.headerBackgroundColor)}
           />
+
+
           <div className="card-body">
             <h4 className="card-title">{this.title}</h4>
             <p className="card-text">{this.date}</p>
