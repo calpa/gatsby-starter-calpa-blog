@@ -14,4 +14,8 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 .card {
   cursor: pointer;
   min-height: 330px;
+
+  .img-resized {
+    height: 15em;
+  }
 }

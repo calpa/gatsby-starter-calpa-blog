@@ -58,4 +58,5 @@ const parseImageTag = ({ href, title, text }) =>
 export {
   parseImgur,
   parseImageTag,
+  getDefaultPicture,
 };

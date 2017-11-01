@@ -29,7 +29,7 @@ class BlogPost extends Component {
     const gitalk = new Gitalk({
       clientID: '18255f031b5e11edd98a',
       clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-      repo: 'blog',
+      repo: 'calpa.github.io',
       owner: 'calpa',
       admin: ['calpa'],
       distractionFreeMode: true,
