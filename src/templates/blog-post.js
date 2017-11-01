@@ -46,7 +46,7 @@ class BlogPost extends Component {
           <title>{post.frontmatter.title}</title>
         </Helmet>
         <Sidebar post />
-        <div className="col-sm-12 order-10">
+        <div className="col-md-10 col-sm-12 order-10">
           <h2>{post.frontmatter.title}</h2>
           <Image
             href={post.frontmatter.headerImage}

@@ -4,7 +4,7 @@ import Link, { navigateTo } from 'gatsby-link';
 const search = (e) => {
   e.preventDefault();
   const query = document.getElementById('nav-search').value;
-  navigateTo(`/search?${query}`);
+  navigateTo(`/search?query=${query}`);
 };
 
 const Navbar = () => (
