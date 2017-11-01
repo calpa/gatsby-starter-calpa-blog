@@ -22,7 +22,9 @@ const getMaxPages = () => maxPages;
 
 const overflow = () => getCurrentPage() === getMaxPages();
 
-const parseDate = date => moment(date).utcOffset(8).format('YYYY/MM/DD');
+const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+
+const parseChineseDate = date => moment(date).locale('zh-hk').format('L');
 
 const isFirstPage = () => (isBrowser() ? isPage() : false);
 
@@ -33,4 +35,5 @@ export {
   getCurrentPage, getMaxPages,
   overflow, parseDate,
   isFirstPage, isLastPage,
+  parseChineseDate,
 };

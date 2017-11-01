@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet';
 
 import 'gitalk/dist/gitalk.css';
 
+import { parseChineseDate } from '../api/';
+
 // import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
@@ -40,17 +42,20 @@ class BlogPost extends Component {
 
   render() {
     const post = this.data.markdownRemark;
+
+    const { title, headerImage, date } = post.frontmatter;
     return (
       <div className="row blog-post order-2">
         <Helmet>
-          <title>{post.frontmatter.title}</title>
+          <title>{title}</title>
         </Helmet>
         <Sidebar post />
         <div className="col-md-10 col-sm-12 order-10">
-          <h2>{post.frontmatter.title}</h2>
+          <h1 className="title">{title}</h1>
+          <p>{parseChineseDate(date)}</p>
           <Image
-            href={post.frontmatter.headerImage}
-            title={post.frontmatter.title}
+            href={headerImage}
+            title={title}
           />
           <Content post={post.internal.content} />
         </div>
@@ -74,6 +79,7 @@ export const query = graphql`
       frontmatter {
         title
         headerImage
+        date
       }
     }
   }
