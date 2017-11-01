@@ -3,24 +3,19 @@ import Page from '../pages/';
 export default Page;
 
 export const pageQuery = graphql`
-    query getPosts($limit: Int, $skip: Int) {
-      allMarkdownRemark(
-        sort: {order: DESC, fields: [frontmatter___date]}
+query getNextPage($limit: Int, $skip: Int) {
+  allContentfulMarkdown(
+        sort: {order: DESC, fields: [createdDate]}
         limit: $limit
         skip: $skip
     ) {
       edges {
-        node {
-          frontmatter {
-            title
-            date
-            parent
-            headerImage
-            headerSize
-            headerBackgroundColor
-          }
-        }
-      }
-    }
+       node {
+         title
+         createdDate
+         url
+       }
+     }
   }
+}
 `;

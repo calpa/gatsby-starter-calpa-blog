@@ -17,15 +17,15 @@ const HomePage = ({ data }) => (
 
     <div className="col-xl-8 col-lg-8 col-md-12 col-xs-12 order-2" >
       <div className="row">
-        {data.allMarkdownRemark.edges.map(({ node }, index) => (
+        {data.allContentfulMarkdown.edges.map(({ node }, index) => (
           <Card
-            title={node.frontmatter.title}
-            date={parseDate(node.frontmatter.date)}
-            url={node.frontmatter.parent}
-            headerSize={node.frontmatter.headerSize}
-            headerImage={node.frontmatter.headerImage || getDefaultPicture()}
-            headerBackgroundColor={node.frontmatter.headerBackgroundColor || 'ededed'}
-            key={node.frontmatter.title}
+            title={node.title}
+            date={parseDate(node.createdDate)}
+            url={node.url}
+            headerSize={node.headerSize}
+            headerImage={node.headerImage || getDefaultPicture()}
+            headerBackgroundColor={node.headerBackgroundColor || 'ededed'}
+            key={node.title}
             index={index}
           />
         ))}
@@ -42,21 +42,16 @@ const HomePage = ({ data }) => (
 export default HomePage;
 
 export const pageQuery = graphql`
-    query getAllPosts {
-      allMarkdownRemark(
-        sort: {order: DESC, fields: [frontmatter___date]}
-        limit: 6
+  query getAllPosts {
+    allContentfulMarkdown(
+      sort: {order: DESC, fields: [createdDate]},
+      limit: 6
     ) {
       edges {
         node {
-          frontmatter {
-            title
-            date
-            parent
-            headerImage
-            headerSize
-            headerBackgroundColor
-          }
+          title
+          createdDate
+          url
         }
       }
     }

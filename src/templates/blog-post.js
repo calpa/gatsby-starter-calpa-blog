@@ -41,9 +41,9 @@ class BlogPost extends Component {
   }
 
   render() {
-    const post = this.data.markdownRemark;
+    const post = this.data.contentfulMarkdown;
 
-    const { title, headerImage, date } = post.frontmatter;
+    const { title, headerImg, createdDate } = post;
     return (
       <div className="row blog-post order-2">
         <Helmet>
@@ -52,12 +52,12 @@ class BlogPost extends Component {
         <Sidebar post />
         <div className="col-lg-8 col-md-10 col-sm-12 order-10 d-flex flex-column">
           <h1 className="title">{title}</h1>
-          <p>{parseChineseDate(date)}</p>
+          <p>{parseChineseDate(createdDate)}</p>
           <Image
-            href={headerImage}
+            href={headerImg}
             title={title}
           />
-          <Content post={post.internal.content} />
+          <Content post={post.content} />
         </div>
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
@@ -70,17 +70,11 @@ class BlogPost extends Component {
 export default BlogPost;
 
 export const query = graphql`
-  query BlogPostQuery($slug: String!) {
-    markdownRemark(fields: { slug: { eq: $slug } }) {
-      tableOfContents
-      internal {
-        content
-      }
-      frontmatter {
-        title
-        headerImage
-        date
-      }
+  query BlogPostQuery($id: String!) {
+    contentfulMarkdown(id: { eq: $id }) {
+      content
+      title
+      createdDate
     }
   }
 `;

@@ -8,8 +8,12 @@ import { parseImgur } from '../../api/images';
 
 import './index.scss';
 
-const parseUrl = (date, rawUrl) => (
+const parseMarkdownUrl = (date, rawUrl) => (
   `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
+);
+
+const parseUrl = (date, rawUrl) => (
+  `/${date}/${rawUrl}/`
 );
 
 const imageStyle = (headerImage, color) => ({
