@@ -1,6 +1,6 @@
 @import '../styles/colors';
 
-.blog-post {
+.post {
   margin-bottom: 5em;
   @for $i from 1 through 6 {
     h#{$i} {

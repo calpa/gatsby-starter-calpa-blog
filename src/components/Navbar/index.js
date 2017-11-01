@@ -14,13 +14,7 @@ const Navbar = ({ location }) => (
       <span className="navbar-toggler-icon" />
     </button>
 
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul className="navbar-nav mr-auto">
-        <li className="nav-item active">
-          <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-        </li>
-      </ul>
-
+    <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
       {location.pathname !== '/search' &&
         <form
           className="form-inline my-2 my-lg-0"
@@ -30,6 +24,12 @@ const Navbar = ({ location }) => (
           <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
         </form>
       }
+
+      <ul className="navbar-nav mr-2">
+        <li className="nav-item active">
+          <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
+        </li>
+      </ul>
     </div>
   </nav>
 );

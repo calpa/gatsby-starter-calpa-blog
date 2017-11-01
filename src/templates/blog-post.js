@@ -46,12 +46,12 @@ class BlogPost extends Component {
     } = this.data.contentfulMarkdown;
     console.log(this.data);
     return (
-      <div className="row blog-post order-2">
+      <div className="row post order-2">
         <Helmet>
           <title>{title}</title>
         </Helmet>
         <Sidebar post />
-        <div className="col-lg-8 col-md-10 col-sm-12 order-10 d-flex flex-column">
+        <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column">
           <h1 className="title">{title}</h1>
           <p>{parseChineseDate(createdDate)}</p>
           <Image

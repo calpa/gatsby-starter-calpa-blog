@@ -10,9 +10,8 @@ const API_SPACE_ID = 'n3ctvxixp1mr';
 const API_TOKEN = '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a';
 
 // Get All Post from Contentful
-const getPosts = async () => {
+const getPosts = async (contentType) => {
   const order = '-fields.createdDate';
-  const contentType = 'blogPost';
   const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries`;
   const res = await axios.get(POST_URL, {
     params: {
@@ -20,6 +19,8 @@ const getPosts = async () => {
       content_type: contentType,
       access_token: API_TOKEN,
     },
+  }).catch((err) => {
+    console.log(err);
   });
   return res;
 };
@@ -36,14 +37,20 @@ const processDatum = datum => ({
   ...datum.fields,
 });
 
+const makeNode = async ({ contentType, createNode }) => {
+  const { data } = await getPosts(contentType);
+
+  // Process data into nodes.
+  data.items.forEach(datum => createNode(processDatum(datum)));
+};
+
 exports.sourceNodes = async ({ boundActionCreators }) => {
   const { createNode } = boundActionCreators;
   // Create nodes here, generally by downloading data
   // from a remote API.
-  const { data } = await getPosts();
 
-  // Process data into nodes.
-  data.items.forEach(datum => createNode(processDatum(datum)));
+  await makeNode({ contentType: 'blogPost', createNode });
+  await makeNode({ contentType: 'about', createNode });
 };
 
 exports.modifyWebpackConfig = ({ config, stage }) => {
