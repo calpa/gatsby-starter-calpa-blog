@@ -50,7 +50,7 @@ class BlogPost extends Component {
           <title>{title}</title>
         </Helmet>
         <Sidebar post />
-        <div className="col-md-10 col-sm-12 order-10">
+        <div className="col-lg-8 col-md-10 col-sm-12 order-10 d-flex flex-column">
           <h1 className="title">{title}</h1>
           <p>{parseChineseDate(date)}</p>
           <Image

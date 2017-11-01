@@ -36,7 +36,7 @@ const parseImgur = (headerImage, size = 'large') => {
 
   // Don't resize the png image
   // as there is a transparent bug in imgur
-  if (headerImage.match('png')) {
+  if (headerImage.match('(png)|(gif)')) {
     // Prevent double http url
     if (headerImage.match('http')) {
       return headerImage;
