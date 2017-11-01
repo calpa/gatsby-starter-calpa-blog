@@ -41,9 +41,10 @@ class BlogPost extends Component {
   }
 
   render() {
-    const post = this.data.contentfulMarkdown;
-
-    const { title, headerImg, createdDate } = post;
+    const {
+      title, headerImgur, createdDate, content,
+    } = this.data.contentfulMarkdown;
+    console.log(this.data);
     return (
       <div className="row blog-post order-2">
         <Helmet>
@@ -54,10 +55,10 @@ class BlogPost extends Component {
           <h1 className="title">{title}</h1>
           <p>{parseChineseDate(createdDate)}</p>
           <Image
-            href={headerImg}
+            href={headerImgur}
             title={title}
           />
-          <Content post={post.content} />
+          <Content post={content} />
         </div>
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
@@ -75,6 +76,7 @@ export const query = graphql`
       content
       title
       createdDate
+      headerImgur
     }
   }
 `;

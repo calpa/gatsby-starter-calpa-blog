@@ -42,8 +42,6 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // from a remote API.
   const { data } = await getPosts();
 
-  // console.log(data.items);
-
   // Process data into nodes.
   data.items.forEach(datum => createNode(processDatum(datum)));
 };
@@ -86,9 +84,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then((result) => {
-      console.log(result);
+      // console.log(result);
       const posts = result.data.allContentfulMarkdown.edges;
-      console.log(posts);
+      // console.log(posts);
       const postInPage = 6;
       const pages = Math.ceil(posts.length / postInPage);
 

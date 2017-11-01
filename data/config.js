@@ -22,7 +22,7 @@ const config = {
     description: 'Calpa的技術博客，開發日常，以及遇到的坑',
     keyword: 'calpa, blog, JavaScript',
     theme_color: '#384f7c',
-    favicon: '/img/icon.png',
+    favicon: 'https://i.imgur.com/PO9Y4fT.png',
     google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
   },
   SEOTitle: "Calpa's blog",

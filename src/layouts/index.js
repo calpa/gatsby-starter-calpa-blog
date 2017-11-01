@@ -6,10 +6,10 @@ import Head from './Head';
 
 import './index.scss';
 
-const Layout = ({ children }) => (
+const Layout = ({ children, location }) => (
   <div>
     <Head />
-    <Navbar />
+    <Navbar location={location} />
 
     <div className="container">
       {children()}

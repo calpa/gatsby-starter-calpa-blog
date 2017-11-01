@@ -23,7 +23,7 @@ const HomePage = ({ data }) => (
             date={parseDate(node.createdDate)}
             url={node.url}
             headerSize={node.headerSize}
-            headerImage={node.headerImage || getDefaultPicture()}
+            headerImage={node.headerImgur || getDefaultPicture()}
             headerBackgroundColor={node.headerBackgroundColor || 'ededed'}
             key={node.title}
             index={index}
@@ -52,6 +52,8 @@ export const pageQuery = graphql`
           title
           createdDate
           url
+          headerImgur
+          headerBackgroundColor
         }
       }
     }

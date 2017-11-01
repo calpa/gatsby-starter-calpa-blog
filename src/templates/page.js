@@ -14,6 +14,7 @@ query getNextPage($limit: Int, $skip: Int) {
          title
          createdDate
          url
+         headerImgur
        }
      }
   }

@@ -7,7 +7,7 @@ const search = (e) => {
   navigateTo(`/search?query=${query}`);
 };
 
-const Navbar = () => (
+const Navbar = ({ location }) => (
   <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top mb-3">
     <Link className="navbar-brand" to="/">Calpa's Blog</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -21,13 +21,15 @@ const Navbar = () => (
         </li>
       </ul>
 
-      <form
-        className="form-inline my-2 my-lg-0"
-        onSubmit={e => search(e)}
-      >
-        <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="nav-search" />
-        <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-      </form>
+      {location.pathname !== '/search' &&
+        <form
+          className="form-inline my-2 my-lg-0"
+          onSubmit={e => search(e)}
+        >
+          <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="nav-search" />
+          <button className="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+      }
     </div>
   </nav>
 );
