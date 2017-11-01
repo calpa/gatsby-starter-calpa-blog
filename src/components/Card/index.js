@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigateTo } from 'gatsby-link';
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
 // import lozad from 'lozad';
@@ -35,23 +35,24 @@ class Card extends Component {
   render() {
     return (
       <div className="col-sm-12 pb-4">
-        <div
-          className="card text-black bg-light border-info"
-          onClick={() => navigateTo(parseUrl(this.date, this.url))}
-          role="button"
-          tabIndex={this.index}
+        <Link
+          to={parseUrl(this.date, this.url)}
         >
           <div
-            className="img-resized"
-            style={imageStyle(this.headerImage, this.headerBackgroundColor)}
-          />
-
-
-          <div className="card-body">
-            <h4 className="card-title">{this.title}</h4>
-            <p className="card-text">{this.date}</p>
+            className="card text-black bg-light border-info"
+            role="button"
+            tabIndex={this.index}
+          >
+            <div
+              className="img-resized"
+              style={imageStyle(this.headerImage, this.headerBackgroundColor)}
+            />
+            <div className="card-body">
+              <h4 className="card-title">{this.title}</h4>
+              <p className="card-text">{this.date}</p>
+            </div>
           </div>
-        </div>
+        </Link>
       </div>
     );
   }

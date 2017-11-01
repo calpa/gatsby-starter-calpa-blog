@@ -1,3 +1,4 @@
+@import '../../styles/colors';
 $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
 .card {
@@ -6,5 +7,13 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
   .img-resized {
     height: 15em;
+  }
+
+  a & {
+    color: $black;
+
+    &:hover {
+      color: $light-black;
+    }
   }
 }
