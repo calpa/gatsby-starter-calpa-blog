@@ -5,8 +5,6 @@ import lozad from 'lozad';
 import { getBody } from '../../api/text';
 // import config from '../../../data/config';
 
-import './index.scss';
-
 class Content extends Component {
   constructor(props) {
     super(props);
