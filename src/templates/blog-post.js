@@ -52,8 +52,8 @@ class BlogPost extends Component {
         </Helmet>
         <Sidebar post />
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column">
-          <h1 className="title">{title}</h1>
-          <p>{parseChineseDate(createdDate)}</p>
+          <h1 className="title han-sans">{title}</h1>
+          <p className="date han-sans">{parseChineseDate(createdDate)}</p>
           <Image
             href={headerImgur}
             title={title}

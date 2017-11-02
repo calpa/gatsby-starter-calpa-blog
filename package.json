@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^1.5.5",
     "gatsby-transformer-remark": "^1.7.18",
     "gitalk": "^1.1.4",
+    "han-css": "^3.3.0",
     "jquery": "^3.2.1",
     "lozad": "^1.0.9",
     "marked": "^0.3.6",

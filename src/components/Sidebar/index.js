@@ -14,8 +14,8 @@ const Sidebar = ({ post }) => (
         alt="Calpa"
       />
       <h4>Calpa</h4>
-      <p className="mb-1">夢裡不覺秋已深</p>
-      <p className="mb-3">餘情豈是為他人</p>
+      <p className="mb-1 han-cursive">夢裡不覺秋已深</p>
+      <p className="mb-3 han-cursive">餘情豈是為他人</p>
     </div>
   </header>
 );
