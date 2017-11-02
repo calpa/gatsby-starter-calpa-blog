@@ -44,7 +44,7 @@ class BlogPost extends Component {
     const {
       title, headerImgur, createdDate, content,
     } = this.data.contentfulMarkdown;
-    console.log(this.data);
+    // console.log(this.data);
     return (
       <div className="row post order-2">
         <Helmet>
