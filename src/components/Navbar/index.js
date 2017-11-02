@@ -1,14 +1,32 @@
 import React from 'react';
 import Link, { navigateTo } from 'gatsby-link';
 
+import './index.scss';
+
 const search = (e) => {
   e.preventDefault();
   const query = document.getElementById('nav-search').value;
   navigateTo(`/search?query=${query}`);
 };
 
+const NavItem = ({ url, name }) => (
+  <ul className="navbar-nav mr-2">
+    <li className="nav-item">
+      <Link
+        className="nav-link"
+        href={url}
+        to={url}
+        activeStyle={{
+          color: 'black',
+        }}
+      >{name}
+      </Link>
+    </li>
+  </ul>
+);
+
 const Navbar = ({ location }) => (
-  <nav className="navbar navbar-expand-sm navbar-light bg-light sticky-top mb-3">
+  <nav className="navbar navbar-expand-sm navbar-light sticky-top mb-3 custom-navbar">
     <Link className="navbar-brand" to="/">Calpa's Blog</Link>
     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span className="navbar-toggler-icon" />
@@ -25,11 +43,7 @@ const Navbar = ({ location }) => (
         </form>
       }
 
-      <ul className="navbar-nav mr-2">
-        <li className="nav-item active">
-          <Link className="nav-link" to="/">Home <span className="sr-only">(current)</span></Link>
-        </li>
-      </ul>
+      <NavItem url="/about" name="About" />
     </div>
   </nav>
 );

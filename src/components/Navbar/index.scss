@@ -1,1 +1,8 @@
-h1 {}
+.custom-navbar {
+  background-color: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 0 10px rgba(14, 14, 14, 0.26);
+
+  .navbar-toggler {
+    border: 0;
+  }
+}
