@@ -112,8 +112,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       posts.map(({ node }) => {
         const { createdDate, url, id } = node;
         const date = moment(createdDate).locale('zh-hk').format('YYYY/MM/DD');
-        createPage({
-          path: `${date}/${url}`,
+        const postPath = url === 'about' ? url : `${date}/${url}`;
+        return createPage({
+          path: postPath,
           component: path.resolve('./src/templates/blog-post.js'),
           context: {
           // Data passed to context is available in page queries as GraphQL variables.
