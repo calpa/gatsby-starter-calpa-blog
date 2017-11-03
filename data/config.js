@@ -1,6 +1,7 @@
 const config = {
   title: 'Calpa',
   subtitle: null,
+  addthis: ['facebook', 'wechat', 'twitter', 'whatsapp', 'compact'],
   author: 'Calpa',
   language: null,
   timezone: null,

@@ -11,6 +11,7 @@ import { parseChineseDate } from '../api/';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import Image from '../components/Image';
+import ShareBox from '../components/ShareBox';
 
 import './blog-post.scss';
 import './toc.scss';
@@ -54,6 +55,7 @@ class BlogPost extends Component {
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column">
           <h1 className="title han-sans">{title}</h1>
           <p className="date han-sans">{parseChineseDate(createdDate)}</p>
+          <ShareBox />
           <Image
             href={headerImgur}
             title={title}
