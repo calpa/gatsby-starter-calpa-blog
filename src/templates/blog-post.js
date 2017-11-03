@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate } from '../api/';
-
+import { refreshToolBox } from '../api/addthis';
 // import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
@@ -39,6 +39,7 @@ class BlogPost extends Component {
       distractionFreeMode: true,
     });
     gitalk.render('gitalk-container');
+    refreshToolBox();
   }
 
   render() {

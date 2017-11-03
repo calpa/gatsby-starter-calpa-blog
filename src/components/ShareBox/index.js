@@ -4,15 +4,15 @@ import PropTypes from 'prop-types';
 
 import { addthis } from '../../../data/config';
 
+import { refreshToolBox } from '../../api/addthis';
+
 const ShareButton = ({ service }) => (
   <a className={`addthis_button_${service}`} />
 );
 
 class ShareBox extends Component {
   componentDidMount() {
-    if (window.addthis) {
-      window.addthis.toolbox('.addthis_toolbox');
-    }
+    refreshToolBox();
   }
 
   render() {
