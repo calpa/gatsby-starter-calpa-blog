@@ -1,19 +1,79 @@
 @import '../../styles/colors';
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700); // Variables
 $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
-
-.card {
-  cursor: pointer;
-  min-height: 330px;
-
-  .img-resized {
-    height: 15em;
+$regal-blue: #034378;
+$san-juan: #2d4e68;
+$bermuda: #77d7b9;
+$white: #fff;
+$black: #000;
+$open-sans: 'Open Sans', sans-serif; // clear-fix mixin
+@mixin cf {
+  &::after,
+  &::before {
+    content: '';
+    display: table;
   }
 
-  a & {
-    color: $black;
+  &::after {
+    clear: both;
+  }
+}
+// Base styles
+
+.custom-card {
+  .wrapper {
+    background-color: $white;
+    min-height: 17em;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
 
     &:hover {
-      color: $light-black;
+      .data {
+        transform: translateY(-1em);
+      }
+    }
+  }
+
+  .data {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    transform: translateY(0);
+    transition: transform 0.3s;
+
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+    }
+  }
+
+  .title {
+    margin-top: 10px;
+  }
+}
+
+.custom-card {
+  .date {
+    background-color: $bermuda;
+    color: $white;
+    padding: 0.8em;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .content {
+    background-color: $white;
+    box-shadow: 0 5px 30px 10px rgba($black, 0.3);
+  }
+
+  .title {
+    a {
+      color: lighten($black, 50%);
     }
   }
 }

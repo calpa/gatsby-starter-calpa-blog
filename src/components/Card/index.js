@@ -29,6 +29,7 @@ class Card extends Component {
     this.headerImage = this.props.headerImage;
     this.headerBackgroundColor = this.props.headerBackgroundColor;
     this.index = this.props.index;
+    this.theme = 'white';
   }
   /*
   componentDidMount() {
@@ -42,18 +43,18 @@ class Card extends Component {
         <Link
           to={parseUrl(this.date, this.url)}
         >
-          <div
-            className="card text-black bg-light border-info"
-            role="button"
-            tabIndex={this.index}
-          >
+          <div className="custom-card">
             <div
-              className="img-resized"
+              className={`wrapper ${this.theme === 'white' ? 'white' : 'black'}`}
               style={imageStyle(this.headerImage, this.headerBackgroundColor)}
-            />
-            <div className="card-body">
-              <h4 className="card-title">{this.title}</h4>
-              <p className="card-text">{this.date}</p>
+            >
+              <div className="header" />
+              <div className="data">
+                <div className="content">
+                  <div className="stats"><span className="date">{this.date}</span></div>
+                  <h4 className="title">{this.title}</h4>
+                </div>
+              </div>
             </div>
           </div>
         </Link>
