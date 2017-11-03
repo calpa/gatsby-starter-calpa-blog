@@ -55,9 +55,9 @@ class BlogPost extends Component {
           <title>{title}</title>
         </Helmet>
         <Sidebar post />
-        <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column">
-          <h1 className="title han-sans">{title}</h1>
-          <p className="date han-sans">{parseChineseDate(createdDate)}</p>
+        <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column content">
+          <h1 className="title han-sans mt-3">{title}</h1>
+          <p className="date han-sans mb-1">{parseChineseDate(createdDate)}</p>
           <ShareBox url={url} />
           <Image
             href={headerImgur}

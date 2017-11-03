@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import './index.scss';
 
 const Layout = ({ children, location }) => (
-  <div>
+  <div className="layout">
     <Head />
     <Navbar location={location} />
 

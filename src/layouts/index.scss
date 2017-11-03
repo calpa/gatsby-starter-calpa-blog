@@ -66,16 +66,16 @@
 }
 // Content
 
-p {
-  @extend %han-mono;
-  // font-size: 14px;
-}
+.layout {
+  background: #f4f4f4;
 
-a {
-  text-decoration: none;
-}
+  p {
+    @extend %han-mono;
+    // font-size: 14px;
+  }
 
-img {
-  max-height: 30rem;
-  max-width: 100%;
+  img {
+    max-height: 30em;
+    max-width: 100%;
+  }
 }
