@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate } from '../api/';
+import { parseChineseDate, getPath } from '../api/';
 // import { refreshToolBox } from '../api/addthis';
 // import ReactMarkdown from 'react-markdown';
 
@@ -47,7 +47,7 @@ class BlogPost extends Component {
       title, headerImgur, createdDate, content,
     } = this.data.contentfulMarkdown;
 
-    const url = window.location.href;
+    const url = getPath();
 
     return (
       <div className="row post order-2">

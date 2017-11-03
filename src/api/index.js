@@ -18,6 +18,8 @@ const getCurrentPage = () => {
   return 0;
 };
 
+const getPath = () => (isBrowser ? window.location.href : '');
+
 const getMaxPages = () => maxPages;
 
 const overflow = () => getCurrentPage() === getMaxPages();
@@ -36,4 +38,5 @@ export {
   overflow, parseDate,
   isFirstPage, isLastPage,
   parseChineseDate,
+  getPath,
 };
