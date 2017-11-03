@@ -53,7 +53,7 @@ const parseImgur = (headerImage, size = 'large') => {
 };
 
 const parseImageTag = ({ href, title, text }) =>
-  `<img class="lozad d-block" data-src=${parseImgur(href, 'large')} title=${title || text} />`;
+  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} title=${title || text} />`;
 
 export {
   parseImgur,

@@ -16,6 +16,9 @@ const getBody = (mdFile, remark = false) => {
   const renderer = new marked.Renderer();
   renderer.image = (href, title, text) =>
     parseImageTag({ href, title, text });
+
+  renderer.heading = (text, level) => `<h${level}>${text}</h${level}>`;
+
   const html = marked(body, { renderer });
   return html;
 };
