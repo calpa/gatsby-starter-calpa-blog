@@ -1,31 +1,42 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { addthis } from '../../../data/config';
+import { ShareButtons, generateShareIcon } from 'react-share';
 
-import { refreshToolBox } from '../../api/addthis';
+// import { addthis } from '../../../data/config';
 
-const ShareButton = ({ service }) => (
-  <a className={`addthis_button_${service}`} />
+// import { refreshToolBox } from '../../api/addthis';
+
+const { FacebookShareButton, TwitterShareButton } = ShareButtons;
+const FacebookIcon = generateShareIcon('facebook');
+const TwitterIcon = generateShareIcon('twitter');
+
+const ShareBox = ({ url }) => (
+  <div>
+    <FacebookShareButton
+      url={url}
+      className="d-inline-block"
+    >
+      <FacebookIcon
+        size={32}
+        round
+      />
+    </FacebookShareButton>
+    <TwitterShareButton
+      url={url}
+      className="d-inline-block"
+    >
+      <TwitterIcon
+        size={32}
+        round
+      />
+    </TwitterShareButton>
+  </div>
 );
 
-class ShareBox extends Component {
-  componentDidMount() {
-    refreshToolBox();
-  }
-
-  render() {
-    return (
-      <div className="addthis_toolbox addthis_default_style addthis_32x32_style">
-        {addthis.map(service => <ShareButton service={service} key={service} />)}
-      </div>
-    );
-  }
-}
-
-ShareButton.propTypes = {
-  service: PropTypes.string.isRequired,
+ShareBox.propTypes = {
+  url: PropTypes.string.isRequired,
 };
 
 export default ShareBox;

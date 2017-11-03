@@ -5,7 +5,7 @@ import { Helmet } from 'react-helmet';
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate } from '../api/';
-import { refreshToolBox } from '../api/addthis';
+// import { refreshToolBox } from '../api/addthis';
 // import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
@@ -39,14 +39,16 @@ class BlogPost extends Component {
       distractionFreeMode: true,
     });
     gitalk.render('gitalk-container');
-    refreshToolBox();
+    // refreshToolBox();
   }
 
   render() {
     const {
       title, headerImgur, createdDate, content,
     } = this.data.contentfulMarkdown;
-    // console.log(this.data);
+
+    const url = window.location.href;
+
     return (
       <div className="row post order-2">
         <Helmet>
@@ -56,7 +58,7 @@ class BlogPost extends Component {
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column">
           <h1 className="title han-sans">{title}</h1>
           <p className="date han-sans">{parseChineseDate(createdDate)}</p>
-          <ShareBox />
+          <ShareBox url={url} />
           <Image
             href={headerImgur}
             title={title}
