@@ -8,9 +8,17 @@ import { ShareButtons, generateShareIcon } from 'react-share';
 
 // import { refreshToolBox } from '../../api/addthis';
 
-const { FacebookShareButton, TwitterShareButton } = ShareButtons;
+const {
+  FacebookShareButton,
+  TwitterShareButton,
+  TelegramShareButton,
+  WhatsappShareButton,
+} = ShareButtons;
+
 const FacebookIcon = generateShareIcon('facebook');
 const TwitterIcon = generateShareIcon('twitter');
+const TelegramIcon = generateShareIcon('telegram');
+const WhatsappIcon = generateShareIcon('whatsapp');
 
 const ShareBox = ({ url }) => (
   <div>
@@ -23,6 +31,7 @@ const ShareBox = ({ url }) => (
         round
       />
     </FacebookShareButton>
+
     <TwitterShareButton
       url={url}
       className="d-inline-block"
@@ -32,6 +41,24 @@ const ShareBox = ({ url }) => (
         round
       />
     </TwitterShareButton>
+    <TelegramShareButton
+      url={url}
+      className="d-inline-block"
+    >
+      <TelegramIcon
+        size={32}
+        round
+      />
+    </TelegramShareButton>
+    <WhatsappShareButton
+      url={url}
+      className="d-inline-block"
+    >
+      <WhatsappIcon
+        size={32}
+        round
+      />
+    </WhatsappShareButton>
   </div>
 );
 
