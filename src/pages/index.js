@@ -2,11 +2,11 @@ import React from 'react';
 
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
-
+import SEO from '../components/SEO';
 import BackPage from '../components/BackPage';
 import NextPage from '../components/NextPage';
 
-import { parseDate, isFirstPage, isLastPage } from '../api/';
+import { parseDate, isFirstPage, isLastPage, getPath } from '../api/';
 import { getDefaultPicture } from '../api/images';
 
 import './index.scss';
@@ -36,6 +36,13 @@ const HomePage = ({ data }) => (
       {!isFirstPage() && <BackPage /> }
       {!isLastPage() && <NextPage />}
     </div>
+    <SEO
+      url={getPath()}
+      description="Calpa's Blog"
+      image="https://i.imgur.com/kjt2x52.png"
+      siteTitleAlt="Calpa's Blog"
+      isPost={false}
+    />
   </div>
 );
 

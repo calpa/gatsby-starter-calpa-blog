@@ -12,7 +12,7 @@ import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import Image from '../components/Image';
 import ShareBox from '../components/ShareBox';
-
+import SEO from '../components/SEO';
 import './blog-post.scss';
 import './toc.scss';
 
@@ -67,7 +67,13 @@ class BlogPost extends Component {
         </div>
 
         <div id="gitalk-container" className="col-sm-12 order-12" />
-
+        <SEO
+          url={getPath()}
+          description={content.substring(0, 140)}
+          image="https://i.imgur.com/kjt2x52.png"
+          siteTitleAlt="Calpa's Blog"
+          isPost={false}
+        />
       </div>
     );
   }
