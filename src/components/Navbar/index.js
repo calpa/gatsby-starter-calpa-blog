@@ -28,7 +28,15 @@ const NavItem = ({ url, name }) => (
 const Navbar = ({ location }) => (
   <nav className="navbar navbar-expand-sm navbar-light sticky-top mb-3 custom-navbar">
     <Link className="navbar-brand" to="/">Calpa's Blog</Link>
-    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <button
+      className="navbar-toggler"
+      type="button"
+      data-toggle="collapse"
+      data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
       <span className="navbar-toggler-icon" />
     </button>
 
@@ -43,7 +51,7 @@ const Navbar = ({ location }) => (
         </form>
       }
 
-      <NavItem url="/about" name="About" />
+      <NavItem url="/about/" name="About" />
     </div>
   </nav>
 );
