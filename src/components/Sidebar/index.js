@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 import './index.scss';
 
 const Sidebar = ({ post }) => (
-  <header className={`mx-3 intro-header site-heading text-center col-lg-2 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
+  <header className={`my-2 mx-3 intro-header site-heading text-center col-lg-2 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
     <div className="about-me">
       <img
         className="avatar my-3"
