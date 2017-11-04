@@ -5,6 +5,7 @@ import { Helmet } from 'react-helmet';
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate, getPath } from '../api/';
+import { parseImgur } from '../api/images';
 // import { refreshToolBox } from '../api/addthis';
 // import ReactMarkdown from 'react-markdown';
 
@@ -72,7 +73,7 @@ class BlogPost extends Component {
         <SEO
           url={getPath()}
           description={content.substring(0, 140)}
-          image="https://i.imgur.com/kjt2x52.png"
+          image={parseImgur(headerImgur, 'large')}
           siteTitleAlt="Calpa's Blog"
           isPost={false}
         />
