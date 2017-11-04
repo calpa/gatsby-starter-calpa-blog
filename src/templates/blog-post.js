@@ -47,6 +47,8 @@ class BlogPost extends Component {
       title, headerImgur, createdDate, content,
     } = this.data.contentfulMarkdown;
 
+    const { totalCount } = this.data.allContentfulMarkdown;
+
     const url = getPath();
 
     return (
@@ -54,7 +56,7 @@ class BlogPost extends Component {
         <Helmet>
           <title>{title}</title>
         </Helmet>
-        <Sidebar post />
+        <Sidebar post totalCount={totalCount} />
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">{parseChineseDate(createdDate)}</p>
@@ -88,6 +90,9 @@ export const query = graphql`
       title
       createdDate
       headerImgur
+    }
+    allContentfulMarkdown {
+      totalCount
     }
   }
 `;

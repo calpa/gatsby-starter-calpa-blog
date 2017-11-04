@@ -52,6 +52,7 @@ const Navbar = ({ location }) => (
       }
 
       <NavItem url="/about/" name="About" />
+      <NavItem url="/fonts/" name="Fonts" />
     </div>
   </nav>
 );

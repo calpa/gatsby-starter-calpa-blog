@@ -13,7 +13,7 @@ import './index.scss';
 
 const HomePage = ({ data }) => (
   <div className="row pb-5">
-    <Sidebar />
+    <Sidebar totalCount={data.allContentfulMarkdown.totalCount} />
 
     <div className="col-xl-8 col-lg-8 col-md-12 col-xs-12 order-2" >
       <div className="row">
@@ -54,6 +54,7 @@ export const pageQuery = graphql`
       sort: {order: DESC, fields: [createdDate]},
       limit: 6
     ) {
+      totalCount
       edges {
         node {
           title
