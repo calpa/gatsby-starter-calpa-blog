@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
+import { isBrowser } from '../../api';
 import { getBody } from '../../api/text';
 // import config from '../../../data/config';
 
@@ -18,8 +19,11 @@ class Content extends Component {
     const { html } = await getBody(this.post);
     // lazy loads elements with default selector as '.lozad'
     this.setState({ html });
-    const observer = lozad();
-    observer.observe();
+    // Prevent WebPack build fail
+    if (isBrowser()) {
+      const observer = lozad();
+      observer.observe();
+    }
   }
 
   render() {
