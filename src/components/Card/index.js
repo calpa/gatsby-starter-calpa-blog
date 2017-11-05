@@ -8,13 +8,7 @@ import { parseImgur } from '../../api/images';
 
 import './index.scss';
 
-const parseMarkdownUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
-);
-
-const parseUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl}/`
-);
+import { parseUrl } from '../../api/url';
 
 const imageStyle = (headerImage, color) => ({
   background: `#${color} url(${parseImgur(headerImage, 'large')}) center/contain no-repeat`,

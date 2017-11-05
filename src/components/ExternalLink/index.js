@@ -3,7 +3,11 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ExternalLink = ({ href, title }) => (
-  <a href={href} rel="external nofollow noopener noreferrer">{title}</a>
+  <a
+    href={href}
+    rel="external nofollow noopener noreferrer"
+  >{title}
+  </a>
 );
 
 ExternalLink.propTypes = {
