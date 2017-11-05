@@ -22,7 +22,12 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
 .custom-card {
   .wrapper {
-    background-color: $white;
+    background-position: center;
+    @media (min-width: 576px) {
+      background-size: contain;
+    }
+    background-size: cover;
+    background-repeat: no-repeat;
     min-height: 17em;
     position: relative;
     overflow: hidden;

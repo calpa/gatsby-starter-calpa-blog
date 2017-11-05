@@ -11,7 +11,8 @@ import './index.scss';
 import { parseUrl } from '../../api/url';
 
 const imageStyle = (headerImage, color) => ({
-  background: `#${color} url(${parseImgur(headerImage, 'large')}) center/contain no-repeat`,
+  backgroundColor: `#${color}`,
+  backgroundImage: ` url(${parseImgur(headerImage, 'large')})`,
 });
 
 const Card = ({
