@@ -9,19 +9,24 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.post = this.props.post;
+    this.state = {
+      html: '',
+    };
   }
 
-  componentDidMount() {
+  async componentWillMount() {
+    const { html } = await getBody(this.post);
     // lazy loads elements with default selector as '.lozad'
     const observer = lozad();
     observer.observe();
+    this.setState({ html });
   }
 
   render() {
     return (
       <div className="col-lg-12 col-sm-12 post-container order-md-2">
         <div
-          dangerouslySetInnerHTML={{ __html: getBody(this.post) }}
+          dangerouslySetInnerHTML={{ __html: this.state.html }}
         />
         <hr />
       </div>

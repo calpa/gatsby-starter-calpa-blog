@@ -1,7 +1,7 @@
 import marked from 'marked';
 import { parseImageTag } from './images';
 
-const getBody = (mdFile, remark = false) => {
+const getBody = async (mdFile, remark = false) => {
   let body;
   if (remark === true) {
     // As Gastby's markdownRemark add '---' at the beginnings
@@ -17,10 +17,23 @@ const getBody = (mdFile, remark = false) => {
   renderer.image = (href, title, text) =>
     parseImageTag({ href, title, text });
 
-  renderer.heading = (text, level) => `<h${level}>${text}</h${level}>`;
+  const toc = {};
+
+  renderer.heading = (text, level) => {
+    let id;
+    const link = text.match(/<a.*>(.*)<\/a>/);
+    if (link) {
+      id = link[1];
+    } else {
+      id = text.match(/[\u4e00-\u9fa5\S]+/g).join('');
+    }
+    toc[level] = toc[level] || [];
+    toc[level].push(id);
+    return `<h${level} id="${id}">${text}</h${level}>`;
+  };
 
   const html = marked(body, { renderer });
-  return html;
+  return { html, toc };
 };
 
 export {
