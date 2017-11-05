@@ -1,3 +1,4 @@
+@import '../styles/colors'; // Colors
 // 「漢字標準格式」必要檔案
 // @import '~han-css/src/sass/var'; // variable
 // @import '~han-css/src/sass/api'; // api
@@ -67,7 +68,12 @@
 // Content
 
 .layout {
-  background: #f4f4f4;
+  // Pixiv background style
+  background-color: $bg;
+  background-attachment: fixed;
+  background-image: url("https://i.imgur.com/WzTCiyo.jpg");
+  // background-position: center;
+  background-repeat: no-repeat;
 
   p {
     @extend %han-mono;

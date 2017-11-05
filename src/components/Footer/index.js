@@ -2,12 +2,14 @@ import React from 'react';
 
 import config from '../../../data/config';
 
+import './index.scss';
+
 const Footer = () => (
-  <footer>
+  <footer className="footer">
     <div className="container">
       <div className="row">
         <div className="col-sm-12 text-center">
-          <p className="copyright text-muted">
+          <p className="copyright">
             Copyright &copy; {config.title} {new Date().getFullYear()}<br />
             Theme by Calpa Liu
           </p>
