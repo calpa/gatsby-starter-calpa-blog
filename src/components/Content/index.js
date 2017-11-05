@@ -17,9 +17,9 @@ class Content extends Component {
   async componentWillMount() {
     const { html } = await getBody(this.post);
     // lazy loads elements with default selector as '.lozad'
+    this.setState({ html });
     const observer = lozad();
     observer.observe();
-    this.setState({ html });
   }
 
   render() {
