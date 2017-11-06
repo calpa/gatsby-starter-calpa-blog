@@ -16,7 +16,7 @@ const imageStyle = (headerImage, color) => ({
 });
 
 const Card = ({
-  title, date, url, headerImage, headerBackgroundColor,
+  title, date, url, headerImage, headerBackgroundColor, content,
 }) => (
   <div className="col-sm-12 pb-4">
     <Link
@@ -33,6 +33,7 @@ const Card = ({
             <div className="content">
               <div className="stats"><span className="date">{date}</span></div>
               <h4 className="title">{title}</h4>
+              <p>{content}</p>
             </div>
           </div>
         </div>
@@ -47,6 +48,7 @@ Card.propTypes = {
   url: PropTypes.string.isRequired,
   headerImage: PropTypes.string.isRequired,
   headerBackgroundColor: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
 };
 
 export default Card;

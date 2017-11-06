@@ -46,6 +46,12 @@ const getBody = async (mdFile, remark = false) => {
   return { html, toc };
 };
 
+const getFirstParagraph = (content) => {
+  const introduction = content.match(/[\n]+(.*)[\n]/);
+  return introduction[1].substring(0, 140);
+};
+
 export {
   getBody,
+  getFirstParagraph,
 };

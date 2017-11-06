@@ -8,7 +8,7 @@ import NextPage from '../components/NextPage';
 
 import { parseDate, isFirstPage, isLastPage, getPath } from '../api/';
 import { getDefaultPicture } from '../api/images';
-
+import { getFirstParagraph } from '../api/text';
 import './index.scss';
 
 const HomePage = ({ data }) => (
@@ -30,15 +30,16 @@ const HomePage = ({ data }) => (
             headerBackgroundColor={node.headerBackgroundColor || 'ededed'}
             key={node.title}
             index={index}
+            content={getFirstParagraph(node.content)}
           />
         ))}
       </div>
+      <div className="row order-3 w-100 justify-content-around">
+        {!isFirstPage() && <BackPage /> }
+        {!isLastPage() && <NextPage />}
+      </div>
     </div>
 
-    <div className="row order-3 w-100 justify-content-around">
-      {!isFirstPage() && <BackPage /> }
-      {!isLastPage() && <NextPage />}
-    </div>
     <SEO
       url={getPath()}
       description="Calpa's Blog"
@@ -65,6 +66,7 @@ export const pageQuery = graphql`
           url
           headerImgur
           headerBackgroundColor
+          content
         }
       }
     }
