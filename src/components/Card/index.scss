@@ -1,12 +1,6 @@
 @import '../../styles/colors';
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700); // Variables
 $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
-$regal-blue: #034378;
-$san-juan: #2d4e68;
-$bermuda: #77d7b9;
-$white: #fff;
-$black: #000;
-$open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 @mixin cf {
   &::after,
   &::before {
@@ -25,6 +19,7 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
     background-position: center;
     @media (min-width: 576px) {
       background-size: contain;
+      min-height: 20em;
     }
     background-size: cover;
     background-repeat: no-repeat;
@@ -36,6 +31,7 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
     &:hover {
       .data {
         transform: translateY(-1em);
+        transition: transform 0.3s;
       }
     }
   }
@@ -57,9 +53,7 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
   .title {
     margin-top: 10px;
   }
-}
 
-.custom-card {
   .date {
     background-color: $bermuda;
     color: $white;
@@ -74,11 +68,15 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
   .content {
     background-color: $white;
     box-shadow: 0 5px 30px 10px rgba($black, 0.3);
-  }
 
-  .title {
-    a {
-      color: lighten($black, 50%);
+    .title {
+      // color: $regal-blue;
+      // color: $blue;
+      color: $light-blue;
+    }
+
+    p {
+      color: $black;
     }
   }
 }

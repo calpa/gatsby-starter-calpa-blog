@@ -33,7 +33,7 @@ const Card = ({
             <div className="content">
               <div className="stats"><span className="date">{date}</span></div>
               <h4 className="title">{title}</h4>
-              <p>{content}</p>
+              <p className="d-none d-md-block">{content}</p>
             </div>
           </div>
         </div>
