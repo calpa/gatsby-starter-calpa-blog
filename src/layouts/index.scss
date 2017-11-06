@@ -71,7 +71,9 @@
   // Pixiv background style
   background-color: $bg;
   background-attachment: fixed;
-  background-image: url("https://i.imgur.com/WzTCiyo.jpg");
+  @media (min-width: 992px) {
+    background-image: url("https://i.imgur.com/WzTCiyo.jpg");
+  }
   // background-position: center;
   background-repeat: no-repeat;
 
