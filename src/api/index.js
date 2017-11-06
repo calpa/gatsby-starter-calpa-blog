@@ -26,7 +26,7 @@ const overflow = () => getCurrentPage() === getMaxPages();
 
 const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
 
-const parseChineseDate = date => moment(date).locale('zh-hk').format('L');
+const parseChineseDate = date => moment(date).locale('zh-hk').format('DD/MM/YYYY');
 
 const isFirstPage = () => (isBrowser() ? isPage() : false);
 
