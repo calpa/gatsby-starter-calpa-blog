@@ -76,7 +76,7 @@ class BlogPost extends Component {
         <SEO
           url={getPath()}
           description={content.substring(0, 140)}
-          image={parseImgur(headerImgur, 'medium')}
+          image={parseImgur(headerImgur, 'large')}
           siteTitleAlt="Calpa's Blog"
           isPost={false}
         />
