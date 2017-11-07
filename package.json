@@ -5,6 +5,7 @@
   "author": "Calpa Liu <calpaliu@gmail.com>",
   "dependencies": {
     "axios": "^0.17.0",
+    "cytoscape": "^3.2.5",
     "eslint-plugin-jsx-a11y": "^5.1.1",
     "gatsby": "^1.9.92",
     "gatsby-link": "^1.6.24",
