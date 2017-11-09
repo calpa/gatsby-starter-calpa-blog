@@ -5,10 +5,7 @@ import cytoscape from 'cytoscape';
 import './route.scss';
 
 const nodes = [
-  {
-    data: { id: 'FE' },
-    position: { x: 100, y: 100 },
-  },
+  { data: { id: 'Front-End' } },
   { data: { id: 'HTML' } },
   { data: { id: 'JavaScript' } },
   { data: { id: 'CSS' } },
@@ -16,17 +13,20 @@ const nodes = [
 const edges = [
   {
     data: {
-      source: 'FE', target: 'HTML', faveColor: '#6cf', strength: 90,
+      source: 'Front-End',
+      target: 'HTML',
     },
   },
   {
     data: {
-      source: 'FE', target: 'JavaScript', faveColor: '#6cf',
+      source: 'Front-End',
+      target: 'JavaScript',
     },
   },
   {
     data: {
-      source: 'FE', target: 'CSS', faveColor: '#6cf',
+      source: 'Front-End',
+      target: 'CSS',
     },
   },
 ];
@@ -38,6 +38,8 @@ class Cytoscape extends Component {
     cytoscape({
       container: document.getElementById('cy'),
       elements,
+
+      pan: { x: 0, y: 0 },
 
       style: [ // the stylesheet for the graph
         {
@@ -52,16 +54,14 @@ class Cytoscape extends Component {
           selector: 'edge',
           style: {
             width: 3,
-            'line-color': 'data(faveColor)',
-            'target-arrow-color': 'data(faveColor)',
-            'target-arrow-shape': 'triangle',
+            'line-color': '#6cf',
           },
         },
       ],
 
+      // TODO: Change layout name by location or other config
       layout: {
-        name: 'grid',
-        rows: 1,
+        name: 'circle',
       },
 
     });
