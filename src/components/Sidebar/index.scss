@@ -11,4 +11,28 @@
     opacity: 0.9;
     width: 120px;
   }
+
+  .custom-icon {
+    .fa {
+      font-family: FontAwesome;
+    }
+
+    .fa-stack {
+      border-radius: 50%;
+    }
+
+    :hover {
+      // background: $regal-blue;
+      border-radius: 50%;
+
+      i {
+        background: $regal-blue;
+      }
+    }
+
+    i {
+      background: $light-blue;
+      border-radius: 50%;
+    }
+  }
 }
