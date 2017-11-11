@@ -6,12 +6,14 @@ const isBrowser = () => typeof window !== 'undefined';
 
 const isPage = () => (isBrowser() ? window.location.pathname.indexOf('page') === -1 : false);
 
+const getPageNumber = () => (isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1);
+
 const getCurrentPage = () => {
   if (isBrowser() === true) {
     const str = window.location.pathname;
     if (str.indexOf('page') !== -1) {
       // Return the last pathname in number
-      return +window.location.pathname.match(/page[/](\d)/)[1];
+      return getPageNumber();
     }
   }
 
@@ -39,4 +41,5 @@ export {
   isFirstPage, isLastPage,
   parseChineseDate,
   getPath,
+  getPageNumber,
 };

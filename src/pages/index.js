@@ -5,13 +5,14 @@ import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import BackPage from '../components/BackPage';
 import NextPage from '../components/NextPage';
+import Pagination from '../components/Pagination';
 
 import { parseDate, isFirstPage, isLastPage, getPath } from '../api/';
 import { getDefaultPicture } from '../api/images';
 import { getFirstParagraph } from '../api/text';
 import './index.scss';
 
-const HomePage = ({ data }) => (
+const HomePage = ({ data, location }) => (
   <div className="row pb-5">
     <Sidebar
       totalCount={data.allContentfulMarkdown.totalCount}
@@ -35,8 +36,7 @@ const HomePage = ({ data }) => (
         ))}
       </div>
       <div className="row order-3 w-100 justify-content-around">
-        {!isFirstPage() && <BackPage /> }
-        {!isLastPage() && <NextPage />}
+        <Pagination pathname={location.pathname} />
       </div>
     </div>
 

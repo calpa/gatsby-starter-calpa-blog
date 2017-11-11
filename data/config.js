@@ -5,7 +5,7 @@ const config = {
   author: 'Calpa',
   language: null,
   timezone: null,
-  maxPages: 7,
+  maxPages: 8, // TODO: Update this automatically
   friends: [{
     title: '娜酱骑士团',
     href: 'http://blog.shanamaid.top/',
