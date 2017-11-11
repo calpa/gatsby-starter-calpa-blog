@@ -5,11 +5,22 @@
   box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
   height: 100%;
 
-  .avatar {
-    border-radius: 50%;
-    height: 120px;
-    opacity: 0.9;
-    width: 120px;
+  .about-me {
+    .avatar {
+      border-radius: 50%;
+      height: 120px;
+      opacity: 0.9;
+      width: 120px;
+    }
+
+    .name {
+      color: $regal-blue;
+      text-decoration: none;
+
+      :hover {
+        color: $light-blue;
+      }
+    }
   }
 
   .custom-icon {
@@ -22,16 +33,15 @@
     }
 
     :hover {
-      // background: $regal-blue;
       border-radius: 50%;
 
       i {
-        background: $regal-blue;
+        background: $light-blue;
       }
     }
 
     i {
-      background: $light-blue;
+      background: $regal-blue;
       border-radius: 50%;
     }
   }

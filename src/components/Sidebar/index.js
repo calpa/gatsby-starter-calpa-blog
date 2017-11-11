@@ -1,6 +1,6 @@
 import React from 'react';
 // import LazyLoad from 'react-lazyload';
-
+import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
 import config from '../../../data/config';
@@ -31,7 +31,9 @@ const Sidebar = ({ post, totalCount, posts }) => (
         src="https://i.imgur.com/kjt2x52.png"
         alt="Calpa"
       />
-      <h4>Calpa</h4>
+      <Link to="/about/" href="/about" className="name">
+        <h4>Calpa</h4>
+      </Link>
       <p className="mb-1">夢裡不覺秋已深</p>
       <p className="mb-3">餘情豈是為他人</p>
       <Icon
