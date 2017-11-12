@@ -1,16 +1,19 @@
 import React from 'react';
 
+import Link from 'gatsby-link';
+
 import { getMaxPages } from '../../api';
 
 import { handlePreviousPage, handleNextPage } from '../../api/url';
 
 const PageItem = ({ number, content, url }) => (
   <li className={`page-item ${number < 0 ? 'disabled' : ''}`}>
-    <a
+    <Link
       className="page-link"
+      to={`${typeof content === 'string' ? url : `/page/${number}`}`}
       href={`${typeof content === 'string' ? url : `/page/${number}`}`}
     >{content || number}
-    </a>
+    </Link>
   </li>
 );
 
@@ -19,7 +22,7 @@ const Pagination = () => (
     <ul className="pagination">
       <PageItem
         number={handlePreviousPage()}
-        content="Latest Posts"
+        content="上一頁"
         url={handlePreviousPage()}
       />
       <PageItem number={1} />
@@ -29,7 +32,7 @@ const Pagination = () => (
       <PageItem number={getMaxPages()} />
       <PageItem
         number={handleNextPage()}
-        content="Older Posts"
+        content="下一頁"
         url={handleNextPage()}
       />
     </ul>
