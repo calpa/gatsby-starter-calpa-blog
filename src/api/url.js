@@ -1,12 +1,15 @@
-import { isPage, getCurrentPage, getMaxPages } from './index';
+import { getCurrentPage, getMaxPages } from './index';
 
 const parseMarkdownUrl = (date, rawUrl) => (
   `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
 );
 
-const parseUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl}/`
-);
+const parseUrl = (date, rawUrl) => {
+  if (rawUrl === 'about') {
+    return '/about/';
+  }
+  return `/${date}/${rawUrl}/`;
+};
 
 const minusOnePage = (currentPage) => {
   if (currentPage - 1 >= 0) {
