@@ -1,13 +1,12 @@
-// Coponents
+// Components
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
+import Link from 'gatsby-link';
 
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate, getPath } from '../api/';
 import { parseImgur } from '../api/images';
-// import { refreshToolBox } from '../api/addthis';
-// import ReactMarkdown from 'react-markdown';
 
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
@@ -16,8 +15,6 @@ import ShareBox from '../components/ShareBox';
 import SEO from '../components/SEO';
 import './blog-post.scss';
 import './toc.scss';
-
-// import config from '../../data/config';
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
@@ -40,7 +37,6 @@ class BlogPost extends Component {
       distractionFreeMode: true,
     });
     gitalk.render('gitalk-container');
-    // refreshToolBox();
   }
 
   render() {
@@ -63,7 +59,9 @@ class BlogPost extends Component {
         />
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h1 className="title han-sans mt-3">{title}</h1>
-          <p className="date han-sans mb-1">{parseChineseDate(createdDate)}</p>
+          <p className="date han-sans mb-1">
+            作者：<Link to="/about/" href="/about/">Calpa</Link> {parseChineseDate(createdDate)}
+          </p>
           <ShareBox url={url} />
           <Image
             href={headerImgur}
