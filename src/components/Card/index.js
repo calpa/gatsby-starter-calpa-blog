@@ -19,26 +19,36 @@ const Card = ({
   title, date, url, headerImage, headerBackgroundColor, content,
 }) => (
   <div className="col-sm-12 pb-4">
-    <Link
-      to={parseUrl(date, url)}
-      href={parseUrl(date, url)}
-    >
-      <div className="custom-card">
+
+    <div className="custom-card">
+      <Link
+        to={parseUrl(date, url)}
+        href={parseUrl(date, url)}
+      >
         <div
           className="wrapper"
           style={imageStyle(headerImage, headerBackgroundColor)}
-        >
-          <div className="header" />
-          <div className="data">
-            <div className="content">
-              <div className="stats"><span className="date">{date}</span></div>
-              <h4 className="title">{title}</h4>
-              <p className="d-none d-md-block">{content}</p>
-            </div>
-          </div>
+        />
+      </Link>
+      <div className="data">
+        <div className="content">
+          <div className="stats"><span className="date">{date}</span></div>
+          <Link
+            to={parseUrl(date, url)}
+            href={parseUrl(date, url)}
+          >
+            <h4 className="title">{title}</h4>
+          </Link>
+          <p className="d-none d-md-block">{content}</p>
+          <Link
+            to={parseUrl(date, url)}
+            href={parseUrl(date, url)}
+          >
+            ....繼續閱讀全文內容
+          </Link>
         </div>
       </div>
-    </Link>
+    </div>
   </div>
 );
 
