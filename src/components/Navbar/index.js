@@ -51,8 +51,8 @@ const Navbar = ({ location }) => (
         </form>
       }
 
-      <NavItem url="/about/" name="About" />
-      <NavItem url="/fonts/" name="Fonts" />
+      <NavItem url="/about/" name="瀏覽簡介" />
+      <NavItem url="/fonts/" name="字體" />
     </div>
   </nav>
 );
