@@ -15,13 +15,13 @@ import './index.scss';
 const HomePage = ({ data, location }) => (
   <div className="row pb-5">
     <Sidebar
-      totalCount={data.allContentfulMarkdown.totalCount}
-      posts={data.allContentfulMarkdown.edges}
+      totalCount={data.latestPosts.totalCount}
+      posts={data.latestPosts.edges}
     />
 
     <div className="col-xl-8 col-lg-8 col-md-12 col-xs-12 order-2" >
       <div className="row">
-        {data.allContentfulMarkdown.edges.map(({ node }, index) => (
+        {data.pagePosts.edges.map(({ node }, index) => (
           <Card
             title={node.title}
             date={parseDate(node.createdDate)}
@@ -54,7 +54,17 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query getAllPosts {
-    allContentfulMarkdown(
+    latestPosts: allContentfulMarkdown(limit: 6) {
+      totalCount
+      edges {
+        node {
+          title
+          url
+        }
+      }
+    }
+
+    pagePosts: allContentfulMarkdown(
       sort: {order: DESC, fields: [createdDate]},
       limit: 6
     ) {

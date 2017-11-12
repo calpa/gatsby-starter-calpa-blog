@@ -42,9 +42,9 @@ class BlogPost extends Component {
   render() {
     const {
       title, headerImgur, createdDate, content,
-    } = this.data.contentfulMarkdown;
+    } = this.data.content;
 
-    const { totalCount, edges } = this.data.allContentfulMarkdown;
+    const { totalCount, edges } = this.data.latestPosts;
     const url = getPath();
 
     return (
@@ -87,21 +87,17 @@ export default BlogPost;
 
 export const query = graphql`
   query BlogPostQuery($id: String!) {
-    contentfulMarkdown(id: { eq: $id }) {
+    content: contentfulMarkdown(id: { eq: $id }) {
       content
       title
       createdDate
       headerImgur
     }
-    allContentfulMarkdown(
-      sort: {order: DESC, fields: [createdDate]},
-      limit: 6
-    ) {
+    latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
       edges {
         node {
           title
-          createdDate
           url
         }
       }
