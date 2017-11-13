@@ -29,8 +29,12 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
     position: relative;
     overflow: hidden;
     box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    transition: all 0.5s ease 0s;
+    overflow: hidden;
 
     &:hover {
+      opacity: 0.7;
+
       .data {
         transform: translateY(-1em);
         transition: transform 0.3s;
