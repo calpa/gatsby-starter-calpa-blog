@@ -55,8 +55,12 @@ const parseImgur = (headerImage, size = 'large') => {
 const parseImageTag = ({ href, title, text }) =>
   `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} title=${title || text} />`;
 
+const getGalleryImage = ({ href, title, text }) =>
+  `<a data-fancybox="gallery" href="${parseImgur(href, 'large')}">${parseImageTag({ href, title, text })}</a>`;
+
 export {
   parseImgur,
   parseImageTag,
   getDefaultPicture,
+  getGalleryImage,
 };

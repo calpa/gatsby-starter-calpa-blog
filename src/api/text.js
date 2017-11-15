@@ -1,6 +1,6 @@
 import marked from 'marked';
 import highlightjs from 'highlight.js';
-import { parseImageTag } from './images';
+import { getGalleryImage } from './images';
 
 const getBody = async (mdFile, remark = false) => {
   let body;
@@ -16,7 +16,7 @@ const getBody = async (mdFile, remark = false) => {
   // Override the renderer methods
   const renderer = new marked.Renderer();
   renderer.image = (href, title, text) =>
-    parseImageTag({ href, title, text });
+    getGalleryImage({ href, title, text });
 
   const toc = {};
 
