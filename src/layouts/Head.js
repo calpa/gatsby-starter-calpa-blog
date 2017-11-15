@@ -24,6 +24,7 @@ const Head = () => (
     <meta name="google-site-verification" content={config.meta.google_site_verification} />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css" />
+    <script src="https://og6593g2z.qnssl.com/fundebug.0.3.3.min.js" apikey="39f87293dfa92477200a5648c60d648510301d9d98b9de4a73e31cf4318308f6" />
   </Helmet>
 );
 
