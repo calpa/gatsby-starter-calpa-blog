@@ -10,6 +10,7 @@ query getNextPage($limit: Int, $skip: Int) {
       node {
         title
         url
+        createdDate
       }
     }
   }
