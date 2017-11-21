@@ -66,7 +66,7 @@ class Navbar extends Component {
           </button>
 
           <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
-            {location.pathname !== '/search' &&
+            {this.props.location.pathname !== '/search' &&
               <form
                 className="form-inline my-2 my-lg-0"
                 onSubmit={e => search(e)}
