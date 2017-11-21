@@ -60,6 +60,7 @@ export const pageQuery = graphql`
         node {
           title
           url
+          createdDate
         }
       }
     }
