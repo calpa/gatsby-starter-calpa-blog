@@ -18,6 +18,13 @@ const getContent = async (mdFile) => {
       return beautifyCode(str, lang);
     },
   });
+
+  // Add image to fancybox
+  md.renderer.rules.image = (tokens, idx) => {
+    const { src, title, alt } = Remarkable.utils.escapeHtml(tokens[idx]);
+    return getGalleryImage({ href: src, title, text: alt });
+  };
+
   const html = md.render(mdFile);
   return { html };
 };

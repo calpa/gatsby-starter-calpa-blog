@@ -52,8 +52,10 @@ const parseImgur = (headerImage, size = 'large') => {
   return `https://i.imgur.com/${resizedImage}`;
 };
 
+const parseTitle = (title, text) => `title="${title || text}"`;
+
 const parseImageTag = ({ href, title, text }) =>
-  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} title=${title || text} />`;
+  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} ${parseTitle(title, text)} />`;
 
 const getGalleryImage = ({ href, title, text }) =>
   `<a data-fancybox="gallery" href="${parseImgur(href, 'large')}">${parseImageTag({ href, title, text })}</a>`;
