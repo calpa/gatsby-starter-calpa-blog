@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
 import { isBrowser } from '../../api';
-import { getBody } from '../../api/text';
+import { getContent } from '../../api/text';
 // import config from '../../../data/config';
 
 class Content extends Component {
@@ -16,7 +16,7 @@ class Content extends Component {
   }
 
   async componentWillMount() {
-    const { html } = await getBody(this.post);
+    const { html } = await getContent(this.post);
     // lazy loads elements with default selector as '.lozad'
     this.setState({ html });
     // Prevent WebPack build fail

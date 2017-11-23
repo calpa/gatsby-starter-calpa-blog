@@ -1,6 +1,33 @@
 import marked from 'marked';
+import Remarkable from 'remarkable';
 import highlightjs from 'highlight.js';
 import { getGalleryImage } from './images';
+
+const beautifyCode = (code, language = 'javascript') => {
+  // Check whether the given language is valid for highlight.js.
+  const validLang = !!(language && highlightjs.getLanguage(language));
+  // Highlight only if the language is valid.
+  const highlighted = validLang ? highlightjs.highlight(language, code).value : code;
+  // Render the highlighted code with `hljs` class.
+  return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
+};
+
+const getContent = async (mdFile) => {
+  const md = new Remarkable({
+    highlight(str, lang) {
+      return beautifyCode(str, lang);
+    },
+  });
+
+  // Add image to fancybox
+  md.renderer.rules.image = (tokens, idx) => {
+    const { src, title, alt } = Remarkable.utils.escapeHtml(tokens[idx]);
+    return getGalleryImage({ href: src, title, text: alt });
+  };
+
+  const html = md.render(mdFile);
+  return { html };
+};
 
 const getBody = async (mdFile, remark = false) => {
   let body;
@@ -52,6 +79,7 @@ const getFirstParagraph = (content) => {
 };
 
 export {
+  getContent,
   getBody,
   getFirstParagraph,
 };
