@@ -11,7 +11,7 @@ const Layout = ({ children, location }) => (
     <Head />
     <Navbar location={location} />
 
-    <div className="container">
+    <div className="fluid-container">
       {children()}
     </div>
     <Footer />

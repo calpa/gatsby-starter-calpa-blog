@@ -13,8 +13,11 @@ import Content from '../components/Content';
 import Image from '../components/Image';
 import ShareBox from '../components/ShareBox';
 import SEO from '../components/SEO';
+
+import TableOfContent from '../components/TableOfContent';
+
+// Styles
 import './blog-post.scss';
-import './toc.scss';
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
@@ -57,7 +60,7 @@ class BlogPost extends Component {
           posts={edges}
           post
         />
-        <div className="col-lg-8 col-md-12 col-sm-12 order-10 d-flex flex-column content">
+        <div className="col-lg-7 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">
             作者：<Link to="/about/" href="/about/">Calpa</Link> {parseChineseDate(createdDate)}
@@ -69,7 +72,7 @@ class BlogPost extends Component {
           />
           <Content post={content} />
         </div>
-
+        <TableOfContent post={content} />
         <div id="gitalk-container" className="col-sm-12 order-12" />
         <SEO
           url={getPath()}

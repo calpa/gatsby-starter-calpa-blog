@@ -12,7 +12,20 @@ const beautifyCode = (code, language = 'javascript') => {
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
 };
 
+const extractId = (text) => {
+  let id;
+  const link = text.match(/<a.*>(.*)<\/a>/);
+  if (link) {
+    id = link[1];
+  } else {
+    // Extract Chinese and English wordings
+    id = text.match(/[\u4e00-\u9fa5\S]+/g).join('');
+  }
+  return id;
+};
+
 const getContent = async (mdFile) => {
+  const toc = [];
   const md = new Remarkable({
     highlight(str, lang) {
       return beautifyCode(str, lang);
@@ -25,8 +38,14 @@ const getContent = async (mdFile) => {
     return getGalleryImage({ href: src, title, text: alt });
   };
 
+  md.renderer.rules.heading_open = (tokens, idx) => {
+    const id = extractId(tokens[idx + 1].content);
+    toc.push(id);
+    return `<h${tokens[idx].hLevel} id=${id}>`;
+  };
+
   const html = md.render(mdFile);
-  return { html };
+  return { html, toc };
 };
 
 const getBody = async (mdFile, remark = false) => {
