@@ -18,8 +18,7 @@ const HomePage = ({ data, location }) => (
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
     />
-
-    <div className="col-xl-8 col-lg-8 col-md-12 col-xs-12 order-2" >
+    <div className="col-lg-6 col-md-12 col-xs-12 order-2" >
       <div className="row">
         {data.pagePosts.edges.map(({ node }, index) => (
           <Card
@@ -39,7 +38,7 @@ const HomePage = ({ data, location }) => (
         <Pagination pathname={location.pathname} />
       </div>
     </div>
-
+    <div className="col-lg-2 order-3" />
     <SEO
       url={getPath()}
       description="Calpa's Blog"
