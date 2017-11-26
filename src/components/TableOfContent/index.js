@@ -20,6 +20,7 @@ class TableOfContent extends Component {
     this.post = this.props.post;
     this.state = {
       toc: [],
+      isTop: true,
     };
   }
   async componentDidMount() {
@@ -29,7 +30,9 @@ class TableOfContent extends Component {
 
   render() {
     return (
-      <div className="col-1 order-11 toc-wrap">
+      <div
+        className="col-lg-2 d-none d-lg-block order-11 toc-wrap"
+      >
         <Table items={this.state.toc} />
       </div>
     );

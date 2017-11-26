@@ -24,7 +24,7 @@ const Icon = ({ href, name, content }) => (
 );
 
 const Sidebar = ({ post, totalCount, posts }) => (
-  <header className={`mb-4 mx-3 pb-3 intro-header site-heading text-center col-lg-3 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
+  <header className={`ml-auto mb-4 mx-3 pb-3 intro-header site-heading text-center col-lg-2 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
     <div className="about-me">
       <img
         className="avatar my-3"

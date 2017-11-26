@@ -60,7 +60,7 @@ class BlogPost extends Component {
           posts={edges}
           post
         />
-        <div className="col-lg-7 col-md-12 col-sm-12 order-10 d-flex flex-column content">
+        <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">
             作者：<Link to="/about/" href="/about/">Calpa</Link> {parseChineseDate(createdDate)}
