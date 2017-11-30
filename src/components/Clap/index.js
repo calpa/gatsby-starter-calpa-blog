@@ -1,17 +1,18 @@
 import React, { Component } from 'react';
-
+import PropTypes from 'prop-types';
+import Gun from 'gun/gun';
 import mojs from 'mo-js';
 import './index.scss';
-
-const generateRandomNumber = (min, max) =>
-  Math.floor((Math.random() * ((max - min) + 1)) + min);
 
 class Clap extends Component {
   constructor(props) {
     super(props);
+    this.gun = Gun('https://gun-ndbtgvyfxy.now.sh/gun');
+    this.uuid = this.props.uuid;
+
     this.state = {
       count: 0,
-      countTotal: generateRandomNumber(500, 10000),
+      countTotal: 0,
       isClicked: false,
     };
   }
@@ -87,6 +88,15 @@ class Clap extends Component {
       circleBurst,
       triangleBurst,
     ]);
+
+    // Get the original value of the post
+    // TODO: Handle the case of a lot of clips
+    this.gun.get('posts').get(this.uuid)
+      .val((data) => {
+        // Prevent no data in the initialization
+        const countTotal = data ? data.countTotal : 0;
+        this.setState({ countTotal });
+      });
   }
 
   handleClick() {
@@ -96,6 +106,10 @@ class Clap extends Component {
       countTotal: prevState.countTotal + 1,
       isClicked: true,
     }));
+
+    this.gun.get('posts').get(this.uuid).put({
+      countTotal: this.state.countTotal,
+    });
   }
 
   render() {
@@ -127,5 +141,8 @@ class Clap extends Component {
   }
 }
 
+Clap.propTypes = {
+  uuid: PropTypes.string.isRequired,
+};
 
 export default Clap;
