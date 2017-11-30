@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
+import Clap from '../Clap';
+
 import { isBrowser } from '../../api';
 import { getContent } from '../../api/text';
 // import config from '../../../data/config';
@@ -33,6 +35,7 @@ class Content extends Component {
           dangerouslySetInnerHTML={{ __html: this.state.html }}
         />
         <hr />
+        <Clap />
       </div>
     );
   }
