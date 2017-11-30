@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Gun from 'gun/gun';
-import mojs from 'mo-js';
+import { isBrowser } from '../../api';
 import './index.scss';
+
+const Gun = isBrowser() ? require('gun/gun') : () => 0;
+const mojs = isBrowser() ? require('mo-js') : () => 0;
 
 class Clap extends Component {
   constructor(props) {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import Gun from 'gun/gun';
+import { isBrowser } from '../api';
 import NameForm from '../components/NameForm';
+
+const Gun = isBrowser() ? require('gun/gun') : () => 0;
 
 class GunPage extends Component {
   constructor(props) {
