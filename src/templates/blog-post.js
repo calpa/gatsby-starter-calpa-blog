@@ -44,7 +44,7 @@ class BlogPost extends Component {
 
   render() {
     const {
-      title, headerImgur, createdDate, content,
+      title, headerImgur, createdDate, content, id,
     } = this.data.content;
 
     const { totalCount, edges } = this.data.latestPosts;
@@ -70,7 +70,7 @@ class BlogPost extends Component {
             href={headerImgur}
             title={title}
           />
-          <Content post={content} />
+          <Content post={content} uuid={id} />
         </div>
         <TableOfContent post={content} />
         <div id="gitalk-container" className="col-sm-12 order-12" />
@@ -95,6 +95,7 @@ export const query = graphql`
       title
       createdDate
       headerImgur
+      id
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
