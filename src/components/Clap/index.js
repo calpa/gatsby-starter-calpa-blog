@@ -101,7 +101,7 @@ class Clap extends Component {
   render() {
     const { count, countTotal, isClicked } = this.state;
     return (
-      <div>
+      <div className="clap-container">
         <button id="clap" className="clap" onClick={() => this.handleClick()}>
           <span>
             {/* <!--  SVG Created by Luis Durazo from the Noun Project  --> */}

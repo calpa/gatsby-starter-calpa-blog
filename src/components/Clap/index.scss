@@ -2,6 +2,10 @@ $btn-dimension: 80px;
 $primary-color: rgba(189,195,199 ,1);
 $secondary-color: rgba(39,174,96 ,1);
 
+.clap-container {
+  text-align: center;
+}
+
 .clap {
   background: none;
   border: 1px solid $primary-color;

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
-import Clap from '../Clap';
+import Thankyou from '../Thankyou';
 
 import { isBrowser } from '../../api';
 import { getContent } from '../../api/text';
@@ -35,7 +35,7 @@ class Content extends Component {
           dangerouslySetInnerHTML={{ __html: this.state.html }}
         />
         <hr />
-        <Clap />
+        <Thankyou />
       </div>
     );
   }
