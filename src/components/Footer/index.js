@@ -1,4 +1,6 @@
 import React from 'react';
+import Link from 'gatsby-link';
+
 import ExternalLink from '../ExternalLink';
 import config from '../../../data/config';
 
@@ -18,6 +20,9 @@ const Footer = () => (
             Copyright &copy; {config.title} {new Date().getFullYear()} Theme by Calpa Liu
           </p>
           <hr />
+          <Link to="/redux">
+            Redux Demo
+          </Link>
         </div>
       </div>
     </div>

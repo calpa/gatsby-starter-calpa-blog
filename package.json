@@ -32,7 +32,9 @@
     "react-instantsearch": "^4.1.3",
     "react-lazyload": "^2.3.0",
     "react-markdown": "^2.5.1",
+    "react-redux": "^5.0.6",
     "react-share": "^1.16.0",
+    "redux": "^3.7.2",
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2"
   },
