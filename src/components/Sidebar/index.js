@@ -44,6 +44,10 @@ const Sidebar = ({ post, totalCount, posts }) => (
         href={`https://github.com/${config.github_username}`}
         name="fa-github"
       />
+      <Icon
+        href={`mailto:${config.email}`}
+        name="fa-envelope"
+      />
       <Information
         totalCount={totalCount}
         posts={posts}
