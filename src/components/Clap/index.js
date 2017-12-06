@@ -111,6 +111,8 @@ class Clap extends Component {
 
     this.gun.get('posts').get(this.uuid).put({
       countTotal: this.state.countTotal,
+      // TODO: Remove title as no need to update each time
+      title: this.props.title,
     });
   }
 
@@ -145,6 +147,7 @@ class Clap extends Component {
 
 Clap.propTypes = {
   uuid: PropTypes.string.isRequired,
+  title: PropTypes.string.isRequired,
 };
 
 export default Clap;

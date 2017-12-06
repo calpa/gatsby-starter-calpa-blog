@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { isBrowser } from '../api';
+import Analytics from '../components/Analytics';
 import NameForm from '../components/NameForm';
 
 const Gun = isBrowser() ? require('gun/gun') : () => 0;
@@ -10,6 +11,7 @@ class GunPage extends Component {
     this.gun = Gun('https://gun-ndbtgvyfxy.now.sh/gun');
     this.state = {
       name: '',
+      posts: [],
     };
   }
 
@@ -21,10 +23,17 @@ class GunPage extends Component {
     this.gun.get('username').on((data) => {
       this.setState({ name: data.name });
     });
+
+    // Get the value of each post
+    this.gun.get('posts').map().val((post) => {
+      this.setState((prevState) => {
+        prevState.posts.push(post);
+      });
+    });
   }
 
   render() {
-    const { name } = this.state;
+    const { name, posts } = this.state;
     return (
       <div>
         <h2>Gun Demo Page</h2>
@@ -32,6 +41,8 @@ class GunPage extends Component {
         <div>
           Your name: {name}
         </div>
+        <h3>Posts</h3>
+        <Analytics data={posts} />
       </div>
     );
   }

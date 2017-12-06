@@ -70,7 +70,7 @@ class BlogPost extends Component {
             href={headerImgur}
             title={title}
           />
-          <Content post={content} uuid={id} />
+          <Content post={content} uuid={id} title={title} />
         </div>
         <TableOfContent post={content} />
         <div id="gitalk-container" className="col-sm-12 order-12" />
