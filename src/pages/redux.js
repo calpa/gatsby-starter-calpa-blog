@@ -6,10 +6,14 @@ import Controller from '../components/Controller';
 
 // Gatsby Page View
 const DefaultLayout = () => (
-  <div>
-    <h2>Redux 例子</h2>
-    <ConnectedCounter />
-    <ConnectedController />
+  <div className="container mb-3">
+    <div className="row">
+      <div className="col-12">
+        <h2>Redux 例子</h2>
+        <ConnectedCounter />
+        <ConnectedController />
+      </div>
+    </div>
   </div>
 );
 
