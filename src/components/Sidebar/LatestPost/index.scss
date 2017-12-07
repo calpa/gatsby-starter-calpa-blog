@@ -3,6 +3,11 @@
 .latest-post {
   a {
     color: $light-blue;
-    text-decoration: none;
+    text-align: left;
+
+    &:hover {
+      text-decoration: none;
+    }
+    margin: 5px 0;
   }
 }
