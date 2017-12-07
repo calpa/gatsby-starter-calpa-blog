@@ -7,7 +7,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-next',
+    // 'gatsby-plugin-react-next',
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
