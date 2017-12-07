@@ -7,7 +7,7 @@ import Footer from '../components/Footer';
 import './index.scss';
 
 const Layout = ({ children, location }) => (
-  <div className="layout">
+  <div className="layout fadeIn">
     <Head />
     <Navbar location={location} />
 

@@ -19,7 +19,7 @@ const Head = () => (
     <meta name="apple-mobile-web-app-status-bar-style" content={config.meta.theme_color} />
     <link rel="shortcut icon" href={config.meta.favicon || 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png'} />
     <link rel="alternate" type="application/atom+xml" title={config.title} href="/atom.xml" />
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" />
+    {/* <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" /> */}
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <meta name="google-site-verification" content={config.meta.google_site_verification} />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/css/bootstrap.min.css" />

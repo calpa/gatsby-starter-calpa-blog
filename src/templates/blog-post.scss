@@ -1,6 +1,9 @@
 @import '../styles/colors';
 
 .post {
+  @media screen and (max-width: 990px) {
+    padding: 5px 25px;
+  }
   border-radius: 2px;
 
   .content {
