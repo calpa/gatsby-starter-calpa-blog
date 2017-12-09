@@ -71,7 +71,11 @@ class Navbar extends Component {
             }
 
             {navbarList.map(item => (
-              <NavItem url={item.href} name={item.title} />
+              <NavItem
+                url={item.href}
+                name={item.title}
+                key={item.href}
+              />
             ))}
           </div>
         </div>

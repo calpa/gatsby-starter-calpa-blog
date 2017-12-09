@@ -26,6 +26,10 @@ const internalLinks = {
       href: 'demo/fonts',
       title: '字體',
     },
+    {
+      href: 'demo/bootstrap',
+      title: 'Bootstrap 組件',
+    },
   ],
 };
 
@@ -72,6 +76,20 @@ const config = {
     indexName: 'blog',
   },
   ...internalLinks,
+  items: [
+    {
+      src: 'https://picsum.photos/1024/300?random',
+      alt: 'First slide',
+    },
+    {
+      src: 'https://picsum.photos/1024/400?random',
+      alt: 'Second slide',
+    },
+    {
+      src: 'https://picsum.photos/1024/500?random',
+      alt: 'Third slide',
+    },
+  ],
 };
 
 module.exports = config;
