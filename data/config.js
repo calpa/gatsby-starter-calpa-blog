@@ -11,12 +11,20 @@ const internalLinks = {
   ],
   demoList: [
     {
-      href: 'redux',
+      href: 'demo/redux',
       title: 'Redux 例子',
     },
     {
-      href: 'gun',
+      href: 'demo/gun',
       title: 'Gun 例子',
+    },
+    {
+      href: 'demo/route',
+      title: '前端路線圖',
+    },
+    {
+      href: 'demo/fonts',
+      title: '字體',
     },
   ],
 };

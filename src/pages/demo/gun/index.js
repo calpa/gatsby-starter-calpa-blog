@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { isBrowser } from '../api';
-import Analytics from '../components/Analytics';
-import NameForm from '../components/NameForm';
+import { isBrowser } from '../../../api';
+import Analytics from '../../../components/Analytics';
+import NameForm from '../../../components/NameForm';
 
 const Gun = isBrowser() ? require('gun/gun') : () => 0;
 

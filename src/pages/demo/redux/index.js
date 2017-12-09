@@ -1,8 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import Counter from '../components/Counter';
-import Controller from '../components/Controller';
+import Counter from '../../../components/Counter';
+import Controller from '../../../components/Controller';
 
 // Gatsby Page View
 const DefaultLayout = () => (
