@@ -1,3 +1,26 @@
+const internalLinks = {
+  navbarList: [
+    {
+      href: 'about',
+      title: '關於作者',
+    },
+    {
+      href: 'demo',
+      title: 'DEMO',
+    },
+  ],
+  demoList: [
+    {
+      href: 'redux',
+      title: 'Redux 例子',
+    },
+    {
+      href: 'gun',
+      title: 'Gun 例子',
+    },
+  ],
+};
+
 const config = {
   title: 'Calpa',
   maxPages: 8, // TODO: Update this automatically
@@ -40,6 +63,7 @@ const config = {
     apiKey: 'd9adae0b31ed52fc0f6c4c75aad428bf',
     indexName: 'blog',
   },
+  ...internalLinks,
 };
 
 module.exports = config;

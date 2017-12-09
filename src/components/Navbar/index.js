@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Link, { navigateTo } from 'gatsby-link';
+import NavItem from './NavItem';
 
+import { navbarList } from '../../../data/config';
 import './index.scss';
 
 const search = (e) => {
@@ -8,22 +10,6 @@ const search = (e) => {
   const query = document.getElementById('nav-search').value;
   navigateTo(`/search?query=${query}`);
 };
-
-const NavItem = ({ url, name }) => (
-  <ul className="navbar-nav mr-2">
-    <li className="nav-item">
-      <Link
-        className="nav-link"
-        href={url}
-        to={url}
-        activeStyle={{
-          color: 'black',
-        }}
-      >{name}
-      </Link>
-    </li>
-  </ul>
-);
 
 const NavbarClass = [
   'navbar', 'navbar-expand-md',
@@ -71,14 +57,22 @@ class Navbar extends Component {
                 className="form-inline my-2 my-lg-0"
                 onSubmit={e => search(e)}
               >
-                <input className="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search" id="nav-search" />
+                <input
+                  className="form-control mr-sm-2"
+                  type="text"
+                  placeholder="Search"
+                  aria-label="Search"
+                  id="nav-search"
+                />
                 <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">
                   <i className="fa fa-search" />
                 </button>
               </form>
             }
-            <NavItem url="/about/" name="瀏覽簡介" />
-            <NavItem url="/fonts/" name="字體" />
+
+            {navbarList.map(item => (
+              <NavItem url={item.href} name={item.title} />
+            ))}
           </div>
         </div>
       </nav>
