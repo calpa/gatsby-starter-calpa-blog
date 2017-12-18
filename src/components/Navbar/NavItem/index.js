@@ -1,20 +1,18 @@
 import React from 'react';
-import Link from 'gatsby-link';
-
 import PropTypes from 'prop-types';
+
+import { gotoPage } from '../../../api/url';
 
 const NavItem = ({ url, name }) => (
   <ul className="navbar-nav mr-2">
     <li className="nav-item">
-      <Link
-        className="nav-link"
+      <button
+        className="nav-link btn btn-default"
         href={url}
         to={url}
-        activeStyle={{
-          color: 'black',
-        }}
+        onClick={() => gotoPage(url)}
       >{name}
-      </Link>
+      </button>
     </li>
   </ul>
 );

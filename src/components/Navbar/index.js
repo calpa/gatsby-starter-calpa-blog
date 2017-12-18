@@ -1,14 +1,15 @@
 import React, { Component } from 'react';
-import Link, { navigateTo } from 'gatsby-link';
+import { navigateTo } from 'gatsby-link';
 import NavItem from './NavItem';
-
+import { gotoPage } from '../../api/url';
 import { navbarList } from '../../../data/config';
 import './index.scss';
 
-const search = (e) => {
+const search = async (e) => {
   e.preventDefault();
-  const query = document.getElementById('nav-search').value;
-  navigateTo(`/search?query=${query}`);
+  const { value } = document.getElementById('nav-search');
+  await window.$('.collapse').collapse('hide');
+  await navigateTo(`/search?query=${value}`);
 };
 
 const NavbarClass = [
@@ -39,9 +40,12 @@ class Navbar extends Component {
     return (
       <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === true ? 'navbar-light' : 'navbar-dark is-fixed'}`}>
         <div className="container">
-          <Link className="navbar-brand" to="/">
+          <button
+            className="navbar-brand btn btn-default"
+            onClick={() => gotoPage('/')}
+          >
             <span className="brand-logo">Calpa</span> 's Blog
-          </Link>
+          </button>
           <button
             className="navbar-toggler"
             type="button"

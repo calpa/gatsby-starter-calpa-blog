@@ -1,4 +1,15 @@
+import { navigateTo } from 'gatsby-link';
 import { getCurrentPage, getMaxPages } from './index';
+
+const gotoPage = async (url, show = false) => {
+  if (show === true) {
+    await window.$('.collapse').collapse('show');
+  } else {
+    await window.$('.collapse').collapse('hide');
+  }
+
+  await navigateTo(url);
+};
 
 const parseMarkdownUrl = (date, rawUrl) => (
   `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
@@ -54,4 +65,5 @@ export default {
   parseUrl,
   handlePreviousPage,
   handleNextPage,
+  gotoPage,
 };
