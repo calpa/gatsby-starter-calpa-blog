@@ -30,6 +30,10 @@ const internalLinks = {
       href: 'demo/bootstrap',
       title: 'Bootstrap 組件',
     },
+    {
+      href: 'demo/popmotion',
+      title: 'Popmotion',
+    },
   ],
 };
 

@@ -28,6 +28,8 @@
     "marked": "^0.3.6",
     "mo-js": "^0.288.2",
     "moment": "^2.19.2",
+    "popmotion": "^8.1.2",
+    "popmotion-react": "^2.1.0",
     "qs": "^6.5.1",
     "react-ga": "^2.3.5",
     "react-instantsearch": "^4.1.3",
