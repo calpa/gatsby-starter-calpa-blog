@@ -3,17 +3,14 @@ import React from 'react';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
-import BackPage from '../components/BackPage';
-import NextPage from '../components/NextPage';
 import Pagination from '../components/Pagination';
-
-import { parseDate, isFirstPage, isLastPage, getPath } from '../api/';
+import { parseDate, getPath } from '../api/';
 import { getDefaultPicture } from '../api/images';
 import { getFirstParagraph } from '../api/text';
 import './index.scss';
 
 const HomePage = ({ data, location }) => (
-  <div className="row pb-5">
+  <div className="row homepage">
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}

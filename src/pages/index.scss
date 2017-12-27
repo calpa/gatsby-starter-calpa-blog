@@ -1,1 +1,7 @@
-h1 {}
+.fluid-container {
+  .homepage {
+    @media (max-width: 992px) {
+      margin: 10px;
+    }
+  }
+}
