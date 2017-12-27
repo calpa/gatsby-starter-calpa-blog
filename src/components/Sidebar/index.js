@@ -26,12 +26,12 @@ const Icon = ({ href, name, content }) => (
 const Sidebar = ({ post, totalCount, posts }) => (
   <header className={`intro-header site-heading text-center col-lg-2 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
     <div className="about-me">
-      <img
-        className="avatar my-3"
-        src="https://i.imgur.com/kjt2x52.png"
-        alt="Calpa"
-      />
       <Link to="/about/" href="/about" className="name">
+        <img
+          className="avatar my-3"
+          src="https://i.imgur.com/kjt2x52.png"
+          alt="Calpa"
+        />
         <h4>Calpa</h4>
       </Link>
       <p className="mb-1">夢裡不覺秋已深</p>

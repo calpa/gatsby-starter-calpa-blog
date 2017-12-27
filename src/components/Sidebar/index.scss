@@ -13,8 +13,12 @@
     .avatar {
       border-radius: 50%;
       height: 120px;
-      opacity: 0.9;
       width: 120px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
     }
 
     .name {
@@ -36,7 +40,7 @@
       border-radius: 50%;
     }
 
-    :hover {
+    &:hover {
       border-radius: 50%;
 
       i {
@@ -45,6 +49,7 @@
     }
 
     i {
+      transition: background 1s cubic-bezier(0.22, 0.61, 0.36, 1);
       background: $regal-blue;
       border-radius: 50%;
     }

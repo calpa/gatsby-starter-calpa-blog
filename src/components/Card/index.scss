@@ -15,7 +15,11 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 // Base styles
 
 .custom-card {
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  }
 
   .wrapper {
     background-position: center;
