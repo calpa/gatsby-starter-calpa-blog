@@ -11,6 +11,10 @@ const internalLinks = {
   ],
   demoList: [
     {
+      href: 'demo/count',
+      title: '字數統計',
+    },
+    {
       href: 'demo/redux',
       title: 'Redux 例子',
     },

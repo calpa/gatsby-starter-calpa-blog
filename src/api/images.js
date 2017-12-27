@@ -9,10 +9,10 @@ const getDefaultPicture = () => (
   Math.random() > 0.5 ? 'kkKoV4d.jpg' : 'YexhzBP.jpg'
 );
 
-const parseImgur = (headerImage, size = 'large') => {
+const parseImgur = (image, size = 'large') => {
   let subfix;
 
-  headerImage = headerImage || getDefaultPicture(); // eslint-disable-line
+  image = image || getDefaultPicture(); // eslint-disable-line
 
   switch (size) {
     case 'small-square':
@@ -30,21 +30,24 @@ const parseImgur = (headerImage, size = 'large') => {
     case 'large':
       subfix = 'l';
       break;
-    default:
+    case 'huge':
       subfix = 'h';
+      break;
+    default:
+      break;
   }
 
   // Don't resize the png image
   // as there is a transparent bug in imgur
-  if (headerImage.match('(png)|(gif)')) {
+  if (image.match('(png)|(gif)')) {
     // Prevent double http url
-    if (headerImage.match('http')) {
-      return headerImage;
+    if (image.match('http')) {
+      return image;
     }
-    return `https://i.imgur.com/${headerImage}`;
+    return `https://i.imgur.com/${image}`;
   }
 
-  const resizedImage = headerImage.replace(/(.*)\.(.*)/, `$1${subfix}.$2`);
+  const resizedImage = image.replace(/(.*)\.(.*)/, `$1${subfix}.$2`);
   // Prevent double http url
   if (resizedImage.match('http')) {
     return resizedImage;
@@ -55,10 +58,10 @@ const parseImgur = (headerImage, size = 'large') => {
 const parseTitle = (title, text) => `title="${title || text}"`;
 
 const parseImageTag = ({ href, title, text }) =>
-  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} ${parseTitle(title, text)} />`;
+  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'small')} ${parseTitle(title, text)} />`;
 
 const getGalleryImage = ({ href, title, text }) =>
-  `<a data-fancybox="gallery" href="${parseImgur(href, 'large')}">${parseImageTag({ href, title, text })}</a>`;
+  `<a data-fancybox="gallery" href="${parseImgur(href, 'huge')}">${parseImageTag({ href, title, text })}</a>`;
 
 export {
   parseImgur,
