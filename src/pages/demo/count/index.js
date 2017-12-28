@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 
-import Markmirror from 'react-markmirror';
-
 import { getContent } from '../../../api/text';
 import './index.scss';
+
+const Markmirror = typeof window !== 'undefined' && typeof window.navigator !== 'undefined' ?
+  require('react-markmirror').default : undefined;
 
 class Count extends Component {
   constructor(props) {
@@ -11,7 +12,7 @@ class Count extends Component {
     this.state = {
       code: '',
       html: '',
-      preview: false,
+      preview: true,
       chinese: 0,
     };
   }
@@ -46,10 +47,11 @@ class Count extends Component {
             </button>
           </div>
           <div className="col-6">
-            <Markmirror
-              value={this.state.code}
-              onChange={code => this.handleChange(code)}
-            />
+            {Markmirror &&
+              <Markmirror
+                value={this.state.code}
+                onChange={code => this.handleChange(code)}
+              />}
           </div>
 
           {this.state.preview &&
