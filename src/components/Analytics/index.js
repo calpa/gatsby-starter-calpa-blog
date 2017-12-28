@@ -3,7 +3,7 @@ import React from 'react';
 import Clap from './Clap';
 
 const Analytics = ({ data }) => (
-  <div>
+  <div className="container">
     {data.map(clap =>
       (<Clap
         title={clap.title}

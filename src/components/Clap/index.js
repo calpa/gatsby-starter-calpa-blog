@@ -101,9 +101,9 @@ class Clap extends Component {
       });
   }
 
-  handleClick() {
-    this.animationTimeline.replay();
-    this.setState(prevState => ({
+  async handleClick() {
+    await this.animationTimeline.replay();
+    await this.setState(prevState => ({
       count: Math.min(prevState.count + 1, 50),
       countTotal: prevState.countTotal + 1,
       isClicked: true,
