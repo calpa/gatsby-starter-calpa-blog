@@ -9,8 +9,13 @@ const Markmirror = typeof window !== 'undefined' && typeof window.navigator !== 
 class Count extends Component {
   constructor(props) {
     super(props);
+    let code = '';
+    if (window) {
+      code = JSON.parse(window.localStorage.getItem('paragrah'));
+    }
+
     this.state = {
-      code: '',
+      code,
       html: '',
       preview: true,
       chinese: 0,
@@ -27,6 +32,10 @@ class Count extends Component {
     }
 
     this.setState({ code, html, chinese });
+
+    if (window) {
+      window.localStorage.setItem('paragrah', JSON.stringify(code));
+    }
   }
 
   async togglePreview() {

@@ -12,14 +12,17 @@ const beautifyCode = (code, language = 'javascript') => {
   return `<pre><code class="hljs ${language}">${highlighted}</code></pre>`;
 };
 
-const extractId = (text) => {
+const extractId = (text = '') => {
   let id;
   const link = text.match(/<a.*>(.*)<\/a>/);
   if (link) {
-    id = link[1];
+    [id] = link;
   } else {
     // Extract Chinese and English wordings
-    id = text.match(/[\u4e00-\u9fa5\S]+/g).join('');
+    const temp = text.match(/[\u4e00-\u9fa5\S]+/g);
+    if (temp) {
+      id = temp.join('');
+    }
   }
   return id;
 };
