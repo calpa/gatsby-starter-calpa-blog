@@ -58,7 +58,7 @@ const parseImgur = (image, size = 'large') => {
 const parseTitle = (title, text) => `title="${title || text}"`;
 
 const parseImageTag = ({ href, title, text }) =>
-  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'small')} ${parseTitle(title, text)} />`;
+  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} ${parseTitle(title, text)} />`;
 
 const getGalleryImage = ({ href, title, text }) =>
   `<a data-fancybox="gallery" href="${parseImgur(href, 'huge')}">${parseImageTag({ href, title, text })}</a>`;
