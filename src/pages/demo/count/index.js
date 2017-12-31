@@ -9,17 +9,20 @@ const Markmirror = typeof window !== 'undefined' && typeof window.navigator !== 
 class Count extends Component {
   constructor(props) {
     super(props);
-    let code = '';
-    if (typeof window !== 'undefined') {
-      code = JSON.parse(window.localStorage.getItem('paragrah'));
-    }
-
     this.state = {
-      code,
+      code: '',
       html: '',
       preview: true,
       chinese: 0,
     };
+  }
+
+  componentWillMount() {
+    if (typeof window !== 'undefined') {
+      const code = JSON.parse(window.localStorage.getItem('paragrah'));
+      console.log(code);
+      this.setState({ code });
+    }
   }
 
   async handleChange(code) {
@@ -55,7 +58,7 @@ class Count extends Component {
             >預覽
             </button>
           </div>
-          <div className="col-6">
+          <div className="col">
             {Markmirror &&
               <Markmirror
                 value={this.state.code}
@@ -64,7 +67,7 @@ class Count extends Component {
           </div>
 
           {this.state.preview &&
-            <div className="col-6">
+            <div className="col">
               <div
                 dangerouslySetInnerHTML={{ __html: this.state.html }}
               />
