@@ -10,7 +10,7 @@ class Count extends Component {
   constructor(props) {
     super(props);
     let code = '';
-    if (window) {
+    if (typeof window !== 'undefined') {
       code = JSON.parse(window.localStorage.getItem('paragrah'));
     }
 
