@@ -17,14 +17,6 @@ class Count extends Component {
     };
   }
 
-  componentWillMount() {
-    if (typeof window !== 'undefined') {
-      const code = JSON.parse(window.localStorage.getItem('paragrah'));
-      console.log(code);
-      this.setState({ code });
-    }
-  }
-
   async handleChange(code) {
     const { html } = await getContent(code);
     const temp = code.match(/[\u4e00-\u9fa5]/g);
@@ -35,10 +27,6 @@ class Count extends Component {
     }
 
     this.setState({ code, html, chinese });
-
-    if (window) {
-      window.localStorage.setItem('paragrah', JSON.stringify(code));
-    }
   }
 
   async togglePreview() {
