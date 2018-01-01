@@ -73,7 +73,7 @@ class BlogPost extends Component {
           <Content post={content} uuid={id} title={title} />
         </div>
         <TableOfContent post={content} />
-        <div id="gitalk-container" className="col-sm-12 order-12" />
+        <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
           url={getPath()}
           description={content.substring(0, 140)}
