@@ -7,7 +7,7 @@ const NavItem = ({ url, name }) => (
   <ul className="navbar-nav mr-2">
     <li className="nav-item">
       <button
-        className="nav-link btn btn-default"
+        className="nav-link btn btn-link"
         href={url}
         to={url}
         onClick={() => gotoPage(url)}

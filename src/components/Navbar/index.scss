@@ -1,10 +1,12 @@
 @import "../../styles/colors.scss";
 
 .custom-navbar {
+  $item-color: $cyan-blue;
+  $radius: 3px;
+
   .btn {
     background: $white;
   }
-  $item-color: $cyan-blue;
   background-color: rgba(255, 255, 255, 0.98);
   box-shadow: 0 0 10px rgba(14, 14, 14, 0.26);
   // height: 55px;
@@ -25,28 +27,36 @@
 
       .brand-logo {
         background: $black;
-        border-radius: 3px;
+        border-radius: $radius;
         color: $white;
         padding: 1px 5px 2px;
       }
 
+      &:focus,
       &:hover {
+        background-color: darken($white, 5%);
         color: $regal-blue;
+        cursor: pointer;
       }
     }
 
     .nav-item {
       .nav-link {
+        border-radius: $radius;
         color: $item-color;
 
+        &:focus,
         &:hover {
+          background-color: darken($white, 10%);
           color: $regal-blue;
+          cursor: pointer;
         }
       }
     }
   }
 
   &.is-fixed {
-    background: rgba(255, 255, 255, 0.5);
+    // background: rgba(255, 255, 255, 0.5);
+    background: transparent;
   }
 }
