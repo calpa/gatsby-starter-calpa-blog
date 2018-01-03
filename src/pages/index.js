@@ -31,9 +31,7 @@ const HomePage = ({ data, location }) => (
           />
         ))}
       </div>
-      <div className="row order-3 w-100 justify-content-around">
-        <Pagination pathname={location.pathname} />
-      </div>
+      <Pagination pathname={location.pathname} />
     </div>
     <div className="col-lg-2 order-3" />
     <SEO

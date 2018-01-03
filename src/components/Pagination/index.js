@@ -19,10 +19,10 @@ const PageItem = ({ number, content, url }) => (
 
 const Pagination = () => (
   <nav aria-label="Page navigation example">
-    <ul className="pagination">
+    <ul className="pagination justify-content-center">
       <PageItem
         number={handlePreviousPage()}
-        content="上一頁"
+        content="Previous"
         url={handlePreviousPage()}
       />
       <PageItem number={1} />
@@ -32,7 +32,7 @@ const Pagination = () => (
       <PageItem number={getMaxPages()} />
       <PageItem
         number={handleNextPage()}
-        content="下一頁"
+        content="Next"
         url={handleNextPage()}
       />
     </ul>
