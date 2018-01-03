@@ -2,12 +2,13 @@ import React from 'react';
 
 import Link from 'gatsby-link';
 
-import { getMaxPages } from '../../api';
+import Dropdown from './Dropdown';
 
+import { getMaxPages, getPages } from '../../api';
 import { handlePreviousPage, handleNextPage } from '../../api/url';
 
 const PageItem = ({ number, content, url }) => (
-  <li className={`page-item ${number < 0 ? 'disabled' : ''}`}>
+  <li className={`page-item${number < 0 ? ' disabled' : ''}`}>
     <Link
       className="page-link"
       to={`${typeof content === 'string' ? url : `/page/${number}`}`}
@@ -27,7 +28,9 @@ const Pagination = () => (
       />
       <PageItem number={1} />
       <PageItem number={2} />
-      <PageItem number={-1} content="..." />
+      <li className="page-item">
+        <Dropdown pages={getPages()} />
+      </li>
       <PageItem number={getMaxPages() - 1} />
       <PageItem number={getMaxPages()} />
       <PageItem

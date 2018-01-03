@@ -24,6 +24,10 @@ const getPath = () => (isBrowser() ? window.location.href : '');
 
 const getMaxPages = () => maxPages;
 
+// Array.fill() is added by trial and error
+const getPages = () =>
+  new Array(getMaxPages()).fill().map((_, index) => `/page/${index + 1}`);
+
 const overflow = () => getCurrentPage() === getMaxPages();
 
 const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
@@ -36,7 +40,7 @@ const isLastPage = () => (isBrowser() ? overflow() : false);
 
 export {
   isBrowser, isPage,
-  getCurrentPage, getMaxPages,
+  getCurrentPage, getMaxPages, getPages,
   overflow, parseDate,
   isFirstPage, isLastPage,
   parseChineseDate,
