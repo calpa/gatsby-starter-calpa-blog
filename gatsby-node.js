@@ -1,6 +1,7 @@
 const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
+const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 
 const moment = require('moment');
 const axios = require('axios');
@@ -53,12 +54,17 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   await makeNode({ contentType: 'about', createNode });
 };
 
+// Add custom webpack config
 exports.modifyWebpackConfig = ({ config, stage }) => {
   if (stage === 'build-html') {
     config.loader('null', {
       test: /bad-module/,
       loader: 'null-loader',
     });
+  }
+
+  if (stage === 'build-javascript') {
+    config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
   }
 };
 
