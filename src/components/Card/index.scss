@@ -24,10 +24,9 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
   .wrapper {
     background-position: center;
     @media (min-width: 576px) {
-      background-size: contain;
       min-height: 20em;
     }
-    background-size: cover;
+    background-size: contain;
     background-repeat: no-repeat;
     min-height: 17em;
     position: relative;
