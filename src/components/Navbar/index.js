@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { navigateTo } from 'gatsby-link';
+import GithubCorner from '../GithubCorner';
+
 import NavItem from './NavItem';
 import { gotoPage } from '../../api/url';
 import { navbarList } from '../../../data/config';
@@ -24,6 +26,7 @@ class Navbar extends Component {
     this.location = this.props.location;
     this.state = {
       isTop: true,
+      searchable: false,
     };
   }
 
@@ -54,9 +57,9 @@ class Navbar extends Component {
           >
             <span className="navbar-toggler-icon" />
           </button>
-
+          <GithubCorner url="https://github.com/calpa/blog" />
           <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
-            {this.props.location.pathname !== '/search' &&
+            {this.state.searchable &&
               <form
                 className="form-inline my-2 my-lg-0"
                 onSubmit={e => search(e)}
@@ -73,14 +76,15 @@ class Navbar extends Component {
                 </button>
               </form>
             }
-
-            {navbarList.map(item => (
-              <NavItem
-                url={item.href}
-                name={item.title}
-                key={item.href}
-              />
-            ))}
+            <ul className="navbar-nav mr-2">
+              {navbarList.map(item => (
+                <NavItem
+                  url={item.href}
+                  name={item.title}
+                  key={item.href}
+                />
+              ))}
+            </ul>
           </div>
         </div>
       </nav>
