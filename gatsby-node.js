@@ -67,8 +67,10 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     config.merge({
       resolve: {
         alias: {
-          react: 'nervjs',
-          'react-dom': 'nervjs',
+          react: 'rax',
+          'react-dom': 'rax-dom',
+          // Not necessary unless you consume a module using `createClass`
+          'create-react-class': 'rax/lib/createClass',
         },
       },
     });
