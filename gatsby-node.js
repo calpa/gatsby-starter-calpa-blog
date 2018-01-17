@@ -64,14 +64,14 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
   }
 
   if (stage === 'build-javascript') {
-    config.merge({
-      resolve: {
-        alias: {
-          react: 'nervjs',
-          'react-dom': 'nervjs',
-        },
-      },
-    });
+    // config.merge({
+    //   resolve: {
+    //     alias: {
+    //       react: 'nervjs',
+    //       'react-dom': 'nervjs',
+    //     },
+    //   },
+    // });
     config.plugin(
       'remove-hljs-lang', webpack.ContextReplacementPlugin,
       [
