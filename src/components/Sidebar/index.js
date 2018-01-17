@@ -6,6 +6,7 @@ import PropTypes from 'prop-types';
 import config from '../../../data/config';
 
 import Information from './Information';
+import Subscribiton from './Subscribiton';
 
 import './index.scss';
 
@@ -28,7 +29,7 @@ const Sidebar = ({ post, totalCount, posts }) => (
     <div className="about-me">
       <Link to="/about/" href="/about" className="name">
         <img
-          className="avatar my-3"
+          className="avatar"
           src="https://i.imgur.com/kjt2x52.png"
           alt="Calpa"
         />
@@ -48,6 +49,8 @@ const Sidebar = ({ post, totalCount, posts }) => (
         href={`mailto:${config.email}`}
         name="fa-envelope"
       />
+
+      <Subscribiton />
       <Information
         totalCount={totalCount}
         posts={posts}
