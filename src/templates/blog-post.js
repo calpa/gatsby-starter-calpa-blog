@@ -3,6 +3,9 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import Link from 'gatsby-link';
 
+import moment from 'moment';
+import { Motion, spring } from 'react-motion';
+
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate, getPath } from '../api/';
@@ -22,6 +25,36 @@ import './blog-post.scss';
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
+
+const CreatedDate = ({ createdDate, reducedDate, x }) => (
+  <div style={{
+    display: 'inline',
+    margin: '0.5rem',
+  }}
+  >
+    <span style={{ color: `${reducedDate === x ? 'black' : `rgba(220, 53, 69, ${1 - (x / 200)})`}` }}>
+      {parseChineseDate(moment(createdDate).subtract(reducedDate, 'days').add(Math.floor(x), 'days'))}
+    </span>
+    {x < reducedDate &&
+      <span style={{
+          color: `rgba(220, 53, 69, ${1 - (x / 200)})`,
+          margin: '0.5rem',
+      }}
+      >
+        修正時間線中
+      </span>
+    }
+  </div>
+);
+
+const MotionDate = ({ createdDate, reducedDate }) => (
+  <Motion
+    defaultStyle={{ x: 0 }}
+    style={{ x: spring(reducedDate, { stiffness: 34, damping: 36 }) }}
+  >
+    {({ x }) => <CreatedDate createdDate={createdDate} reducedDate={reducedDate} x={x} />}
+  </Motion>
+);
 
 class BlogPost extends Component {
   constructor(props) {
@@ -63,7 +96,8 @@ class BlogPost extends Component {
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">
-            作者：<Link to="/about/" href="/about/">Calpa</Link> {parseChineseDate(createdDate)}
+            作者：<Link to="/about/" href="/about/">Calpa</Link>
+            <MotionDate createdDate={createdDate} reducedDate={50} />
           </p>
           <ShareBox url={url} />
           <Image

@@ -37,6 +37,7 @@
     "react-lazyload": "^2.3.0",
     "react-markdown": "^2.5.1",
     "react-markmirror": "^0.4.16",
+    "react-motion": "^0.5.2",
     "react-redux": "^5.0.6",
     "react-share": "^1.18.0",
     "redux": "^3.7.2",
