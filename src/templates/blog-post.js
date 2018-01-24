@@ -41,7 +41,7 @@ const CreatedDate = ({ createdDate, reducedDate, x }) => (
           margin: '0.5rem',
       }}
       >
-        修正時間線中
+        修正世界線中
       </span>
     }
   </div>
@@ -100,10 +100,12 @@ class BlogPost extends Component {
             <MotionDate createdDate={createdDate} reducedDate={50} />
           </p>
           <ShareBox url={url} />
-          <Image
-            href={headerImgur}
-            title={title}
-          />
+          {content &&
+            <Image
+              href={headerImgur}
+              title={title}
+            />
+          }
           <Content post={content} uuid={id} title={title} />
         </div>
         <TableOfContent post={content} />

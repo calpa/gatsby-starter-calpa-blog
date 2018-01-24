@@ -1,11 +1,11 @@
 const internalLinks = {
   navbarList: [
     {
-      href: 'about',
+      href: '/about/',
       title: '關於作者',
     },
     {
-      href: 'demo',
+      href: '/demo/',
       title: 'DEMO',
     },
   ],
