@@ -81,6 +81,7 @@ class Navbar extends Component {
                 <NavItem
                   url={item.href}
                   name={item.title}
+                  list={item.list}
                   key={item.href}
                 />
               ))}

@@ -1,6 +1,20 @@
 const internalLinks = {
   navbarList: [
     {
+      href: '/tags',
+      title: '分類',
+    },
+    // {
+    //   href: '/categories/',
+    //   title: '技術分類',
+    //   list: [
+    //     {
+    //       href: '/front-end',
+    //       title: '前端',
+    //     },
+    //   ],
+    // },
+    {
       href: '/about/',
       title: '關於作者',
     },
