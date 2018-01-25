@@ -65,6 +65,30 @@ const others = [
   }, {
     source: '瀏覽器',
     target: '瀏覽器渲染頁面過程',
+  }, {
+    source: '常用網站',
+    target: '掘金',
+  }, {
+    source: '常用網站',
+    target: 'V2EX',
+  }, {
+    source: '常用網站',
+    target: 'MDN',
+  }, {
+    source: '常用網站',
+    target: 'CSDN',
+  }, {
+    source: '前端',
+    target: '常用網站',
+  }, {
+    source: 'Redux',
+    target: 'Flux',
+  }, {
+    source: '常用網站',
+    target: 'Github',
+  }, {
+    source: '常用網站',
+    target: 'CodePen',
   },
 ];
 

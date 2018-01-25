@@ -115,6 +115,20 @@ const data = [{
   name: 'Storage',
 }, {
   name: 'IndexDB',
+}, {
+  name: '常用網站',
+}, {
+  name: '掘金',
+}, {
+  name: 'V2EX',
+}, {
+  name: 'MDN',
+}, {
+  name: 'CSDN',
+}, {
+  name: 'Github',
+}, {
+  name: 'CodePen',
 }];
 
 export default data;
