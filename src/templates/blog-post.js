@@ -4,7 +4,7 @@ import { Helmet } from 'react-helmet';
 import Link from 'gatsby-link';
 
 import moment from 'moment';
-import { Motion, spring } from 'react-motion';
+// import { Motion, spring } from 'react-motion';
 
 import 'gitalk/dist/gitalk.css';
 
@@ -47,14 +47,14 @@ const CreatedDate = ({ createdDate, reducedDate, x }) => (
   </div>
 );
 
-const MotionDate = ({ createdDate, reducedDate }) => (
-  <Motion
-    defaultStyle={{ x: 0 }}
-    style={{ x: spring(reducedDate, { stiffness: 34, damping: 36 }) }}
-  >
-    {({ x }) => <CreatedDate createdDate={createdDate} reducedDate={reducedDate} x={x} />}
-  </Motion>
-);
+// const MotionDate = ({ createdDate, reducedDate }) => (
+//   <Motion
+//     defaultStyle={{ x: 0 }}
+//     style={{ x: spring(reducedDate, { stiffness: 34, damping: 36 }) }}
+//   >
+//     {({ x }) => <CreatedDate createdDate={createdDate} reducedDate={reducedDate} x={x} />}
+//   </Motion>
+// );
 
 class BlogPost extends Component {
   constructor(props) {
@@ -97,7 +97,8 @@ class BlogPost extends Component {
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">
             作者：<Link to="/about/" href="/about/">Calpa</Link>
-            <MotionDate createdDate={createdDate} reducedDate={50} />
+            {<CreatedDate createdDate={createdDate} />}
+            {/* <MotionDate createdDate={createdDate} reducedDate={50} /> */}
           </p>
           <ShareBox url={url} />
           {content &&
