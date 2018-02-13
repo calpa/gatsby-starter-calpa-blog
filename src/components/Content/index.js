@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
-import Thankyou from '../Thankyou';
+// import Thankyou from '../Thankyou';
 
 import { isBrowser } from '../../api';
 import { getContent } from '../../api/text';
@@ -35,10 +35,10 @@ class Content extends Component {
           dangerouslySetInnerHTML={{ __html: this.state.html }}
         />
         <hr />
-        <Thankyou
+        {/* <Thankyou
           uuid={this.props.uuid}
           title={this.props.title}
-        />
+        /> */}
       </div>
     );
   }
@@ -46,8 +46,8 @@ class Content extends Component {
 
 Content.propTypes = {
   post: PropTypes.string.isRequired,
-  uuid: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  // uuid: PropTypes.string.isRequired,
+  // title: PropTypes.string.isRequired,
 };
 
 export default Content;
