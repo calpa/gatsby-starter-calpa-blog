@@ -1,13 +1,17 @@
-# gatsby-starter-default
-The default Gatsby starter
+Calpa's Blog
+---
 
-For an overview of the project structure please refer to the [Gatsby documentation - Building with Components](https://www.gatsbyjs.org/docs/building-with-components/)
+Source code repo of my Blog.
 
-Install this starter (assuming Gatsby is installed) by running from your CLI:
+## Develop
+How to start this project?
 ```
-gatsby new gatsby-example-site
+1. npm install
+1. npm run develop
 ```
 
 ## Deploy
+This blog is currently using Netlify.
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/gatsbyjs/gatsby-starter-default)
+## Contact
+[Github: Calpa](https://github.com/calpa/)
