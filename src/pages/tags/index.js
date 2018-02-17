@@ -1,14 +1,22 @@
 import React, { Component } from 'react';
 
+import moment from 'moment';
+
 import Tag from '../../components/Tag';
 
 const splitTag = (raw = '') => raw.split(', ');
 
 const getTag = (item) => {
-  if (item.node.tags) {
+  const { tags, url, createdDate } = item.node;
+
+  if (tags) {
+    const date = moment(createdDate).locale('zh-hk').format('YYYY/MM/DD');
+    const postPath = url === 'about' ? url : `${date}/${url}`;
     return {
       tags: splitTag(item.node.tags),
-      title: item.node.title
+      title: item.node.title,
+      url: postPath,
+      createdDate
     }
   }
   return item;
@@ -18,13 +26,13 @@ const flatten = (arr = []) => arr.reduce(
   (acc, cur) => acc.concat(cur), [],
 );
 
-const TagSession = ({ tag, articles }) => (
+const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
   <div className="row" id={tag}>
     <div className="col">
       <h3>{tag}:</h3>
-      <div>
-        {articles.map(title => (<p key={title}>{title}</p>))}
-      </div>
+      <ol>
+        {articles.map(title => (<li key={title}><a href={url}>{title}</a></li>))}
+      </ol>
     </div>
 </div>
 )
@@ -44,8 +52,9 @@ class TagPage extends Component {
 
     // debugger;
     temp.forEach((x) => {
+      const { title, url } = x;
+
       for (var i = 0, n = x.tags.length; i < n; i += 1) {
-        const { title } = temp[i];
 
         if (tags[x.tags[i]]) {
           tags[x.tags[i]].push(title);
@@ -84,7 +93,7 @@ class TagPage extends Component {
         {tags.map(tag => (
           <TagSession
             tag={tag}
-            articles={[...new Set(this.state.tags[tag])]}
+            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
             key={tag}
           />
           )
@@ -101,6 +110,8 @@ query myTags {
       node {
         tags
         title
+        url
+        createdDate
       }
     }
   }
