@@ -1,6 +1,5 @@
 const internalLinks = {
-  navbarList: [
-    {
+  navbarList: [{
       href: '/tags',
       title: '分類',
     },
@@ -15,16 +14,19 @@ const internalLinks = {
     //   ],
     // },
     {
+      href: '/guestbook/',
+      title: '留言簿',
+    },
+    {
       href: '/about/',
       title: '關於作者',
     },
     {
       href: '/demo/',
-      title: 'DEMO',
+      title: '實驗室',
     },
   ],
-  demoList: [
-    {
+  demoList: [{
       href: 'demo/count',
       title: '字數統計',
     },
@@ -98,8 +100,7 @@ const config = {
     indexName: 'blog',
   },
   ...internalLinks,
-  items: [
-    {
+  items: [{
       src: 'https://picsum.photos/1024/300?random',
       alt: 'First slide',
     },
