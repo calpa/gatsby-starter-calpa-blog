@@ -5,7 +5,7 @@
   $radius: 3px;
 
   .btn {
-    background: $white;
+    // background: $white;
   }
   background-color: #f8f8f8;
   box-shadow: 0 0 10px rgba(14, 14, 14, 0.26);
@@ -23,6 +23,7 @@
   .container {
     .navbar-brand {
       color: $item-color;
+      background: $white;
 
       .brand-logo {
         background: $black;
@@ -39,19 +40,6 @@
       }
     }
 
-    .nav-item {
-      .nav-link {
-        border-radius: $radius;
-        color: $item-color;
-
-        &:focus,
-        &:hover {
-          background-color: darken($white, 10%);
-          color: $regal-blue;
-          cursor: pointer;
-        }
-      }
-    }
   }
 
   &.is-fixed {

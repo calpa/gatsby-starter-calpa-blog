@@ -7,7 +7,7 @@ import { gotoPage } from '../../api/url';
 import { navbarList } from '../../../data/config';
 import './index.scss';
 
-const search = async (e) => {
+const search = async(e) => {
   e.preventDefault();
   const { value } = document.getElementById('nav-search');
   await window.$('.collapse').collapse('hide');
@@ -41,7 +41,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === true ? 'navbar-light' : 'navbar-dark is-fixed'}`}>
+      <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === false ? 'navbar-light' : 'navbar-dark is-fixed'}`}>
         <div className="container">
           <button
             className="navbar-brand btn btn-default"

@@ -1,3 +1,10 @@
-.nav-item {
-  margin-right: 5px;
+@import "../../../styles/colors.scss";
+
+.nav-btn {
+  cursor: pointer;
+  background: white;
+
+  text-decoration: none;
+
+  margin: 0 5px;
 }
