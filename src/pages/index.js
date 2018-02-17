@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from '../components/Header';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
@@ -11,6 +12,7 @@ import './index.scss';
 
 const HomePage = ({ data, location }) => (
   <div className="row homepage">
+    <Header />
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
@@ -46,7 +48,7 @@ const HomePage = ({ data, location }) => (
 
 export default HomePage;
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
   query getAllPosts {
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
