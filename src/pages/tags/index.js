@@ -2,19 +2,32 @@ import React, { Component } from 'react';
 
 import Tag from '../../components/Tag';
 
-const getTag = (item) => {
-  if (item.node.tags) {
-    return item.node.tags;
-  }
-  return '';
-};
-
 const splitTag = (raw = '') => raw.split(', ');
 
+const getTag = (item) => {
+  if (item.node.tags) {
+    return {
+      tags: splitTag(item.node.tags),
+      title: item.node.title
+    }
+  }
+  return item;
+};
+
 const flatten = (arr = []) => arr.reduce(
-  (acc, cur) => acc.concat(cur),
-  [],
+  (acc, cur) => acc.concat(cur), [],
 );
+
+const TagSession = ({ tag, articles }) => (
+  <div className="row" id={tag}>
+    <div className="col">
+      <h3>{tag}:</h3>
+      <div>
+        {articles.map(title => (<p key={title}>{title}</p>))}
+      </div>
+    </div>
+</div>
+)
 
 class TagPage extends Component {
   constructor(props) {
@@ -27,14 +40,26 @@ class TagPage extends Component {
   componentWillMount() {
     const tags = {};
     const { edges } = this.props.data.tags;
-    const temp = edges.map(item => splitTag(getTag(item)));
-    flatten(temp).forEach((x) => { tags[x] = (tags[x] || 0) + 1; });
+    const temp = edges.map(item => getTag(item));
+
+    // debugger;
+    temp.forEach((x) => {
+      for (var i = 0, n = x.tags.length; i < n; i += 1) {
+        const { title } = temp[i];
+
+        if (tags[x.tags[i]]) {
+          tags[x.tags[i]].push(title);
+        }
+        else {
+          tags[x.tags[i]] = [title];
+        }
+      }
+    });
     this.setState({ tags });
   }
 
   render() {
-    // TODO: sort the tags
-    const tags = Object.keys(this.state.tags);
+    const tags = Object.keys(this.state.tags).sort();
 
     return (
       <div className="container">
@@ -49,23 +74,33 @@ class TagPage extends Component {
             {tags.map(item => (
               <Tag
                 name={item}
-                count={this.state.tags[item]}
+                count={this.state.tags[item].length}
                 key={item}
               />))
             }
           </div>
         </div>
+
+        {tags.map(tag => (
+          <TagSession
+            tag={tag}
+            articles={[...new Set(this.state.tags[tag])]}
+            key={tag}
+          />
+          )
+        )}
       </div>
     );
   }
 }
 
-export const pageQuery = graphql`
+export const pageQuery = graphql `
 query myTags {
   tags: allContentfulMarkdown {
     edges {
       node {
         tags
+        title
       }
     }
   }
