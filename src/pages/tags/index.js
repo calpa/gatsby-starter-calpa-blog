@@ -6,11 +6,13 @@ import Tag from '../../components/Tag';
 
 const splitTag = (raw = '') => raw.split(', ');
 
+const parseDate = (date) => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+
 const getTag = (item) => {
   const { tags, url, createdDate } = item.node;
 
   if (tags) {
-    const date = moment(createdDate).locale('zh-hk').format('YYYY/MM/DD');
+    const date = parseDate(createdDate);
     const postPath = url === 'about' ? url : `${date}/${url}`;
     return {
       tags: splitTag(item.node.tags),
@@ -26,8 +28,10 @@ const flatten = (arr = []) => arr.reduce(
   (acc, cur) => acc.concat(cur), [],
 );
 
-const Item = ({ url = '', title = '' }) => (
-  <li key={title}><a href={url}>{title}</a></li>
+const Item = ({ url = '', title = '', createdDate = '' }) => (
+  <li key={title}>
+    <a href={url}>{title} ({parseDate(createdDate)})</a>
+  </li>
 )
 
 const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
@@ -35,7 +39,13 @@ const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
     <div className="col">
       <h3>{tag}:</h3>
       <ol>
-        {articles.map(article => (<Item url={article.url} title={article.title}/>))}
+        {articles.map(article => (
+        <Item
+          url={article.url}
+          title={article.title}
+          createdDate={article.createdDate}
+        />
+        ))}
       </ol>
     </div>
 </div>
@@ -56,13 +66,10 @@ class TagPage extends Component {
 
     // debugger;
     temp.forEach((x) => {
-      const { title, url } = x;
+      const { title, url, createdDate } = x;
 
       for (var i = 0, n = x.tags.length; i < n; i += 1) {
-        const item = {
-          title,
-          url
-        }
+        const item = { title, url, createdDate };
         if (tags[x.tags[i]]) {
           tags[x.tags[i]].push(item);
         }
