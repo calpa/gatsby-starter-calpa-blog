@@ -26,12 +26,16 @@ const flatten = (arr = []) => arr.reduce(
   (acc, cur) => acc.concat(cur), [],
 );
 
+const Item = ({ url = '', title = '' }) => (
+  <li key={title}><a href={url}>{title}</a></li>
+)
+
 const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
   <div className="row" id={tag}>
     <div className="col">
       <h3>{tag}:</h3>
       <ol>
-        {articles.map(title => (<li key={title}><a href={url}>{title}</a></li>))}
+        {articles.map(article => (<Item url={article.url} title={article.title}/>))}
       </ol>
     </div>
 </div>
@@ -55,12 +59,15 @@ class TagPage extends Component {
       const { title, url } = x;
 
       for (var i = 0, n = x.tags.length; i < n; i += 1) {
-
+        const item = {
+          title,
+          url
+        }
         if (tags[x.tags[i]]) {
-          tags[x.tags[i]].push(title);
+          tags[x.tags[i]].push(item);
         }
         else {
-          tags[x.tags[i]] = [title];
+          tags[x.tags[i]] = [item];
         }
       }
     });
