@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Tag = ({ name, count }) => (
   <a
-    className="btn btn-warning"
+    className={`btn ${count > 5 ? 'btn-danger': 'btn-warning'}`}
     style={{
       margin: 5,
     }}
