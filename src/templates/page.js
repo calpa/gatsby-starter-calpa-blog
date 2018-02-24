@@ -5,7 +5,6 @@ import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
 import { parseDate, getPath } from '../api/';
-import { getDefaultPicture } from '../api/images';
 import { getFirstParagraph } from '../api/text';
 
 const Page = ({ data, location }) => (
@@ -22,7 +21,7 @@ const Page = ({ data, location }) => (
             date={parseDate(node.createdDate)}
             url={node.url}
             headerSize={node.headerSize}
-            headerImage={node.headerImgur || getDefaultPicture()}
+            headerImage={node.headerImgur}
             headerBackgroundColor={node.headerBackgroundColor || 'ededed'}
             key={node.title}
             index={index}
@@ -46,7 +45,7 @@ const Page = ({ data, location }) => (
 
 export default Page;
 
-export const pageQuery = graphql `
+export const pageQuery = graphql`
 query getNextPage($limit: Int, $skip: Int) {
   latestPosts: allContentfulMarkdown(limit: 6) {
     totalCount

@@ -54,7 +54,7 @@
   "scripts": {
     "build": "gatsby build --prefix-paths",
     "postbuild": "rimraf public/**/*.map",
-    "develop": "gatsby develop -p 8080",
+    "develop": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
     "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1"

@@ -15,21 +15,24 @@ const imageStyle = (headerImage, color) => ({
   backgroundImage: ` url(${parseImgur(headerImage, 'large')})`,
 });
 
+const CardHeader = ({ url, image, backgroundColor }) => (
+  <Link
+    to={url}
+    href={url}
+  >
+    <div
+      className="wrapper"
+      style={imageStyle(image, backgroundColor)}
+    />
+  </Link>
+);
+
 const Card = ({
   title, date, url, headerImage, headerBackgroundColor, content,
 }) => (
   <div className="col-sm-12 pb-4">
-
     <div className="custom-card">
-      <Link
-        to={parseUrl(date, url)}
-        href={parseUrl(date, url)}
-      >
-        <div
-          className="wrapper"
-          style={imageStyle(headerImage, headerBackgroundColor)}
-        />
-      </Link>
+      {headerImage && <CardHeader url={parseUrl(date, url)} image={headerImage} backgroundColor={headerBackgroundColor} />}
       <div className="data">
         <div className="content">
           <div className="stats"><span className="date">{date}</span></div>
@@ -56,9 +59,13 @@ Card.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  headerImage: PropTypes.string.isRequired,
+  headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+};
+
+Card.defaultProps = {
+  headerImage: '',
 };
 
 export default Card;
