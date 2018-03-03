@@ -11,7 +11,7 @@ import './index.scss';
 
 const HomePage = ({ data, location }) => (
   <div className="row homepage">
-    <Header img="/img/ust-header.jpg" />
+    <Header img={data.header.headerImage} />
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
@@ -49,6 +49,9 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query getAllPosts {
+    header(purpose: {eq: "Home"}) {
+        headerImage
+    }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
       edges {

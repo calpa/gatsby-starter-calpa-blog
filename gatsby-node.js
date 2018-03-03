@@ -51,7 +51,21 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // from a remote API.
 
   await makeNode({ contentType: 'blogPost', createNode });
-  await makeNode({ contentType: 'about', createNode });
+  // await makeNode({ contentType: 'about', createNode });
+  // Make changable headers
+  const { data } = await getPosts('headers');
+  const node = {
+    id: data.items[0].sys.id,
+    parent: 'Headers',
+    children: [],
+    internal: {
+      type: 'Header',
+      contentDigest: data.items[0].fields.headerImage,
+    },
+    ...data.items[0].fields,
+  };
+
+  createNode(node);
 };
 
 // Add custom webpack config
