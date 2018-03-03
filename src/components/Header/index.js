@@ -7,7 +7,7 @@ const Header = ({ img = '' }) => (
     <div
       className="img-container"
       style={{
-              backgroundImage: `url(${img})`,
+              backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(${img})`,
           }}
     />
   </div>
