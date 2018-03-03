@@ -11,7 +11,7 @@ import './index.scss';
 
 const HomePage = ({ data, location }) => (
   <div className="row homepage">
-    <Header />
+    <Header img="/img/ust-header.jpg" />
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
