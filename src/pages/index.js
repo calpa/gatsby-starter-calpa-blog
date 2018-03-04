@@ -11,7 +11,13 @@ import './index.scss';
 
 const HomePage = ({ data, location }) => (
   <div className="row homepage">
-    <Header img={data.header.headerImage} />
+    <Header
+      img={data.header.headerImage}
+      title={data.header.title}
+      titleVisible={data.header.titleVisible}
+      subTitle={data.header.subTitle}
+      subTitleVisible={data.header.subTitleVisible}
+    />
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
@@ -51,6 +57,10 @@ export const pageQuery = graphql`
   query getAllPosts {
     header(purpose: {eq: "Home"}) {
         headerImage
+        title
+        titleVisible
+        subTitle
+        subTitleVisible
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
