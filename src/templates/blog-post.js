@@ -97,8 +97,7 @@ class BlogPost extends Component {
           <h1 className="title han-sans mt-3">{title}</h1>
           <p className="date han-sans mb-1">
             作者：<Link to="/about/" href="/about/">Calpa</Link>
-            {<CreatedDate createdDate={createdDate} />}
-            {/* <MotionDate createdDate={createdDate} reducedDate={50} /> */}
+            日期: {parseChineseDate(moment(createdDate))}
           </p>
           <ShareBox url={url} />
           {content &&
