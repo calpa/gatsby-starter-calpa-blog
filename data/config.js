@@ -1,8 +1,8 @@
 const internalLinks = {
   navbarList: [{
-      href: '/tags',
-      title: '分類',
-    },
+    href: '/tags',
+    title: '分類',
+  },
     // {
     //   href: '/categories/',
     //   title: '技術分類',
@@ -13,47 +13,47 @@ const internalLinks = {
     //     },
     //   ],
     // },
-    {
-      href: '/guestbook/',
-      title: '留言簿',
-    },
-    {
-      href: '/about/',
-      title: '關於作者',
-    },
-    {
-      href: '/demo/',
-      title: '實驗室',
-    },
+  {
+    href: '/guestbook/',
+    title: '留言簿',
+  },
+  {
+    href: '/about/',
+    title: '關於作者',
+  },
+  {
+    href: '/demo/',
+    title: '實驗室',
+  },
   ],
   demoList: [{
-      href: 'demo/count',
-      title: '字數統計',
-    },
-    {
-      href: 'demo/redux',
-      title: 'Redux 例子',
-    },
-    {
-      href: 'demo/gun',
-      title: 'Gun 例子',
-    },
-    {
-      href: 'demo/route',
-      title: '前端路線圖',
-    },
-    {
-      href: 'demo/fonts',
-      title: '字體',
-    },
-    {
-      href: 'demo/bootstrap',
-      title: 'Bootstrap 組件',
-    },
-    {
-      href: 'demo/popmotion',
-      title: 'Popmotion',
-    },
+    href: 'demo/count',
+    title: '字數統計',
+  },
+  {
+    href: 'demo/redux',
+    title: 'Redux 例子',
+  },
+  {
+    href: 'demo/gun',
+    title: 'Gun 例子',
+  },
+  {
+    href: 'demo/route',
+    title: '前端路線圖',
+  },
+  {
+    href: 'demo/fonts',
+    title: '字體',
+  },
+  {
+    href: 'demo/bootstrap',
+    title: 'Bootstrap 組件',
+  },
+  {
+    href: 'demo/popmotion',
+    title: 'Popmotion',
+  },
   ],
 };
 
@@ -86,6 +86,9 @@ const config = {
   }, {
     title: '晚晴幽草轩',
     href: 'https://jeffjade.com/',
+  }, {
+    title: 'MacPlay',
+    href: 'https://macplay.github.io/',
   }],
   // Plugins
   ga_track_id: 'UA-84737574-3',
@@ -101,17 +104,17 @@ const config = {
   },
   ...internalLinks,
   items: [{
-      src: 'https://picsum.photos/1024/300?random',
-      alt: 'First slide',
-    },
-    {
-      src: 'https://picsum.photos/1024/400?random',
-      alt: 'Second slide',
-    },
-    {
-      src: 'https://picsum.photos/1024/500?random',
-      alt: 'Third slide',
-    },
+    src: 'https://picsum.photos/1024/300?random',
+    alt: 'First slide',
+  },
+  {
+    src: 'https://picsum.photos/1024/400?random',
+    alt: 'Second slide',
+  },
+  {
+    src: 'https://picsum.photos/1024/500?random',
+    alt: 'Third slide',
+  },
   ],
 };
 
