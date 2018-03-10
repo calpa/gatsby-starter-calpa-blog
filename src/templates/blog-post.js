@@ -68,8 +68,9 @@ class BlogPost extends Component {
     // Then we need to hack the id
     const issueDate = '2018-03-01';
     let id = getPath();
-
+    let title = document ? document.title : '';
     if (moment(this.data.content.createdDate).isAfter(issueDate)) {
+      title = `${this.data.content.title} | Calpa's Blog`;
       id = md5(this.data.content.title);
     }
     const gitalk = new Gitalk({
@@ -79,6 +80,7 @@ class BlogPost extends Component {
       owner: 'calpa',
       admin: ['calpa'],
       distractionFreeMode: true,
+      title,
       id,
     });
     gitalk.render('gitalk-container');
