@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import Link from 'gatsby-link';
-
+import md5 from 'md5';
 import moment from 'moment';
 // import { Motion, spring } from 'react-motion';
 
@@ -64,6 +64,14 @@ class BlogPost extends Component {
 
   componentDidMount() {
     // Gitalk
+    // Due to Github Issue tags length is limited,
+    // Then we need to hack the id
+    const issueDate = '2018-03-01';
+    let id = getPath();
+
+    if (moment(this.data.content.createdDate).isAfter(issueDate)) {
+      id = md5(this.data.content.title);
+    }
     const gitalk = new Gitalk({
       clientID: '18255f031b5e11edd98a',
       clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
@@ -71,6 +79,7 @@ class BlogPost extends Component {
       owner: 'calpa',
       admin: ['calpa'],
       distractionFreeMode: true,
+      id,
     });
     gitalk.render('gitalk-container');
   }
