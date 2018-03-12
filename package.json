@@ -8,6 +8,7 @@
     "cytoscape": "^3.2.5",
     "echarts": "^4.0.2",
     "eslint-plugin-jsx-a11y": "^5.1.1",
+    "fundebug-javascript": "^0.3.5",
     "gatsby": "^1.9.155",
     "gatsby-link": "^1.6.34",
     "gatsby-plugin-catch-links": "^1.0.14",

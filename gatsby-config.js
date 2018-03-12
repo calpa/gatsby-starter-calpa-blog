@@ -10,13 +10,13 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    {
+    /* {
       resolve: 'gatsby-plugin-sentry',
       options: {
         dsn: 'https://523166273f6b4f7d8a98e67d8ba4c457@sentry.io/181131',
 
       },
-    },
+    }, */
     {
       resolve: 'gatsby-plugin-feed',
       options: {
