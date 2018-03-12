@@ -11,6 +11,13 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
     {
+      resolve: 'gatsby-plugin-sentry',
+      options: {
+        dsn: 'https://523166273f6b4f7d8a98e67d8ba4c457@sentry.io/181131',
+
+      },
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
@@ -56,7 +63,7 @@ module.exports = {
                 }
             `,
           output: '/feed.xml',
-        }, ],
+        }],
       },
     },
     // 'gatsby-plugin-react-next', // Disable as the blog-post missing classes in refresh
@@ -70,15 +77,15 @@ module.exports = {
         theme_color: '#384f7c',
         display: 'standalone',
         icons: [{
-            src: '/favicons/android-chrome-192x192.png',
-            sizes: '192x192',
-            type: 'image/png',
-          },
-          {
-            src: '/favicons/android-chrome-512x512.png',
-            sizes: '512x512',
-            type: 'image/png',
-          },
+          src: '/favicons/android-chrome-192x192.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: '/favicons/android-chrome-512x512.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
         ],
       },
     },

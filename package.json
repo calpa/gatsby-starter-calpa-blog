@@ -18,6 +18,7 @@
     "gatsby-plugin-react-helmet": "^1.0.8",
     "gatsby-plugin-react-next": "^1.0.9",
     "gatsby-plugin-sass": "^1.0.15",
+    "gatsby-plugin-sentry": "0.0.3",
     "gatsby-source-filesystem": "^1.5.11",
     "gatsby-transformer-remark": "^1.7.28",
     "gitalk": "^1.2.2",
