@@ -36,6 +36,15 @@ const Demo = () => (
         }
       </div>
     </div>
+    <div className="row">
+      <div className="col">
+        <button
+          className="btn btn-danger"
+          onClick={() => { throw new Error('Error Message!'); }}
+        >Throw Error Message
+        </button>
+      </div>
+    </div>
   </div>
 );
 
