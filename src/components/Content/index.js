@@ -9,15 +9,10 @@ class Content extends Component {
   constructor(props) {
     super(props);
     this.post = this.props.post;
-    this.state = {
-      html: '',
-    };
   }
 
-  async componentWillMount() {
-    const { html } = await getContent(this.post);
+  componentDidMount() {
     // lazy loads elements with default selector as '.lozad'
-    this.setState({ html });
     // Prevent WebPack build fail
     if (isBrowser()) {
       const observer = lozad();
@@ -28,7 +23,7 @@ class Content extends Component {
   render() {
     return (
       <div
-        dangerouslySetInnerHTML={{ __html: this.state.html }}
+        dangerouslySetInnerHTML={{ __html: this.props.post }}
       />
     );
   }

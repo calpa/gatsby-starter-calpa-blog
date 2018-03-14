@@ -1,7 +1,5 @@
-import Remarkable from 'remarkable';
-
-import { getGalleryImage } from './images';
-
+const Remarkable = require('remarkable');
+const { getGalleryImage } = require('./images');
 const hljs = require('highlight.js/lib/highlight');
 
 const beautifyCode = (code, language = 'javascript') => {
@@ -62,7 +60,7 @@ const getFirstParagraph = (content) => {
   return introduction[1].substring(0, 140);
 };
 
-export {
+module.exports = {
   getContent,
   getFirstParagraph,
 };

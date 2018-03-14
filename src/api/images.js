@@ -63,7 +63,7 @@ const parseImageTag = ({ href, title, text }) =>
 const getGalleryImage = ({ href, title, text }) =>
   `<a data-fancybox="gallery" href="${parseImgur(href, 'huge')}">${parseImageTag({ href, title, text })}</a>`;
 
-export {
+module.exports = {
   parseImgur,
   parseImageTag,
   getDefaultPicture,

@@ -6,6 +6,8 @@ const webpack = require('webpack');
 const moment = require('moment');
 const axios = require('axios');
 
+const { getContent } = require('./src/api/text.js');
+
 const API_BASE_URL = 'https://cdn.contentful.com';
 const API_SPACE_ID = 'n3ctvxixp1mr';
 const API_TOKEN = '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a';
@@ -27,7 +29,7 @@ const getPosts = async (contentType) => {
 };
 
 // Create node for createNode function
-const processDatum = datum => ({
+const processDatum = (datum, html = '') => ({
   id: datum.sys.id,
   parent: 'Contentful',
   children: [],
@@ -35,14 +37,27 @@ const processDatum = datum => ({
     type: 'ContentfulMarkdown',
     contentDigest: datum.fields.content,
   },
+  html,
   ...datum.fields,
 });
+
+const asyncForEach = async (array = [], callback = () => {}) => {
+  for (let i = 0, n = array.length; i < n; i += 1) {
+    await callback(array[i], i, array);
+  }
+};
 
 const makeNode = async ({ contentType, createNode }) => {
   const { data } = await getPosts(contentType);
 
   // Process data into nodes.
-  data.items.forEach(datum => createNode(processDatum(datum)));
+  // Async forEach function is used in here,
+  // please refer to the blog
+
+  asyncForEach(data.items, async (datum) => {
+    const { html } = await getContent(datum.fields.content);
+    createNode(processDatum(datum, html));
+  });
 };
 
 exports.sourceNodes = async ({ boundActionCreators }) => {

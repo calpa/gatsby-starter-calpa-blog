@@ -138,7 +138,7 @@ export default BlogPost;
 export const query = graphql`
   query BlogPostQuery($id: String!) {
     content: contentfulMarkdown(id: { eq: $id }) {
-      content
+      content: html
       title
       createdDate
       headerImgur
