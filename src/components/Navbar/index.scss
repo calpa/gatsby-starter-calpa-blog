@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 
 .custom-navbar {
-  $item-color: $cyan-blue;
+  $item-color: $black;
   $radius: 3px;
 
   .btn {
@@ -23,7 +23,7 @@
   .container {
     .navbar-brand {
       color: $item-color;
-      background: $white;
+      background: transparent;
 
       .brand-logo {
         background: $black;

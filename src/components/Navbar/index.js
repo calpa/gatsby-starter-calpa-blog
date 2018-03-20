@@ -41,7 +41,7 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === false ? 'navbar-light' : 'navbar-dark is-fixed'}`}>
+      <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === false ? 'navbar-light' : 'navbar-light is-fixed'}`}>
         <div className="container">
           <button
             className="navbar-brand btn btn-default"

@@ -9,7 +9,7 @@ const NavItem = ({ url, name, list }) => {
   if (list.length === 0) {
     return (
       <button
-        className="nav-btn btn btn-light"
+        className="nav-btn btn btn-link"
         href={url}
         to={url}
         onClick={() => gotoPage(url)}
