@@ -8,10 +8,11 @@ const Header = ({ img, title, subTitle }) => (
       className="img-container"
       style={{
               backgroundImage: `linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url(${img})`,
+          marginTop: -58,
           }}
     >
-      {title && <h1>{title}</h1>}
-      {subTitle && <h2>{subTitle}</h2>}
+      {title && <h1 style={{ fontSize: 24 }}>{title}</h1>}
+      {subTitle && <h2 style={{ fontSize: 22 }}>{subTitle}</h2>}
     </div>
   </div>
 );

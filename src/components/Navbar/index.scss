@@ -1,7 +1,7 @@
 @import "../../styles/colors.scss";
 
 .custom-navbar {
-  $item-color: $black;
+  $item-color: $white;
   $radius: 3px;
 
   .btn {
@@ -20,9 +20,11 @@
     font-family: FontAwesome;
   }
 
+  .btn-link {
+    color: $black;
+  }
   .container {
     .navbar-brand {
-      color: $item-color;
       background: transparent;
 
       .brand-logo {
@@ -45,5 +47,12 @@
   &.is-fixed {
     // background: rgba(255, 255, 255, 0.5);
     background: transparent;
+    .btn-link {
+        color: $white;
+    }
+
+    .navbar-brand {
+        color: $white;
+    }
   }
 }
