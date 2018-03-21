@@ -5,6 +5,8 @@
   "author": "Calpa Liu <calpaliu@gmail.com>",
   "dependencies": {
     "axios": "^0.17.0",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-plugin-transform-regenerator": "^6.26.0",
     "cytoscape": "^3.2.5",
     "echarts": "^4.0.2",
     "eslint-plugin-jsx-a11y": "^5.1.1",

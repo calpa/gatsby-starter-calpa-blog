@@ -1,7 +1,7 @@
 const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require('webpack');
 const moment = require('moment');
 const axios = require('axios');
@@ -91,7 +91,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       loader: 'null-loader',
     });
   }
-
   if (stage === 'build-javascript') {
     // config.merge({
     //   resolve: {
@@ -109,9 +108,14 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       ],
     );
     config.plugin('ignore-moment-locale', webpack.IgnorePlugin, [/^\.\/locale$/, [/moment$/]]);
-    config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
+    // config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
   }
 };
+
+exports.modifyBabelrc = ({ babelrc }) => ({
+  ...babelrc,
+  plugins: babelrc.plugins.concat(['transform-decorators-legacy', 'transform-regenerator']),
+});
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
