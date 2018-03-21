@@ -114,7 +114,7 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
 
 exports.modifyBabelrc = ({ babelrc }) => ({
   ...babelrc,
-  plugins: babelrc.plugins.concat(['transform-decorators-legacy', 'transform-regenerator']),
+  plugins: babelrc.plugins.concat(['transform-decorators-legacy', 'transform-regenerator', 'transform-runtime']),
 });
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
