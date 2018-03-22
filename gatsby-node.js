@@ -29,7 +29,7 @@ const getPosts = async (contentType) => {
 };
 
 // Create node for createNode function
-const processDatum = (datum, html = '') => ({
+const processDatum = (datum, html = '', toc = []) => ({
   id: datum.sys.id,
   parent: 'Contentful',
   children: [],
@@ -38,6 +38,7 @@ const processDatum = (datum, html = '') => ({
     contentDigest: datum.fields.content,
   },
   html,
+  toc,
   ...datum.fields,
 });
 
@@ -55,8 +56,8 @@ const makeNode = async ({ contentType, createNode }) => {
   // please refer to the blog
 
   asyncForEach(data.items, async (datum) => {
-    const { html } = await getContent(datum.fields.content);
-    createNode(processDatum(datum, html));
+    const { html, toc } = await getContent(datum.fields.content);
+    createNode(processDatum(datum, html, toc));
   });
 };
 

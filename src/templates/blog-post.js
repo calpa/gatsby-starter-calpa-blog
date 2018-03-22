@@ -59,6 +59,7 @@ class BlogPost extends Component {
   render() {
     const {
       title, headerImgur, createdDate, content, id,
+      toc,
     } = this.data.content;
 
     const { totalCount, edges } = this.data.latestPosts;
@@ -85,7 +86,7 @@ class BlogPost extends Component {
           <ShareBox url={url} />
           <Content post={content} uuid={id} title={title} />
         </div>
-        <TableOfContent post={content} />
+        <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
           url={getPath()}
@@ -109,6 +110,7 @@ export const query = graphql`
       createdDate
       headerImgur
       id
+      toc
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
