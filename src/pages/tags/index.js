@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 
+import Link from 'gatsby-link';
 import moment from 'moment';
 
 import Tag from '../../components/Tag';
 
 const splitTag = (raw = '') => raw.split(', ');
 
-const parseDate = (date) => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
 
 const getTag = (item) => {
   const { tags, url, createdDate } = item.node;
@@ -18,21 +19,19 @@ const getTag = (item) => {
       tags: splitTag(item.node.tags),
       title: item.node.title,
       url: postPath,
-      createdDate
-    }
+      createdDate,
+    };
   }
   return item;
 };
 
-const flatten = (arr = []) => arr.reduce(
-  (acc, cur) => acc.concat(cur), [],
-);
-
 const Item = ({ url = '', title = '', createdDate = '' }) => (
   <li key={title}>
-    <a href={url}>{title} ({parseDate(createdDate)})</a>
+    <Link href={url} to={url}>
+      {title} ({parseDate(createdDate)})
+    </Link>
   </li>
-)
+);
 
 const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
   <div className="row" id={tag}>
@@ -40,16 +39,16 @@ const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
       <h3>{tag}:</h3>
       <ol>
         {articles.map(article => (
-        <Item
-          url={article.url}
-          title={article.title}
-          createdDate={article.createdDate}
-        />
+          <Item
+            url={article.url}
+            title={article.title}
+            createdDate={article.createdDate}
+          />
         ))}
       </ol>
     </div>
-</div>
-)
+  </div>
+);
 
 class TagPage extends Component {
   constructor(props) {
@@ -68,12 +67,11 @@ class TagPage extends Component {
     temp.forEach((x) => {
       const { title, url, createdDate } = x;
 
-      for (var i = 0, n = x.tags.length; i < n; i += 1) {
+      for (let i = 0, n = x.tags.length; i < n; i += 1) {
         const item = { title, url, createdDate };
         if (tags[x.tags[i]]) {
           tags[x.tags[i]].push(item);
-        }
-        else {
+        } else {
           tags[x.tags[i]] = [item];
         }
       }
@@ -110,14 +108,13 @@ class TagPage extends Component {
             articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
             key={tag}
           />
-          )
-        )}
+          ))}
       </div>
     );
   }
 }
 
-export const pageQuery = graphql `
+export const pageQuery = graphql`
 query myTags {
   tags: allContentfulMarkdown {
     edges {
