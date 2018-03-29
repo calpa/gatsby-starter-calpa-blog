@@ -33,16 +33,23 @@ const Item = ({ url = '', title = '', createdDate = '' }) => (
   </li>
 );
 
-const TagSession = ({ tag = 'tag', articles = [], url = '' }) => (
+const TagSession = ({
+  tag = 'tag', articles = [], url = '', isActive = false,
+}) => (
   <div className="row" id={tag}>
     <div className="col">
-      <h3>{tag}:</h3>
+      <h3 style={{
+            color: isActive ? 'red' : 'black',
+        }}
+      >{tag}:
+      </h3>
       <ol>
         {articles.map(article => (
           <Item
             url={article.url}
             title={article.title}
             createdDate={article.createdDate}
+            key={article.title}
           />
         ))}
       </ol>
@@ -106,6 +113,7 @@ class TagPage extends Component {
           <TagSession
             tag={tag}
             articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
+            isActive={decodeURI(this.props.location.hash) === `#${tag}`}
             key={tag}
           />
           ))}
