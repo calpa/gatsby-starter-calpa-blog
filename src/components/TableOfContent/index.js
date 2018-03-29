@@ -5,12 +5,12 @@ import './toc.scss';
 
 const TableItem = ({ url, name }) => (
   <li>
-    <Link
+    <a
       href={url}
-      to={url}
+      data-scroll
     >
       {name}
-    </Link>
+    </a>
   </li>
 );
 
