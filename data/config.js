@@ -18,7 +18,7 @@ const internalLinks = {
     title: '留言簿',
   },
   {
-    href: '/2016/12/31/about-calpa-liu/',
+    href: '/2017/01/01/about-calpa-liu/',
     title: '關於作者',
   },
   {
