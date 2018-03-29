@@ -24,6 +24,10 @@ class Content extends Component {
     return (
       <div
         dangerouslySetInnerHTML={{ __html: this.props.post }}
+        style={{
+            padding: 15,
+            background: 'white',
+        }}
       />
     );
   }

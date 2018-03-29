@@ -1,7 +1,6 @@
 // Components
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
-import Link from 'gatsby-link';
 import md5 from 'md5';
 import moment from 'moment';
 // import { Motion, spring } from 'react-motion';
@@ -13,7 +12,6 @@ import { parseImgur } from '../api/images';
 
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
-import ShareBox from '../components/ShareBox';
 import SEO from '../components/SEO';
 
 import TableOfContent from '../components/TableOfContent';
@@ -83,7 +81,6 @@ class BlogPost extends Component {
           post
         />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
-          <ShareBox url={url} />
           <Content post={content} uuid={id} title={title} />
         </div>
         <TableOfContent toc={toc} />
