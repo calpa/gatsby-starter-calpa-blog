@@ -1,17 +1,18 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+// import Link from 'gatsby-link';
 
 const Tag = ({ name, count }) => (
-  <Link
+  <a
     className={`btn ${count > 5 ? 'btn-danger' : 'btn-warning'}`}
     style={{
       margin: 5,
     }}
     href={`#${name}`}
+    data-scroll
   >
     {name === '' ? '沒有標籤' : name}: {count}
-  </Link>
+  </a>
 );
 
 Tag.propTypes = {

@@ -6,6 +6,13 @@ import Head from './Head';
 import Footer from '../components/Footer';
 import './index.scss';
 
+if (typeof window !== 'undefined') {
+  // Make scroll behavior of internal links smooth
+  require('smooth-scroll')('a[href*="#"]', {
+    offset: 60,
+  });
+}
+
 const Layout = ({ children, location }) => (
   <div className="layout fadeIn">
     <Head />

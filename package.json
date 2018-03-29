@@ -50,7 +50,8 @@
     "react-share": "^1.18.0",
     "redux": "^3.7.2",
     "remarkable": "^1.7.1",
-    "rimraf": "^2.6.2"
+    "rimraf": "^2.6.2",
+    "smooth-scroll": "^12.1.5"
   },
   "keywords": [
     "gatsby"
