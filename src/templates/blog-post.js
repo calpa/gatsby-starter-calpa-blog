@@ -10,6 +10,7 @@ import 'gitalk/dist/gitalk.css';
 import { parseChineseDate, getPath } from '../api/';
 import { parseImgur } from '../api/images';
 
+import ExternalLink from '../components/ExternalLink';
 import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import SEO from '../components/SEO';
@@ -82,6 +83,23 @@ class BlogPost extends Component {
         />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <Content post={content} uuid={id} title={title} />
+          <p style={{
+              padding: '10px 15px',
+              background: 'white',
+          }}
+          >
+              如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
+              <ExternalLink
+                href="https://github.com/calpa/blog"
+                title="關注和 Star 本博客"
+              />
+            或者
+            <ExternalLink
+              href="https://github.com/calpa/"
+              title="關注我的 Github"
+            />
+            。
+          </p>
         </div>
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
