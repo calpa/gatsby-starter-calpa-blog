@@ -58,11 +58,21 @@ class BlogPost extends Component {
   render() {
     const {
       title, headerImgur, createdDate, content, id,
-      toc,
+      toc, tags
     } = this.data.content;
 
     const { totalCount, edges } = this.data.latestPosts;
-    const url = getPath();
+    // const url = getPath();
+
+    let finalTags = [];
+    if (tags) {
+        finalTags = tags.split(',').map(item => {
+            if (item) {
+                return item.trim();
+            }
+            return '';
+        });
+    }
     const image = parseImgur(headerImgur, 'large');
     const header = parseImgur(headerImgur, 'header');
 
@@ -71,6 +81,7 @@ class BlogPost extends Component {
         <Header
           img={header}
           title={title}
+          tags={finalTags}
           subTitle={`日期： ${parseChineseDate(createdDate)}`}
         />
         <Helmet>
@@ -126,6 +137,7 @@ export const query = graphql`
       headerImgur
       id
       toc
+      tags
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
