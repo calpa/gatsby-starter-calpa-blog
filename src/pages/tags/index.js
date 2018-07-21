@@ -4,6 +4,7 @@ import Link from 'gatsby-link';
 import moment from 'moment';
 
 import Tag from '../../components/Tag';
+import Header from '../../components/Header';
 
 const splitTag = (raw = '') => raw.split(', ');
 
@@ -88,15 +89,17 @@ class TagPage extends Component {
 
   render() {
     const tags = Object.keys(this.state.tags).sort();
+    const { header } = this.props.data;
 
     return (
-      <div className="container">
-        <div className="row">
-          <div className="col">
-            <h2>Tags</h2>
-          </div>
-        </div>
-
+      <div className="row">
+        <Header
+          img={header.headerImage}
+          title={header.title}
+          titleVisible={header.titleVisible}
+          subTitle={header.subTitle}
+          subTitleVisible={header.subTitleVisible}
+        />
         <div className="row">
           <div className="col">
             {tags.map(item => (
@@ -124,6 +127,13 @@ class TagPage extends Component {
 
 export const pageQuery = graphql`
 query myTags {
+  header(purpose: {eq: "Tags"}) {
+    headerImage
+    title
+    titleVisible
+    subTitle
+    subTitleVisible
+  }
   tags: allContentfulMarkdown {
     edges {
       node {
