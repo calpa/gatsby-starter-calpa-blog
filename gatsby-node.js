@@ -70,18 +70,19 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // await makeNode({ contentType: 'about', createNode });
   // Make changable headers
   const { data } = await getPosts('headers');
-  const node = {
-    id: data.items[0].sys.id,
-    parent: 'Headers',
-    children: [],
-    internal: {
-      type: 'Header',
-      contentDigest: data.items[0].fields.headerImage,
-    },
-    ...data.items[0].fields,
-  };
-
-  createNode(node);
+  data.items.forEach((datum) => {
+    const node = {
+      id: datum.sys.id,
+      parent: 'Headers',
+      children: [],
+      internal: {
+        type: 'Header',
+        contentDigest: datum.fields.headerImage,
+      },
+      ...datum.fields,
+    };
+    createNode(node);
+  });
 };
 
 // Add custom webpack config
