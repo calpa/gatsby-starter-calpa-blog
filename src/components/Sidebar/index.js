@@ -27,7 +27,7 @@ const Icon = ({ href, name, content }) => (
 const Sidebar = ({ post, totalCount, posts }) => (
   <header className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
     <div className="about-me">
-      <Link to="/about/" href="/about" className="name">
+      <Link to="/2017/01/01/about-calpa-liu" href="/2017/01/01/about-calpa-liu" className="name">
         <img
           className="avatar"
           src="https://i.imgur.com/kjt2x52.png"
