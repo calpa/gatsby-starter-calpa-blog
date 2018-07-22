@@ -9,6 +9,7 @@ import Header from '../../components/Header';
 const splitTag = (raw = '') => raw.split(', ');
 
 const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+const tagCenter = 'col-12 col-md-10 col-lg-8 m-auto';
 
 const getTag = (item) => {
   const { tags, url, createdDate } = item.node;
@@ -37,24 +38,22 @@ const Item = ({ url = '', title = '', createdDate = '' }) => (
 const TagSession = ({
   tag = 'tag', articles = [], url = '', isActive = false,
 }) => (
-  <div className="row" id={tag}>
-    <div className="col">
-      <h3 style={{
+  <div className={tagCenter} id={tag}>
+    <h3 style={{
             color: isActive ? 'red' : 'black',
         }}
-      >{tag}:
-      </h3>
-      <ol>
-        {articles.map(article => (
-          <Item
-            url={article.url}
-            title={article.title}
-            createdDate={article.createdDate}
-            key={article.title}
-          />
+    >{tag}:
+    </h3>
+    <ol>
+      {articles.map(article => (
+        <Item
+          url={article.url}
+          title={article.title}
+          createdDate={article.createdDate}
+          key={article.title}
+        />
         ))}
-      </ol>
-    </div>
+    </ol>
   </div>
 );
 
@@ -100,16 +99,14 @@ class TagPage extends Component {
           subTitle={header.subTitle}
           subTitleVisible={header.subTitleVisible}
         />
-        <div className="row">
-          <div className="col">
-            {tags.map(item => (
-              <Tag
-                name={item}
-                count={this.state.tags[item].length}
-                key={item}
-              />))
+        <div className={tagCenter}>
+          {tags.map(item => (
+            <Tag
+              name={item}
+              count={this.state.tags[item].length}
+              key={item}
+            />))
             }
-          </div>
         </div>
 
         {tags.map(tag => (
