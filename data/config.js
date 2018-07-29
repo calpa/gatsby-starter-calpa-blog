@@ -1,24 +1,16 @@
+const about = '/2018/05/01/about-calpa-liu/';
+
 const internalLinks = {
   navbarList: [{
     href: '/tags',
     title: '分類',
   },
-    // {
-    //   href: '/categories/',
-    //   title: '技術分類',
-    //   list: [
-    //     {
-    //       href: '/front-end',
-    //       title: '前端',
-    //     },
-    //   ],
-    // },
   {
     href: '/guestbook/',
     title: '留言簿',
   },
   {
-    href: '/2017/01/01/about-calpa-liu/',
+    href: about,
     title: '關於作者',
   },
   {
@@ -62,7 +54,7 @@ const config = {
   maxPages: 8, // TODO: Update this automatically
   meta: {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
-    keyword: 'calpa, blog, JavaScript',
+    keyword: 'calpa, blog, Javascript',
     theme_color: '#384f7c',
     favicon: 'https://i.imgur.com/PO9Y4fT.png',
     google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
@@ -71,6 +63,7 @@ const config = {
   email: 'calpaliu@gmail.com',
   License: 'by',
   url: 'https://calpa.me',
+  about,
   // Sidebar
   zhihu_username: 'piao-xue-wu-ying',
   github_username: 'calpa',
