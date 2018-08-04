@@ -32,7 +32,7 @@ const Card = ({
   tags,
 }) => {
   const postUrl = parseUrl(date, url);
-  const finalTags = tags.split(',');
+  const finalTags = tags.split(', ');
 
   return (
     <div className="col-sm-12 pb-4">
