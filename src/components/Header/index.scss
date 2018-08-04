@@ -4,7 +4,7 @@
     line-height: 24px;
     position: relative;
     font-size: 14px;
-    margin-left: 20px;
+    margin: 5px 20px;
     padding: 0 10px 0 12px;
     background: #0089e0;
     color: #fff;
@@ -62,4 +62,9 @@
   justify-content: center;
   align-items: center;
   color: white;
+
+  .tag {
+    display:flex;
+    flex-direction: row;
+  }
 }

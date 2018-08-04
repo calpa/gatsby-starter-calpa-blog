@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-// import lozad from 'lozad';
+import Tag from '../Tag';
 
 import { parseImgur } from '../../api/images';
 
@@ -29,8 +29,10 @@ const CardHeader = ({ url, image, backgroundColor }) => (
 
 const Card = ({
   title, date, url, headerImage, headerBackgroundColor, content,
+  tags,
 }) => {
   const postUrl = parseUrl(date, url);
+  const finalTags = tags.split(',');
 
   return (
     <div className="col-sm-12 pb-4">
@@ -38,7 +40,10 @@ const Card = ({
         {headerImage && <CardHeader url={postUrl} image={headerImage} backgroundColor={headerBackgroundColor} />}
         <div className="data">
           <div className="content">
-            <div className="stats"><span className="date">{date}</span></div>
+            <div className="stats">
+              <span className="date">{date}</span>
+              {finalTags.map(tag => (<Tag name={tag} key={tag}/>))}
+            </div>
             <Link
               to={postUrl}
               href={postUrl}
@@ -65,10 +70,12 @@ Card.propTypes = {
   headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  tags: PropTypes.string,
 };
 
 Card.defaultProps = {
   headerImage: '',
+  tags: '',
 };
 
 export default Card;

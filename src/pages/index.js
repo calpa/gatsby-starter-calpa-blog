@@ -35,6 +35,7 @@ const HomePage = ({ data, location }) => (
             key={node.title}
             index={index}
             content={getFirstParagraph(node.content)}
+            tags={node.tags}
           />
         ))}
       </div>
@@ -86,6 +87,7 @@ export const pageQuery = graphql`
           headerImgur
           headerBackgroundColor
           content
+          tags
         }
       }
     }

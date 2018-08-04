@@ -26,6 +26,7 @@ const Page = ({ data, location }) => (
             key={node.title}
             index={index}
             content={getFirstParagraph(node.content)}
+            tags={node.tags}
           />
         ))}
       </div>
@@ -71,6 +72,7 @@ query getNextPage($limit: Int, $skip: Int) {
          url
          headerImgur
          content
+         tags
        }
      }
   }

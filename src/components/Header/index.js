@@ -2,21 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-const TagSession = ({ tags }) => (
-  <div>
-    {tags.map(tag => (
-      <a href={`/tags#${tag}`} key={tag} className="header-tag">{tag}</a>
-    ))}
-  </div>
-);
-
-TagSession.propTypes = {
-  tags: PropTypes.arrayOf(PropTypes.string.isRequired),
-};
-
-TagSession.defaultProps = {
-  tags: [],
-};
+import Tag from '../Tag';
 
 const Header = ({
   img, title, subTitle, tags,
@@ -31,7 +17,11 @@ const Header = ({
     >
       {title && <h1 style={{ fontSize: 24 }}>{title}</h1>}
       {subTitle && <h2 style={{ fontSize: 22 }}>{subTitle}</h2>}
-      {tags && <TagSession tags={tags} />}
+      <div className="tag">
+        {tags &&
+              tags.map(tag => (<Tag name={tag} key={tag} />))
+        }
+      </div>
     </div>
   </div>
 );
