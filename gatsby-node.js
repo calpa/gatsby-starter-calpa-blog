@@ -1,10 +1,12 @@
 const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
-const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require('webpack');
 const moment = require('moment');
 const axios = require('axios');
+
+const { getContent } = require('./src/api/text.js');
 
 const API_BASE_URL = 'https://cdn.contentful.com';
 const API_SPACE_ID = 'n3ctvxixp1mr';
@@ -27,7 +29,7 @@ const getPosts = async (contentType) => {
 };
 
 // Create node for createNode function
-const processDatum = datum => ({
+const processDatum = (datum, html = '', toc = []) => ({
   id: datum.sys.id,
   parent: 'Contentful',
   children: [],
@@ -35,14 +37,28 @@ const processDatum = datum => ({
     type: 'ContentfulMarkdown',
     contentDigest: datum.fields.content,
   },
+  html,
+  toc,
   ...datum.fields,
 });
+
+const asyncForEach = async (array = [], callback = () => {}) => {
+  for (let i = 0, n = array.length; i < n; i += 1) {
+    await callback(array[i], i, array);
+  }
+};
 
 const makeNode = async ({ contentType, createNode }) => {
   const { data } = await getPosts(contentType);
 
   // Process data into nodes.
-  data.items.forEach(datum => createNode(processDatum(datum)));
+  // Async forEach function is used in here,
+  // please refer to the blog
+
+  asyncForEach(data.items, async (datum) => {
+    const { html, toc } = await getContent(datum.fields.content);
+    createNode(processDatum(datum, html, toc));
+  });
 };
 
 exports.sourceNodes = async ({ boundActionCreators }) => {
@@ -51,7 +67,22 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   // from a remote API.
 
   await makeNode({ contentType: 'blogPost', createNode });
-  await makeNode({ contentType: 'about', createNode });
+  // await makeNode({ contentType: 'about', createNode });
+  // Make changable headers
+  const { data } = await getPosts('headers');
+  data.items.forEach((datum) => {
+    const node = {
+      id: datum.sys.id,
+      parent: 'Headers',
+      children: [],
+      internal: {
+        type: 'Header',
+        contentDigest: datum.fields.headerImage,
+      },
+      ...datum.fields,
+    };
+    createNode(node);
+  });
 };
 
 // Add custom webpack config
@@ -62,7 +93,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       loader: 'null-loader',
     });
   }
-
   if (stage === 'build-javascript') {
     // config.merge({
     //   resolve: {
@@ -80,9 +110,14 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       ],
     );
     config.plugin('ignore-moment-locale', webpack.IgnorePlugin, [/^\.\/locale$/, [/moment$/]]);
-    config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
+    // config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
   }
 };
+
+exports.modifyBabelrc = ({ babelrc }) => ({
+  ...babelrc,
+  plugins: babelrc.plugins.concat(['transform-decorators-legacy', 'transform-regenerator', 'transform-runtime']),
+});
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;

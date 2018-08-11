@@ -1,4 +1,48 @@
-import Page from '../pages/';
+import React from 'react';
+
+import Card from '../components/Card';
+import Sidebar from '../components/Sidebar';
+import SEO from '../components/SEO';
+import Pagination from '../components/Pagination';
+import { parseDate, getPath } from '../api/';
+import { getFirstParagraph } from '../api/text';
+
+const Page = ({ data, location }) => (
+  <div className="row homepage">
+    <Sidebar
+      totalCount={data.latestPosts.totalCount}
+      posts={data.latestPosts.edges}
+    />
+    <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2" >
+      <div className="row">
+        {data.pagePosts.edges.map(({ node }, index) => (
+          <Card
+            title={node.title}
+            date={parseDate(node.createdDate)}
+            url={node.url}
+            headerSize={node.headerSize}
+            headerImage={node.headerImgur}
+            headerBackgroundColor={node.headerBackgroundColor || 'ededed'}
+            key={node.title}
+            index={index}
+            content={getFirstParagraph(node.content)}
+            tags={node.tags}
+          />
+        ))}
+      </div>
+      <Pagination pathname={location.pathname} />
+    </div>
+    <div className="col-xl-2 col-lg-1 order-3" />
+    <SEO
+      url={getPath()}
+      description="Calpa's Blog"
+      image="https://i.imgur.com/kjt2x52.png"
+      siteTitleAlt="Calpa's Blog"
+      isPost={false}
+    />
+  </div>
+);
+
 
 export default Page;
 
@@ -28,6 +72,7 @@ query getNextPage($limit: Int, $skip: Int) {
          url
          headerImgur
          content
+         tags
        }
      }
   }

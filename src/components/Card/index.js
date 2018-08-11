@@ -2,7 +2,7 @@ import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-// import lozad from 'lozad';
+import Tag from '../Tag';
 
 import { parseImgur } from '../../api/images';
 
@@ -15,50 +15,67 @@ const imageStyle = (headerImage, color) => ({
   backgroundImage: ` url(${parseImgur(headerImage, 'large')})`,
 });
 
+const CardHeader = ({ url, image, backgroundColor }) => (
+  <Link
+    to={url}
+    href={url}
+  >
+    <div
+      className="wrapper"
+      style={imageStyle(image, backgroundColor)}
+    />
+  </Link>
+);
+
 const Card = ({
   title, date, url, headerImage, headerBackgroundColor, content,
-}) => (
-  <div className="col-sm-12 pb-4">
+  tags,
+}) => {
+  const postUrl = parseUrl(date, url);
+  const finalTags = tags.split(', ');
 
-    <div className="custom-card">
-      <Link
-        to={parseUrl(date, url)}
-        href={parseUrl(date, url)}
-      >
-        <div
-          className="wrapper"
-          style={imageStyle(headerImage, headerBackgroundColor)}
-        />
-      </Link>
-      <div className="data">
-        <div className="content">
-          <div className="stats"><span className="date">{date}</span></div>
-          <Link
-            to={parseUrl(date, url)}
-            href={parseUrl(date, url)}
-          >
-            <h4 className="title">{title}</h4>
-          </Link>
-          <p className="d-none d-md-block">{content}</p>
-          <Link
-            to={parseUrl(date, url)}
-            href={parseUrl(date, url)}
-          >
+  return (
+    <div className="col-sm-12 pb-4">
+      <div className="custom-card">
+        {headerImage && <CardHeader url={postUrl} image={headerImage} backgroundColor={headerBackgroundColor} />}
+        <div className="data">
+          <div className="content">
+            <div className="stats">
+              <span className="date">{date}</span>
+              {finalTags.map(tag => (<Tag name={tag} key={tag}/>))}
+            </div>
+            <Link
+              to={postUrl}
+              href={postUrl}
+            >
+              <h4 className="title">{title}</h4>
+            </Link>
+            <p className="d-none d-md-block">{content}</p>
+            <Link
+              to={postUrl}
+              href={postUrl}
+            >
             ....繼續閱讀全文內容
-          </Link>
+            </Link>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-);
-
+  );
+};
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
-  headerImage: PropTypes.string.isRequired,
+  headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string.isRequired,
   content: PropTypes.string.isRequired,
+  tags: PropTypes.string,
+};
+
+Card.defaultProps = {
+  headerImage: '',
+  tags: '',
 };
 
 export default Card;

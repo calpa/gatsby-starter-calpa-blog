@@ -53,6 +53,12 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
       padding: 1em;
       position: relative;
       z-index: 1;
+
+      // Tags, Date
+      .stats {
+          display: flex;
+          align-items: center;
+      }
     }
   }
 

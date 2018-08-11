@@ -1,42 +1,36 @@
-import React, { Component } from 'react';
-import { getContent } from '../../api/text';
+import React from 'react';
+import Link from 'gatsby-link';
+import PropTypes from 'prop-types';
 import './toc.scss';
 
-const TableItem = ({ name }) => (
+const TableItem = ({ url, name }) => (
   <li>
-    <a href={`#${name}`}>{name}</a>
+    <a
+      href={url}
+      data-scroll
+    >
+      {name}
+    </a>
   </li>
 );
 
+TableItem.propTypes = {
+  url: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+};
+
 const Table = ({ items }) => (
   <ul>
-    {items.map(item => <TableItem name={item} key={item} />)}
+    {items.map(item => <TableItem url={`#${item}`} name={item} key={item} />)}
   </ul>
 );
 
-class TableOfContent extends Component {
-  constructor(props) {
-    super(props);
-    this.post = this.props.post;
-    this.state = {
-      toc: [],
-      isTop: true,
-    };
-  }
-  async componentDidMount() {
-    const { toc } = await getContent(this.post);
-    this.setState({ toc });
-  }
-
-  render() {
-    return (
-      <div
-        className="col-lg-2 d-none d-lg-block order-11 toc-wrap"
-      >
-        <Table items={this.state.toc} />
-      </div>
-    );
-  }
-}
+const TableOfContent = ({ toc }) => (
+  <div
+    className="col-lg-2 d-none d-lg-block order-11 toc-wrap"
+  >
+    <Table items={toc} />
+  </div>
+);
 
 export default TableOfContent;

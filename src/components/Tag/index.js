@@ -2,23 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Tag = ({ name, count }) => (
-  <button
-    className="btn btn-warning"
-    style={{
-      margin: 5,
-    }}
-  >
-    {name === '' ? '沒有標籤' : name}: {count}
-  </button>
+  <a href={`/tags#${name}`} key={name} className="header-tag">{name} {count || ''}</a>
 );
 
 Tag.propTypes = {
-  name: PropTypes.string,
+  name: PropTypes.string.isRequired,
   count: PropTypes.number,
 };
 
 Tag.defaultProps = {
-  name: '',
   count: 0,
 };
 

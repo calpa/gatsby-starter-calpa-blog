@@ -5,12 +5,10 @@
 // l = Large Thumbnail (640×640)
 // h = Huge Thumbnail (1024×1024)
 
-const getDefaultPicture = () => (
-  Math.random() > 0.5 ? 'kkKoV4d.jpg' : 'YexhzBP.jpg'
-);
+const getDefaultPicture = () => 'M795H8A.jpg';
 
 const parseImgur = (image, size = 'large') => {
-  let subfix;
+  let subfix = '';
 
   image = image || getDefaultPicture(); // eslint-disable-line
 
@@ -36,7 +34,6 @@ const parseImgur = (image, size = 'large') => {
     default:
       break;
   }
-
   // Don't resize the png image
   // as there is a transparent bug in imgur
   if (image.match('(png)|(gif)')) {
@@ -63,7 +60,7 @@ const parseImageTag = ({ href, title, text }) =>
 const getGalleryImage = ({ href, title, text }) =>
   `<a data-fancybox="gallery" href="${parseImgur(href, 'huge')}">${parseImageTag({ href, title, text })}</a>`;
 
-export {
+module.exports = {
   parseImgur,
   parseImageTag,
   getDefaultPicture,

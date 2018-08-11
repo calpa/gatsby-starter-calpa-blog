@@ -1,18 +1,21 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Link from 'gatsby-link';
 import Dropdown from './Dropdown';
 import { gotoPage } from '../../../api/url';
+
+import './index.scss';
 
 const NavItem = ({ url, name, list }) => {
   if (list.length === 0) {
     return (
-      <button
-        className="nav-link btn btn-link"
+      <Link
+        className="nav-btn btn btn-link"
         href={url}
         to={url}
         onClick={() => gotoPage(url)}
       >{name}
-      </button>
+      </Link>
     );
   }
 
