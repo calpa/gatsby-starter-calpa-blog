@@ -36,7 +36,6 @@ class Guestbook extends Component {
   }
 
   render() {
-
     const { totalCount, edges } = this.data.latestPosts;
     const url = getPath();
 
@@ -46,20 +45,18 @@ class Guestbook extends Component {
     return (
       <div className="row post guestbook">
         <Helmet>
-        <title>留言簿</title>
+          <title>留言簿</title>
         </Helmet>
 
-        <Sidebar
-          totalCount={totalCount}
-          posts={edges}
-          post
-        />
+        <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
-          <h2>留言簿</h2>
-          <ShareBox url={url} />
+          <h2>
+            留言簿
+            <ShareBox url={url} />
+          </h2>
           <div id="gitalk-container" className="col-12" />
         </div>
-        
+
         <SEO
           url={getPath()}
           description={description}
@@ -74,7 +71,7 @@ class Guestbook extends Component {
 
 export default Guestbook;
 
-export const query = graphql `
+export const query = graphql`
   query GuestbookQuery {
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount

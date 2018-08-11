@@ -30,7 +30,6 @@
     "highlight.js": "^9.12.0",
     "immutable": "^3.8.2",
     "lozad": "^1.0.9",
-    "markdown-toc": "^1.2.0",
     "marked": "^0.3.6",
     "md5": "^2.2.1",
     "mo-js": "^0.288.2",
@@ -52,9 +51,7 @@
     "rimraf": "^2.6.2",
     "smooth-scroll": "^12.1.5"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -63,7 +60,8 @@
     "postbuild": "rimraf public/**/*.map",
     "develop": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions"
   },

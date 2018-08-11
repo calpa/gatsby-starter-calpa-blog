@@ -14,41 +14,6 @@ const internalLinks = {
       href: about,
       title: '關於作者',
     },
-    {
-      href: '/demo/',
-      title: '實驗室',
-    },
-  ],
-  // TODO: Remove demo from the main frame
-  demoList: [
-    {
-      href: '/demo/count',
-      title: '字數統計',
-    },
-    {
-      href: '/demo/redux',
-      title: 'Redux 例子',
-    },
-    {
-      href: '/demo/gun',
-      title: 'Gun 例子',
-    },
-    {
-      href: '/demo/route',
-      title: '前端路線圖',
-    },
-    {
-      href: '/demo/fonts',
-      title: '字體',
-    },
-    {
-      href: '/demo/bootstrap',
-      title: 'Bootstrap 組件',
-    },
-    {
-      href: '/demo/popmotion',
-      title: 'Popmotion',
-    },
   ],
 };
 

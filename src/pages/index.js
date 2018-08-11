@@ -7,7 +7,6 @@ import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
 import { parseDate, getPath } from '../api/';
 import { getFirstParagraph } from '../api/text';
-import './index.scss';
 
 const HomePage = ({ data, location }) => (
   <div className="row homepage">
@@ -22,7 +21,7 @@ const HomePage = ({ data, location }) => (
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
     />
-    <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2" >
+    <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
       <div className="row">
         {data.pagePosts.edges.map(({ node }, index) => (
           <Card
@@ -56,12 +55,12 @@ export default HomePage;
 
 export const pageQuery = graphql`
   query getAllPosts {
-    header(purpose: {eq: "Home"}) {
-        headerImage
-        title
-        titleVisible
-        subTitle
-        subTitleVisible
+    header(purpose: { eq: "Home" }) {
+      headerImage
+      title
+      titleVisible
+      subTitle
+      subTitleVisible
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
@@ -73,9 +72,8 @@ export const pageQuery = graphql`
         }
       }
     }
-
     pagePosts: allContentfulMarkdown(
-      sort: {order: DESC, fields: [createdDate]},
+      sort: { order: DESC, fields: [createdDate] }
       limit: 6
     ) {
       totalCount
