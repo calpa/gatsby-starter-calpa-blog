@@ -6,7 +6,7 @@ import moment from 'moment';
 
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate, getPath, isBrowser } from '../api/';
+import { parseChineseDate, getPath } from '../api/';
 import { parseImgur } from '../api/images';
 
 import ExternalLink from '../components/ExternalLink';
@@ -21,6 +21,7 @@ import Header from '../components/Header';
 import './blog-post.scss';
 
 // Prevent webpack window problem
+const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 class BlogPost extends Component {
