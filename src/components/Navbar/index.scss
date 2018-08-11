@@ -4,9 +4,6 @@
   $item-color: $white;
   $radius: 3px;
 
-  .btn {
-    // background: $white;
-  }
   background-color: #f8f8f8;
   box-shadow: 0 0 10px rgba(14, 14, 14, 0.26);
 
@@ -35,25 +32,22 @@
         padding: 1px 5px 2px;
       }
 
-      &:focus,
       &:hover {
         background-color: darken($white, 5%);
         color: $regal-blue;
         cursor: pointer;
       }
     }
-
   }
 
   &.is-fixed {
-    // background: rgba(255, 255, 255, 0.5);
     background: transparent;
     .btn-link {
-        color: $white;
+      color: $white;
     }
 
     .navbar-brand {
-        color: $white;
+      color: $white;
     }
   }
 }

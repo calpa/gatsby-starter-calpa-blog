@@ -3,11 +3,10 @@ import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import md5 from 'md5';
 import moment from 'moment';
-// import { Motion, spring } from 'react-motion';
 
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate, getPath } from '../api/';
+import { parseChineseDate, getPath, isBrowser } from '../api/';
 import { parseImgur } from '../api/images';
 
 import ExternalLink from '../components/ExternalLink';
@@ -22,7 +21,6 @@ import Header from '../components/Header';
 import './blog-post.scss';
 
 // Prevent webpack window problem
-const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 class BlogPost extends Component {
@@ -57,21 +55,25 @@ class BlogPost extends Component {
 
   render() {
     const {
-      title, headerImgur, createdDate, content, id,
-      toc, tags
+      title,
+      headerImgur,
+      createdDate,
+      content,
+      id,
+      toc,
+      tags,
     } = this.data.content;
 
     const { totalCount, edges } = this.data.latestPosts;
-    // const url = getPath();
 
     let finalTags = [];
     if (tags) {
-        finalTags = tags.split(',').map(item => {
-            if (item) {
-                return item.trim();
-            }
-            return '';
-        });
+      finalTags = tags.split(',').map((item) => {
+        if (item) {
+          return item.trim();
+        }
+        return '';
+      });
     }
     const image = parseImgur(headerImgur, 'large');
     const header = parseImgur(headerImgur, 'header');
@@ -87,23 +89,20 @@ class BlogPost extends Component {
         <Helmet>
           <title>{title}</title>
         </Helmet>
-        <Sidebar
-          totalCount={totalCount}
-          posts={edges}
-          post
-        />
+        <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <Content post={content} uuid={id} title={title} />
-          <p style={{
+          <p
+            style={{
               padding: '10px 15px',
               background: 'white',
-          }}
+            }}
           >
-              如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
-              <ExternalLink
-                href="https://github.com/calpa/blog"
-                title="關注和 Star 本博客"
-              />
+            如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
+            <ExternalLink
+              href="https://github.com/calpa/blog"
+              title="關注和 Star 本博客"
+            />
             或者
             <ExternalLink
               href="https://github.com/calpa/"
