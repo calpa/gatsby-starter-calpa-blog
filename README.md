@@ -15,6 +15,11 @@ How to start this project?
 
 ## Deploy
 
+Fork this project, and run
+```
+npm run deploy
+```
+
 This blog is currently using Netlify.
 
 ## Contact
