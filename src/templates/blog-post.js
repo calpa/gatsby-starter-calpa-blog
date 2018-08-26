@@ -7,6 +7,7 @@ import moment from 'moment';
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate, getPath } from '../api/';
+import { getFirstParagraph } from '../api/text';
 import { parseImgur } from '../api/images';
 
 import ExternalLink from '../components/ExternalLink';
@@ -116,7 +117,7 @@ class BlogPost extends Component {
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
           url={getPath()}
-          description={content.substring(0, 140)}
+          description={getFirstParagraph(content)}
           image={image}
           siteTitleAlt="Calpa's Blog"
           isPost={false}
