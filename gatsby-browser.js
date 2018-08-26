@@ -7,8 +7,12 @@ import createStore from './src/state/createStore';
 
 const { ga_track_id } = require('./data/config');
 
-ReactGA.initialize(ga_track_id);
-ReactGA.ga('require', 'GTM-WHP7SC5');
+const isLocalDevelopment = () => window && window.location.hostname;
+
+if (isLocalDevelopment() === false) {
+  ReactGA.initialize(ga_track_id);
+  ReactGA.ga('require', 'GTM-WHP7SC5');
+}
 
 // Inspired by APlayer
 console.log(`${'\n'} %c CALPA %c https://calpa.me ${'\n'}${'\n'}`, 'color: #6cf; background: #030307; padding:5px 0;', 'background: #6cf; padding:5px 0;');
@@ -33,10 +37,8 @@ exports.replaceRouterComponent = ({ history }) => {
   return ConnectedRouterWrapper;
 };
 
-exports.onRouteUpdate = (state) => {
-  ReactGA.pageview(state.location.pathname);
-  // Fix AddThis refresh problem in SPA
-  // if (window.addthis) {
-  //   window.addthis.layers.refresh();
-  // }
-};
+if (isLocalDevelopment !== true) {
+  exports.onRouteUpdate = (state) => {
+    ReactGA.pageview(state.location.pathname);
+  };
+}
