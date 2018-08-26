@@ -1,7 +1,6 @@
 const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
-// const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
 const webpack = require('webpack');
 const moment = require('moment');
 const axios = require('axios');
@@ -94,14 +93,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     });
   }
   if (stage === 'build-javascript') {
-    // config.merge({
-    //   resolve: {
-    //     alias: {
-    //       react: 'nervjs',
-    //       'react-dom': 'nervjs',
-    //     },
-    //   },
-    // });
     config.plugin(
       'remove-hljs-lang', webpack.ContextReplacementPlugin,
       [
@@ -110,7 +101,6 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
       ],
     );
     config.plugin('ignore-moment-locale', webpack.IgnorePlugin, [/^\.\/locale$/, [/moment$/]]);
-    // config.plugin('webpack-bundle-analyzer', BundleAnalyzerPlugin, []);
   }
 };
 
