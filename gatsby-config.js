@@ -17,6 +17,9 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-nprogress',
+    },
+    {
       resolve: 'gatsby-plugin-feed',
       options: {
         query: `
