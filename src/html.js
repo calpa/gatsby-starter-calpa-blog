@@ -1,7 +1,7 @@
-import React from "react";
+import React from 'react';
 
 let stylesStr;
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   try {
     stylesStr = require("!raw-loader!../public/styles.css"); // eslint-disable-line
   } catch (e) {
@@ -9,7 +9,7 @@ if (process.env.NODE_ENV === "production") {
   }
 }
 let css;
-if (process.env.NODE_ENV === "production") {
+if (process.env.NODE_ENV === 'production') {
   css = (
     <style
       id="gatsby-inlined-css"
@@ -24,7 +24,7 @@ const HTML = ({
   bodyAttributes,
   preBodyComponents,
   body,
-  postBodyComponents
+  postBodyComponents,
 }) => (
   <html {...htmlAttributes} lang="zh">
     <head>
@@ -51,8 +51,13 @@ const HTML = ({
         crossOrigin="anonymous"
       />
       <script
-        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"
-        integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossOrigin="anonymous"
+      />
+      <script
+        src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossOrigin="anonymous"
       />
       <link
