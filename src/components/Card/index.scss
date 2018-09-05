@@ -1,10 +1,10 @@
-@import '../../styles/colors';
+@import "../../styles/colors";
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700); // Variables
-$open-sans: 'Open Sans', sans-serif; // clear-fix mixin
+$open-sans: "Open Sans", sans-serif; // clear-fix mixin
 @mixin cf {
   &::after,
   &::before {
-    content: '';
+    content: "";
     display: table;
   }
 
@@ -31,7 +31,7 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
     min-height: 17em;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 1px 2px 0 rgba(0,0,0,.05);
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
     transition: all 0.5s ease 0s;
     overflow: hidden;
 
@@ -56,8 +56,9 @@ $open-sans: 'Open Sans', sans-serif; // clear-fix mixin
 
       // Tags, Date
       .stats {
-          display: flex;
-          align-items: center;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
       }
     }
   }
