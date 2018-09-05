@@ -1,5 +1,4 @@
 import React from 'react';
-// import LazyLoad from 'react-lazyload';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
