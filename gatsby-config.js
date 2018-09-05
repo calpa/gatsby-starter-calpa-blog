@@ -10,13 +10,12 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
-    /* {
+    {
       resolve: 'gatsby-plugin-sentry',
       options: {
-        dsn: 'https://523166273f6b4f7d8a98e67d8ba4c457@sentry.io/181131',
-
+        dsn: 'https://fe988b5e96fc4634babe220e23464e15@sentry.io/1274827',
       },
-    }, */
+    },
     {
       resolve: 'gatsby-plugin-feed',
       options: {
@@ -31,24 +30,27 @@ module.exports = {
             }
           }
         }`,
-        feeds: [{
-          serialize: ({ query: { site, allContentfulMarkdown } }) =>
-            // GraphQL query the posts from allContentfulMarkdown
-            allContentfulMarkdown.edges.map((edge) => {
-              const url = `${site.siteMetadata.siteUrl}${require('moment')(edge.node.createdDate).locale('zh-hk').format('YYYY/MM/DD')}/${edge.node.url}`;
-              const Remarkable = require('remarkable');
-              const md = new Remarkable({});
-              const description = md.render(edge.node.content);
+        feeds: [
+          {
+            serialize: ({ query: { site, allContentfulMarkdown } }) =>
+              // GraphQL query the posts from allContentfulMarkdown
+              allContentfulMarkdown.edges.map((edge) => {
+                const url = `${site.siteMetadata.siteUrl}${require('moment')(edge.node.createdDate,)
+                  .locale('zh-hk')
+                  .format('YYYY/MM/DD')}/${edge.node.url}`;
+                const Remarkable = require('remarkable');
+                const md = new Remarkable({});
+                const description = md.render(edge.node.content);
 
-              return {
-                title: edge.node.title,
-                description,
-                date: require('moment')(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
-                url,
-                guid: url,
-              };
-            }),
-          query: `
+                return {
+                  title: edge.node.title,
+                  description,
+                  date: require('moment')(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A',),
+                  url,
+                  guid: url,
+                };
+              }),
+            query: `
               {
                   allContentfulMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
                     edges {
@@ -62,8 +64,9 @@ module.exports = {
                   }
                 }
             `,
-          output: '/feed.xml',
-        }],
+            output: '/feed.xml',
+          },
+        ],
       },
     },
     // 'gatsby-plugin-react-next', // Disable as the blog-post missing classes in refresh
@@ -76,16 +79,17 @@ module.exports = {
         background_color: '#ededed',
         theme_color: '#384f7c',
         display: 'standalone',
-        icons: [{
-          src: '/favicons/android-chrome-192x192.png',
-          sizes: '192x192',
-          type: 'image/png',
-        },
-        {
-          src: '/favicons/android-chrome-512x512.png',
-          sizes: '512x512',
-          type: 'image/png',
-        },
+        icons: [
+          {
+            src: '/favicons/android-chrome-192x192.png',
+            sizes: '192x192',
+            type: 'image/png',
+          },
+          {
+            src: '/favicons/android-chrome-512x512.png',
+            sizes: '512x512',
+            type: 'image/png',
+          },
         ],
       },
     },
