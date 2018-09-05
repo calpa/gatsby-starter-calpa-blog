@@ -60,9 +60,12 @@
   justify-content: center;
   align-items: center;
   color: white;
+  padding: 0.8rem;
 
   .tag {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 }
