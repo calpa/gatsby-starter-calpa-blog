@@ -8,9 +8,7 @@ const axios = require('axios');
 const { getContent } = require('./src/api/text.js');
 
 const API_BASE_URL = 'https://cdn.contentful.com';
-const API_SPACE_ID = 'n3ctvxixp1mr';
-const API_TOKEN =
-  '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a';
+const { API_SPACE_ID, API_TOKEN } = require('./data/config').contentful;
 
 // Get All Post from Contentful
 const getPosts = async (contentType) => {
