@@ -1,14 +1,13 @@
 import React, { Component } from 'react';
 
 import Link from 'gatsby-link';
-import moment from 'moment';
-
+import dayjs from 'dayjs';
 import Tag from '../../components/Tag';
 import Header from '../../components/Header';
 
 const splitTag = (raw = '') => raw.split(', ');
 
-const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+const parseDate = date => dayjs(date).format('YYYY/MM/DD');
 const tagCenter = 'col-12 col-md-10 col-lg-8 m-auto';
 
 const getTag = (item) => {
@@ -36,13 +35,18 @@ const Item = ({ url = '', title = '', createdDate = '' }) => (
 );
 
 const TagSession = ({
-  tag = 'tag', articles = [], url = '', isActive = false,
+  tag = 'tag',
+  articles = [],
+  url = '',
+  isActive = false,
 }) => (
   <div className={tagCenter} id={tag}>
-    <h3 style={{
-            color: isActive ? 'red' : 'black',
-        }}
-    >{tag}:
+    <h3
+      style={{
+        color: isActive ? 'red' : 'black',
+      }}
+    >
+      {tag}:
     </h3>
     <ol>
       {articles.map(article => (
@@ -52,7 +56,7 @@ const TagSession = ({
           createdDate={article.createdDate}
           key={article.title}
         />
-        ))}
+      ))}
     </ol>
   </div>
 );
@@ -101,47 +105,43 @@ class TagPage extends Component {
         />
         <div className={tagCenter}>
           {tags.map(item => (
-            <Tag
-              name={item}
-              count={this.state.tags[item].length}
-              key={item}
-            />))
-            }
+            <Tag name={item} count={this.state.tags[item].length} key={item} />
+          ))}
         </div>
 
         {tags.map(tag => (
           <TagSession
             tag={tag}
-            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
+            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i,)}
             isActive={decodeURI(this.props.location.hash) === `#${tag}`}
             key={tag}
           />
-          ))}
+        ))}
       </div>
     );
   }
 }
 
 export const pageQuery = graphql`
-query myTags {
-  header(purpose: {eq: "Tags"}) {
-    headerImage
-    title
-    titleVisible
-    subTitle
-    subTitleVisible
-  }
-  tags: allContentfulMarkdown {
-    edges {
-      node {
-        tags
-        title
-        url
-        createdDate
+  query myTags {
+    header(purpose: { eq: "Tags" }) {
+      headerImage
+      title
+      titleVisible
+      subTitle
+      subTitleVisible
+    }
+    tags: allContentfulMarkdown {
+      edges {
+        node {
+          tags
+          title
+          url
+          createdDate
+        }
       }
     }
   }
-}
 `;
 
 export default TagPage;

@@ -2,28 +2,31 @@ const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
 const webpack = require('webpack');
-const moment = require('moment');
+const dayjs = require('dayjs');
 const axios = require('axios');
 
 const { getContent } = require('./src/api/text.js');
 
 const API_BASE_URL = 'https://cdn.contentful.com';
 const API_SPACE_ID = 'n3ctvxixp1mr';
-const API_TOKEN = '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a';
+const API_TOKEN =
+  '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a';
 
 // Get All Post from Contentful
 const getPosts = async (contentType) => {
   const order = '-fields.createdDate';
   const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries`;
-  const res = await axios.get(POST_URL, {
-    params: {
-      order,
-      content_type: contentType,
-      access_token: API_TOKEN,
-    },
-  }).catch((err) => {
-    console.log(err);
-  });
+  const res = await axios
+    .get(POST_URL, {
+      params: {
+        order,
+        content_type: contentType,
+        access_token: API_TOKEN,
+      },
+    })
+    .catch((err) => {
+      console.log(err);
+    });
   return res;
 };
 
@@ -93,20 +96,20 @@ exports.modifyWebpackConfig = ({ config, stage }) => {
     });
   }
   if (stage === 'build-javascript') {
-    config.plugin(
-      'remove-hljs-lang', webpack.ContextReplacementPlugin,
-      [
-        /highlight\.js\/lib\/languages$/,
-        new RegExp(`^./(${['javascript', 'python', 'bash'].join('|')})$`),
-      ],
-    );
-    config.plugin('ignore-moment-locale', webpack.IgnorePlugin, [/^\.\/locale$/, [/moment$/]]);
+    config.plugin('remove-hljs-lang', webpack.ContextReplacementPlugin, [
+      /highlight\.js\/lib\/languages$/,
+      new RegExp(`^./(${['javascript', 'python', 'bash'].join('|')})$`),
+    ]);
   }
 };
 
 exports.modifyBabelrc = ({ babelrc }) => ({
   ...babelrc,
-  plugins: babelrc.plugins.concat(['transform-decorators-legacy', 'transform-regenerator', 'transform-runtime']),
+  plugins: babelrc.plugins.concat([
+    'transform-decorators-legacy',
+    'transform-regenerator',
+    'transform-runtime',
+  ]),
 });
 
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
@@ -126,7 +129,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
   return new Promise((resolve) => {
     graphql(`
       {
-        allContentfulMarkdown(sort: {fields:[createdDate], order: DESC}) {
+        allContentfulMarkdown(sort: { fields: [createdDate], order: DESC }) {
           edges {
             node {
               title
@@ -149,7 +152,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           path: `page/${index}`,
           component: path.resolve('./src/templates/page.js'),
           context: {
-          // Data passed to context is available in page queries as GraphQL variables.
+            // Data passed to context is available in page queries as GraphQL variables.
             limit: postInPage,
             skip: index * postInPage,
           },
@@ -158,13 +161,13 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
 
       posts.map(({ node }) => {
         const { createdDate, url, id } = node;
-        const date = moment(createdDate).locale('zh-hk').format('YYYY/MM/DD');
+        const date = dayjs(createdDate).format('YYYY/MM/DD');
         const postPath = url === 'about' ? url : `${date}/${url}`;
         return createPage({
           path: postPath,
           component: path.resolve('./src/templates/blog-post.js'),
           context: {
-          // Data passed to context is available in page queries as GraphQL variables.
+            // Data passed to context is available in page queries as GraphQL variables.
             id,
           },
         });

@@ -2,7 +2,7 @@
 import React, { Component } from 'react';
 import { Helmet } from 'react-helmet';
 import md5 from 'md5';
-import moment from 'moment';
+import dayjs from 'dayjs';
 
 import 'gitalk/dist/gitalk.css';
 
@@ -38,7 +38,7 @@ class BlogPost extends Component {
     const issueDate = '2018-03-01';
     let id = getPath();
     let title = document ? document.title : '';
-    if (moment(this.data.content.createdDate).isAfter(issueDate)) {
+    if (dayjs(this.data.content.createdDate).isAfter(issueDate)) {
       title = `${this.data.content.title} | Calpa's Blog`;
       id = md5(this.data.content.title);
     }
