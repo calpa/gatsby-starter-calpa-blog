@@ -7,15 +7,21 @@ import createStore from './src/state/createStore';
 
 const { ga_track_id } = require('./data/config');
 
-const isLocalDevelopment = () => window && window.location.hostname;
+const isLocalDevelopment = () =>
+  window && window.location.hostname.indexOf('localhost') !== -1;
 
 if (isLocalDevelopment() === false) {
   ReactGA.initialize(ga_track_id);
   ReactGA.ga('require', 'GTM-WHP7SC5');
+  console.log('Welcome to online environment.');
 }
 
 // Inspired by APlayer
-console.log(`${'\n'} %c CALPA %c https://calpa.me ${'\n'}${'\n'}`, 'color: #6cf; background: #030307; padding:5px 0;', 'background: #6cf; padding:5px 0;');
+console.log(
+  `${'\n'} %c CALPA %c https://calpa.me ${'\n'}${'\n'}`,
+  'color: #6cf; background: #030307; padding:5px 0;',
+  'background: #6cf; padding:5px 0;',
+);
 
 exports.replaceRouterComponent = ({ history }) => {
   const store = createStore();
