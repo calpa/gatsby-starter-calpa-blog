@@ -22,6 +22,7 @@
     "gatsby-plugin-react-next": "^1.0.11",
     "gatsby-plugin-sass": "^1.0.23",
     "gatsby-plugin-sentry": "0.0.3",
+    "gatsby-plugin-sitemap": "^1.2.25",
     "gatsby-source-filesystem": "^1.5.27",
     "gatsby-transformer-remark": "^1.7.37",
     "gitalk": "^1.2.2",

@@ -8,6 +8,11 @@ Source code repo of my Blog.
 
 If you like [my blog](https://calpa.me), please star it. Many thanks.
 
+## Feature
+
+1. Sitemap is supported
+1. Contentful
+
 ## Develop
 
 How to start this project?

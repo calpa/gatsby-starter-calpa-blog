@@ -3,13 +3,16 @@ module.exports = {
   siteMetadata: {
     title: 'Calpa&apos;s Blog',
     description: 'Front End Technical Blog - Calpa',
-    siteUrl: 'https://calpa.me/',
+    siteUrl: 'https://calpa.me',
     author: 'Calpa',
   },
   plugins: [
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
+    {
+      resolve: 'gatsby-plugin-sitemap',
+    },
     {
       resolve: 'gatsby-plugin-sentry',
       options: {
