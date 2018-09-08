@@ -64,6 +64,7 @@ class BlogPost extends Component {
       id,
       toc,
       tags,
+      jueJinId,
     } = this.data.content;
 
     const { totalCount, edges } = this.data.latestPosts;
@@ -87,6 +88,7 @@ class BlogPost extends Component {
           title={title}
           tags={finalTags}
           subTitle={`日期： ${parseChineseDate(createdDate)}`}
+          jueJinId={jueJinId}
         />
         <Helmet>
           <title>{title}</title>
@@ -94,12 +96,7 @@ class BlogPost extends Component {
         <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <Content post={content} uuid={id} title={title} />
-          <p
-            style={{
-              padding: '10px 15px',
-              background: 'white',
-            }}
-          >
+          <p style={{ padding: '10px 15px', background: 'white' }}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
               href="https://github.com/calpa/blog"
@@ -139,6 +136,7 @@ export const query = graphql`
       id
       toc
       tags
+      jueJinId
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
