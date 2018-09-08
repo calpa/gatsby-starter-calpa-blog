@@ -7,11 +7,13 @@ import createStore from './src/state/createStore';
 
 const { ga_track_id } = require('./data/config');
 
-const isLocalDevelopment = () => window && window.location.hostname;
+const isLocalDevelopment = () =>
+  window && window.location.hostname.indexOf('localhost') !== -1;
 
 if (isLocalDevelopment() === false) {
   ReactGA.initialize(ga_track_id);
   ReactGA.ga('require', 'GTM-WHP7SC5');
+  console.log('Welcome to online environment.');
 }
 
 // Inspired by APlayer
