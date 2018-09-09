@@ -28,7 +28,7 @@ const ShareBox = ({ url }) => (
 
     <a
       className="share-button"
-      href="#m-navbar"
+      href="#header"
       style={{
         lineHeight: '1.7rem',
         paddingLeft: '0.1rem',

@@ -8,7 +8,7 @@ import JueJin from '../JueJin';
 const Header = ({
  img, title, subTitle, tags, jueJinId 
 }) => (
-  <div className="col-12 header" style={{ padding: 0 }}>
+  <div className="col-12 header" style={{ padding: 0 }} id="header">
     <div
       className="img-container"
       style={{
