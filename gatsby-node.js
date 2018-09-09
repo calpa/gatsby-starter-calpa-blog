@@ -157,8 +157,8 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
         });
       }
 
-      posts.map(({ node }) => {
-        const { createdDate, url, id } = node;
+      posts.map(({ node }, index) => {
+        const { createdDate, url } = node;
         const date = dayjs(createdDate).format('YYYY/MM/DD');
         const postPath = url === 'about' ? url : `${date}/${url}`;
         return createPage({
@@ -166,7 +166,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
           component: path.resolve('./src/templates/blog-post.js'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
-            id,
+            index,
           },
         });
       });

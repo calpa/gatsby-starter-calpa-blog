@@ -37,10 +37,12 @@ class BlogPost extends Component {
     // Then we need to hack the id
     const issueDate = '2018-03-01';
     let id = getPath();
-    let title = document ? document.title : '';
-    if (dayjs(this.data.content.createdDate).isAfter(issueDate)) {
-      title = `${this.data.content.title} | Calpa's Blog`;
-      id = md5(this.data.content.title);
+    // let title = document ? document.title : '';
+    const { createdDate, title } = this.data.content.edges[0].node;
+    let finalTitle = title;
+    if (dayjs(createdDate).isAfter(issueDate)) {
+      finalTitle = `${title} | Calpa's Blog`; // For Create Github Issue
+      id = md5(title);
     }
     const gitalk = new Gitalk({
       clientID: '18255f031b5e11edd98a',
@@ -49,7 +51,7 @@ class BlogPost extends Component {
       owner: 'calpa',
       admin: ['calpa'],
       distractionFreeMode: true,
-      title,
+      title: finalTitle,
       id,
     });
     gitalk.render('gitalk-container');
@@ -65,7 +67,7 @@ class BlogPost extends Component {
       toc,
       tags,
       jueJinId,
-    } = this.data.content;
+    } = this.data.content.edges[0].node;
 
     const { totalCount, edges } = this.data.latestPosts;
 
@@ -127,26 +129,42 @@ class BlogPost extends Component {
 export default BlogPost;
 
 export const query = graphql`
-  query BlogPostQuery($id: String!) {
-    content: contentfulMarkdown(id: { eq: $id }) {
-      content: html
-      title
-      createdDate
-      headerImgur
-      id
-      toc
-      tags
-      jueJinId
+  fragment post on ContentfulMarkdownConnection {
+    edges {
+      node {
+        id
+        title
+        url
+        createdDate
+      }
+    }
+  }
+
+  query BlogPostQuery($index: Int) {
+    content: allContentfulMarkdown(limit: 1, skip: $index) {
+      ...post
+      edges {
+        # 文章數據
+        node {
+          content: html
+          headerImgur
+          toc
+          tags
+          jueJinId
+        }
+        previous {
+          id
+          title
+        }
+        next {
+          id
+          title
+        }
+      }
     }
     latestPosts: allContentfulMarkdown(limit: 6) {
       totalCount
-      edges {
-        node {
-          title
-          url
-          createdDate
-        }
-      }
+      ...post
     }
   }
 `;
