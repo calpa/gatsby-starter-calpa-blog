@@ -1,5 +1,9 @@
 import { navigateTo } from 'gatsby-link';
+import dayjs from 'dayjs';
 import { getCurrentPage, getMaxPages } from './index';
+
+const getUrl = ({ createdDate, url }) =>
+  `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;
 
 const gotoPage = async (url, show = false) => {
   if (show === true) {
@@ -11,9 +15,8 @@ const gotoPage = async (url, show = false) => {
   await navigateTo(url);
 };
 
-const parseMarkdownUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
-);
+const parseMarkdownUrl = (date, rawUrl) =>
+  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`;
 
 const parseUrl = (date, rawUrl) => {
   if (rawUrl === 'about') {
@@ -61,6 +64,7 @@ const handleNextPage = () => {
 };
 
 export default {
+  getUrl,
   parseMarkdownUrl,
   parseUrl,
   handlePreviousPage,

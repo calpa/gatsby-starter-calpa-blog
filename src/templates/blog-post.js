@@ -17,9 +17,14 @@ import SEO from '../components/SEO';
 
 import TableOfContent from '../components/TableOfContent';
 import Header from '../components/Header';
+import ChangePageButton from '../components/ChangePageButton';
+
+import { getUrl } from '../api/url';
 
 // Styles
 import './blog-post.scss';
+
+const bgWhite = { padding: '10px 15px', background: 'white' };
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
@@ -58,6 +63,8 @@ class BlogPost extends Component {
   }
 
   render() {
+    const { previous, node, next } = this.data.content.edges[0];
+
     const {
       title,
       headerImgur,
@@ -67,7 +74,7 @@ class BlogPost extends Component {
       toc,
       tags,
       jueJinId,
-    } = this.data.content.edges[0].node;
+    } = node;
 
     const { totalCount, edges } = this.data.latestPosts;
 
@@ -98,7 +105,8 @@ class BlogPost extends Component {
         <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <Content post={content} uuid={id} title={title} />
-          <p style={{ padding: '10px 15px', background: 'white' }}>
+
+          <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
               href="https://github.com/calpa/blog"
@@ -110,7 +118,15 @@ class BlogPost extends Component {
               title="關注我的 Github"
             />
             。
-          </p>
+          </div>
+
+          <div className="m-change-page" style={bgWhite}>
+            <p>更多文章：</p>
+            {previous && (
+              <ChangePageButton url={getUrl(previous)} title={previous.title} />
+            )}
+            {next && <ChangePageButton url={getUrl(next)} title={next.title} />}
+          </div>
         </div>
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
@@ -140,11 +156,16 @@ export const query = graphql`
     }
   }
 
+  fragment postLink on ContentfulMarkdown {
+    title
+    url
+    createdDate
+  }
+
   query BlogPostQuery($index: Int) {
     content: allContentfulMarkdown(limit: 1, skip: $index) {
       ...post
       edges {
-        # 文章數據
         node {
           content: html
           headerImgur
@@ -153,12 +174,10 @@ export const query = graphql`
           jueJinId
         }
         previous {
-          id
-          title
+          ...postLink
         }
         next {
-          id
-          title
+          ...postLink
         }
       }
     }
