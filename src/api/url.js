@@ -26,7 +26,7 @@ const parseUrl = (date, rawUrl) => {
 };
 
 const minusOnePage = (currentPage) => {
-  if (currentPage - 1 >= 0) {
+  if (currentPage - 1 >= 1) {
     return currentPage - 1;
   }
 
@@ -36,7 +36,7 @@ const minusOnePage = (currentPage) => {
 const addOnePage = (currentPage) => {
   const maxPages = getMaxPages();
 
-  if (currentPage + 1 <= maxPages) {
+  if (currentPage + 1 < maxPages) {
     return currentPage + 1;
   }
   return -1;
@@ -51,14 +51,15 @@ const parsePageUrl = (index) => {
   return -1;
 };
 
-const handlePreviousPage = () => {
-  const index = minusOnePage(getCurrentPage());
+const handlePreviousPage = (pageNumber) => {
+  const index = minusOnePage(+pageNumber);
 
   return parsePageUrl(index);
 };
 
-const handleNextPage = () => {
-  const index = addOnePage(getCurrentPage());
+const handleNextPage = (pageNumber) => {
+  debugger; //eslint-disable-line
+  const index = addOnePage(+pageNumber);
 
   return parsePageUrl(index);
 };

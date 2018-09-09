@@ -10,6 +10,13 @@ const { getContent } = require('./src/api/text.js');
 const API_BASE_URL = 'https://cdn.contentful.com';
 const { API_SPACE_ID, API_TOKEN } = require('./data/config').contentful;
 
+const redirectors = [
+  {
+    fromPath: '/',
+    toPath: '/page/1',
+  },
+];
+
 // Get All Post from Contentful
 const getPosts = async (contentType) => {
   const order = '-fields.createdDate';
@@ -123,7 +130,14 @@ exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
 };
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators;
+  const { createPage, createRedirect } = boundActionCreators;
+
+  redirectors.forEach(({ fromPath, toPath = '/' }) => {
+    createRedirect({ fromPath, redirectInBrowser: true, toPath });
+    // Uncomment next line to see forEach in action during build
+    console.log(`Redirecting: ${fromPath} To: ${toPath}`);
+  });
+
   return new Promise((resolve) => {
     graphql(`
       {
@@ -145,9 +159,9 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
       const postInPage = 6;
       const pages = Math.ceil(posts.length / postInPage);
 
-      for (let index = 1; index < pages; index += 1) {
+      for (let index = 0; index < pages; index += 1) {
         createPage({
-          path: `page/${index}`,
+          path: `page/${index + 1}`,
           component: path.resolve('./src/templates/page.js'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
