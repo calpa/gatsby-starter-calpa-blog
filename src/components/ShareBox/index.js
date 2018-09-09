@@ -2,35 +2,40 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import { ShareButtons, generateShareIcon } from 'react-share';
+import ExternalLink from '../ExternalLink';
 
-const {
-  FacebookShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  WhatsappShareButton,
-} = ShareButtons;
-
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const TelegramIcon = generateShareIcon('telegram');
-const WhatsappIcon = generateShareIcon('whatsapp');
+import './index.scss';
 
 const ShareBox = ({ url }) => (
-  <div className="d-inline-block m-l-3">
-    <FacebookShareButton url={url} className="d-inline-block">
-      <FacebookIcon size={32} round />
-    </FacebookShareButton>
+  <div className="m-share-box">
+    <ExternalLink
+      href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+      title=""
+      className="share-button fa fa-facebook"
+    />
+    {/* 視覺置中 => 稍微往上偏移 */}
+    <a
+      className="share-button"
+      style={{
+        lineHeight: '1.7rem',
+        color: '#337ab7',
+        paddingLeft: '0.15rem',
+      }}
+      href="#gitalk-container"
+    >
+      <i className="fa fa-comment-o" />
+    </a>
 
-    <TwitterShareButton url={url} className="d-inline-block">
-      <TwitterIcon size={32} round />
-    </TwitterShareButton>
-    <TelegramShareButton url={url} className="d-inline-block">
-      <TelegramIcon size={32} round />
-    </TelegramShareButton>
-    <WhatsappShareButton url={url} className="d-inline-block">
-      <WhatsappIcon size={32} round />
-    </WhatsappShareButton>
+    <a
+      className="share-button"
+      href="#m-navbar"
+      style={{
+        lineHeight: '1.7rem',
+        paddingLeft: '0.1rem',
+      }}
+    >
+      <i className="fa fa-chevron-up" />
+    </a>
   </div>
 );
 

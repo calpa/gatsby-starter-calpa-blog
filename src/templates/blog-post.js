@@ -19,6 +19,8 @@ import TableOfContent from '../components/TableOfContent';
 import Header from '../components/Header';
 import ChangePageButton from '../components/ChangePageButton';
 
+import ShareBox from '../components/ShareBox';
+
 import { getUrl } from '../api/url';
 
 // Styles
@@ -128,6 +130,8 @@ class BlogPost extends Component {
             {next && <ChangePageButton url={getUrl(next)} title={next.title} />}
           </div>
         </div>
+
+        <ShareBox url={getUrl(node)} />
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
