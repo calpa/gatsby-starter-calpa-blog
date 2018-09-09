@@ -23,6 +23,8 @@ import ShareBox from '../components/ShareBox';
 
 import { getUrl } from '../api/url';
 
+import data from '../../data/config';
+
 // Styles
 import './blog-post.scss';
 
@@ -131,7 +133,7 @@ class BlogPost extends Component {
           </div>
         </div>
 
-        <ShareBox url={getUrl(node)} />
+        <ShareBox url={data.url + getUrl(node)} />
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
