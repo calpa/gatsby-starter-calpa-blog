@@ -44,15 +44,27 @@ class BlogPost extends Component {
     // Gitalk
     // Due to Github Issue tags length is limited,
     // Then we need to hack the id
+
+    // 一開始的時候是直接調用 document.title 作為 id
+    // 不過在 2018年 3月 1日 Github 有標籤字數限制
+    // 2018年 9月 9日後直接使用 id
+
     const issueDate = '2018-03-01';
-    let id = getPath();
-    // let title = document ? document.title : '';
+    const idDate = '2018-09-09'; // 修理遺留代碼錯誤
     const { createdDate, title } = this.data.content.edges[0].node;
+    let { id } = this.data.content.edges[0].node;
+
     let finalTitle = title;
     if (dayjs(createdDate).isAfter(issueDate)) {
       finalTitle = `${title} | Calpa's Blog`; // For Create Github Issue
-      id = md5(title);
+
+      if (dayjs(createdDate).isBefore(idDate)) {
+        id = md5(title);
+      }
+    } else {
+      id = getPath();
     }
+
     const gitalk = new Gitalk({
       clientID: '18255f031b5e11edd98a',
       clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
