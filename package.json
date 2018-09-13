@@ -40,9 +40,7 @@
     "rimraf": "^2.6.2",
     "smooth-scroll": "^12.1.5"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -52,9 +50,11 @@
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "functions": "netlify-lambda serve functions"
+    "functions": "netlify-lambda serve functions",
+    "reset": "rimraf pubilc/ .cache/"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
