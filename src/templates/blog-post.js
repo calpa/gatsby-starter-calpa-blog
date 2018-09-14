@@ -117,9 +117,6 @@ class BlogPost extends Component {
           subTitle={`日期： ${parseChineseDate(createdDate)}`}
           jueJinId={jueJinId}
         />
-        <Helmet>
-          <title>{title}</title>
-        </Helmet>
         <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <Content post={content} uuid={id} title={title} />
@@ -151,6 +148,7 @@ class BlogPost extends Component {
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
+          title={title}
           url={getPath()}
           description={getFirstParagraph(content)}
           image={image}

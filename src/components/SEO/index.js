@@ -58,6 +58,8 @@ const SEO = ({
  url, title, description, image, siteTitleAlt, isPost 
 }) => (
   <Helmet>
+    <title>{title}</title>
+
     {/* General tags */}
     <meta name="description" content={description} />
     <meta name="image" content={image} />

@@ -4,6 +4,10 @@ import Link from 'gatsby-link';
 import dayjs from 'dayjs';
 import Tag from '../../components/Tag';
 import Header from '../../components/Header';
+import ShareBox from '../../components/ShareBox';
+import SEO from '../../components/SEO';
+
+import { url } from '../../../data/config';
 
 const splitTag = (raw = '') => raw.split(', ');
 
@@ -117,6 +121,8 @@ class TagPage extends Component {
 
     const { header } = this.props.data;
 
+    const tagUrl = `${url}/tags`;
+
     return (
       <div className="row">
         <Header
@@ -128,12 +134,7 @@ class TagPage extends Component {
         />
 
         <div className={tagCenter}>
-          <h2
-            style={{
-              ...style,
-              justifyContent: 'space-between',
-            }}
-          >
+          <h2 style={{ ...style, justifyContent: 'space-between' }}>
             最熱門標籤：
             <button
               className="btn btn-info"
@@ -168,6 +169,16 @@ class TagPage extends Component {
             key={tag}
           />
         ))}
+
+        <ShareBox url={tagUrl} hasCommentBox={false} />
+
+        <SEO
+          title={header.title}
+          description="所有文章"
+          url={tagUrl}
+          isPost={false}
+          image={header.headerImage}
+        />
       </div>
     );
   }
