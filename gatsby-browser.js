@@ -5,10 +5,10 @@ import { Provider } from 'react-redux';
 
 import createStore from './src/state/createStore';
 
-const { ga_track_id } = require('./data/config');
+const { url, ga_track_id } = require('./data/config');
 
 const isLocalDevelopment = () =>
-  window && window.location.hostname.indexOf('localhost') !== -1;
+  window && window.location && window.location.origin !== url;
 
 if (isLocalDevelopment() === false) {
   ReactGA.initialize(ga_track_id);
