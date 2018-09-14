@@ -26,6 +26,8 @@ const getTag = (item) => {
   return item;
 };
 
+const lenOf = (array = []) => array.length;
+
 const Item = ({ url = '', title = '', createdDate = '' }) => (
   <li key={title}>
     <Link href={url} to={url}>
@@ -61,11 +63,18 @@ const TagSession = ({
   </div>
 );
 
+const style = {
+  display: 'flex',
+  alignItems: 'center',
+  flexDirection: 'row',
+};
+
 class TagPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       tags: {},
+      showAllTags: false,
     };
   }
 
@@ -89,8 +98,23 @@ class TagPage extends Component {
     this.setState({ tags });
   }
 
+  compareTag(a, b) {
+    return lenOf(this.state.tags[b]) - lenOf(this.state.tags[a]);
+  }
+
+  toggleAllTags() {
+    this.setState(state => ({
+      showAllTags: !state.showAllTags,
+    }));
+  }
+
   render() {
-    const tags = Object.keys(this.state.tags).sort();
+    const rawTags = Object.keys(this.state.tags);
+    const tags = rawTags.sort((a, b) => this.compareTag(a, b));
+
+    const hotTags =
+      this.state.showAllTags === false ? rawTags.slice(0, 5) : rawTags;
+
     const { header } = this.props.data;
 
     return (
@@ -102,10 +126,38 @@ class TagPage extends Component {
           subTitle={header.subTitle}
           subTitleVisible={header.subTitleVisible}
         />
+
         <div className={tagCenter}>
-          {tags.map(item => (
-            <Tag name={item} count={this.state.tags[item].length} key={item} />
-          ))}
+          <h2
+            style={{
+              ...style,
+              justifyContent: 'space-between',
+            }}
+          >
+            最熱門標籤：
+            <button
+              className="btn btn-info"
+              onClick={() => this.toggleAllTags()}
+            >
+              展示所有標籤
+            </button>
+          </h2>
+
+          <div
+            style={{
+              ...style,
+              justifyContent: 'space-evenly',
+              flexWrap: 'wrap',
+            }}
+          >
+            {hotTags.map(item => (
+              <Tag
+                name={item}
+                count={this.state.tags[item].length}
+                key={item}
+              />
+            ))}
+          </div>
         </div>
 
         {tags.map(tag => (
