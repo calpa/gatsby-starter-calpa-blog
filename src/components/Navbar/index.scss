@@ -50,5 +50,17 @@
     .navbar-brand {
       color: $white;
     }
+
+    @media (max-width: 767.98px) {
+      background: $white;
+
+      .btn-link {
+        color: $black;
+      }
+
+      .navbar-brand {
+        color: $black;
+      }
+    }
   }
 }
