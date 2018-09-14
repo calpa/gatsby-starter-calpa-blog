@@ -74,7 +74,6 @@ class TagPage extends Component {
     const { edges } = this.props.data.tags;
     const temp = edges.map(item => getTag(item));
 
-    // debugger;
     temp.forEach((x) => {
       const { title, url, createdDate } = x;
 

@@ -58,7 +58,6 @@ const handlePreviousPage = (pageNumber) => {
 };
 
 const handleNextPage = (pageNumber) => {
-  debugger; //eslint-disable-line
   const index = addOnePage(+pageNumber);
 
   return parsePageUrl(index);
