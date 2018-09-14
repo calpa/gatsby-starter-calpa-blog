@@ -22,7 +22,7 @@ const getCurrentPage = () => {
   return 0;
 };
 
-const getPath = () => (isBrowser() ? window.location.href : '');
+const getPath = () => (isBrowser() ? window.location.pathname : '');
 
 const getMaxPages = () => maxPages;
 

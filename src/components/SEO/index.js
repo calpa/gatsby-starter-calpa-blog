@@ -6,8 +6,13 @@ import PropTypes from 'prop-types';
 import config from '../../../data/config';
 
 const schemaOrgJSONLD = ({
-  url, title, siteTitleAlt, isPost, image, description,
-}) => ([
+  url,
+  title,
+  siteTitleAlt,
+  isPost,
+  image,
+  description,
+}) => [
   {
     '@context': 'http://schema.org',
     '@type': 'WebSite',
@@ -15,38 +20,42 @@ const schemaOrgJSONLD = ({
     name: title,
     alternateName: siteTitleAlt || '',
   },
-  isPost ? {
-    '@context': 'http://schema.org',
-    '@type': 'BreadcrumbList',
-    itemListElement: [
-      {
-        '@type': 'ListItem',
-        position: 1,
-        item: {
-          '@id': url,
-          name: title,
-          image,
+  isPost
+    ? {
+      '@context': 'http://schema.org',
+      '@type': 'BreadcrumbList',
+      itemListElement: [
+        {
+          '@type': 'ListItem',
+          position: 1,
+          item: {
+            '@id': url,
+            name: title,
+            image,
+          },
         },
+      ],
+    }
+    : '',
+  isPost
+    ? {
+      '@context': 'http://schema.org',
+      '@type': 'BlogPosting',
+      url,
+      name: title,
+      alternateName: siteTitleAlt || '',
+      headline: title,
+      image: {
+        '@type': 'ImageObject',
+        url: image,
       },
-    ],
-  } : '',
-  isPost ? {
-    '@context': 'http://schema.org',
-    '@type': 'BlogPosting',
-    url,
-    name: title,
-    alternateName: siteTitleAlt || '',
-    headline: title,
-    image: {
-      '@type': 'ImageObject',
-      url: image,
-    },
-    description,
-  } : '',
-]);
+      description,
+    }
+    : '',
+];
 
 const SEO = ({
-  url, title, description, image, siteTitleAlt, isPost,
+ url, title, description, image, siteTitleAlt, isPost 
 }) => (
   <Helmet>
     {/* General tags */}
@@ -60,10 +69,11 @@ const SEO = ({
 
     {/* OpenGraph tags */}
     <meta property="og:url" content={url} />
-    {isPost ?
-      <meta property="og:type" content="article" /> :
+    {isPost ? (
+      <meta property="og:type" content="article" />
+    ) : (
       <meta property="og:type" content="website" />
-     }
+    )}
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={image} />
@@ -94,7 +104,7 @@ SEO.propTypes = {
 };
 
 SEO.defaultProps = {
-  title: config.SEOTitle,
+  title: config.title,
 };
 
 export default SEO;

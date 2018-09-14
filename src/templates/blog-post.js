@@ -23,7 +23,7 @@ import ShareBox from '../components/ShareBox';
 
 import { getUrl } from '../api/url';
 
-import data from '../../data/config';
+import { url } from '../../data/config';
 
 // Styles
 import './blog-post.scss';
@@ -62,7 +62,9 @@ class BlogPost extends Component {
         id = md5(title);
       }
     } else {
-      id = getPath();
+      const pathname = getPath();
+      const lastSymbol = pathname[pathname.length - 1] === '/' ? '' : '/';
+      id = `${url}${pathname}${lastSymbol}`;
     }
 
     const gitalk = new Gitalk({
@@ -145,7 +147,7 @@ class BlogPost extends Component {
           </div>
         </div>
 
-        <ShareBox url={data.url + getUrl(node)} />
+        <ShareBox url={url + getUrl(node)} />
         <TableOfContent toc={toc} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
