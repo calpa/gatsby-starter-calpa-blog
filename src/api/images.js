@@ -4,10 +4,11 @@
 // m = Medium Thumbnail (320×320)
 // l = Large Thumbnail (640×640)
 // h = Huge Thumbnail (1024×1024)
+const getDefaultPicture = () => 'M795H8A.jpg';
 
 const parseImgur = (rawImage, size = 'large') => {
   let subfix = '';
-  const image = rawImage || ''; // Fix null
+  const image = rawImage || getDefaultPicture();
 
   switch (size) {
     case 'small-square':
