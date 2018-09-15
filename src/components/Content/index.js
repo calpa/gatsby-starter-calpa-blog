@@ -14,7 +14,19 @@ class Content extends Component {
     // lazy loads elements with default selector as '.lozad'
     // Prevent WebPack build fail
     if (isBrowser()) {
-      const observer = lozad();
+      // Initialize library
+      const observer = lozad('.lozad', {
+        load(el) {
+          /* eslint-disable no-param-reassign */
+
+          el.src = el.dataset.src;
+          el.onload = () => {
+            el.classList.add('animated');
+            el.classList.add('fadeIn');
+          };
+          /* eslint-enable */
+        },
+      });
       observer.observe();
     }
   }
