@@ -174,6 +174,7 @@ class TagPage extends Component {
 
         <SEO
           title={header.title}
+          siteTitleAlt={header.title}
           description="所有文章"
           url={tagUrl}
           isPost={false}
