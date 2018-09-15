@@ -48,9 +48,15 @@
   $height: 500px;
   $width: 1920px;
 
-  min-height: $height;
   background-repeat: no-repeat;
-  background-size: $width $height;
+  @media (min-width: 768px) {
+    min-height: $height;
+    background-size: $width $height;
+  }
+
+  @media (max-width: 767.98px) {
+    background-size: cover;
+  }
   background-position: center top;
 
   margin-bottom: 10px;
@@ -62,7 +68,7 @@
   padding-top: 58px;
   padding-left: 0.8125rem;
   padding-right: 0.8125rem;
-  padding-bottom: 0;
+  padding-bottom: 0.8125rem;
 
   .u-title {
     margin: 0 0 0.75rem;
