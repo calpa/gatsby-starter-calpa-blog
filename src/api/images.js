@@ -5,7 +5,7 @@
 // l = Large Thumbnail (640×640)
 // h = Huge Thumbnail (1024×1024)
 
-const parseImgur = (image, size = 'large') => {
+const parseImgur = (image = '', size = 'large') => {
   let subfix = '';
 
   switch (size) {
