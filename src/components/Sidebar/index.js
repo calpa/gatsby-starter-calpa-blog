@@ -2,7 +2,13 @@ import React from 'react';
 import Link from 'gatsby-link';
 import PropTypes from 'prop-types';
 
-import config from '../../../data/config';
+import {
+  githubUsername,
+  zhihuUsername,
+  email,
+  iconUrl,
+  about,
+} from '../../../data/config';
 
 import Information from './Information';
 import Subscribiton from './Subscribiton';
@@ -24,36 +30,28 @@ const Icon = ({ href, name, content }) => (
 );
 
 const Sidebar = ({ post, totalCount, posts }) => (
-  <header className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${post === true ? 'order-11' : 'order-1'}`} >
+  <header
+    className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${post ===
+    true
+      ? 'order-11'
+      : 'order-1'}`}
+  >
     <div className="about-me">
-      <Link to={config.about} href={config.about} className="name">
-        <img
-          className="avatar"
-          src="https://i.imgur.com/kjt2x52.png"
-          alt="Calpa"
-        />
+      <Link to={about} href={about} className="name">
+        <img className="avatar" src={iconUrl} alt="Calpa" />
         <h4>Calpa</h4>
       </Link>
       <p className="mb-1">夢裡不覺秋已深</p>
       <p className="mb-3">餘情豈是為他人</p>
       <Icon
-        href={`https://www.zhihu.com/people/${config.zhihu_username}`}
+        href={`https://www.zhihu.com/people/${zhihuUsername}`}
         content="知"
       />
-      <Icon
-        href={`https://github.com/${config.github_username}`}
-        name="fa-github"
-      />
-      <Icon
-        href={`mailto:${config.email}`}
-        name="fa-envelope"
-      />
+      <Icon href={`https://github.com/${githubUsername}`} name="fa-github" />
+      <Icon href={`mailto:${email}`} name="fa-envelope" />
 
       <Subscribiton />
-      <Information
-        totalCount={totalCount}
-        posts={posts}
-      />
+      <Information totalCount={totalCount} posts={posts} />
     </div>
   </header>
 );

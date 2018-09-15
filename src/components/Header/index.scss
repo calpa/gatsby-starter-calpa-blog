@@ -57,10 +57,83 @@
 
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  color: white;
-  padding: 0.8rem;
+
+  padding-top: 58px;
+  padding-left: 0.8125rem;
+  padding-right: 0.8125rem;
+  padding-bottom: 0;
+
+  .u-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    color: white; // TODO: Auto change color by detect background color
+  }
+
+  .u-subtitle {
+    color: white;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    .u-title {
+      padding-top: 1.5rem;
+    }
+
+    .u-subtitle {
+      display: flex;
+      align-self: flex-end;
+      justify-content: center;
+
+      font-size: 0.75rem;
+      line-height: 1.2rem;
+      height: 1.2rem;
+      width: 100%;
+
+      .m-left {
+        margin-right: auto;
+      }
+
+      .author-image {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .author-name {
+        margin-right: 0.5rem;
+      }
+
+      .text {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  // For Tablet
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  // For PC
+  @media (min-width: 992px) {
+    .u-subtitle {
+      font-size: 1rem;
+    }
+
+    .m-left {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .u-subtitle {
+      width: auto;
+      align-self: center;
+    }
+  }
 
   .tag {
     display: flex;

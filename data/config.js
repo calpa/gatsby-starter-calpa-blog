@@ -5,17 +5,19 @@ module.exports = {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
     keyword: 'calpa, blog, Javascript',
     theme_color: '#384f7c',
-    favicon: 'https://i.imgur.com/PO9Y4fT.png',
+    favicon: 'https://i.imgur.com/PO9Y4fT.jpg',
     google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
   },
   SEOTitle: "Calpa's Blog",
+  name: 'calpa',
   email: 'calpaliu@gmail.com',
+  iconUrl: 'https://i.imgur.com/kjt2x52.jpg',
   License: 'by',
   url: 'https://calpa.me',
   about: '/2018/05/01/about-calpa-liu',
   // Sidebar
-  zhihu_username: 'piao-xue-wu-ying',
-  github_username: 'calpa',
+  zhihuUsername: 'piao-xue-wu-ying',
+  githubUsername: 'calpa',
   friends: [
     {
       title: '娜酱骑士团',

@@ -23,7 +23,7 @@ import ShareBox from '../components/ShareBox';
 
 import { getUrl } from '../api/url';
 
-import { url } from '../../data/config';
+import { url, name, iconUrl } from '../../data/config';
 
 // Styles
 import './blog-post.scss';
@@ -114,7 +114,9 @@ class BlogPost extends Component {
           img={header}
           title={title}
           tags={finalTags}
-          subTitle={`日期： ${parseChineseDate(createdDate)}`}
+          authorName={name}
+          authorImage={iconUrl}
+          subTitle={parseChineseDate(createdDate)}
           jueJinId={jueJinId}
         />
         <Sidebar totalCount={totalCount} posts={edges} post />

@@ -5,8 +5,16 @@ import './index.scss';
 import Tag from '../Tag';
 import JueJin from '../JueJin';
 
+import { parseImgur } from '../../api/images';
+
 const Header = ({
- img, title, subTitle, tags, jueJinId 
+  img,
+  title,
+  subTitle,
+  tags,
+  jueJinId,
+  authorImage,
+  authorName,
 }) => (
   <div className="col-12 header" style={{ padding: 0 }} id="header">
     <div
@@ -16,11 +24,20 @@ const Header = ({
         marginTop: -58,
       }}
     >
-      {title && <h1 style={{ fontSize: 24 }}>{title}</h1>}
+      {title && <h1 className="u-title">{title}</h1>}
       {subTitle && (
-        <h2 style={{ fontSize: 22 }}>
-          {subTitle} {jueJinId && <JueJin jueJinId={jueJinId} />}
-        </h2>
+        <div className="u-subtitle">
+          <div className="m-left">
+            <img
+              src={parseImgur(authorImage, 'small-square')}
+              className="author-image"
+              alt={authorName}
+            />
+            <span className="author-name">{authorName}</span>
+          </div>
+          <span className="text">{subTitle}</span>{' '}
+          {jueJinId && <JueJin jueJinId={jueJinId} />}
+        </div>
       )}
 
       <div className="tag">
@@ -36,6 +53,8 @@ Header.propTypes = {
   subTitle: PropTypes.string,
   tags: PropTypes.arrayOf(PropTypes.string),
   jueJinId: PropTypes.string,
+  authorName: PropTypes.string,
+  authorImage: PropTypes.string,
 };
 
 Header.defaultProps = {
@@ -43,6 +62,8 @@ Header.defaultProps = {
   subTitle: '',
   tags: [],
   jueJinId: '',
+  authorName: '',
+  authorImage: '',
 };
 
 export default Header;
