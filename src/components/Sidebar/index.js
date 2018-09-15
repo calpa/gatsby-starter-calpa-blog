@@ -11,7 +11,7 @@ import {
 } from '../../../data/config';
 
 import Information from './Information';
-import Subscribiton from './Subscribiton';
+import Subscription from './Subscription';
 
 import './index.scss';
 
@@ -50,7 +50,7 @@ const Sidebar = ({ post, totalCount, posts }) => (
       <Icon href={`https://github.com/${githubUsername}`} name="fa-github" />
       <Icon href={`mailto:${email}`} name="fa-envelope" />
 
-      <Subscribiton />
+      <Subscription />
       <Information totalCount={totalCount} posts={posts} />
     </div>
   </header>
