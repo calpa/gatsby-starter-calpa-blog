@@ -24,7 +24,6 @@
     "gatsby-plugin-sentry": "0.0.3",
     "gatsby-plugin-sitemap": "^1.2.25",
     "gatsby-source-filesystem": "^1.5.27",
-    "gatsby-transformer-remark": "^1.7.37",
     "gitalk": "^1.2.2",
     "han-css": "^3.3.0",
     "highlight.js": "^9.12.0",
@@ -40,7 +39,9 @@
     "rimraf": "^2.6.2",
     "smooth-scroll": "^12.1.5"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "scripts": {
@@ -50,8 +51,7 @@
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
-    "format":
-      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/"
