@@ -41,6 +41,7 @@ module.exports = {
     },
   ],
   // Plugins
+  gaOptimizeId: 'GTM-WHP7SC5',
   ga_track_id: 'UA-84737574-3',
   ga_domain: 'auto',
   anchorjs: true,
