@@ -92,31 +92,6 @@ exports.sourceNodes = async ({ boundActionCreators }) => {
   });
 };
 
-// Add custom webpack config
-exports.modifyWebpackConfig = ({ config, stage }) => {
-  if (stage === 'build-html') {
-    config.loader('null', {
-      test: /bad-module/,
-      loader: 'null-loader',
-    });
-  }
-  if (stage === 'build-javascript') {
-    config.plugin('remove-hljs-lang', webpack.ContextReplacementPlugin, [
-      /highlight\.js\/lib\/languages$/,
-      new RegExp(`^./(${['javascript', 'python', 'bash'].join('|')})$`),
-    ]);
-  }
-};
-
-exports.modifyBabelrc = ({ babelrc }) => ({
-  ...babelrc,
-  plugins: babelrc.plugins.concat([
-    'transform-decorators-legacy',
-    'transform-regenerator',
-    'transform-runtime',
-  ]),
-});
-
 exports.onCreateNode = ({ node, getNode, boundActionCreators }) => {
   const { createNodeField } = boundActionCreators;
   if (node.internal.type === 'MarkdownRemark') {

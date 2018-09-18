@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import Dropdown from './Dropdown';
 import { gotoPage } from '../../../api/url';
 
@@ -14,14 +14,14 @@ const NavItem = ({ url, name, list }) => {
         href={url}
         to={url}
         onClick={() => gotoPage(url)}
-      >{name}
+      >
+        {name}
       </Link>
     );
   }
 
-  return (<Dropdown title={name} list={list} />);
+  return <Dropdown title={name} list={list} />;
 };
-
 
 NavItem.propTypes = {
   url: PropTypes.string.isRequired,

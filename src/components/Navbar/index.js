@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigateTo } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import GithubCorner from '../GithubCorner';
 
 import NavItem from './NavItem';
@@ -11,7 +11,7 @@ const search = async (e) => {
   e.preventDefault();
   const { value } = document.getElementById('nav-search');
   await window.$('.collapse').collapse('hide');
-  await navigateTo(`/search?query=${value}`);
+  await navigate(`/search?query=${value}`);
 };
 
 const NavbarClass = [
@@ -29,15 +29,23 @@ class Navbar extends Component {
       isTop: true,
       searchable: false,
     };
+
+    this.onScroll = this.onScroll.bind(this);
   }
 
   componentDidMount() {
-    document.addEventListener('scroll', () => {
-      const isTop = window.scrollY < 55;
-      if (isTop !== this.state.isTop) {
-        this.setState({ isTop });
-      }
-    });
+    document.addEventListener('scroll', this.onScroll());
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('scroll', this.onScroll());
+  }
+
+  onScroll() {
+    const isTop = window.scrollY < 55;
+    if (isTop !== this.state.isTop) {
+      this.setState({ isTop });
+    }
   }
 
   render() {

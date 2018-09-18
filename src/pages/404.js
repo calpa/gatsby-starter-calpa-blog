@@ -1,6 +1,8 @@
 import React from 'react';
 
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
+
+import wrapLayout from '../api/layout';
 
 const NotFoundPage = ({ data }) => (
   <div className="container">
@@ -29,4 +31,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default NotFoundPage;
+export default wrapLayout(NotFoundPage);

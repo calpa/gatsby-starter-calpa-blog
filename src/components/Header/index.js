@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import './index.scss';
 
-import Tag from '../Tag';
 import JueJin from '../JueJin';
 
 import { parseImgur } from '../../api/images';
@@ -11,7 +10,6 @@ const Header = ({
   img,
   title,
   subTitle,
-  tags,
   jueJinId,
   authorImage,
   authorName,
@@ -29,11 +27,11 @@ const Header = ({
         <div className="u-subtitle">
           <div className="m-left">
             {authorImage && (
-            <img
-              src={parseImgur(authorImage, 'small-square')}
-              className="author-image"
-              alt={authorName}
-            />
+              <img
+                src={parseImgur(authorImage, 'small-square')}
+                className="author-image"
+                alt={authorName}
+              />
             )}
             <span className="author-name">{authorName}</span>
           </div>
@@ -41,10 +39,6 @@ const Header = ({
           {jueJinId && <JueJin jueJinId={jueJinId} />}
         </div>
       )}
-
-      <div className="tag">
-        {tags && tags.map(tag => <Tag name={tag} key={tag} />)}
-      </div>
     </div>
   </div>
 );
@@ -53,7 +47,6 @@ Header.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string,
   subTitle: PropTypes.string,
-  tags: PropTypes.arrayOf(PropTypes.string),
   jueJinId: PropTypes.string,
   authorName: PropTypes.string,
   authorImage: PropTypes.string,
@@ -62,7 +55,6 @@ Header.propTypes = {
 Header.defaultProps = {
   title: '',
   subTitle: '',
-  tags: [],
   jueJinId: '',
   authorName: '',
   authorImage: '',

@@ -1,11 +1,10 @@
 import React from 'react';
 import ReactGA from 'react-ga';
-import { Router } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import createStore from './src/state/createStore';
 
-const { url, ga_track_id, gaOptimizeId } = require('./data/config');
+import { url, ga_track_id, gaOptimizeId } from './data/config';
 
 const isLocalDevelopment = () =>
   window && window.location && window.location.origin !== url;
@@ -27,28 +26,16 @@ console.log(
   'background: #6cf; padding:5px 0;',
 );
 
-exports.replaceRouterComponent = ({ history }) => {
+export const wrapRootElement = ({ element }) => {
   const store = createStore();
 
-  if (module.hot) {
-    // Enable Webpack hot module replacement for reducers
-    module.hot.accept('./src/reducers', () => {
-      const nextRootReducer = require('./src/reducers/index');
-      store.replaceReducer(nextRootReducer);
-    });
-  }
+  const ConnectedRootElement = <Provider store={store}>{element}</Provider>;
 
-  const ConnectedRouterWrapper = ({ children }) => (
-    <Provider store={store}>
-      <Router history={history}>{children}</Router>
-    </Provider>
-  );
-
-  return ConnectedRouterWrapper;
+  return ConnectedRootElement;
 };
 
-if (isLocalDevelopment() !== true) {
-  exports.onRouteUpdate = (state) => {
+export const onRouteUpdate = (state) => {
+  if (isLocalDevelopment() !== true) {
     ReactGA.pageview(state.location.pathname);
-  };
-}
+  }
+};
