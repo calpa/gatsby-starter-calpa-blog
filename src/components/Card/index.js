@@ -1,5 +1,5 @@
 import React from 'react';
-import Link from 'gatsby-link';
+import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
 import Tag from '../Tag';
@@ -16,19 +16,18 @@ const imageStyle = (headerImage, color) => ({
 });
 
 const CardHeader = ({ url, image, backgroundColor }) => (
-  <Link
-    to={url}
-    href={url}
-  >
-    <div
-      className="wrapper"
-      style={imageStyle(image, backgroundColor)}
-    />
+  <Link to={url} href={url}>
+    <div className="wrapper" style={imageStyle(image, backgroundColor)} />
   </Link>
 );
 
 const Card = ({
-  title, date, url, headerImage, headerBackgroundColor, content,
+  title,
+  date,
+  url,
+  headerImage,
+  headerBackgroundColor,
+  content,
   tags,
 }) => {
   const postUrl = parseUrl(date, url);
@@ -37,25 +36,25 @@ const Card = ({
   return (
     <div className="col-sm-12 pb-4">
       <div className="custom-card">
-        {headerImage && <CardHeader url={postUrl} image={headerImage} backgroundColor={headerBackgroundColor} />}
+        {headerImage && (
+          <CardHeader
+            url={postUrl}
+            image={headerImage}
+            backgroundColor={headerBackgroundColor}
+          />
+        )}
         <div className="data">
           <div className="content">
             <div className="stats">
               <span className="date">{date}</span>
-              {finalTags.map(tag => (<Tag name={tag} key={tag}/>))}
+              {finalTags.map(tag => <Tag name={tag} key={tag} />)}
             </div>
-            <Link
-              to={postUrl}
-              href={postUrl}
-            >
+            <Link to={postUrl} href={postUrl}>
               <h4 className="title">{title}</h4>
             </Link>
             <p className="d-none d-md-block">{content}</p>
-            <Link
-              to={postUrl}
-              href={postUrl}
-            >
-            ....繼續閱讀全文內容
+            <Link to={postUrl} href={postUrl}>
+              ....繼續閱讀全文內容
             </Link>
           </div>
         </div>

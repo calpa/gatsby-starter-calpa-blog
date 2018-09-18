@@ -1,4 +1,4 @@
-import { navigateTo } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import dayjs from 'dayjs';
 import { getCurrentPage, getMaxPages } from './index';
 
@@ -12,7 +12,7 @@ const gotoPage = async (url, show = false) => {
     await window.$('.collapse').collapse('hide');
   }
 
-  await navigateTo(url);
+  await navigate(url);
 };
 
 const parseMarkdownUrl = (date, rawUrl) =>
@@ -63,7 +63,7 @@ const handleNextPage = (pageNumber) => {
   return parsePageUrl(index);
 };
 
-export default {
+export {
   getUrl,
   parseMarkdownUrl,
   parseUrl,

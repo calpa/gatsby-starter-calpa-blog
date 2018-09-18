@@ -1,5 +1,6 @@
 // Components
 import React, { Component } from 'react';
+import { graphql } from 'gatsby';
 
 import Helmet from 'react-helmet';
 
@@ -9,6 +10,8 @@ import { getPath } from '../../api';
 import Sidebar from '../../components/Sidebar';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
+
+import wrapLayout from '../../api/layout';
 
 import './index.scss';
 
@@ -69,7 +72,7 @@ class Guestbook extends Component {
   }
 }
 
-export default Guestbook;
+export default wrapLayout(Guestbook);
 
 export const query = graphql`
   query GuestbookQuery {

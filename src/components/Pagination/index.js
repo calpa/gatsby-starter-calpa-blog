@@ -1,25 +1,25 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Link from 'gatsby-link';
+import React from "react";
+import PropTypes from "prop-types";
+import { Link } from "gatsby";
 
-import Dropdown from './Dropdown';
+import Dropdown from "./Dropdown";
 
-import { getPages } from '../../api';
-import { handlePreviousPage, handleNextPage } from '../../api/url';
+import { getPages } from "../../api";
+import { handlePreviousPage, handleNextPage } from "../../api/url";
 
 const PageItem = ({ number, content, url }) => (
-  <li className={`page-item${number < 0 ? ' disabled' : ''}`}>
+  <li className={`page-item${number < 0 ? " disabled" : ""}`}>
     <Link
       className="page-link"
-      to={`${typeof content === 'string' ? url : `/page/${number}`}`}
-      href={`${typeof content === 'string' ? url : `/page/${number}`}`}
+      to={`${typeof content === "string" ? url : `/page/${number}`}`}
+      href={`${typeof content === "string" ? url : `/page/${number}`}`}
     >
       {content || number}
     </Link>
   </li>
 );
 
-const getPageNumber = pathname => pathname.split('/')[2];
+const getPageNumber = pathname => pathname.split("/")[2];
 
 const Pagination = ({ pathname }) => (
   <nav aria-label="Page navigation example">
@@ -42,7 +42,7 @@ const Pagination = ({ pathname }) => (
 );
 
 Pagination.propTypes = {
-  pathname: PropTypes.string.isRequired,
+  pathname: PropTypes.string.isRequired
 };
 
 export default Pagination;

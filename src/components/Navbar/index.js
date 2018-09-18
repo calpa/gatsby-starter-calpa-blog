@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { navigateTo } from 'gatsby-link';
+import { navigate } from 'gatsby';
 import GithubCorner from '../GithubCorner';
 
 import NavItem from './NavItem';
@@ -11,7 +11,7 @@ const search = async (e) => {
   e.preventDefault();
   const { value } = document.getElementById('nav-search');
   await window.$('.collapse').collapse('hide');
-  await navigateTo(`/search?query=${value}`);
+  await navigate(`/search?query=${value}`);
 };
 
 const NavbarClass = [

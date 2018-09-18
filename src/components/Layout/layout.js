@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import Navbar from '../components/Navbar';
+import Navbar from '../Navbar';
 import Head from './Head';
-import Footer from '../components/Footer';
+import Footer from '../Footer';
 import './index.scss';
 
 if (typeof window !== 'undefined') {
@@ -18,15 +18,14 @@ const Layout = ({ children, location }) => (
     <Head />
     <Navbar location={location} />
 
-    <div className="container-fluid">
-      {children()}
-    </div>
+    <div className="container-fluid">{children}</div>
     <Footer />
   </div>
 );
 
-Layout.propTypes = {
-  children: PropTypes.func,
-};
+// Layout.propTypes = {
+//   children: PropTypes.object.isRequired,
+//   location: PropTypes.any
+// };
 
 export default Layout;

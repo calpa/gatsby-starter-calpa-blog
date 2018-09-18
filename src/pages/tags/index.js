@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import Link from 'gatsby-link';
+import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
 import Tag from '../../components/Tag';
 import Header from '../../components/Header';
@@ -8,6 +8,8 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import { url } from '../../../data/config';
+
+import wrapLayout from '../../api/layout';
 
 const splitTag = (raw = '') => raw.split(', ');
 
@@ -207,4 +209,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default TagPage;
+export default wrapLayout(TagPage);

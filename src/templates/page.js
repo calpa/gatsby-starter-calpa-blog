@@ -1,4 +1,5 @@
 import React from 'react';
+import { graphql } from 'gatsby';
 
 import Header from '../components/Header';
 import Card from '../components/Card';
@@ -7,6 +8,7 @@ import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
 import { parseDate, getPath } from '../api/';
 import { getFirstParagraph } from '../api/text';
+import wrapLayout from '../api/layout';
 
 const Page = ({ data, location }) => (
   <div className="row homepage">
@@ -51,7 +53,7 @@ const Page = ({ data, location }) => (
   </div>
 );
 
-export default Page;
+export default wrapLayout(Page);
 
 export const pageQuery = graphql`
   query getNextPage($limit: Int, $skip: Int) {

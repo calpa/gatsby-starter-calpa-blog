@@ -4,13 +4,13 @@ import { renderToString } from 'react-dom/server';
 
 import createStore from './src/state/createStore';
 
-exports.replaceRenderer = ({ bodyComponent, replaceBodyHTMLString }) => {
+const replaceRenderer = () => ({ bodyComponent, replaceBodyHTMLString }) => {
   const store = createStore();
 
   const ConnectedBody = () => (
-    <Provider store={store}>
-      {bodyComponent}
-    </Provider>
+    <Provider store={store}>{bodyComponent}</Provider>
   );
   replaceBodyHTMLString(renderToString(<ConnectedBody />));
 };
+
+export default replaceRenderer;

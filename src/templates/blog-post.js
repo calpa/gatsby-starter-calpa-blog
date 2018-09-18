@@ -1,6 +1,8 @@
 // Components
 import React, { Component } from 'react';
-import { Helmet } from 'react-helmet';
+import { StaticQuery, graphql } from 'gatsby';
+// import { Helmet } from 'react-helmet';
+
 import md5 from 'md5';
 import dayjs from 'dayjs';
 
@@ -22,6 +24,7 @@ import ChangePageButton from '../components/ChangePageButton';
 import ShareBox from '../components/ShareBox';
 
 import { getUrl } from '../api/url';
+import wrapLayout from '../api/layout';
 
 import { url, name, iconUrl } from '../../data/config';
 
@@ -162,9 +165,9 @@ class BlogPost extends Component {
   }
 }
 
-export default BlogPost;
+export default wrapLayout(BlogPost);
 
-export const query = graphql`
+const query = graphql`
   fragment post on ContentfulMarkdownConnection {
     edges {
       node {
