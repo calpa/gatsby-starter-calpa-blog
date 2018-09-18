@@ -33,7 +33,6 @@
     "react-markdown": "^2.5.1",
     "react-markmirror": "^0.4.16",
     "react-redux": "^5.0.6",
-    "react-share": "^1.18.0",
     "redux": "^3.7.2",
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2",
