@@ -32,7 +32,6 @@ const Head = () => (
       title={config.title}
       href="/atom.xml"
     />
-    {/* <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css" /> */}
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"

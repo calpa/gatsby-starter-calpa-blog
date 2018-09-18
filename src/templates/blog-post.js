@@ -165,9 +165,7 @@ class BlogPost extends Component {
   }
 }
 
-export default wrapLayout(BlogPost);
-
-const query = graphql`
+export const pageQuery = graphql`
   fragment post on ContentfulMarkdownConnection {
     edges {
       node {
@@ -210,3 +208,6 @@ const query = graphql`
     }
   }
 `;
+
+export default wrapLayout(BlogPost);
+// export default BlogPost;

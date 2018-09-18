@@ -1,6 +1,4 @@
 import React from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-
 import Layout from '../components/Layout/layout';
 
 function wrapLayout(WrappedComponent) {
@@ -21,9 +19,5 @@ function wrapLayout(WrappedComponent) {
     }
   };
 }
-
-export const wrapGraphQL = ({ query, children }) => (
-  <StaticQuery query={graphql(query)} render={data => <div>{children}</div>} />
-);
 
 export default wrapLayout;
