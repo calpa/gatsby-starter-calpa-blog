@@ -1,12 +1,14 @@
-import moment from 'moment';
+import dayjs from 'dayjs';
 import { maxPages } from '../../data/config';
 
 // Prevent webpack window problem
 const isBrowser = () => typeof window !== 'undefined';
 
-const isPage = () => (isBrowser() ? window.location.pathname.indexOf('page') === -1 : false);
+const isPage = () =>
+  (isBrowser() ? window.location.pathname.indexOf("page") === -1 : false);
 
-const getPageNumber = () => (isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1);
+const getPageNumber = () =>
+  (isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1);
 
 const getCurrentPage = () => {
   if (isBrowser() === true) {
@@ -20,7 +22,7 @@ const getCurrentPage = () => {
   return 0;
 };
 
-const getPath = () => (isBrowser() ? window.location.href : '');
+const getPath = () => (isBrowser() ? window.location.pathname : '');
 
 const getMaxPages = () => maxPages;
 
@@ -30,19 +32,24 @@ const getPages = () =>
 
 const overflow = () => getCurrentPage() === getMaxPages();
 
-const parseDate = date => moment(date).locale('zh-hk').format('YYYY/MM/DD');
+const parseDate = date => dayjs(date).format('YYYY/MM/DD');
 
-const parseChineseDate = date => moment(date).locale('zh-hk').format('DD/MM/YYYY');
+const parseChineseDate = date => dayjs(date).format('DD/MM/YYYY');
 
 const isFirstPage = () => (isBrowser() ? isPage() : false);
 
 const isLastPage = () => (isBrowser() ? overflow() : false);
 
 export {
-  isBrowser, isPage,
-  getCurrentPage, getMaxPages, getPages,
-  overflow, parseDate,
-  isFirstPage, isLastPage,
+  isBrowser,
+  isPage,
+  getCurrentPage,
+  getMaxPages,
+  getPages,
+  overflow,
+  parseDate,
+  isFirstPage,
+  isLastPage,
   parseChineseDate,
   getPath,
   getPageNumber,

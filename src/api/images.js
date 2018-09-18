@@ -4,13 +4,11 @@
 // m = Medium Thumbnail (320×320)
 // l = Large Thumbnail (640×640)
 // h = Huge Thumbnail (1024×1024)
-
 const getDefaultPicture = () => 'M795H8A.jpg';
 
-const parseImgur = (image, size = 'large') => {
+const parseImgur = (rawImage, size = 'large') => {
   let subfix = '';
-
-  image = image || getDefaultPicture(); // eslint-disable-line
+  const image = rawImage || getDefaultPicture();
 
   switch (size) {
     case 'small-square':
@@ -55,14 +53,19 @@ const parseImgur = (image, size = 'large') => {
 const parseTitle = (title, text) => `title="${title || text}"`;
 
 const parseImageTag = ({ href, title, text }) =>
-  `<img class="lozad d-block mx-auto" data-src=${parseImgur(href, 'large')} ${parseTitle(title, text)} />`;
+  `<img class="lozad d-block mx-auto" data-src=${parseImgur(
+    href,
+    'large',
+  )} ${parseTitle(title, text)} />`;
 
 const getGalleryImage = ({ href, title, text }) =>
-  `<a data-fancybox="gallery" href="${parseImgur(href, 'huge')}">${parseImageTag({ href, title, text })}</a>`;
+  `<a data-fancybox="gallery" href="${parseImgur(
+    href,
+    'huge',
+  )}">${parseImageTag({ href, title, text })}</a>`;
 
 module.exports = {
   parseImgur,
   parseImageTag,
-  getDefaultPicture,
   getGalleryImage,
 };

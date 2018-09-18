@@ -1,69 +1,68 @@
 import React from 'react';
 
 import PropTypes from 'prop-types';
+import ReactGA from 'react-ga';
 
-import { ShareButtons, generateShareIcon } from 'react-share';
+import ExternalLink from '../ExternalLink';
 
-// import { addthis } from '../../../data/config';
+import './index.scss';
 
-// import { refreshToolBox } from '../../api/addthis';
+const CommentButton = () => (
+  <a
+    className="share-button"
+    style={{
+      lineHeight: '1.7rem',
+      color: '#337ab7',
+      paddingLeft: '0.15rem',
+    }}
+    href="#gitalk-container"
+    onClick={() =>
+      ReactGA.event({
+        category: 'User',
+        action: 'Goto Comment Box',
+      })}
+  >
+    <i className="fa fa-comment-o" />
+  </a>
+);
 
-const {
-  FacebookShareButton,
-  TwitterShareButton,
-  TelegramShareButton,
-  WhatsappShareButton,
-} = ShareButtons;
+const ShareBox = ({ url, hasCommentBox }) => (
+  <div className="m-share-box">
+    <ExternalLink
+      href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
+      title=""
+      className="share-button fa fa-facebook"
+    />
 
-const FacebookIcon = generateShareIcon('facebook');
-const TwitterIcon = generateShareIcon('twitter');
-const TelegramIcon = generateShareIcon('telegram');
-const WhatsappIcon = generateShareIcon('whatsapp');
+    {/* 視覺置中 => 稍微往上偏移 */}
+    {hasCommentBox && <CommentButton />}
 
-const ShareBox = ({ url }) => (
-  <div>
-    <FacebookShareButton
-      url={url}
-      className="d-inline-block"
+    <a
+      className="share-button"
+      href="#header"
+      onClick={() => {
+        ReactGA.event({
+          category: 'User',
+          action: 'Scroll to Top',
+        });
+      }}
+      style={{
+        lineHeight: '1.7rem',
+        paddingLeft: '0.1rem',
+      }}
     >
-      <FacebookIcon
-        size={32}
-        round
-      />
-    </FacebookShareButton>
-
-    <TwitterShareButton
-      url={url}
-      className="d-inline-block"
-    >
-      <TwitterIcon
-        size={32}
-        round
-      />
-    </TwitterShareButton>
-    <TelegramShareButton
-      url={url}
-      className="d-inline-block"
-    >
-      <TelegramIcon
-        size={32}
-        round
-      />
-    </TelegramShareButton>
-    <WhatsappShareButton
-      url={url}
-      className="d-inline-block"
-    >
-      <WhatsappIcon
-        size={32}
-        round
-      />
-    </WhatsappShareButton>
+      <i className="fa fa-chevron-up" />
+    </a>
   </div>
 );
 
 ShareBox.propTypes = {
   url: PropTypes.string.isRequired,
+  hasCommentBox: PropTypes.bool,
+};
+
+ShareBox.defaultProps = {
+  hasCommentBox: true,
 };
 
 export default ShareBox;

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import lozad from 'lozad';
 
 import { isBrowser } from '../../api';
-import { getContent } from '../../api/text';
 
 class Content extends Component {
   constructor(props) {
@@ -15,7 +14,19 @@ class Content extends Component {
     // lazy loads elements with default selector as '.lozad'
     // Prevent WebPack build fail
     if (isBrowser()) {
-      const observer = lozad();
+      // Initialize library
+      const observer = lozad('.lozad', {
+        load(el) {
+          /* eslint-disable no-param-reassign */
+
+          el.src = el.dataset.src;
+          el.onload = () => {
+            el.classList.add('animated');
+            el.classList.add('fadeIn');
+          };
+          /* eslint-enable */
+        },
+      });
       observer.observe();
     }
   }
@@ -25,8 +36,8 @@ class Content extends Component {
       <div
         dangerouslySetInnerHTML={{ __html: this.props.post }}
         style={{
-            padding: 15,
-            background: 'white',
+          padding: 15,
+          background: 'white',
         }}
       />
     );
@@ -35,8 +46,6 @@ class Content extends Component {
 
 Content.propTypes = {
   post: PropTypes.string.isRequired,
-  // uuid: PropTypes.string.isRequired,
-  // title: PropTypes.string.isRequired,
 };
 
 export default Content;

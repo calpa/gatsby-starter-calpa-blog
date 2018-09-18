@@ -1,5 +1,9 @@
 import { navigateTo } from 'gatsby-link';
+import dayjs from 'dayjs';
 import { getCurrentPage, getMaxPages } from './index';
+
+const getUrl = ({ createdDate, url }) =>
+  `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;
 
 const gotoPage = async (url, show = false) => {
   if (show === true) {
@@ -11,9 +15,8 @@ const gotoPage = async (url, show = false) => {
   await navigateTo(url);
 };
 
-const parseMarkdownUrl = (date, rawUrl) => (
-  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`
-);
+const parseMarkdownUrl = (date, rawUrl) =>
+  `/${date}/${rawUrl.match(/_posts[/](.*).md/)[1]}/`;
 
 const parseUrl = (date, rawUrl) => {
   if (rawUrl === 'about') {
@@ -23,7 +26,7 @@ const parseUrl = (date, rawUrl) => {
 };
 
 const minusOnePage = (currentPage) => {
-  if (currentPage - 1 >= 0) {
+  if (currentPage - 1 >= 1) {
     return currentPage - 1;
   }
 
@@ -33,7 +36,7 @@ const minusOnePage = (currentPage) => {
 const addOnePage = (currentPage) => {
   const maxPages = getMaxPages();
 
-  if (currentPage + 1 <= maxPages) {
+  if (currentPage + 1 < maxPages) {
     return currentPage + 1;
   }
   return -1;
@@ -48,19 +51,20 @@ const parsePageUrl = (index) => {
   return -1;
 };
 
-const handlePreviousPage = () => {
-  const index = minusOnePage(getCurrentPage());
+const handlePreviousPage = (pageNumber) => {
+  const index = minusOnePage(+pageNumber);
 
   return parsePageUrl(index);
 };
 
-const handleNextPage = () => {
-  const index = addOnePage(getCurrentPage());
+const handleNextPage = (pageNumber) => {
+  const index = addOnePage(+pageNumber);
 
   return parsePageUrl(index);
 };
 
 export default {
+  getUrl,
   parseMarkdownUrl,
   parseUrl,
   handlePreviousPage,

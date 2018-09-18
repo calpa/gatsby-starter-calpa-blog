@@ -51,6 +51,11 @@ const getContent = async (mdFile) => {
     return `<h${tokens[idx].hLevel} id=${id}>`;
   };
 
+  md.renderer.rules.table_open = () =>
+    '<div class="table-responsive"><table class="table table-striped">';
+
+  md.renderer.rules.table_close = () => '</table></div>';
+
   const html = md.render(mdFile);
   return { html, toc };
 };

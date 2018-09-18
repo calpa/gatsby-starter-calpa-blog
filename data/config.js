@@ -1,75 +1,23 @@
-const about = '/2018/05/01/about-calpa-liu/';
-
-const internalLinks = {
-  navbarList: [
-    {
-      href: '/tags',
-      title: '分類',
-    },
-    {
-      href: '/guestbook/',
-      title: '留言簿',
-    },
-    {
-      href: about,
-      title: '關於作者',
-    },
-    {
-      href: '/demo/',
-      title: '實驗室',
-    },
-  ],
-  // TODO: Remove demo from the main frame
-  demoList: [
-    {
-      href: '/demo/count',
-      title: '字數統計',
-    },
-    {
-      href: '/demo/redux',
-      title: 'Redux 例子',
-    },
-    {
-      href: '/demo/gun',
-      title: 'Gun 例子',
-    },
-    {
-      href: '/demo/route',
-      title: '前端路線圖',
-    },
-    {
-      href: '/demo/fonts',
-      title: '字體',
-    },
-    {
-      href: '/demo/bootstrap',
-      title: 'Bootstrap 組件',
-    },
-    {
-      href: '/demo/popmotion',
-      title: 'Popmotion',
-    },
-  ],
-};
-
-const config = {
-  title: 'Calpa',
-  maxPages: 9, // TODO: Update this automatically
+module.exports = {
+  title: 'Calpa 的技術博客',
+  maxPages: 11, // TODO: Update this automatically
   meta: {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
     keyword: 'calpa, blog, Javascript',
     theme_color: '#384f7c',
-    favicon: 'https://i.imgur.com/PO9Y4fT.png',
+    favicon: 'https://i.imgur.com/PO9Y4fT.jpg',
     google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
   },
   SEOTitle: "Calpa's Blog",
+  name: 'calpa',
   email: 'calpaliu@gmail.com',
+  iconUrl: 'https://i.imgur.com/kjt2x52.jpg',
   License: 'by',
   url: 'https://calpa.me',
-  about,
+  about: '/2018/05/01/about-calpa-liu',
   // Sidebar
-  zhihu_username: 'piao-xue-wu-ying',
-  github_username: 'calpa',
+  zhihuUsername: 'piao-xue-wu-ying',
+  githubUsername: 'calpa',
   friends: [
     {
       title: '娜酱骑士团',
@@ -93,32 +41,30 @@ const config = {
     },
   ],
   // Plugins
+  gaOptimizeId: 'GTM-WHP7SC5',
   ga_track_id: 'UA-84737574-3',
   ga_domain: 'auto',
   anchorjs: true,
   pace: true,
   fancybox: true,
   gitalk: true,
-  algolia: {
-    applicationID: 'ABS4QV1E9V',
-    apiKey: 'd9adae0b31ed52fc0f6c4c75aad428bf',
-    indexName: 'blog',
-  },
-  ...internalLinks,
-  items: [
+  navbarList: [
     {
-      src: 'https://picsum.photos/1024/300?random',
-      alt: 'First slide',
+      href: '/tags',
+      title: '分類',
     },
     {
-      src: 'https://picsum.photos/1024/400?random',
-      alt: 'Second slide',
+      href: '/guestbook/',
+      title: '留言簿',
     },
     {
-      src: 'https://picsum.photos/1024/500?random',
-      alt: 'Third slide',
+      href: '/2018/05/01/about-calpa-liu',
+      title: '關於作者',
     },
   ],
+  contentful: {
+    API_SPACE_ID: 'n3ctvxixp1mr',
+    API_TOKEN:
+      '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a',
+  },
 };
-
-module.exports = config;

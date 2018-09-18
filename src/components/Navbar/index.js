@@ -15,7 +15,8 @@ const search = async (e) => {
 };
 
 const NavbarClass = [
-  'navbar', 'navbar-expand-md',
+  'navbar',
+  'navbar-expand-md',
   'sticky-top',
   'custom-navbar',
 ];
@@ -41,7 +42,12 @@ class Navbar extends Component {
 
   render() {
     return (
-      <nav className={`${NavbarClass.join(' ')} ${this.state.isTop === false ? 'navbar-dark' : 'navbar-light is-fixed'}`}>
+      <nav
+        id="m-navbar"
+        className={`${NavbarClass.join(' ')} ${this.state.isTop === false
+          ? 'navbar-dark'
+          : 'navbar-light is-fixed'}`}
+      >
         <div className="container">
           <button
             className="navbar-brand btn btn-default"
@@ -58,8 +64,11 @@ class Navbar extends Component {
             <span className="navbar-toggler-icon" />
           </button>
           <GithubCorner url="https://github.com/calpa/blog" />
-          <div className="collapse navbar-collapse flex-row-reverse" id="navbarSupportedContent">
-            {this.state.searchable &&
+          <div
+            className="collapse navbar-collapse flex-row-reverse"
+            id="navbarSupportedContent"
+          >
+            {this.state.searchable && (
               <form
                 className="form-inline my-2 my-lg-0"
                 onSubmit={e => search(e)}
@@ -71,11 +80,14 @@ class Navbar extends Component {
                   aria-label="Search"
                   id="nav-search"
                 />
-                <button className="btn btn-outline-secondary my-2 my-sm-0" type="submit">
+                <button
+                  className="btn btn-outline-secondary my-2 my-sm-0"
+                  type="submit"
+                >
                   <i className="fa fa-search" />
                 </button>
               </form>
-            }
+            )}
             <ul className="navbar-nav mr-2">
               {navbarList.map(item => (
                 <NavItem

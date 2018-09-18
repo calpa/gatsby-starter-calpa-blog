@@ -1,5 +1,6 @@
 import React from 'react';
 
+import Header from '../components/Header';
 import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
@@ -9,11 +10,18 @@ import { getFirstParagraph } from '../api/text';
 
 const Page = ({ data, location }) => (
   <div className="row homepage">
+    <Header
+      img={data.header.headerImage}
+      title={data.header.title}
+      titleVisible={data.header.titleVisible}
+      subTitle={data.header.subTitle}
+      subTitleVisible={data.header.subTitleVisible}
+    />
     <Sidebar
       totalCount={data.latestPosts.totalCount}
       posts={data.latestPosts.edges}
     />
-    <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2" >
+    <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
       <div className="row">
         {data.pagePosts.edges.map(({ node }, index) => (
           <Card
@@ -43,38 +51,42 @@ const Page = ({ data, location }) => (
   </div>
 );
 
-
 export default Page;
 
 export const pageQuery = graphql`
-query getNextPage($limit: Int, $skip: Int) {
-  latestPosts: allContentfulMarkdown(limit: 6) {
-    totalCount
-    edges {
-      node {
-        title
-        url
-        createdDate
+  query getNextPage($limit: Int, $skip: Int) {
+    header(purpose: { eq: "Home" }) {
+      headerImage
+      title
+      titleVisible
+      subTitle
+      subTitleVisible
+    }
+    latestPosts: allContentfulMarkdown(limit: 6) {
+      totalCount
+      edges {
+        node {
+          title
+          url
+          createdDate
+        }
+      }
+    }
+    pagePosts: allContentfulMarkdown(
+      sort: { order: DESC, fields: [createdDate] }
+      limit: $limit
+      skip: $skip
+    ) {
+      edges {
+        node {
+          title
+          createdDate
+          url
+          headerImgur
+          content
+          tags
+        }
       }
     }
   }
-
-  pagePosts: allContentfulMarkdown(
-        sort: {order: DESC, fields: [createdDate]}
-        limit: $limit
-        skip: $skip
-    ) {
-
-      edges {
-       node {
-         title
-         createdDate
-         url
-         headerImgur
-         content
-         tags
-       }
-     }
-  }
-}
 `;
