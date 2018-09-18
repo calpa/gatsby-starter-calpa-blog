@@ -10,6 +10,13 @@ import { parseDate, getPath } from '../api/';
 import { getFirstParagraph } from '../api/text';
 import wrapLayout from '../api/layout';
 
+const getTitle = (pageNumber = '1') => {
+  if (pageNumber === '1') {
+    return '首頁';
+  }
+  return `第 ${pageNumber} 頁`;
+};
+
 const Page = ({ data, location }) => (
   <div className="row homepage">
     <Header
@@ -44,6 +51,7 @@ const Page = ({ data, location }) => (
     </div>
     <div className="col-xl-2 col-lg-1 order-3" />
     <SEO
+      title={getTitle(location.pathname.split('/')[2])}
       url={getPath()}
       description="Calpa's Blog"
       image="https://i.imgur.com/kjt2x52.png"
