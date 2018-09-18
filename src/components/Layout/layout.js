@@ -14,11 +14,11 @@ if (typeof window !== 'undefined') {
 }
 
 const Layout = ({ children, location }) => (
-  <div className="layout fadeIn">
+  <div className="layout">
     <Head />
     <Navbar location={location} />
 
-    <div className="container-fluid">{children}</div>
+    <div className="container-fluid fadeIn">{children}</div>
     <Footer />
   </div>
 );
