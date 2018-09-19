@@ -55,7 +55,7 @@ const schemaOrgJSONLD = ({
 ];
 
 const SEO = ({
- url, title, description, image, siteTitleAlt, isPost 
+  url, title, description, image, siteTitleAlt, isPost,
 }) => (
   <Helmet>
     <title>{title}</title>

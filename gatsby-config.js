@@ -1,3 +1,6 @@
+const dayjs = require('dayjs');
+const Remarkable = require('remarkable');
+
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -41,17 +44,17 @@ module.exports = {
             serialize: ({ query: { site, allContentfulMarkdown } }) =>
               // GraphQL query the posts from allContentfulMarkdown
               allContentfulMarkdown.edges.map((edge) => {
-                const url = `${site.siteMetadata.siteUrl}${require('moment')(edge.node.createdDate,)
+                const url = `${site.siteMetadata.siteUrl}${dayjs(edge.node.createdDate)
                   .locale('zh-hk')
                   .format('YYYY/MM/DD')}/${edge.node.url}`;
-                const Remarkable = require('remarkable');
+
                 const md = new Remarkable({});
                 const description = md.render(edge.node.content);
 
                 return {
                   title: edge.node.title,
                   description,
-                  date: require('moment')(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A',),
+                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
                   url,
                   guid: url,
                 };

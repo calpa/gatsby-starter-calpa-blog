@@ -1,14 +1,10 @@
 import React from 'react';
-import { Link } from "gatsby";
 import PropTypes from 'prop-types';
 import './toc.scss';
 
 const TableItem = ({ url, name }) => (
   <li>
-    <a
-      href={url}
-      data-scroll
-    >
+    <a href={url} data-scroll>
       {name}
     </a>
   </li>
@@ -19,18 +15,16 @@ TableItem.propTypes = {
   name: PropTypes.string.isRequired,
 };
 
-const Table = ({ items }) => (
-  <ul>
-    {items.map(item => <TableItem url={`#${item}`} name={item} key={item} />)}
-  </ul>
-);
-
 const TableOfContent = ({ toc }) => (
-  <div
-    className="col-lg-2 d-none d-lg-block order-11 toc-wrap"
-  >
-    <Table items={toc} />
+  <div className="col-lg-2 d-none d-lg-block order-11 toc-wrap">
+    <ul>
+      {toc.map(item => <TableItem url={`#${item}`} name={item} key={item} />)}
+    </ul>
   </div>
 );
+
+TableOfContent.propTypes = {
+  toc: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+};
 
 export default TableOfContent;

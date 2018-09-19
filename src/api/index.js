@@ -5,7 +5,7 @@ import { maxPages } from '../../data/config';
 const isBrowser = () => typeof window !== 'undefined';
 
 const isPage = () =>
-  (isBrowser() ? window.location.pathname.indexOf("page") === -1 : false);
+  (isBrowser() ? window.location.pathname.indexOf('page') === -1 : false);
 
 const getPageNumber = () =>
   (isBrowser() ? +window.location.pathname.match(/page[/](\d)/)[1] : -1);

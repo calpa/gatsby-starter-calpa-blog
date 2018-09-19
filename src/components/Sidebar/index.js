@@ -1,19 +1,19 @@
-import React from "react";
-import { Link } from "gatsby";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
 
 import {
   githubUsername,
   zhihuUsername,
   email,
   iconUrl,
-  about
-} from "../../../data/config";
+  about,
+} from '../../../data/config';
 
-import Information from "./Information";
-import Subscription from "./Subscription";
+import Information from './Information';
+import Subscription from './Subscription';
 
-import "./index.scss";
+import './index.scss';
 
 const Icon = ({ href, name, content }) => (
   <a
@@ -33,8 +33,8 @@ const Sidebar = ({ post, totalCount, posts }) => (
   <header
     className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${post ===
     true
-      ? "order-11"
-      : "order-1"}`}
+      ? 'order-11'
+      : 'order-1'}`}
   >
     <div className="about-me">
       <Link to={about} href={about} className="name">
@@ -56,14 +56,21 @@ const Sidebar = ({ post, totalCount, posts }) => (
   </header>
 );
 
+Icon.propTypes = {
+  href: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  content: PropTypes.string.isRequired,
+};
+
 Sidebar.propTypes = {
   post: PropTypes.bool,
-  totalCount: PropTypes.number
+  totalCount: PropTypes.number,
+  posts: PropTypes.array // eslint-disable-line
 };
 
 Sidebar.defaultProps = {
   post: false,
-  totalCount: 0
+  totalCount: 0,
 };
 
 export default Sidebar;
