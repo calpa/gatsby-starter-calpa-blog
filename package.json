@@ -33,7 +33,6 @@
     "react-dom": "^16.5.1",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
-    "react-markmirror": "^0.4.16",
     "react-redux": "^5.0.7",
     "redux": "^3.7.2",
     "remarkable": "^1.7.1",
@@ -41,11 +40,15 @@
     "smooth-scroll": "^14.2.1",
     "webpack": "^4.19.0"
   },
-  "keywords": [
-    "gatsby"
-  ],
+  "keywords": ["gatsby"],
   "license": "MIT",
   "main": "n/a",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged",
+      "pre-push": "lint-staged"
+    }
+  },
   "scripts": {
     "start": "npm run develop",
     "build": "gatsby build --prefix-paths",
@@ -53,7 +56,8 @@
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
-    "format": "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
+    "format":
+      "prettier --trailing-comma es5 --no-semi --single-quote --write 'src/**/*.js'",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/"
@@ -65,7 +69,12 @@
     "eslint-plugin-import": "^2.7.0",
     "eslint-plugin-react": "^7.4.0",
     "gh-pages": "^1.0.0",
+    "husky": "^1.0.0-rc.14",
+    "lint-staged": "^7.2.2",
     "prettier": "^1.7.4",
     "webpack-bundle-analyzer": "^3.0.2"
+  },
+  "lint-staged": {
+    "*.js": ["eslint --fix", "prettier --write", "git add"]
   }
 }
