@@ -40,7 +40,9 @@
     "smooth-scroll": "^14.2.1",
     "webpack": "^4.19.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "husky": {
@@ -57,6 +59,7 @@
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
     "format": "eslint --fix --ignore-path .gitignore .",
+    "format-style": "stylelint src/**/*.scss --syntax=scss",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/"
@@ -71,12 +74,22 @@
     "husky": "^1.0.0-rc.14",
     "lint-staged": "^7.2.2",
     "prettier": "^1.7.4",
+    "stylelint": "^9.5.0",
+    "stylelint-config-recommended-scss": "^3.2.0",
+    "stylelint-scss": "^3.3.0",
     "webpack-bundle-analyzer": "^3.0.2"
   },
   "lint-staged": {
     "linters": {
-      "*.{js,scss}": ["eslint --fix", "git add"]
+      "*.{js}": [
+        "eslint --fix",
+        "git add"
+      ],
+      "*.css": "stylelint",
+      "*.scss": "stylelint --syntax=scss"
     },
-    "ignore": ["**/dist/*.min.js"]
+    "ignore": [
+      "**/dist/*.min.js"
+    ]
   }
 }
