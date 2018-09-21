@@ -13,7 +13,7 @@ const { API_SPACE_ID, API_TOKEN } = require('./data/config').contentful;
 const redirectors = [
   {
     fromPath: '/',
-    toPath: '/page/1',
+    toPath: '/page/1/',
   },
 ];
 
