@@ -81,12 +81,12 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js}": [
+      "**/*.{js}": [
         "eslint --fix",
         "git add"
       ],
-      "*.css": "stylelint",
-      "*.scss": "stylelint --syntax=scss"
+      "**/*.css": "stylelint",
+      "**/*.scss": "stylelint --syntax=scss"
     },
     "ignore": [
       "**/dist/*.min.js"
