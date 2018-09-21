@@ -4,10 +4,10 @@
 // @import '~han-css/src/sass/api'; // api
 // @import '~han-css/src/sass/locale/normalize'; // Normalize.css
 // @import '~han-css/src/sass/locale'; // 本地樣式標準化模組
-@import "~han-css/src/sass/typography"; // 文字設計模組
+// @import "~han-css/src/sass/typography"; // 文字設計模組
 // @import '~han-css/src/sass/typeset'; // 高級排版功能模組（章節的編排、行的組成）
 // We use .han-mono
-
+/*
 .han {
   &-sans {
     @extend %han-sans;
@@ -65,6 +65,7 @@
     }
   }
 }
+*/
 // Content
 
 .fadeIn {

@@ -18,7 +18,7 @@ const Layout = ({ children, location }) => (
     <Head />
     <Navbar location={location} />
 
-    <div className="container-fluid fadeIn">{children}</div>
+    <div className="container-fluid">{children}</div>
     <Footer />
   </div>
 );
