@@ -33,11 +33,9 @@
   }
 
   .custom-icon {
-    .fa {
-      font-family: FontAwesome;
-    }
-
-    .fa-stack {
+    i {
+      transition: background 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+      background: $regal-blue;
       border-radius: 50%;
     }
 
@@ -47,12 +45,6 @@
       i {
         background: $light-blue;
       }
-    }
-
-    i {
-      transition: background 1s cubic-bezier(0.22, 0.61, 0.36, 1);
-      background: $regal-blue;
-      border-radius: 50%;
     }
   }
 

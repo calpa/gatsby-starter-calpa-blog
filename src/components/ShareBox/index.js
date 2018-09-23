@@ -2,8 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 import ReactGA from 'react-ga';
-
-import ExternalLink from '../ExternalLink';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import './index.scss';
 
@@ -22,17 +21,19 @@ const CommentButton = () => (
         action: 'Goto Comment Box',
       })}
   >
-    <i className="fa fa-comment-o" />
+    <FontAwesomeIcon icon={['far', 'comment']} />
   </a>
 );
 
 const ShareBox = ({ url, hasCommentBox }) => (
   <div className="m-share-box">
-    <ExternalLink
+    <a
       href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
       title=""
-      className="share-button fa fa-facebook"
-    />
+      className="share-button"
+    >
+      <FontAwesomeIcon icon={['fab', 'facebook-f']} />
+    </a>
 
     {/* 視覺置中 => 稍微往上偏移 */}
     {hasCommentBox && <CommentButton />}
@@ -51,7 +52,7 @@ const ShareBox = ({ url, hasCommentBox }) => (
         paddingLeft: '0.1rem',
       }}
     >
-      <i className="fa fa-chevron-up" />
+      <FontAwesomeIcon icon={['fas', 'chevron-up']} />
     </a>
   </div>
 );

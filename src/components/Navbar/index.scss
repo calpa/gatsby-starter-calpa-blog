@@ -14,10 +14,6 @@
     border: 0;
   }
 
-  .fa {
-    font-family: FontAwesome;
-  }
-
   .btn-link {
     color: $black;
   }
@@ -44,10 +40,6 @@
   &.is-fixed {
     background: transparent;
     .btn-link {
-      color: $white;
-    }
-
-    .navbar-brand {
       color: $white;
     }
 

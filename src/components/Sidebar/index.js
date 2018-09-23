@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
   githubUsername,
@@ -15,16 +16,15 @@ import Subscription from './Subscription';
 
 import './index.scss';
 
-const Icon = ({ href, name, content }) => (
+const Icon = ({ href, icon }) => (
   <a
     target="_blank"
     href={href}
     rel="external nofollow noopener noreferrer"
     className="custom-icon"
   >
-    <span className="fa-stack fa-lg mx-1">
-      <i className="fa fa-circle fa-stack-2x" />
-      <i className={`fa fa-stack-1x fa-inverse ${name}`}>{content}</i>
+    <span className="fa-layers fa-fw fa-2x">
+      <FontAwesomeIcon icon={icon} />
     </span>
   </a>
 );
@@ -45,11 +45,13 @@ const Sidebar = ({ post, totalCount, posts }) => (
       <p className="mb-3">餘情豈是為他人</p>
       <Icon
         href={`https://www.zhihu.com/people/${zhihuUsername}`}
-        content="知"
+        icon={['fab', 'zhihu']}
       />
-      <Icon href={`https://github.com/${githubUsername}`} name="fa-github" />
-      <Icon href={`mailto:${email}`} name="fa-envelope" />
-
+      <Icon
+        href={`https://github.com/${githubUsername}`}
+        icon={['fab', 'github']}
+      />
+      <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
       <Subscription />
       <Information totalCount={totalCount} posts={posts} />
     </div>
@@ -58,8 +60,7 @@ const Sidebar = ({ post, totalCount, posts }) => (
 
 Icon.propTypes = {
   href: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  content: PropTypes.string.isRequired,
+  icon: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 Sidebar.propTypes = {

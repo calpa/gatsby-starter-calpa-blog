@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
-import { navigate } from 'gatsby';
+import React from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBars } from '@fortawesome/free-solid-svg-icons';
 import GithubCorner from '../GithubCorner';
 
 import NavItem from './NavItem';
@@ -21,7 +22,7 @@ const Navbar = () => (
         className="navbar-brand btn btn-default"
         onClick={() => gotoPage('/')}
       >
-        <span className="brand-logo">Calpa</span> 's Blog
+        <span className="brand-logo">Calpa</span> &apos;s Blog
       </button>
       <button
         className="navbar-toggler"
@@ -29,7 +30,7 @@ const Navbar = () => (
         data-toggle="collapse"
         data-target="#navbarSupportedContent"
       >
-        <span className="fa fa-bars" />
+        <FontAwesomeIcon icon={faBars} />
       </button>
       <GithubCorner url="https://github.com/calpa/blog" />
       <div

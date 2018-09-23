@@ -1,16 +1,34 @@
 import React from 'react';
 import ReactGA from 'react-ga';
 import { Provider } from 'react-redux';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { faCircle, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { faEnvelope, faComment } from '@fortawesome/free-regular-svg-icons';
+import {
+  faGithub,
+  faZhihu,
+  faFacebookF,
+} from '@fortawesome/free-brands-svg-icons';
 
 import createStore from './src/state/createStore';
 
-import { url, ga_track_id, gaOptimizeId } from './data/config';
+import { url, gaTrackId, gaOptimizeId } from './data/config';
+
+library.add(
+  faCircle,
+  faComment,
+  faChevronUp,
+  faEnvelope,
+  faGithub,
+  faZhihu,
+  faFacebookF,
+);
 
 const isLocalDevelopment = () =>
   window && window.location && window.location.origin !== url;
 
 if (isLocalDevelopment() === false) {
-  ReactGA.initialize(ga_track_id);
+  ReactGA.initialize(gaTrackId);
 
   // Google Optimizer
   if (gaOptimizeId) {

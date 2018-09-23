@@ -24,7 +24,7 @@ const TableOfContent = ({ toc }) => (
 );
 
 TableOfContent.propTypes = {
-  toc: PropTypes.objectOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
+  toc: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default TableOfContent;
