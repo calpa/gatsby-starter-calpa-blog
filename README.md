@@ -4,6 +4,8 @@
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
 
+![HomePage](https://i.imgur.com/6Xd4yVQ.png)
+
 Starter of Calpa's Blog.
 
 If you like [my blog](https://calpa.me), please star it. Many thanks.
@@ -11,6 +13,7 @@ If you like [my blog](https://calpa.me), please star it. Many thanks.
 ## Feature
 
 1. Sitemap is supported
+1. Font Awesome is auto loaded(powererd by react-fontawesome)
 1. Contentful
 
 ## Prerequisites
