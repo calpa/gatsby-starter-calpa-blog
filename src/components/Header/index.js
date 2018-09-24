@@ -10,9 +10,10 @@ const Header = ({
   img,
   title,
   subTitle,
-  jueJinId,
   authorImage,
   authorName,
+  jueJinPostLink,
+  jueJinLikeIconLink,
 }) => (
   <div className="col-12 header" style={{ padding: 0 }} id="header">
     <div
@@ -35,8 +36,14 @@ const Header = ({
             )}
             <span className="author-name">{authorName}</span>
           </div>
-          <span className="text">{subTitle}</span>{' '}
-          {jueJinId && <JueJin jueJinId={jueJinId} />}
+          <span className="text">{subTitle}</span>
+          {jueJinPostLink &&
+            jueJinLikeIconLink && (
+              <JueJin
+                jueJinPostLink={jueJinPostLink}
+                jueJinLikeIconLink={jueJinLikeIconLink}
+              />
+            )}
         </div>
       )}
     </div>
@@ -47,17 +54,19 @@ Header.propTypes = {
   img: PropTypes.string.isRequired,
   title: PropTypes.string,
   subTitle: PropTypes.string,
-  jueJinId: PropTypes.string,
   authorName: PropTypes.string,
   authorImage: PropTypes.string,
+  jueJinPostLink: PropTypes.string,
+  jueJinLikeIconLink: PropTypes.string,
 };
 
 Header.defaultProps = {
   title: '',
   subTitle: '',
-  jueJinId: '',
   authorName: '',
   authorImage: '',
+  jueJinPostLink: '',
+  jueJinLikeIconLink: '',
 };
 
 export default Header;

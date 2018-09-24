@@ -1,7 +1,8 @@
+/* eslint react/prop-types: 0 */
+
 // Components
 import React, { Component } from 'react';
-import { StaticQuery, graphql } from 'gatsby';
-// import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 
 import md5 from 'md5';
 import dayjs from 'dayjs';
@@ -94,7 +95,8 @@ class BlogPost extends Component {
       id,
       toc,
       tags,
-      jueJinId,
+      jueJinLikeIconLink,
+      jueJinPostLink,
     } = node;
 
     const { totalCount, edges } = this.data.latestPosts;
@@ -120,7 +122,8 @@ class BlogPost extends Component {
           authorName={name}
           authorImage={iconUrl}
           subTitle={parseChineseDate(createdDate)}
-          jueJinId={jueJinId}
+          jueJinLikeIconLink={jueJinLikeIconLink}
+          jueJinPostLink={jueJinPostLink}
         />
         <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
@@ -192,7 +195,8 @@ export const pageQuery = graphql`
           headerImgur
           toc
           tags
-          jueJinId
+          jueJinLikeIconLink
+          jueJinPostLink
         }
         previous {
           ...postLink
@@ -210,4 +214,3 @@ export const pageQuery = graphql`
 `;
 
 export default wrapLayout(BlogPost);
-// export default BlogPost;

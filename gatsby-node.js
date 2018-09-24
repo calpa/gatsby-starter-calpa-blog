@@ -1,7 +1,6 @@
 const path = require('path');
 
 const { createFilePath } = require('gatsby-source-filesystem');
-const webpack = require('webpack');
 const dayjs = require('dayjs');
 const axios = require('axios');
 
@@ -51,7 +50,9 @@ const processDatum = (datum, html = '', toc = []) => ({
 
 const asyncForEach = async (array = [], callback = () => {}) => {
   for (let i = 0, n = array.length; i < n; i += 1) {
+    /* eslint-disable no-await-in-loop */
     await callback(array[i], i, array);
+    /* eslint-enable no-await-in-loop */
   }
 };
 

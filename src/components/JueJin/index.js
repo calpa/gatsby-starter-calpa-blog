@@ -1,13 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const JueJin = ({ jueJinId, style }) => (
-  <a
-    href={`https://juejin.im/entry/${jueJinId}/detail`}
-    rel="external nofollow noopener noreferrer"
-  >
+const JueJin = ({ jueJinPostLink, jueJinLikeIconLink }) => (
+  <a href={jueJinPostLink} rel="external nofollow noopener noreferrer">
     <img
-      src={`https://badge.juejin.im/entry/${jueJinId}/likes.svg?style=${style}`}
+      src={jueJinLikeIconLink}
       alt="JueJin Link"
       style={{
         cursor: 'pointer',
@@ -19,13 +16,13 @@ const JueJin = ({ jueJinId, style }) => (
 );
 
 JueJin.propTypes = {
-  jueJinId: PropTypes.string,
-  style: PropTypes.string,
+  jueJinPostLink: PropTypes.string,
+  jueJinLikeIconLink: PropTypes.string,
 };
 
 JueJin.defaultProps = {
-  jueJinId: '',
-  style: 'flat',
+  jueJinPostLink: '',
+  jueJinLikeIconLink: '',
 };
 
 export default JueJin;
