@@ -7,13 +7,9 @@ import Dropdown from './Dropdown';
 import { getPages } from '../../api';
 import { handlePreviousPage, handleNextPage } from '../../api/url';
 
-const PageItem = ({ number, content, url }) => (
+const PageItem = ({ number, content }) => (
   <li className={`page-item${number < 0 ? ' disabled' : ''}`}>
-    <Link
-      className="page-link"
-      to={`${typeof content === 'string' ? url : `/page/${number}`}`}
-      href={`${typeof content === 'string' ? url : `/page/${number}`}`}
-    >
+    <Link className="page-link" to={`${number}`} href={number}>
       {content || number}
     </Link>
   </li>
@@ -27,7 +23,6 @@ const Pagination = ({ pathname }) => (
       <PageItem
         number={handlePreviousPage(getPageNumber(pathname))}
         content="Previous"
-        url={handlePreviousPage(getPageNumber(pathname))}
       />
       <li className="page-item">
         <Dropdown pages={getPages()} text={getPageNumber(pathname)} />
@@ -35,16 +30,14 @@ const Pagination = ({ pathname }) => (
       <PageItem
         number={handleNextPage(getPageNumber(pathname))}
         content="Next"
-        url={handleNextPage(getPageNumber(pathname))}
       />
     </ul>
   </nav>
 );
 
 PageItem.propTypes = {
-  number: PropTypes.number.isRequired,
+  number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
   content: PropTypes.string.isRequired,
-  url: PropTypes.string.isRequired,
 };
 
 Pagination.propTypes = {
