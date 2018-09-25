@@ -164,3 +164,5 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     });
   });
 };
+
+exports.onCreateWebpackConfig = require('./gatsby/onCreateWebpackConfig');
