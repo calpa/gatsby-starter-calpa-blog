@@ -7,7 +7,8 @@ class AddToHomePrompt extends Component {
     this.state = {
       showPrompt: true,
       deferredPrompt: null,
-      outcome: 'Not Triggered Yet...',
+      outcome: '你是否願意使用更快更新的版本？',
+      disablePrompt: false,
     };
   }
 
@@ -70,6 +71,20 @@ class AddToHomePrompt extends Component {
   }
 
   render() {
+    if (
+      window.matchMedia('(display-mode: standalone)').matches ||
+      window.navigator.standalone === true ||
+      this.state.disablePrompt === true
+    ) {
+      return (
+        <div
+          style={{
+            display: 'none',
+          }}
+        />
+      );
+    }
+
     return (
       <div className="m-addToHomePrompt">
         <p>{this.state.outcome}</p>
@@ -78,6 +93,12 @@ class AddToHomePrompt extends Component {
             Add to Home Screen
           </button>
         )}
+        <button
+          className="btn btn-default"
+          onClick={() => this.setState({ disablePrompt: true })}
+        >
+          X
+        </button>
       </div>
     );
   }
