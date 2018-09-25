@@ -7,6 +7,7 @@ class AddToHomePrompt extends Component {
     this.state = {
       showPrompt: true,
       deferredPrompt: null,
+      outcome: 'Not Triggered Yet...',
     };
   }
 
@@ -15,6 +16,11 @@ class AddToHomePrompt extends Component {
       'beforeinstallprompt',
       this.handlePrompt,
     );
+
+    this.state.appinstalled = window.addEventListener(
+      'appinstalled',
+      this.handleAppInstalled,
+    );
   }
 
   componentWillUnmount() {
@@ -22,6 +28,17 @@ class AddToHomePrompt extends Component {
       'beforeinstallprompt',
       this.handlePrompt,
     );
+
+    this.state.appinstalled = window.removeEventListener(
+      'appinstalled',
+      this.handleAppInstalled,
+    );
+  }
+
+  handleAppInstalled() {
+    this.setState({
+      outcome: 'Thank you for install this APP',
+    });
   }
 
   handlePrompt(e) {
@@ -40,10 +57,14 @@ class AddToHomePrompt extends Component {
     // Wait for the user to respond to the prompt
     this.state.deferredPrompt.userChoice.then((choiceResult) => {
       if (choiceResult.outcome === 'accepted') {
-        console.log('User accepted the A2HS prompt');
+        this.setState({ outcome: 'User accepted the A2HS prompt' });
       } else {
-        console.log('User dismissed the A2HS prompt');
+        this.setState({
+          outcome: 'User dismissed the A2HS prompt',
+          showPrompt: true,
+        });
       }
+
       this.setState({ deferredPrompt: null });
     });
   }
@@ -51,6 +72,7 @@ class AddToHomePrompt extends Component {
   render() {
     return (
       <div className="m-addToHomePrompt">
+        <p>{this.state.outcome}</p>
         {this.state.showPrompt === true && (
           <button className="btn btn-info" onClick={e => this.handleClick(e)}>
             Add to Home Screen
