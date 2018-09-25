@@ -82,8 +82,8 @@ module.exports = {
       resolve: 'gatsby-plugin-manifest',
       options: {
         name: "Calpa's Blog",
-        short_name: 'Calpa',
-        start_url: '/',
+        short_name: 'Calpa 的博客',
+        start_url: '/page/1/',
         background_color: '#ededed',
         theme_color: '#384f7c',
         display: 'standalone',

@@ -15,11 +15,11 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "dayjs": "^1.7.5",
     "eslint-plugin-jsx-a11y": "^5.1.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.8",
     "gatsby-link": "^2.0.1",
-    "gatsby-plugin-catch-links": "^2.0.2",
+    "gatsby-plugin-catch-links": "^2.0.3",
     "gatsby-plugin-feed": "^2.0.5",
-    "gatsby-plugin-manifest": "^2.0.2",
+    "gatsby-plugin-manifest": "^2.0.3",
     "gatsby-plugin-netlify": "^2.0.0",
     "gatsby-plugin-nprogress": "^2.0.5",
     "gatsby-plugin-offline": "^2.0.5",
@@ -82,7 +82,7 @@
     "prettier": "^1.7.4",
     "stylelint": "^9.5.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-scss": "^3.3.0"
+    "stylelint-scss": "^3.3.1"
   },
   "lint-staged": {
     "linters": {
