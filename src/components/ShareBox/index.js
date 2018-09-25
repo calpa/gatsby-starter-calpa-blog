@@ -19,7 +19,8 @@ const CommentButton = () => (
       ReactGA.event({
         category: 'User',
         action: 'Goto Comment Box',
-      })}
+      })
+    }
   >
     <FontAwesomeIcon icon={['far', 'comment']} />
   </a>
@@ -31,6 +32,12 @@ const ShareBox = ({ url, hasCommentBox }) => (
       href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
       title=""
       className="share-button"
+      onClick={() =>
+        ReactGA.event({
+          category: 'Share',
+          action: 'Facebook Share',
+        })
+      }
     >
       <FontAwesomeIcon icon={['fab', 'facebook-f']} />
     </a>
