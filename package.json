@@ -27,6 +27,7 @@
     "gatsby-plugin-sass": "^2.0.1",
     "gatsby-plugin-sentry": "^0.1.0",
     "gatsby-plugin-sitemap": "^2.0.1",
+    "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.1",
     "gitalk": "^1.4.0",
     "han-css": "^3.3.0",
@@ -45,7 +46,9 @@
     "smooth-scroll": "^14.2.1",
     "webpack": "^4.19.0"
   },
-  "keywords": ["gatsby"],
+  "keywords": [
+    "gatsby"
+  ],
   "license": "MIT",
   "main": "n/a",
   "husky": {
@@ -79,15 +82,19 @@
     "prettier": "^1.7.4",
     "stylelint": "^9.5.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-scss": "^3.3.0",
-    "webpack-bundle-analyzer": "^3.0.2"
+    "stylelint-scss": "^3.3.0"
   },
   "lint-staged": {
     "linters": {
-      "**/*.js": ["eslint --fix", "git add"],
+      "**/*.js": [
+        "eslint --fix",
+        "git add"
+      ],
       "**/*.css": "stylelint",
       "**/*.scss": "stylelint --syntax=scss"
     },
-    "ignore": ["**/dist/*.min.js"]
+    "ignore": [
+      "**/dist/*.min.js"
+    ]
   }
 }

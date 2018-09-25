@@ -13,6 +13,7 @@ module.exports = {
     'gatsby-plugin-react-helmet',
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
+    'gatsby-plugin-webpack-bundle-analyzer',
     {
       resolve: 'gatsby-plugin-sitemap',
     },
@@ -44,7 +45,7 @@ module.exports = {
             serialize: ({ query: { site, allContentfulMarkdown } }) =>
               // GraphQL query the posts from allContentfulMarkdown
               allContentfulMarkdown.edges.map((edge) => {
-                const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate,).format('YYYY/MM/DD')}/${edge.node.url}`;
+                const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate).format('YYYY/MM/DD')}/${edge.node.url}`;
 
                 const md = new Remarkable({});
                 const description = md.render(edge.node.content);
@@ -52,7 +53,7 @@ module.exports = {
                 return {
                   title: edge.node.title,
                   description,
-                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A',),
+                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
                   url,
                   guid: url,
                 };
