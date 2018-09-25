@@ -1,3 +1,4 @@
+/* eslint react/prop-types: 0 */
 import React from 'react';
 import { graphql } from 'gatsby';
 
@@ -9,6 +10,7 @@ import Pagination from '../components/Pagination';
 import { parseDate, getPath } from '../api/';
 import { getFirstParagraph } from '../api/text';
 import wrapLayout from '../api/layout';
+import ShareBox from '../components/ShareBox';
 
 const getTitle = (pageNumber = '1') => {
   if (pageNumber === '1') {
@@ -50,6 +52,7 @@ const Page = ({ data, location }) => (
       <Pagination pathname={location.pathname} />
     </div>
     <div className="col-xl-2 col-lg-1 order-3" />
+    <ShareBox url={location.hrefname} hasCommentBox={false} />
     <SEO
       title={getTitle(location.pathname.split('/')[2])}
       url={getPath()}
