@@ -71,18 +71,15 @@ class AddToHomePrompt extends Component {
   }
 
   render() {
-    if (
-      window.matchMedia('(display-mode: standalone)').matches ||
-      window.navigator.standalone === true ||
-      this.state.disablePrompt === true
-    ) {
-      return (
-        <div
-          style={{
-            display: 'none',
-          }}
-        />
-      );
+    // Fix WebpackError: ReferenceError: window is not defined
+    if (typeof window !== 'undefined') {
+      if (
+        window.matchMedia('(display-mode: standalone)').matches ||
+        window.navigator.standalone === true ||
+        this.state.disablePrompt === true
+      ) {
+        return <div style={{ display: 'none' }} />;
+      }
     }
 
     return (
