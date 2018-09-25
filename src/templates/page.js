@@ -52,7 +52,7 @@ const Page = ({ data, location }) => (
       <Pagination pathname={location.pathname} />
     </div>
     <div className="col-xl-2 col-lg-1 order-3" />
-    <ShareBox url={location.hrefname} hasCommentBox={false} />
+    <ShareBox url={location.href} hasCommentBox={false} />
     <SEO
       title={getTitle(location.pathname.split('/')[2])}
       url={getPath()}
