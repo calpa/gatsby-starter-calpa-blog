@@ -67,4 +67,10 @@ module.exports = {
     API_TOKEN:
       '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a',
   },
+  redirectors: [
+    {
+      fromPath: '/',
+      toPath: '/page/1',
+    },
+  ],
 };
