@@ -1,20 +1,19 @@
 module.exports = {
   title: 'Calpa 的技術博客',
-  maxPages: 11, // TODO: Update this automatically
+  maxPages: 12, // TODO: Update this automatically
   meta: {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
-    keyword: 'calpa, blog, Javascript',
+    keyword: 'calpa, blog, JavaScript',
     theme_color: '#384f7c',
     favicon: 'https://i.imgur.com/PO9Y4fT.jpg',
     google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
   },
-  SEOTitle: "Calpa's Blog",
   name: 'calpa',
   email: 'calpaliu@gmail.com',
   iconUrl: 'https://i.imgur.com/kjt2x52.jpg',
   License: 'by',
   url: 'https://calpa.me',
-  about: '/2018/05/01/about-calpa-liu',
+  about: '/2018/05/01/about-calpa-liu/',
   // Sidebar
   zhihuUsername: 'piao-xue-wu-ying',
   githubUsername: 'calpa',
@@ -44,10 +43,6 @@ module.exports = {
   gaOptimizeId: 'GTM-WHP7SC5',
   gaTrackId: 'UA-84737574-3',
   ga_domain: 'auto',
-  anchorjs: true,
-  pace: true,
-  fancybox: true,
-  gitalk: true,
   navbarList: [
     {
       href: '/tags',
