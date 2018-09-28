@@ -105,7 +105,7 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
     "titleVisible": "Do you want to show your title in the header?",
     "subTitle": "Display a smaller wordings",
     "subTitleVisible": "Do you want to show a smaller wordings in the header?"
-  ]
+  }
 }
 ```
 
