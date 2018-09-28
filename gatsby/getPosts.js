@@ -1,7 +1,11 @@
 const axios = require('axios');
 
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
+
 const API_BASE_URL = 'https://cdn.contentful.com';
-const { API_SPACE_ID, API_TOKEN } = require('../data/config').contentful;
+const { API_SPACE_ID, API_TOKEN } = process.env;
 
 // Get All Post from Contentful
 const getPosts = async (contentType) => {
