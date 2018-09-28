@@ -45,7 +45,11 @@ module.exports = {
   ga_domain: 'auto',
   navbarList: [
     {
-      href: '/tags',
+      href: '/stats/',
+      title: '網站數據',
+    },
+    {
+      href: '/tags/',
       title: '分類',
     },
     {
@@ -53,7 +57,7 @@ module.exports = {
       title: '留言簿',
     },
     {
-      href: '/2018/05/01/about-calpa-liu',
+      href: '/2018/05/01/about-calpa-liu/',
       title: '關於作者',
     },
   ],
