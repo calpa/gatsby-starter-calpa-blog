@@ -69,7 +69,7 @@ module.exports = {
   redirectors: [
     {
       fromPath: '/',
-      toPath: '/page/1',
+      toPath: '/page/1/',
     },
   ],
 };
