@@ -1,0 +1,18 @@
+services:
+  - docker
+os:
+  - linux
+dist:
+  trusty
+  # use container-based build env for faster boot
+sudo: true
+addons:
+  chrome: stable
+language: node_js
+
+node_js:
+  - "8"
+
+script:
+  - npm install
+  - npm run build
