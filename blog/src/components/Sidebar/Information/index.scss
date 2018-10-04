@@ -1,0 +1,17 @@
+@import '../../../styles/colors';
+
+.information {
+  p {
+    color: $light-black;
+  }
+
+  a {
+    // color: $black;
+    display: block;
+    text-decoration: none;
+
+    &:hover {
+      color: $gray;
+    }
+  }
+}

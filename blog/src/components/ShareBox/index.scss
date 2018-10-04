@@ -1,0 +1,25 @@
+.m-share-box {
+  display: flex;
+  justify-content: space-around;
+  z-index: 10;
+  width: 100%;
+  position: fixed;
+  top: auto;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: rgba(255, 255, 255, 0.9);
+
+  .share-button {
+    border: 1px solid #337ab7;
+    border-radius: 50%;
+    line-height: 2rem;
+    height: 2rem;
+    width: 2rem;
+    text-align: center;
+    margin: 0.4rem;
+    font-size: 1rem;
+
+  }
+}

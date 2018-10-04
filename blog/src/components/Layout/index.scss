@@ -1,0 +1,98 @@
+@import "../../styles/colors.scss"; // Colors
+// 「漢字標準格式」必要檔案
+// @import '~han-css/src/sass/var'; // variable
+// @import '~han-css/src/sass/api'; // api
+// @import '~han-css/src/sass/locale/normalize'; // Normalize.css
+// @import '~han-css/src/sass/locale'; // 本地樣式標準化模組
+// @import "~han-css/src/sass/typography"; // 文字設計模組
+// @import '~han-css/src/sass/typeset'; // 高級排版功能模組（章節的編排、行的組成）
+// We use .han-mono
+/*
+.han {
+  &-sans {
+    @extend %han-sans;
+
+    &-hant {
+      @extend %han-sans-hant;
+    }
+  }
+
+  &-sans-italic {
+    @extend %han-sans-italic;
+
+    &-hant {
+      @extend %han-sans-italic-hant;
+    }
+  }
+
+  &-serif {
+    @extend %han-serif;
+
+    &-hant {
+      @extend %han-serif-hant;
+    }
+  }
+
+  &-serif-italic {
+    @extend %han-serif-italic;
+
+    &-hant {
+      @extend %han-serif-italic-hant;
+    }
+  }
+
+  &-cursive {
+    @extend %han-cursive;
+
+    &-hant {
+      @extend %han-cursive-hant;
+    }
+  }
+
+  &-cursive-italic {
+    @extend %han-cursive-italic;
+
+    &-hant {
+      @extend %han-cursive-italic-hant;
+    }
+  }
+
+  &-mono {
+    @extend %han-mono;
+
+    &-hant {
+      @extend %han-mono-hant;
+    }
+  }
+}
+*/
+// Content
+
+.fadeIn {
+  animation-duration: 1s;
+  animation-fill-mode: both;
+  animation-name: fadeIn;
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+.layout {
+  // Pixiv background style
+  background-color: $bg;
+  p {
+    // @extend %han-mono;
+  }
+
+  img {
+    max-height: 20em;
+    max-width: 100%;
+    cursor: zoom-in;
+  }
+}

@@ -1,0 +1,36 @@
+@import "../styles/colors";
+
+.post {
+  @media screen and (max-width: 990px) {
+    padding: 5px 25px;
+  }
+  border-radius: 2px;
+
+  .content {
+    padding: 0;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+
+    a {
+      color: $light-blue;
+
+      &:hover {
+        color: $blue;
+        text-decoration: none;
+      }
+    }
+    @for $i from 1 through 6 {
+      h#{$i} {
+        font-size: 26 - $i * 2px;
+        font-weight: 400;
+      }
+    }
+
+    h2 {
+      font-weight: 600;
+    }
+  }
+
+  #gitalk-container {
+    margin: 0 auto;
+  }
+}

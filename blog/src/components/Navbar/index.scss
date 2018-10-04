@@ -1,0 +1,58 @@
+@import "../../styles/colors.scss";
+
+.custom-navbar {
+  $item-color: $white;
+  $radius: 3px;
+
+  background-color: #f8f8f8;
+  box-shadow: 0 0 10px rgba(14, 14, 14, 0.26);
+
+  transition: background 0.5s;
+  padding: 0.5rem 1.5rem;
+
+  .navbar-toggler {
+    border: 0;
+  }
+
+  .btn-link {
+    color: $black;
+  }
+  .container {
+    .navbar-brand {
+      color: black;
+      background: transparent;
+
+      .brand-logo {
+        background: $black;
+        border-radius: $radius;
+        color: $white;
+        padding: 1px 5px 2px;
+      }
+
+      &:hover {
+        background-color: darken($white, 5%);
+        color: $regal-blue;
+        cursor: pointer;
+      }
+    }
+  }
+
+  &.is-fixed {
+    background: transparent;
+    .btn-link {
+      color: $white;
+    }
+
+    @media (max-width: 767.98px) {
+      background: $white;
+
+      .btn-link {
+        color: $black;
+      }
+
+      .navbar-brand {
+        color: $black;
+      }
+    }
+  }
+}

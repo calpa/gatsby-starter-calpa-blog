@@ -1,0 +1,150 @@
+.header-tag {
+  float: left;
+  height: 26px;
+  line-height: 24px;
+  position: relative;
+  font-size: 14px;
+  margin: 5px 20px;
+  padding: 0 10px 0 12px;
+  background: #0089e0;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0 4px 4px 0;
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -12px;
+    width: 0;
+    height: 0;
+    border-color: transparent #0089e0 transparent transparent;
+    border-style: solid;
+    border-width: 12px 12px 14px 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 10px;
+    left: 0;
+    width: 4px;
+    height: 4px;
+    border-radius: 2px;
+    background: #fff;
+    box-shadow: -1px -1px 2px #004977;
+  }
+
+  &:hover {
+    $color: #e4e4e4;
+    background: $color;
+    &:before {
+      border-color: transparent $color transparent transparent;
+    }
+  }
+}
+
+.img-container {
+  $height: 500px;
+  $width: 1920px;
+
+  background-repeat: no-repeat;
+  @media (min-width: 768px) {
+    min-height: $height;
+    background-size: $width $height;
+  }
+
+  @media (max-width: 767.98px) {
+    background-size: cover;
+  }
+  background-position: center top;
+
+  margin-bottom: 10px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  padding-top: 58px;
+  padding-left: 0.8125rem;
+  padding-right: 0.8125rem;
+  padding-bottom: 0.8125rem;
+
+  .u-title {
+    margin: 0 0 0.75rem;
+    font-size: 1.5rem;
+    line-height: 1.875rem;
+    color: white; // TODO: Auto change color by detect background color
+  }
+
+  .u-subtitle {
+    color: white;
+  }
+
+  // Medium devices (tablets, less than 992px)
+  @media (max-width: 991.98px) {
+    .u-title {
+      padding-top: 1.5rem;
+    }
+
+    .u-subtitle {
+      display: flex;
+      align-self: flex-end;
+      justify-content: center;
+
+      font-size: 0.75rem;
+      line-height: 1.2rem;
+      height: 1.2rem;
+      width: 100%;
+
+      .m-left {
+        margin-right: auto;
+      }
+
+      .author-image {
+        width: 1.25rem;
+        height: 1.25rem;
+        border-radius: 50%;
+        margin-right: 0.5rem;
+      }
+
+      .author-name {
+        margin-right: 0.5rem;
+      }
+
+      .text {
+        margin-right: 0.5rem;
+      }
+    }
+  }
+
+  // For Tablet
+  @media (min-width: 768px) {
+    justify-content: center;
+  }
+
+  // For PC
+  @media (min-width: 992px) {
+    .u-subtitle {
+      font-size: 1rem;
+    }
+
+    .m-left {
+      display: none;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 991.98px) {
+    .u-subtitle {
+      width: auto;
+      align-self: center;
+    }
+  }
+
+  .tag {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+}

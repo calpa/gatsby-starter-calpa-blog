@@ -1,0 +1,55 @@
+@import "../../styles/colors";
+
+.intro-header {
+  background: $white;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  height: 100%;
+  @media (max-width: 992px) {
+    margin: 15px;
+  }
+  margin-left: auto;
+
+  .about-me {
+    .avatar {
+      margin: 1rem;
+      border-radius: 50%;
+      height: 120px;
+      width: 120px;
+      transition: transform 0.5s;
+
+      &:hover {
+        transform: scale(1.2);
+      }
+    }
+
+    .name {
+      color: $regal-blue;
+      text-decoration: none;
+
+      :hover {
+        color: $light-blue;
+      }
+    }
+  }
+
+  .custom-icon {
+    i {
+      transition: background 1s cubic-bezier(0.22, 0.61, 0.36, 1);
+      background: $regal-blue;
+      border-radius: 50%;
+    }
+
+    &:hover {
+      border-radius: 50%;
+
+      i {
+        background: $light-blue;
+      }
+    }
+  }
+
+  .subscription {
+    margin-top: 0.825rem;
+    margin-bottom: 0.825rem;
+  }
+}

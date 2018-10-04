@@ -1,0 +1,91 @@
+@import "../../styles/colors";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:300,400,700); // Variables
+$open-sans: "Open Sans", sans-serif; // clear-fix mixin
+@mixin cf {
+  &::after,
+  &::before {
+    content: "";
+    display: table;
+  }
+
+  &::after {
+    clear: both;
+  }
+}
+// Base styles
+
+.custom-card {
+  transition: box-shadow 0.5s cubic-bezier(0.22, 0.61, 0.36, 1);
+
+  &:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.3);
+  }
+
+  .wrapper {
+    background-position: center;
+    @media (min-width: 576px) {
+      min-height: 15rem;
+    }
+    background-size: contain;
+    background-repeat: no-repeat;
+    min-height: 5.7rem;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    transition: all 0.5s ease 0s;
+
+    &:hover {
+      opacity: 0.7;
+
+      .data {
+        transform: translateY(-1em);
+        transition: transform 0.3s;
+      }
+    }
+  }
+
+  .data {
+    transform: translateY(0);
+    transition: transform 0.3s;
+
+    .content {
+      padding: 1em;
+      position: relative;
+      z-index: 1;
+
+      // Tags, Date
+      .stats {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+  .title {
+    margin-top: 20px;
+  }
+
+  .date {
+    background-color: $bermuda;
+    color: $white;
+    padding: 0.8em;
+
+    span {
+      display: block;
+      text-align: center;
+    }
+  }
+
+  .content {
+    background-color: $white;
+
+    .title {
+      color: $light-blue;
+    }
+
+    p {
+      color: $black;
+    }
+  }
+}
