@@ -6,6 +6,7 @@ import Tag from '../../components/Tag';
 import Header from '../../components/Header';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
+import PropTypes from 'prop-types';
 
 import { url } from '../../../data/config';
 
@@ -68,6 +69,9 @@ const TagSession = ({
     </ol>
   </div>
 );
+TagSession.propTypes = {
+  location : PropTypes.string
+}
 
 const style = {
   display: 'flex',
@@ -166,7 +170,7 @@ class TagPage extends Component {
         {tags.map(tag => (
           <TagSession
             tag={tag}
-            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i,)}
+            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
             isActive={decodeURI(this.props.location.hash) === `#${tag}`}
             key={tag}
           />
