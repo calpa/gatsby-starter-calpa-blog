@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 
 import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
+import PropTypes from 'prop-types';
 import Tag from '../../components/Tag';
 import Header from '../../components/Header';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
-import PropTypes from 'prop-types';
 
 import { url } from '../../../data/config';
 
@@ -70,8 +70,8 @@ const TagSession = ({
   </div>
 );
 TagSession.propTypes = {
-  location : PropTypes.string
-}
+  location:PropTypes.object,
+};
 
 const style = {
   display: 'flex',
