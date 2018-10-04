@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
-import { parseDate } from '../../../api/';
+import { parseDate } from "../../../api";
 import { parseUrl } from '../../../api/url';
 
 import './index.scss';
