@@ -3,7 +3,9 @@
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog) [![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
-
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
+ 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Starter of Calpa's Blog.
@@ -14,9 +16,9 @@ If you like [my blog](https://calpa.me), please star it. Many thanks.
 
 1. Responsive Design
 1. Parse Markdown in high speed (powered by [remarkable](https://github.com/jonschlinkert/remarkable))
-1. Sitemap is supported
+1. Support to sitemap
 1. Font Awesome is auto loaded (powererd by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-1. Source from Contentful, which is a flexible and easy-to-use content management system
+1. Source from Contentful, a flexible and easy-to-use content management system
 
 ## Prerequisites
 
