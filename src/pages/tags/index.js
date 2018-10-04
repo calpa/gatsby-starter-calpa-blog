@@ -70,7 +70,9 @@ const TagSession = ({
   </div>
 );
 TagSession.propTypes = {
-  location:PropTypes.object,
+  location:PropTypes.shape({
+    hash:PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 const style = {
