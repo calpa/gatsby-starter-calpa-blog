@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 const Dropdown = ({ title, list }) => (
   <li className="nav-item dropdown">
     <button
+      type="button"
       className="nav-link dropdown-toggle btn-link"
       data-toggle="dropdown"
       aria-haspopup="true"
