@@ -27,7 +27,9 @@ import ShareBox from '../components/ShareBox';
 import { getUrl } from '../api/url';
 import wrapLayout from '../api/layout';
 
-import { url, name, iconUrl } from '../../data/config';
+import {
+  url, name, iconUrl, giTalk,
+} from '../../data/config';
 
 // Styles
 import './blog-post.scss';
@@ -41,7 +43,8 @@ const Gitalk = isBrowser ? require('gitalk') : undefined;
 class BlogPost extends Component {
   constructor(props) {
     super(props);
-    this.data = this.props.data;
+    const { data } = this.props;
+    this.data = data;
   }
 
   componentDidMount() {
@@ -71,16 +74,10 @@ class BlogPost extends Component {
       id = `${url}${pathname}${lastSymbol}`;
     }
 
-    const gitalk = new Gitalk({
-      clientID: '18255f031b5e11edd98a',
-      clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-      repo: 'calpa.github.io',
-      owner: 'calpa',
-      admin: ['calpa'],
-      distractionFreeMode: true,
+    const gitalk = new Gitalk(Object.assign({}, giTalk, {
       title: finalTitle,
       id,
-    });
+    }));
     gitalk.render('gitalk-container');
   }
 

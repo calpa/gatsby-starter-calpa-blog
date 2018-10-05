@@ -9,3 +9,8 @@ yarn-error.log
 
 # Local keys
 .env.development
+### Example user template template
+### Example user template
+
+# IntelliJ project files
+.idea/

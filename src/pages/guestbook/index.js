@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 // Components
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
@@ -12,6 +13,7 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import wrapLayout from '../../api/layout';
+import { giTalk } from '../../../data/config';
 
 import './index.scss';
 
@@ -22,19 +24,13 @@ const Gitalk = isBrowser ? require('gitalk') : undefined;
 class Guestbook extends Component {
   constructor(props) {
     super(props);
-    this.data = this.props.data;
+    const { data } = this.props;
+    this.data = data;
   }
 
   componentDidMount() {
     // Gitalk
-    const gitalk = new Gitalk({
-      clientID: '18255f031b5e11edd98a',
-      clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-      repo: 'calpa.github.io',
-      owner: 'calpa',
-      admin: ['calpa'],
-      distractionFreeMode: true,
-    });
+    const gitalk = new Gitalk(giTalk);
     gitalk.render('gitalk-container');
   }
 
