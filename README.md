@@ -140,6 +140,10 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 - `npm run reset` to clear the local cache
 - Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
 
+## Contributing
+
+Please checkout [here](.github/CONTRIBUTING.md) for more information.
+
 ## Contact
 
 If you are interested in this project, please feel free to contact [Calpa Liu](calpaliu@gmail.com).
