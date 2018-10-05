@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
@@ -192,7 +191,7 @@ TagPage.propTypes = {
   location: PropTypes.shape({
     hash: PropTypes.string.isRequired,
   }).isRequired,
-}
+};
 
 export const pageQuery = graphql`
   query myTags {
