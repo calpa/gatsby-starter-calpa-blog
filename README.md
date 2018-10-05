@@ -142,7 +142,7 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 
 ## Contributing
 
-Please checkout [here](.github/CONTRIBUTING.md) for more information.
+Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
 
 ## Contact
 
