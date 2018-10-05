@@ -69,6 +69,71 @@ cd awesome-blog
 
 Edit the export object in `data/config`
 
+Note: [To look up theme_color hex code, click here.](https://www.colorhexa.com/)
+
+```
+module.exports = {
+  title: 'your blog title here',
+  maxPages: 12
+  meta: {
+    description: 'blog description',
+    keyword: 'blog, JavaScript',
+    theme_color: '#hexcode',
+    favicon: 'https:yourimageurl.com',
+    google_site_verification: 'your google verification hash',
+  },
+  name: 'your name',
+  email: 'your_email@gmail.com',
+  iconUrl: 'https://youricon.jpg',
+  License: 'by',
+  url: 'https://yourblog.me',
+  about: '/2018/05/01/about-your-name/',
+  // Sidebar
+  zhihuUsername: 'your zhiu user name here',
+  githubUsername: 'your github user name here',
+  friends: [
+    {
+      title: 'friend title',
+      href: 'link to their blog',
+    }
+  ]
+  ```
+  Plugins in the configuration file:
+  ```
+  gaOptimizeId: 'GTM-WHP7SC5',
+  gaTrackId: 'UA-84737574-3',
+  ga_domain: 'auto',
+  navbarList: [
+    {
+      href: '/stats/',
+      title: 'stat title',
+    },
+    {
+      href: '/tags/',
+      title: 'tags',
+    },
+    {
+      href: '/guestbook/',
+      title: 'guestbook',
+    },
+    {
+      href: '/2018/10/04/about-your-blog/',
+      title: 'your title',
+    },
+  ],
+  contentful: {
+    API_SPACE_ID: 'api_id_here',
+    API_TOKEN: 'api_token_hash_here',
+  },
+  redirectors: [
+    {
+      fromPath: '/',
+      toPath: '/page/1',
+    },
+  ],
+}
+```
+
 ## Content Model
 
 1. Posts
@@ -139,10 +204,6 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 
 - `npm run reset` to clear the local cache
 - Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
-
-## Contributing
-
-Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
 
 ## Contact
 
