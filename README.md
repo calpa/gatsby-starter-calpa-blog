@@ -3,7 +3,9 @@
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
 [![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog) [![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
-
+[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
+ 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Starter of Calpa's Blog.
@@ -14,9 +16,9 @@ If you like [my blog](https://calpa.me), please star it. Many thanks.
 
 1. Responsive Design
 1. Parse Markdown in high speed (powered by [remarkable](https://github.com/jonschlinkert/remarkable))
-1. Sitemap is supported
+1. Support to sitemap
 1. Font Awesome is auto loaded (powererd by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-1. Source from Contentful, which is a flexible and easy-to-use content management system
+1. Source from Contentful, a flexible and easy-to-use content management system
 
 ## Prerequisites
 
@@ -66,6 +68,67 @@ cd awesome-blog
 ## Configuration
 
 Edit the export object in `data/config`
+
+Note: [To look up theme_color hex code, click here.](https://www.colorhexa.com/)
+
+```
+module.exports = {
+  title: 'your blog title here',
+  maxPages: 12
+  meta: {
+    description: 'blog description',
+    keyword: 'blog, JavaScript',
+    theme_color: '#hexcode',
+    favicon: 'https:yourimageurl.com',
+    google_site_verification: 'your google verification hash',
+  },
+  name: 'your name',
+  email: 'your_email@gmail.com',
+  iconUrl: 'https://youricon.jpg',
+  License: 'by',
+  url: 'https://yourblog.me',
+  about: '/2018/05/01/about-your-name/',
+  // Sidebar
+  zhihuUsername: 'your zhiu user name here',
+  githubUsername: 'your github user name here',
+  friends: [
+    {
+      title: 'friend title',
+      href: 'link to their blog',
+    }
+  ]
+  ```
+  Plugins in the configuration file:
+  ```
+  gaOptimizeId: 'GTM-WHP7SC5',
+  gaTrackId: 'UA-84737574-3',
+  ga_domain: 'auto',
+  navbarList: [
+    {
+      href: '/stats/',
+      title: 'stat title',
+    },
+    {
+      href: '/tags/',
+      title: 'tags',
+    },
+    {
+      href: '/guestbook/',
+      title: 'guestbook',
+    },
+    {
+      href: '/2018/10/04/about-your-blog/',
+      title: 'your title',
+    },
+  ],
+  redirectors: [
+    {
+      fromPath: '/',
+      toPath: '/page/1',
+    },
+  ],
+}
+```
 
 ## Content Model
 
@@ -138,6 +201,9 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 - `npm run reset` to clear the local cache
 - Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
 
+## Contributing	
+ Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
+ 
 ## Contact
 
 If you are interested in this project, please feel free to contact [Calpa Liu](calpaliu@gmail.com).

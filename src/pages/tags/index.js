@@ -45,7 +45,6 @@ const Item = ({ url = '', title = '', createdDate = '' }) => (
 const TagSession = ({
   tag = 'tag',
   articles = [],
-  url = '',
   isActive = false,
 }) => (
   <div className={tagCenter} id={tag}>

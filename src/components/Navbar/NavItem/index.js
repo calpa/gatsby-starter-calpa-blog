@@ -26,7 +26,12 @@ const NavItem = ({ url, name, list }) => {
 NavItem.propTypes = {
   url: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  list: PropTypes.array,
+  list: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.string,
+      href: PropTypes.string,
+    }),
+  ),
 };
 
 NavItem.defaultProps = {
