@@ -200,8 +200,8 @@ TagPage.propTypes = {
         }),
       }),
     }),
-  }),
-}
+  }).isRequired,
+};
 
 export const pageQuery = graphql`
   query myTags {
