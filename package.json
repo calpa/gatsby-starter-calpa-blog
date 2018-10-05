@@ -69,7 +69,8 @@
     "format-style": "stylelint src/**/*.scss --syntax=scss",
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
-    "reset": "rimraf pubilc/ .cache/"
+    "reset": "rimraf pubilc/ .cache/",
+    "commit": "npx git-cz"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
