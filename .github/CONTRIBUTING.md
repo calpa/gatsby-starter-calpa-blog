@@ -3,7 +3,7 @@
 Before starting, you may need to know how to contribute in a good way. You can follow the rules here:
 
 ## Code Style
-ommits should follow the Angular commit message guidelines. This is because our release tool uses this format for determining release versions and generating changelogs.
+Commits should follow the Angular commit message guidelines. This is because our release tool uses this format for determining release versions and generating changelogs.
 
 ## Issues
 If you encounter an issue with the Node.js library, you are welcome to submit a bug report. Before that, please search for similar issues. It's possible somebody has already encountered this issue.
