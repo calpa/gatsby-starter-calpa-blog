@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
@@ -185,6 +186,12 @@ class TagPage extends Component {
       </div>
     );
   }
+}
+
+TagPage.propTypes = {
+  location: PropTypes.shape({
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
 }
 
 export const pageQuery = graphql`
