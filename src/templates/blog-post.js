@@ -74,12 +74,12 @@ class BlogPost extends Component {
       id = `${url}${pathname}${lastSymbol}`;
     }
 
-    const giTalk = new Gitalk({
+    const GitTalkInstance = new Gitalk({
       ...gitalk,
       title: finalTitle,
       id,
     });
-    giTalk.render('gitalk-container');
+    GitTalkInstance.render('gitalk-container');
   }
 
   render() {

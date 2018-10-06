@@ -29,8 +29,8 @@ class Guestbook extends Component {
 
   componentDidMount() {
     // Gitalk
-    const giTalk = new Gitalk(gitalk);
-    giTalk.render('gitalk-container');
+    const GitTalkInstance = new Gitalk(gitalk);
+    GitTalkInstance.render('gitalk-container');
   }
 
   render() {
