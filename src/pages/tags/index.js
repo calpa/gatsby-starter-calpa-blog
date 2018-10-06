@@ -201,6 +201,9 @@ TagPage.propTypes = {
       }),
     }),
   }).isRequired,
+  location: PropTypes.shape({
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
 };
 
 export const pageQuery = graphql`
