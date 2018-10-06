@@ -19,6 +19,7 @@ const Navbar = () => (
   <nav id="m-navbar" className={`${NavbarClass.join(' ')} navbar-night`}>
     <div className="container">
       <button
+        type="button"
         className="navbar-brand btn btn-default"
         onClick={() => gotoPage('/')}
       >

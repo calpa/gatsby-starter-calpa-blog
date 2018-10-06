@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
@@ -138,6 +139,7 @@ class TagPage extends Component {
           <h2 style={{ ...style, justifyContent: 'space-between' }}>
             最熱門標籤：
             <button
+              type="button"
               className="btn btn-info"
               onClick={() => this.toggleAllTags()}
             >
@@ -185,6 +187,24 @@ class TagPage extends Component {
     );
   }
 }
+
+TagPage.propTypes = {
+  data: PropTypes.shape({
+    tags: PropTypes.shape({
+      edges: PropTypes.shape({
+        node: PropTypes.shape({
+          tags: PropTypes.string,
+          title: PropTypes.string,
+          url: PropTypes.string,
+          createdDate: PropTypes.string,
+        }),
+      }),
+    }),
+  }).isRequired,
+  location: PropTypes.shape({
+    hash: PropTypes.string.isRequired,
+  }).isRequired,
+};
 
 export const pageQuery = graphql`
   query myTags {
