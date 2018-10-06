@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint react/prop-types: 0 */
 
 // Components
@@ -28,7 +29,7 @@ import { getUrl } from '../api/url';
 import wrapLayout from '../api/layout';
 
 import {
-  url, name, iconUrl, giTalk,
+  url, name, iconUrl, gitalk,
 } from '../../data/config';
 
 // Styles
@@ -43,8 +44,7 @@ const Gitalk = isBrowser ? require('gitalk') : undefined;
 class BlogPost extends Component {
   constructor(props) {
     super(props);
-    const { data } = this.props;
-    this.data = data;
+    this.data = this.props.data;
   }
 
   componentDidMount() {
@@ -74,11 +74,12 @@ class BlogPost extends Component {
       id = `${url}${pathname}${lastSymbol}`;
     }
 
-    const gitalk = new Gitalk(Object.assign({}, giTalk, {
+    const giTalk = new Gitalk({
+      ...gitalk,
       title: finalTitle,
       id,
-    }));
-    gitalk.render('gitalk-container');
+    });
+    giTalk.render('gitalk-container');
   }
 
   render() {

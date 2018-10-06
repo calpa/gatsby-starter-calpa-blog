@@ -72,7 +72,7 @@ module.exports = {
       toPath: '/page/1',
     },
   ],
-  giTalk: {
+  gitalk: {
     clientID: '18255f031b5e11edd98a',
     clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
     repo: 'calpa.github.io',

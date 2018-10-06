@@ -1,4 +1,4 @@
-/* eslint-disable react/prop-types */
+/* eslint-disable react/prop-types,react/destructuring-assignment */
 // Components
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
@@ -13,7 +13,7 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import wrapLayout from '../../api/layout';
-import { giTalk } from '../../../data/config';
+import { gitalk } from '../../../data/config';
 
 import './index.scss';
 
@@ -24,14 +24,13 @@ const Gitalk = isBrowser ? require('gitalk') : undefined;
 class Guestbook extends Component {
   constructor(props) {
     super(props);
-    const { data } = this.props;
-    this.data = data;
+    this.data = this.props.data;
   }
 
   componentDidMount() {
     // Gitalk
-    const gitalk = new Gitalk(giTalk);
-    gitalk.render('gitalk-container');
+    const giTalk = new Gitalk(gitalk);
+    giTalk.render('gitalk-container');
   }
 
   render() {
