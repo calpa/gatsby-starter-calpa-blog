@@ -69,4 +69,13 @@ HTML.propTypes = {
   ]),
 };
 
+HTML.defaultProps = {
+  body: '',
+  htmlAttributes: {},
+  headComponents: null,
+  bodyAttributes: {},
+  preBodyComponents: null,
+  postBodyComponents: null,
+};
+
 export default HTML;
