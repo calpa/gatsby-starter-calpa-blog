@@ -42,22 +42,20 @@ module.exports = {
         }`,
         feeds: [
           {
-            serialize: ({ query: { site, allContentfulMarkdown } }) =>
-              // GraphQL query the posts from allContentfulMarkdown
-              allContentfulMarkdown.edges.map((edge) => {
-                const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate).format('YYYY/MM/DD')}/${edge.node.url}`;
+            serialize: ({ query: { site, allContentfulMarkdown } }) => allContentfulMarkdown.edges.map((edge) => {
+              const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate).format('YYYY/MM/DD')}/${edge.node.url}`;
 
-                const md = new Remarkable({});
-                const description = md.render(edge.node.content);
+              const md = new Remarkable({});
+              const description = md.render(edge.node.content);
 
-                return {
-                  title: edge.node.title,
-                  description,
-                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
-                  url,
-                  guid: url,
-                };
-              }),
+              return {
+                title: edge.node.title,
+                description,
+                date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
+                url,
+                guid: url,
+              };
+            }),
             query: `
               {
                   allContentfulMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
@@ -99,6 +97,8 @@ module.exports = {
             type: 'image/png',
           },
         ],
+        gcm_sender_id: '482941778795',
+        gcm_sender_id_comment: 'Do not change the GCM Sender ID',
       },
     },
     'gatsby-plugin-offline', // put this after gatsby-plugin-manifest

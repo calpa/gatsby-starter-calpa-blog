@@ -22,8 +22,8 @@ const Head = () => (
     <link
       rel="shortcut icon"
       href={
-        config.meta.favicon ||
-        'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png'
+        config.meta.favicon
+        || 'https://cdn4.iconfinder.com/data/icons/ionicons/512/icon-person-128.png'
       }
     />
     <link
@@ -44,6 +44,7 @@ const Head = () => (
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/solarized-light.min.css"
     />
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async="" />
   </Helmet>
 );
 

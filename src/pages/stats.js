@@ -18,17 +18,27 @@ class StatsPage extends Component {
   componentDidMount() {
     const observer = lozad();
     observer.observe();
+
+    const OneSignal = window ? window.OneSignal : [];
+
+    OneSignal.push(() => {
+      OneSignal.init({
+        appId: 'b40b0217-b229-44cc-adb3-093d00acfaa2',
+      });
+    });
   }
 
   render() {
+    const { image, title, description } = this.state;
+
     return (
       <div className="container">
         <div className="row">
           <div className="col">
             <img
-              data-src={this.state.image}
+              data-src={image}
               className="lozad"
-              alt={this.state.title}
+              alt={title}
               style={{ maxHeight: '40rem' }}
             />
           </div>
@@ -36,10 +46,10 @@ class StatsPage extends Component {
 
         <SEO
           url="/stats/"
-          title={this.state.title}
-          description={this.state.description}
-          image={this.state.image}
-          siteTitleAlt={this.state.title}
+          title={title}
+          description={description}
+          image={image}
+          siteTitleAlt={title}
           isPost={false}
         />
       </div>
