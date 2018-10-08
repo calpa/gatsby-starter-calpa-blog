@@ -1,3 +1,4 @@
+/* eslint-disable react/destructuring-assignment */
 /* eslint react/prop-types: 0 */
 
 // Components
@@ -27,7 +28,9 @@ import ShareBox from '../components/ShareBox';
 import { getUrl } from '../api/url';
 import wrapLayout from '../api/layout';
 
-import { url, name, iconUrl } from '../../data/config';
+import {
+  url, name, iconUrl, gitalk,
+} from '../../data/config';
 
 // Styles
 import './blog-post.scss';
@@ -71,17 +74,12 @@ class BlogPost extends Component {
       id = `${url}${pathname}${lastSymbol}`;
     }
 
-    const gitalk = new Gitalk({
-      clientID: '18255f031b5e11edd98a',
-      clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-      repo: 'calpa.github.io',
-      owner: 'calpa',
-      admin: ['calpa'],
-      distractionFreeMode: true,
+    const GitTalkInstance = new Gitalk({
+      ...gitalk,
       title: finalTitle,
       id,
     });
-    gitalk.render('gitalk-container');
+    GitTalkInstance.render('gitalk-container');
   }
 
   render() {
