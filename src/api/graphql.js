@@ -11,7 +11,7 @@ const wrapGraphQL = (query, children) =>
       return (
         <StaticQuery
           query={graphql(query)}
-          render={data => <div>{children}</div>}
+          render={<div>{children}</div>}
         />
       );
     }

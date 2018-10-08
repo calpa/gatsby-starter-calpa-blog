@@ -1,6 +1,6 @@
 import { navigate } from 'gatsby';
 import dayjs from 'dayjs';
-import { getCurrentPage, getMaxPages } from './index';
+import { getMaxPages } from './index';
 
 const getUrl = ({ createdDate, url }) =>
   `/${dayjs(createdDate).format('YYYY/MM/DD')}/${url}`;

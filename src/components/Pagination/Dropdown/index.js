@@ -26,7 +26,7 @@ const Dropdown = ({ pages, text }) => (
 );
 
 Dropdown.propTypes = {
-  pages: PropTypes.array.isRequired,
+  pages: PropTypes.arrayOf(PropTypes.string).isRequired,
   text: PropTypes.string.isRequired,
 };
 

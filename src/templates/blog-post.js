@@ -9,7 +9,7 @@ import dayjs from 'dayjs';
 
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate, getPath } from '../api/';
+import { parseChineseDate, getPath } from '../api';
 import { getFirstParagraph } from '../api/text';
 import { parseImgur } from '../api/images';
 

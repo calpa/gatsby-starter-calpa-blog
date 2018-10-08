@@ -13,7 +13,7 @@
     // allow console during development
     "no-console": 0,
     "linebreak-style": 0,
-    "import/extensions": [2, "never", { "web.js": "never", "json": "never" }],
+    "import/extensions": [2, "never", { "web.js": "never", "json": "never", "css": "always"}],
     "import/no-extraneous-dependencies": [2, { "devDependencies": true }],
     "import/no-unresolved": [2, { "ignore": ["antd"] }],
     "no-underscore-dangle": ["error", {"allow": ["_id"]}]
