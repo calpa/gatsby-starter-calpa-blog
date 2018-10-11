@@ -1,10 +1,8 @@
-@import "../../../styles/colors.scss";
+@import "../../../styles/hover.scss";
 
 .nav-btn {
-  cursor: pointer;
-  // background: white;
-
-  text-decoration: none;
-
-  margin: 0 5px;
+  @extend %hover;
+  .navbar-nav & {
+    color: $light-blue;
+  }
 }

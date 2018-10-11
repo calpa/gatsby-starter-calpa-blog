@@ -1,0 +1,23 @@
+@import "colors";
+
+// Inspired by Landing Page Design for product - Abhinandu V Nair (https://codepen.io/abhinanduN/pen/wYzepG)
+%hover {
+  position: relative;
+
+  &:after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    display: block;
+    height: 0.1rem;
+    background-color: #0f457f;
+    transition: width 0.4s ease 0s;
+    width: 0;
+  }
+  &:hover {
+    text-decoration: none;
+    &:after {
+      // width: auto;
+      width: 100%;
+    }
+  }
+}

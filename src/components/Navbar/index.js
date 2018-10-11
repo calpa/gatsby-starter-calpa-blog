@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
+import ReactGA from 'react-ga';
+
 import GithubCorner from '../GithubCorner';
 
 import NavItem from './NavItem';
@@ -21,9 +23,16 @@ const Navbar = () => (
       <button
         type="button"
         className="navbar-brand btn btn-default"
-        onClick={() => gotoPage('/')}
+        onClick={() => {
+          ReactGA.event({
+            category: 'User',
+            action: 'Click navbar logo',
+          });
+          gotoPage('/');
+        }}
       >
-        <span className="brand-logo">Calpa</span> &apos;s Blog
+        <span className="brand-logo">Calpa</span>
+        &apos;s Blog
       </button>
       <button
         className="navbar-toggler"
