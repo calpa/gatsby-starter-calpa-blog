@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import {
+  wordings,
   githubUsername,
   zhihuUsername,
   email,
@@ -31,18 +32,17 @@ const Icon = ({ href, icon }) => (
 
 const Sidebar = ({ post, totalCount, posts }) => (
   <header
-    className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${post ===
-    true
-      ? 'order-11'
-      : 'order-1'}`}
+    className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${
+      post === true ? 'order-11' : 'order-1'
+    }`}
   >
     <div className="about-me">
       <Link to={about} href={about} className="name">
         <img className="avatar" src={iconUrl} alt="Calpa" />
         <h4>Calpa</h4>
       </Link>
-      <p className="mb-1">夢裡不覺秋已深</p>
-      <p className="mb-3">餘情豈是為他人</p>
+      <p className="mb-1">{wordings[0]}</p>
+      <p className="mb-3">{wordings[1]}</p>
       <Icon
         href={`https://www.zhihu.com/people/${zhihuUsername}`}
         icon={['fab', 'zhihu']}

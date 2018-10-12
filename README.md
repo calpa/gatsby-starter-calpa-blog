@@ -2,10 +2,11 @@
 
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog) [![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
+[![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
- 
+
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Starter of Calpa's Blog.
@@ -97,50 +98,52 @@ module.exports = {
       href: 'link to their blog',
     }
   ]
-  ```
-  Plugins in the configuration file:
-  ```
-  gaOptimizeId: 'GTM-WHP7SC5',
-  gaTrackId: 'UA-84737574-3',
-  ga_domain: 'auto',
-  navbarList: [
-    {
-      href: '/stats/',
-      title: 'stat title',
-    },
-    {
-      href: '/tags/',
-      title: 'tags',
-    },
-    {
-      href: '/guestbook/',
-      title: 'guestbook',
-    },
-    {
-      href: '/2018/10/04/about-your-blog/',
-      title: 'your title',
-    },
-  ],
-  redirectors: [
-    {
-      fromPath: '/',
-      toPath: '/page/1',
-    },
-  ],
+```
+
+Plugins in the configuration file:
 
 ```
- Gitalk plugin configuration
- ```
- gitalk: {
-     clientID: '18255f031b5e11edd98a',
-     clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
-     repo: 'calpa.github.io',
-     owner: 'calpa',
-     admin: ['calpa'],
-     distractionFreeMode: true,
-   },
- }
- ```
+gaOptimizeId: 'GTM-WHP7SC5',
+gaTrackId: 'UA-84737574-3',
+navbarList: [
+  {
+    href: '/stats/',
+    title: 'stat title',
+  },
+  {
+    href: '/tags/',
+    title: 'tags',
+  },
+  {
+    href: '/guestbook/',
+    title: 'guestbook',
+  },
+  {
+    href: '/2018/10/04/about-your-blog/',
+    title: 'your title',
+  },
+],
+redirectors: [
+  {
+    fromPath: '/',
+    toPath: '/page/1',
+  },
+],
+```
+
+Gitalk plugin configuration
+
+```
+gitalk: {
+    clientID: '18255f031b5e11edd98a',
+    clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
+    repo: 'calpa.github.io',
+    owner: 'calpa',
+    admin: ['calpa'],
+    distractionFreeMode: true,
+  },
+}
+```
 
 ## Content Model
 
@@ -213,9 +216,10 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 - `npm run reset` to clear the local cache
 - Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
 
-## Contributing	
- Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
- 
+## Contributing
+
+Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
+
 ## Contact
 
 If you are interested in this project, please feel free to contact [Calpa Liu](calpaliu@gmail.com).

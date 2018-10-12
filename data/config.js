@@ -15,6 +15,7 @@ module.exports = {
   url: 'https://calpa.me',
   about: '/2018/05/01/about-calpa-liu/',
   // Sidebar
+  wordings: ['憶江南，最憶是杭州', '一名愛寫文章的前端工程師'],
   zhihuUsername: 'piao-xue-wu-ying',
   githubUsername: 'calpa',
   friends: [
@@ -42,7 +43,6 @@ module.exports = {
   // Plugins
   gaOptimizeId: 'GTM-WHP7SC5',
   gaTrackId: 'UA-84737574-3',
-  ga_domain: 'auto',
   navbarList: [
     {
       href: '/stats/',
