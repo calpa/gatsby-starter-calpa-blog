@@ -15,7 +15,7 @@ module.exports = {
   url: 'https://calpa.me',
   about: '/2018/05/01/about-calpa-liu/',
   // Sidebar
-  wordings: ['憶江南，最憶是杭州', '一名愛寫文章的前端工程師'],
+  wordings: ['江南憶，最憶是杭州', '一名愛寫文章的前端工程師'],
   zhihuUsername: 'piao-xue-wu-ying',
   githubUsername: 'calpa',
   friends: [
