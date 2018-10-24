@@ -1,4 +1,4 @@
-## Calpa的博客
+## Calpa技術博客的腳手架
 
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
@@ -9,9 +9,9 @@
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
-Calpa的博客入門
+Calpa技術博客的腳手架
 
-如果你喜歡 [我的博客](https://calpa.me)，請給個star，多謝。
+如果妳喜歡 [我的博客](https://calpa.me)，請給個star，多謝。
 
 ## 功能
 
@@ -19,7 +19,7 @@ Calpa的博客入門
 2. 高速解析Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
 3. 支持站點地圖
 4. 自動加載Font Awesome(基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-5. 源自[Contentful][1],一個靈活且易於使用的內容管理系統
+5. 源自[Contentful][1]，壹個靈活且易於使用的內容管理系統
 
 ## 前提
 
@@ -30,7 +30,7 @@ Calpa的博客入門
 
 ## 開發
 
-如何開始這個項目?
+如何運行?
 
 1. 安裝 Gatsby-CLI
 
@@ -70,7 +70,7 @@ cd awesome-blog
 
 在 `data/config`編輯exports的對象
 
-註意: [想要查找theme_color十六進制代碼，請單擊此處。](https://www.colorhexa.com/)
+註意壹下: [想要查找 theme_color 十六進制代碼，請單擊此處。](https://www.colorhexa.com/)
 
 ```
 module.exports = {
@@ -168,9 +168,9 @@ gitalk: {
 }
 ```
 
-2. 頭部
+2. Headers
 
-有兩個可配置的頭頭部, [主頁](https://calpa.me) and [標簽頁](https://calpa.me/tags/).
+有兩個可配置的 Headers ，分別為 [主頁](https://calpa.me) 和 [標簽頁](https://calpa.me/tags/)頂部的 #header 。
 
 ```json
 {
@@ -189,7 +189,7 @@ gitalk: {
 
 ## 部署
 
-[Calpa的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用Github Pages作為替代方案。
+[Calpa的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用 Github Pages 作為替代方案。
 
 - Github Pages
 
@@ -205,7 +205,7 @@ gitalk: {
 
 ## 故障排除
 
-- 對於 `window is defined`, 引包前檢查window:
+- 對於 `window is defined`, 引包前檢查 window :
 
   ```JavaScript
   if (typeof window !== `undefined`) {
@@ -222,7 +222,7 @@ gitalk: {
 
 ## 聯系
 
-如果您對此項目感興趣，請隨時聯系[Calpa Liu]（calpaliu@gmail.com）。
+如果您對此項目感興趣，請隨時聯系[Calpa Liu](calpaliu@gmail.com)。
 
 感謝您的貢獻...... :)
 
