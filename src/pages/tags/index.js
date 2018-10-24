@@ -167,7 +167,7 @@ class TagPage extends Component {
         {tags.map(tag => (
           <TagSession
             tag={tag}
-            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i,)}
+            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
             isActive={decodeURI(this.props.location.hash) === `#${tag}`}
             key={tag}
           />

@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ExternalLink = ({
- href, title, target, className 
+ href, title, target, className, 
 }) => (
   <a
     href={href}
