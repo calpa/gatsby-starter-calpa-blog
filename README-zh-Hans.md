@@ -30,7 +30,7 @@ Calpa 技术博客的脚手架
 
 ## 开发
 
-如何运行?
+如何运行？
 
 1. 安装 Gatsby-CLI
 
@@ -131,7 +131,7 @@ redirectors: [
 ],
 ```
 
-配置[Gitalk](https://gitalk.github.io/)
+[Gitalk](https://gitalk.github.io/) 的配置部分：
 
 ```
 gitalk: {
