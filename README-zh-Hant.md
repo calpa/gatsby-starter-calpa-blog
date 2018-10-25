@@ -1,4 +1,4 @@
-## Calpa技術博客的腳手架
+## Calpa 的技術博客 Starter
 
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
@@ -9,23 +9,23 @@
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
-Calpa技術博客的腳手架
+Calpa 技術博客的腳手架
 
-如果妳喜歡 [我的博客](https://calpa.me)，請給個star，多謝。
+如果妳喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。
 
 ## 功能
 
 1. 響應式設計
-2. 高速解析Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
+2. 高速解析 Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
 3. 支持站點地圖
-4. 自動加載Font Awesome(基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+4. 自動加載 Font Awesome(基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
 5. 源自[Contentful][1]，壹個靈活且易於使用的內容管理系統
 
 ## 前提
 
 1. Git
-2. Node：從8.5.0或更高版本開始的任何8.x版本
-3. fork本項目 （想要貢獻的話）
+2. Node：從 8.5.0 或更高版本開始的任何 8.x 版本
+3. fork 本項目 （想要貢獻的話）
 4. 在本地計算機上克隆本項目
 
 ## 開發
@@ -38,7 +38,7 @@ Calpa技術博客的腳手架
 npm install --global gatsby-cli
 ```
 
-2. 使用Gatsby啟動器創建新的Gatsby項目，`awesome-blog`是您博客的文件夾
+2. 使用 Gatsby 啟動器創建新的 Gatsby 項目，`awesome-blog`是您博客的文件夾
 
 ```
 gatsby new awesome-blog https://github.com/calpa/blog
@@ -64,11 +64,11 @@ cd awesome-blog
    API_TOKEN = Your Content Delivery (Preview) API - access token
    ```
 
-   如果您使用的是[Contentful的預覽API](https://www.contentful.com/developers/docs/references/content-preview-api/)，那麽所有未發布的內容都將可用。
+   如果您使用的是[Contentful 的預覽 API](https://www.contentful.com/developers/docs/references/content-preview-api/)，那麽所有未發布的內容都將可用。
 
 ## 配置
 
-在 `data/config`編輯exports的對象
+在 `data/config`編輯 exports 的對象
 
 註意壹下: [想要查找 theme_color 十六進制代碼，請單擊此處。](https://www.colorhexa.com/)
 
@@ -189,11 +189,11 @@ gitalk: {
 
 ## 部署
 
-[Calpa的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用 Github Pages 作為替代方案。
+[Calpa 的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用 Github Pages 作為替代方案。
 
 - Github Pages
 
-  `npm run deploy` 將博客部署到Github Pages
+  `npm run deploy` 將博客部署到 Github Pages
 
 - Netlify
 
@@ -226,4 +226,4 @@ gitalk: {
 
 感謝您的貢獻...... :)
 
-[1]: https://www.contentful.com/        "Contentful" 
+[1]: https://www.contentful.com/ "Contentful"
