@@ -7,6 +7,8 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
 
+[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hant.md) | [English](README.md)
+
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Starter of Calpa's Blog.
