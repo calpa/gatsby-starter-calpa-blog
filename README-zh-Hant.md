@@ -1,4 +1,4 @@
-## Calpa's Blog
+## Calpa 的技術博客 Starter
 
 [![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
@@ -7,72 +7,70 @@
 [![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
 
-[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hant.md) | [English](README.md)
-
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
-Starter of Calpa's Blog.
+Calpa 技術博客的腳手架
 
-If you like [my blog](https://calpa.me), please star it. Many thanks.
+如果妳喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。
 
-## Feature
+## 功能
 
-1. Responsive Design
-1. Parse Markdown in high speed (powered by [remarkable](https://github.com/jonschlinkert/remarkable))
-1. Support to sitemap
-1. Font Awesome is auto loaded (powererd by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-1. Source from Contentful, a flexible and easy-to-use content management system
+1. 響應式設計
+2. 高速解析 Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
+3. 支持站點地圖
+4. 自動加載 Font Awesome(基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+5. 源自[Contentful][1]，壹個靈活且易於使用的內容管理系統
 
-## Prerequisites
+## 前提
 
 1. Git
-1. Node: any 8.x version starting with 8.5.0 or greater
-1. A fork of the repo (for any contributions)
-1. A clone of the this repo on your local machine
+2. Node：從 8.5.0 或更高版本開始的任何 8.x 版本
+3. fork 本項目 （想要貢獻的話）
+4. 在本地計算機上克隆本項目
 
-## Develop
+## 開發
 
-How to start this project?
+如何運行?
 
-1. Install Gatsby-CLI
+1. 安裝 Gatsby-CLI
 
 ```
 npm install --global gatsby-cli
 ```
 
-2. Create new Gatsby project using this starter, `awesome-blog` is your blog's folder
+2. 使用 Gatsby 啟動器創建新的 Gatsby 項目，`awesome-blog`是您博客的文件夾
 
 ```
 gatsby new awesome-blog https://github.com/calpa/blog
 ```
 
-3. Open the folder
+3. 打開文件夾
 
 ```
 cd awesome-blog
 ```
 
-4. Run Development Server
+4. 運行開發服務器
 
-   1. `npm start` to start the hot-reloading development server (powered by [Gatsby](https://www.gatsbyjs.org/))
-   1. `open http://localhost:8000` to open the site in your favorite browser
+   1. `npm start` 啟動熱重載開發服務器 (基於[Gatsby](https://www.gatsbyjs.org/))
+   2. `open http://localhost:8000` 在您喜歡的瀏覽器中打開
 
-5. Connect Contentful Server
+5. 連接 [Contentful][1] 服務器
 
-   1. add the following config into `.env.development` file
+   1. 將以下配置添加到`.env.development`文件中
 
    ```
    API_SPACE_ID = Your Contentful Space ID
    API_TOKEN = Your Content Delivery (Preview) API - access token
    ```
 
-   If you are using contentful preview API, then all unpublished content will be available.
+   如果您使用的是[Contentful 的預覽 API](https://www.contentful.com/developers/docs/references/content-preview-api/)，那麽所有未發布的內容都將可用。
 
-## Configuration
+## 配置
 
-Edit the export object in `data/config`
+在 `data/config`編輯 exports 的對象
 
-Note: [To look up theme_color hex code, click here.](https://www.colorhexa.com/)
+註意壹下: [想要查找 theme_color 十六進制代碼，請單擊此處。](https://www.colorhexa.com/)
 
 ```
 module.exports = {
@@ -102,7 +100,7 @@ module.exports = {
   ]
 ```
 
-Plugins in the configuration file:
+插件的配置文件:
 
 ```
 gaOptimizeId: 'GTM-WHP7SC5',
@@ -133,7 +131,7 @@ redirectors: [
 ],
 ```
 
-Gitalk plugin configuration
+配置[Gitalk](https://gitalk.github.io/)
 
 ```
 gitalk: {
@@ -147,11 +145,11 @@ gitalk: {
 }
 ```
 
-## Content Model
+## 內容模型
 
-1. Posts
+1. 帖子
 
-To create a post, just provide the following object model:
+要創建帖子，只需提供以下對象模型：
 
 ```json
 {
@@ -172,7 +170,7 @@ To create a post, just provide the following object model:
 
 2. Headers
 
-There are two configurable headers, [Homepage](https://calpa.me) and [tags page](https://calpa.me/tags/).
+有兩個可配置的 Headers ，分別為 [主頁](https://calpa.me) 和 [標簽頁](https://calpa.me/tags/)頂部的 #header 。
 
 ```json
 {
@@ -189,25 +187,25 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 }
 ```
 
-## Deploy
+## 部署
 
-[Calpa's blog](https://calpa.me) is currently using Netlify, though, you may use Github Pages as an alternative.
+[Calpa 的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用 Github Pages 作為替代方案。
 
 - Github Pages
 
-  `npm run deploy` to deploy the blog to Github Pages
+  `npm run deploy` 將博客部署到 Github Pages
 
 - Netlify
 
-  Auto Deploy
+  自動部署
 
 ## TODO
 
-1. Update the number of post pages automatically.
+1. 自動更新帖子頁數。
 
-## Troubleshooting
+## 故障排除
 
-- For `window is defined`, wrap the require in check for window:
+- 對於 `window is defined`, 引包前檢查 window :
 
   ```JavaScript
   if (typeof window !== `undefined`) {
@@ -215,15 +213,17 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
   }
   ```
 
-- `npm run reset` to clear the local cache
-- Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
+- `npm run reset` 清除本地緩存
+- 查 [GatsbyJS 調試文檔](https://www.gatsbyjs.org/docs/debugging-html-builds/)
 
-## Contributing
+## 貢獻
 
-Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
+請閱讀 [CONTRIBUTING.md](.github/CONTRIBUTING.md) 獲取更多信息。
 
-## Contact
+## 聯系
 
-If you are interested in this project, please feel free to contact [Calpa Liu](calpaliu@gmail.com).
+如果您對此項目感興趣，請隨時聯系[Calpa Liu](calpaliu@gmail.com)。
 
-Thanks For Contribute... :)
+感謝您的貢獻...... :)
+
+[1]: https://www.contentful.com/ "Contentful"
