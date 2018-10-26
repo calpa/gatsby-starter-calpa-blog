@@ -42,10 +42,12 @@ module.exports = {
         }`,
         feeds: [
           {
-            serialize: ({ query: { site, allContentfulMarkdown } }) =>
-              // GraphQL query the posts from allContentfulMarkdown
-              allContentfulMarkdown.edges.map((edge) => {
-                const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate).format('YYYY/MM/DD')}/${edge.node.url}`;
+            serialize: ({ query: { site, allPostMarkdown } }) => {
+              // GraphQL query the posts from allPostMarkdown
+              allPostMarkdown.edges.map((edge) => {
+                const url = `${site.siteMetadata.siteUrl}/${dayjs(
+                  edge.node.createdDate,
+                ).format('YYYY/MM/DD')}/${edge.node.url}`;
 
                 const md = new Remarkable({});
                 const description = md.render(edge.node.content);
@@ -53,14 +55,17 @@ module.exports = {
                 return {
                   title: edge.node.title,
                   description,
-                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
+                  date: dayjs(edge.node.createdDate).format(
+                    'MMMM DD, YYYY, h:mm A',
+                  ),
                   url,
                   guid: url,
                 };
-              }),
+              });
+            },
             query: `
               {
-                  allContentfulMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
+                  allPostMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
                     edges {
                       node {
                         content

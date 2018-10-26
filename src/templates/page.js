@@ -75,7 +75,7 @@ export const pageQuery = graphql`
       subTitle
       subTitleVisible
     }
-    latestPosts: allContentfulMarkdown(limit: 6) {
+    latestPosts: allPostMarkdown(limit: 6) {
       totalCount
       edges {
         node {
@@ -85,7 +85,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    pagePosts: allContentfulMarkdown(
+    pagePosts: allPostMarkdown(
       sort: { order: DESC, fields: [createdDate] }
       limit: $limit
       skip: $skip

@@ -71,7 +71,7 @@ export default wrapLayout(Guestbook);
 
 export const query = graphql`
   query GuestbookQuery {
-    latestPosts: allContentfulMarkdown(limit: 6) {
+    latestPosts: allPostMarkdown(limit: 6) {
       totalCount
       edges {
         node {
