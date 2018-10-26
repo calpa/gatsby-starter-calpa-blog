@@ -11,10 +11,10 @@ module.exports = ({ graphql, boundActionCreators }) => {
     console.log(`Redirecting: ${fromPath} To: ${toPath}`);
   });
 
-  return new Promise((resolve) => {
+  return new Promise((resolve, reject) => {
     graphql(`
       {
-        allContentfulMarkdown(sort: { fields: [createdDate], order: DESC }) {
+        allPostMarkdown(sort: { fields: [createdDate], order: DESC }) {
           edges {
             node {
               title
@@ -26,9 +26,11 @@ module.exports = ({ graphql, boundActionCreators }) => {
         }
       }
     `).then((result) => {
-      // console.log(result);
-      const posts = result.data.allContentfulMarkdown.edges;
-      // console.log(posts);
+      if (result.error) {
+        console.error(result.error);
+        return reject();
+      }
+      const posts = result.data.allPostMarkdown.edges;
       const postInPage = 6;
       const pages = Math.ceil(posts.length / postInPage);
 
@@ -57,7 +59,7 @@ module.exports = ({ graphql, boundActionCreators }) => {
           },
         });
       });
-      resolve();
+      return resolve();
     });
   });
 };

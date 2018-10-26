@@ -38,23 +38,31 @@ const lenOf = (array = []) => array.length;
 const Item = ({ url = '', title = '', createdDate = '' }) => (
   <li key={title}>
     <Link href={url} to={url}>
-      {title} ({parseDate(createdDate)})
+      {`${title} (${parseDate(createdDate)})`}
     </Link>
   </li>
 );
 
-const TagSession = ({
-  tag = 'tag',
-  articles = [],
-  isActive = false,
-}) => (
+Item.propTypes = {
+  url: PropTypes.string,
+  title: PropTypes.string,
+  createdDate: PropTypes.string,
+};
+
+Item.defaultProps = {
+  url: '',
+  title: '',
+  createdDate: '',
+};
+
+const TagSession = ({ tag = 'tag', articles = [], isActive = false }) => (
   <div className={tagCenter} id={tag}>
     <h3
       style={{
         color: isActive ? 'red' : 'black',
       }}
     >
-      {tag}:
+      {tag}
     </h3>
     <ol>
       {articles.map(article => (
@@ -68,6 +76,18 @@ const TagSession = ({
     </ol>
   </div>
 );
+
+TagSession.propTypes = {
+  tag: PropTypes.string,
+  articles: PropTypes.arrayOf(PropTypes.object),
+  isActive: PropTypes.bool,
+};
+
+TagSession.defaultProps = {
+  tag: '',
+  articles: [],
+  isActive: false,
+};
 
 const style = {
   display: 'flex',
@@ -86,7 +106,8 @@ class TagPage extends Component {
 
   componentWillMount() {
     const tags = {};
-    const { edges } = this.props.data.tags;
+    const { data } = this.props;
+    const { edges } = data.tags;
     const temp = edges.map(item => getTag(item));
 
     temp.forEach((x) => {
@@ -105,7 +126,8 @@ class TagPage extends Component {
   }
 
   compareTag(a, b) {
-    return lenOf(this.state.tags[b]) - lenOf(this.state.tags[a]);
+    const { tags } = this.state;
+    return lenOf(tags[b]) - lenOf(tags[a]);
   }
 
   toggleAllTags() {
@@ -115,13 +137,14 @@ class TagPage extends Component {
   }
 
   render() {
-    const rawTags = Object.keys(this.state.tags);
-    const tags = rawTags.sort((a, b) => this.compareTag(a, b));
+    const { showAllTags, tags } = this.state;
+    const { data, location } = this.props;
+    const { header } = data;
 
-    const hotTags =
-      this.state.showAllTags === false ? rawTags.slice(0, 5) : rawTags;
+    const rawTags = Object.keys(tags);
+    const sortedTags = rawTags.sort((a, b) => this.compareTag(a, b));
 
-    const { header } = this.props.data;
+    const hotTags = !showAllTags ? rawTags.slice(0, 5) : rawTags;
 
     const tagUrl = `${url}/tags`;
 
@@ -155,20 +178,16 @@ class TagPage extends Component {
             }}
           >
             {hotTags.map(item => (
-              <Tag
-                name={item}
-                count={this.state.tags[item].length}
-                key={item}
-              />
+              <Tag name={item} count={tags[item].length} key={item} />
             ))}
           </div>
         </div>
 
-        {tags.map(tag => (
+        {sortedTags.map(tag => (
           <TagSession
             tag={tag}
-            articles={this.state.tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
-            isActive={decodeURI(this.props.location.hash) === `#${tag}`}
+            articles={tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
+            isActive={decodeURI(location.hash) === `#${tag}`}
             key={tag}
           />
         ))}
@@ -215,7 +234,7 @@ export const pageQuery = graphql`
       subTitle
       subTitleVisible
     }
-    tags: allContentfulMarkdown {
+    tags: allPostMarkdown {
       edges {
         node {
           tags

@@ -1,20 +1,18 @@
 const axios = require('axios');
+const getMockPosts = require('./getMockPosts');
 
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 });
 
-const API_BASE_URL = 'https://cdn.contentful.com';
-const { API_SPACE_ID, API_TOKEN } = process.env;
+const { API_BASE_URL, API_SPACE_ID, API_TOKEN } = process.env;
 
 // Get All Post from Contentful
 const getPosts = async (contentType) => {
-  const order = '-fields.createdDate';
   const POST_URL = `${API_BASE_URL}/spaces/${API_SPACE_ID}/entries`;
   const res = await axios
     .get(POST_URL, {
       params: {
-        order,
         content_type: contentType,
         access_token: API_TOKEN,
       },
@@ -25,4 +23,8 @@ const getPosts = async (contentType) => {
   return res;
 };
 
-module.exports = getPosts;
+if (API_SPACE_ID && API_TOKEN) {
+  module.exports = getPosts;
+} else {
+  module.exports = getMockPosts;
+}

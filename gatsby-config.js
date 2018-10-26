@@ -1,5 +1,23 @@
+/* eslint max-len: 1 */
 const dayjs = require('dayjs');
 const Remarkable = require('remarkable');
+
+const extractData = (site, edge) => {
+  const url = `${site.siteMetadata.siteUrl}/${dayjs(
+    edge.node.createdDate,
+  ).format('YYYY/MM/DD')}/${edge.node.url}`;
+
+  const md = new Remarkable({});
+  const description = md.render(edge.node.content);
+
+  return {
+    title: edge.node.title,
+    description,
+    date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
+    url,
+    guid: url,
+  };
+};
 
 module.exports = {
   pathPrefix: '/',
@@ -42,25 +60,10 @@ module.exports = {
         }`,
         feeds: [
           {
-            serialize: ({ query: { site, allContentfulMarkdown } }) =>
-              // GraphQL query the posts from allContentfulMarkdown
-              allContentfulMarkdown.edges.map((edge) => {
-                const url = `${site.siteMetadata.siteUrl}/${dayjs(edge.node.createdDate).format('YYYY/MM/DD')}/${edge.node.url}`;
-
-                const md = new Remarkable({});
-                const description = md.render(edge.node.content);
-
-                return {
-                  title: edge.node.title,
-                  description,
-                  date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
-                  url,
-                  guid: url,
-                };
-              }),
+            serialize: ({ query: { site, allPostMarkdown } }) => allPostMarkdown.edges.map(edge => extractData(site, edge)),
             query: `
               {
-                  allContentfulMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
+                  allPostMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
                     edges {
                       node {
                         content
@@ -77,7 +80,6 @@ module.exports = {
         ],
       },
     },
-    // 'gatsby-plugin-react-next', // Disable as the blog-post missing classes in refresh
     {
       resolve: 'gatsby-plugin-manifest',
       options: {

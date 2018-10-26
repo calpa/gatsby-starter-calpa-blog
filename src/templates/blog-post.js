@@ -167,7 +167,7 @@ class BlogPost extends Component {
 }
 
 export const pageQuery = graphql`
-  fragment post on ContentfulMarkdownConnection {
+  fragment post on PostMarkdownConnection {
     edges {
       node {
         id
@@ -178,14 +178,14 @@ export const pageQuery = graphql`
     }
   }
 
-  fragment postLink on ContentfulMarkdown {
+  fragment postLink on PostMarkdown {
     title
     url
     createdDate
   }
 
   query BlogPostQuery($index: Int) {
-    content: allContentfulMarkdown(limit: 1, skip: $index) {
+    content: allPostMarkdown(limit: 1, skip: $index) {
       ...post
       edges {
         node {
@@ -204,7 +204,7 @@ export const pageQuery = graphql`
         }
       }
     }
-    latestPosts: allContentfulMarkdown(limit: 6) {
+    latestPosts: allPostMarkdown(limit: 6) {
       totalCount
       ...post
     }

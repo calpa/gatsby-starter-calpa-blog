@@ -5,11 +5,11 @@ const { getContent } = require('../src/api/text');
 // Create node for createNode function
 const processDatum = (datum, html = '', toc = []) => ({
   id: datum.sys.id,
-  parent: 'Contentful',
+  parent: 'Post',
   children: [],
   internal: {
-    type: 'ContentfulMarkdown',
-    contentDigest: datum.fields.content,
+    type: 'PostMarkdown',
+    contentDigest: datum.fields.content || 'no-content',
   },
   html,
   toc,
@@ -18,14 +18,17 @@ const processDatum = (datum, html = '', toc = []) => ({
 
 const makeNode = async ({ contentType, createNode }) => {
   const { data } = await getPosts(contentType);
-
   // Process data into nodes.
   // Async forEach function is used in here,
   // please refer to the blog
 
   asyncForEach(data.items, async (datum) => {
-    const { html, toc } = await getContent(datum.fields.content);
-    createNode(processDatum(datum, html, toc));
+    if (datum && datum.fields && datum.fields.content) {
+      const { html, toc } = await getContent(datum.fields.content);
+      createNode(processDatum(datum, html, toc));
+    } else {
+      console.error('cannot find content');
+    }
   });
 };
 
@@ -35,7 +38,7 @@ module.exports = async ({ actions }) => {
   // from a remote API.
 
   await makeNode({ contentType: 'blogPost', createNode });
-  // await makeNode({ contentType: 'about', createNode });
+
   // Make changable headers
   const { data } = await getPosts('headers');
   data.items.forEach((datum) => {
@@ -45,7 +48,7 @@ module.exports = async ({ actions }) => {
       children: [],
       internal: {
         type: 'Header',
-        contentDigest: datum.fields.headerImage,
+        contentDigest: datum.fields.headerImage || 'no-header-image',
       },
       ...datum.fields,
     };
