@@ -185,7 +185,11 @@ export const pageQuery = graphql`
   }
 
   query BlogPostQuery($index: Int) {
-    content: allPostMarkdown(limit: 1, skip: $index) {
+    content: allPostMarkdown(
+      sort: { fields: createdDate, order: DESC }
+      limit: 1
+      skip: $index
+    ) {
       ...post
       edges {
         node {
