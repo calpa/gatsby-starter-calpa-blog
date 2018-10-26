@@ -1,12 +1,13 @@
-const { posts, headers } = require('../data');
+const { posts, headers, configs } = require('../data');
 
 const getMockPosts = (type) => {
-  console.log(type);
   switch (type) {
     case 'blogPost':
       return posts;
     case 'headers':
       return headers;
+    case 'configs':
+      return configs;
     default:
       return posts;
   }
