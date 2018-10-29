@@ -28,6 +28,18 @@
     h2 {
       font-weight: 600;
     }
+    
+    blockquote {
+      max-width: 100%;
+      width: 100%;
+      white-space: pre-wrap;
+      word-break: break-word;
+      caret-color: rgba(255, 255, 255, 0.9);
+      border-left: 3px solid currentcolor;
+      margin: 0; // Required
+      padding-left: 0.9em;
+      padding-right: 0.9em;
+    }
   }
 
   #gitalk-container {
