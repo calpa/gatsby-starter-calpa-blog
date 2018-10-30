@@ -1,5 +1,5 @@
 import dayjs from 'dayjs';
-import { maxPages } from '../../data/config';
+import { maxPages, maxPostInPage } from '../../data/config';
 
 // Prevent webpack window problem
 const isBrowser = () => typeof window !== 'undefined';
@@ -24,11 +24,11 @@ const getCurrentPage = () => {
 
 const getPath = () => (isBrowser() ? window.location.pathname : '');
 
-const getMaxPages = () => maxPages;
+const getMaxPages = (amount) =>  Math.ceil( amount / postInPage) ;
 
 // Array.fill() is added by trial and error
-const getPages = () =>
-  new Array(getMaxPages()).fill().map((_, index) => `/page/${index + 1}`);
+const getPages = (amount) =>
+  new Array(getMaxPages(amount)).fill().map((_, index) => `/page/${index + 1}`);
 
 const overflow = () => getCurrentPage() === getMaxPages();
 

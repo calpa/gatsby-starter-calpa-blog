@@ -1,6 +1,7 @@
 module.exports = {
   title: 'Calpa 的技術博客',
   maxPages: 12, // TODO: Update this automatically
+  maxPostInPage: 6,
   meta: {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
     keyword: 'calpa, blog, JavaScript',
