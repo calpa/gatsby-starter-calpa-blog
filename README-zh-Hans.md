@@ -1,25 +1,53 @@
 ## Calpa 的技术博客脚手架
 
-[![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
-[![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
-[![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
+[![GitHub license](https://img.shields.io/github/license/calpa/gatsby-starter-calpa-blog.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/LICENSE)
+[![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/pulls)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/gatsby-starter-calpa-blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
+[![Greenkeeper badge](https://badges.greenkeeper.io/calpa/gatsby-starter-calpa-blog.svg)](https://greenkeeper.io/)
+[![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
+
+[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Calpa 技术博客的脚手架
 
-如果你喜欢 [我的博客](https://calpa.me)，请给个 star，多谢。
-
 ## 功能
 
+### 系统架构
+
+1. GatsbyJS v2，更加快速
+1. Google Analytics
+1. 支持离线操作
+1. Web App Manifest
+1. Netlify 网站优化
+1. 精美评论区 (powered by [Gitalk](https://github.com/gitalk/gitalk))
+1. 高速解析 Markdown (基于[remarkable](https://github.com/jonschlinkert/remarkable))
+1. 支持站点地图
+
+### 设计
+
 1. 响应式设计
-2. 高速解析 Markdown (基于[remarkable](https://github.com/jonschlinkert/remarkable))
-3. 支持站点地图
-4. 自动加载 Font Awesome(基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-5. 源自[Contentful][1]，一个灵活且易于使用的内容管理系统
+1. 懒加载（图片） (基于 [lozad.js](https://github.com/ApoorvSaxena/lozad.js))
+1. 自动加载 Font Awesome (基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+1. 流畅滑动设计 (基于 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
+1. 分页设计
+
+### 数据来源
+
+1. 源自 [Contentful][1]，壹个灵活且易于使用的内容管理系统
+1. 经过系统更新后，你可以使用任意的数据库
+
+### 可自定的地方
+
+如果你觉得这个系统需要更加完善的话，你可以从下面的地方入手：
+
+1. 搜索引擎优化
+1. 使用 SCSS 来自定义样式
+1. 数据来源
+
+如果你喜欢 [我的博客](https://calpa.me)，请给个 star，多谢。以下是如何使用这个博客系统的教程：
 
 ## 前提
 
@@ -41,7 +69,7 @@ npm install --global gatsby-cli
 2. 使用 Gatsby 启动器创建新的 Gatsby 项目，`awesome-blog`是您博客的文件夹
 
 ```
-gatsby new awesome-blog https://github.com/calpa/blog
+gatsby new awesome-blog https://github.com/calpa/gatsby-starter-calpa-blog
 ```
 
 3. 打开文件夹
