@@ -7,7 +7,7 @@
 [![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
 
-[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hant.md) | [English](README.md)
+[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
