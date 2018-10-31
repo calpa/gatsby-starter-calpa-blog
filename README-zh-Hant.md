@@ -7,19 +7,47 @@
 [![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
 
+[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
+
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Calpa 技術博客的腳手架
 
-如果妳喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。
-
 ## 功能
 
+### 系統架構
+
+1. GatsbyJS v2，更加快速
+1. Google Analytics
+1. 支持離線操作
+1. Web App Manifest
+1. Netlify 網站優化
+1. 精美評論區 (powered by [Gitalk](https://github.com/gitalk/gitalk))
+1. 高速解析 Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
+1. 支持站點地圖
+
+### 設計
+
 1. 響應式設計
-2. 高速解析 Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
-3. 支持站點地圖
-4. 自動加載 Font Awesome(基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-5. 源自[Contentful][1]，壹個靈活且易於使用的內容管理系統
+1. 懶加載（圖片） (基於 [lozad.js](https://github.com/ApoorvSaxena/lozad.js))
+1. 自動加載 Font Awesome (基於 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+1. 流暢滑動設計 (基於 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
+1. 分頁設計
+
+### 數據來源
+
+1. 源自 [Contentful][1]，壹個靈活且易於使用的內容管理系統
+1. 經過系統更新後，你可以使用任意的數據庫
+
+### 可自定的地方
+
+如果你覺得這個系統需要更加完善的話，你可以從下面的地方入手：
+
+1. 搜索引擎優化
+1. 使用 SCSS 來自定義樣式
+1. 數據來源
+
+如果你喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。以下是如何使用這個博客系統的教程：
 
 ## 前提
 
@@ -34,19 +62,19 @@ Calpa 技術博客的腳手架
 
 1. 安裝 Gatsby-CLI
 
-```
+```shell
 npm install --global gatsby-cli
 ```
 
 2. 使用 Gatsby 啟動器創建新的 Gatsby 項目，`awesome-blog`是您博客的文件夾
 
-```
+```shell
 gatsby new awesome-blog https://github.com/calpa/gatsby-starter-calpa-blog
 ```
 
 3. 打開文件夾
 
-```
+```shell
 cd awesome-blog
 ```
 
@@ -66,13 +94,15 @@ cd awesome-blog
 
    如果您使用的是[Contentful 的預覽 API](https://www.contentful.com/developers/docs/references/content-preview-api/)，那麽所有未發布的內容都將可用。
 
+   1. 您也可以使用其他服務器，只要你提供給 GraphQL 的數據符合系統數據結構。
+
 ## 配置
 
 在 `data/config`編輯 exports 的對象
 
 註意壹下: [想要查找 theme_color 十六進制代碼，請單擊此處。](https://www.colorhexa.com/)
 
-```
+```JavaScript
 module.exports = {
   title: 'your blog title here',
   maxPages: 12
@@ -102,7 +132,7 @@ module.exports = {
 
 插件的配置文件:
 
-```
+```JavaScript
 gaOptimizeId: 'GTM-WHP7SC5',
 gaTrackId: 'UA-84737574-3',
 navbarList: [
@@ -133,7 +163,7 @@ redirectors: [
 
 配置[Gitalk](https://gitalk.github.io/)
 
-```
+```JavaScript
 gitalk: {
     clientID: '18255f031b5e11edd98a',
     clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
