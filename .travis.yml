@@ -2,8 +2,10 @@ services:
   - docker
 os:
   - linux
-dist:
-  trusty
+dist: trusty
+cache:
+  directories:
+    - node_modules
   # use container-based build env for faster boot
 sudo: true
 addons:
@@ -12,6 +14,12 @@ language: node_js
 
 node_js:
   - "8"
+
+before_install: npm install -g greenkeeper-lockfile
+install: case $TRAVIS_BRANCH in greenkeeper*) npm i;; *) npm ci;; esac;
+
+before_script: greenkeeper-lockfile-update
+after_script: greenkeeper-lockfile-upload
 
 script:
   - npm install
