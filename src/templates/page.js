@@ -74,7 +74,7 @@ export const pageQuery = graphql`
       titleVisible
       subTitle
       subTitleVisible
-    }
+    },
     allPosts: allPostMarkdown(sort: { fields: [createdDate], order: DESC }) {
       edges {
         node {
