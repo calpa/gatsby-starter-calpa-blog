@@ -21,7 +21,6 @@ import SEO from '../components/SEO';
 
 import TableOfContent from '../components/TableOfContent';
 import Header from '../components/Header';
-import ChangePageButton from '../components/ChangePageButton';
 
 import ShareBox from '../components/ShareBox';
 
@@ -143,10 +142,8 @@ class BlogPost extends Component {
 
           <div className="m-change-page" style={bgWhite}>
             <p>更多文章：</p>
-            {previous && (
-              <ChangePageButton url={getUrl(previous)} title={previous.title} />
-            )}
-            {next && <ChangePageButton url={getUrl(next)} title={next.title} />}
+            {previous && <a href={getUrl(previous)}>previous.title</a>}
+            {next && <a href={getUrl(next)}>next.title</a>}
           </div>
         </div>
 
