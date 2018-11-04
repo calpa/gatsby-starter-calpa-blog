@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
 
 import { url, gaTrackId, gaOptimizeId } from './data/config';
@@ -25,7 +26,7 @@ console.log(
   'background: #6cf; padding:5px 0;',
 );
 
-exports.onRouteUpdate = (state) => {
+export const onRouteUpdate = (state) => {
   if (isLocalDevelopment() !== true) {
     ReactGA.pageview(state.location.pathname);
   } else {
