@@ -33,6 +33,7 @@ Calpa 技术博客的脚手架
 1. 自动加载 Font Awesome (基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
 1. 流畅滑动设计 (基于 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
 1. 分页设计
+1. 展示博客系统的组件 (基於 [storybook](https://github.com/storybooks/storybook))
 
 ### 数据来源
 
