@@ -16,7 +16,11 @@ node_js:
   - "8"
 
 before_install: npm install -g greenkeeper-lockfile
-install: case $TRAVIS_BRANCH in greenkeeper*) npm i;; *) npm ci;; esac;
+install:
+  - git clone https://github.com/$TRAVIS_REPO_SLUG.git $TRAVIS_REPO_SLUG
+  - cd $TRAVIS_REPO_SLUG
+  - git checkout -qf $TRAVIS_COMMIT
+  - case $TRAVIS_BRANCH in greenkeeper*) npm i;; *) npm ci;; esac;
 
 before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
