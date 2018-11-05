@@ -1,6 +1,6 @@
 const path = require('path');
 const dayjs = require('dayjs');
-const { redirectors } = require('../data/config');
+const { redirectors, maxPostsInPage } = require('../data/config');
 
 module.exports = ({ graphql, boundActionCreators }) => {
   const { createPage, createRedirect } = boundActionCreators;
@@ -31,8 +31,7 @@ module.exports = ({ graphql, boundActionCreators }) => {
         return reject();
       }
       const posts = result.data.allPostMarkdown.edges;
-      const postInPage = 6;
-      const pages = Math.ceil(posts.length / postInPage);
+      const pages = Math.ceil(posts.length / maxPostsInPage);
 
       for (let index = 0; index < pages; index += 1) {
         createPage({
@@ -40,8 +39,8 @@ module.exports = ({ graphql, boundActionCreators }) => {
           component: path.resolve('./src/templates/page.js'),
           context: {
             // Data passed to context is available in page queries as GraphQL variables.
-            limit: postInPage,
-            skip: index * postInPage,
+            limit: maxPostsInPage,
+            skip: index * maxPostsInPage,
           },
         });
       }

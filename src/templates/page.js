@@ -49,7 +49,10 @@ const Page = ({ data, location }) => (
           />
         ))}
       </div>
-      <Pagination pathname={location.pathname} />
+      <Pagination
+        pageCount={data.allPosts.edges.length}
+        pathname={location.pathname}
+      />
     </div>
     <div className="col-xl-2 col-lg-1 order-3" />
     <ShareBox url={location.href} hasCommentBox={false} />
@@ -75,7 +78,17 @@ export const pageQuery = graphql`
       subTitle
       subTitleVisible
     }
-    latestPosts: allPostMarkdown(limit: 6) {
+    allPosts: allPostMarkdown(sort: { fields: [createdDate], order: DESC }) {
+      edges {
+        node {
+          id
+        }
+      }
+    }
+    latestPosts: allPostMarkdown(
+      limit: 6
+      sort: { fields: [createdDate], order: DESC }
+    ) {
       totalCount
       edges {
         node {
