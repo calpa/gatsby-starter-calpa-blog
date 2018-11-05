@@ -1,10 +1,13 @@
+/* eslint-disable import/no-extraneous-dependencies, import/order, import/no-self-import */
 const Remarkable = require('remarkable');
+const { escapeHtml, replaceEntities } = require('remarkable/lib/common/utils');
 const { getGalleryImage } = require('./images');
 const hljs = require('highlight.js/lib/highlight');
 
 const beautifyCode = (code, language = 'javascript') => {
   ['javascript', 'bash'].forEach((langName) => {
     // Using require() here because import() support hasn't landed in Webpack yet
+    // eslint-disable-next-line global-require, import/no-dynamic-require
     const langModule = require(`highlight.js/lib/languages/${langName}`);
     hljs.registerLanguage(langName, langModule);
   });
@@ -51,13 +54,22 @@ const getContent = async (mdFile) => {
     return `<h${tokens[idx].hLevel} id=${id}>`;
   };
 
-  md.renderer.rules.table_open = () =>
-    '<div class="table-responsive"><table class="table table-striped">';
+  md.renderer.rules.table_open = () => '<div class="table-responsive"><table class="table table-striped">';
 
   md.renderer.rules.table_close = () => '</table></div>';
 
-  md.renderer.rules.blockquote_open = () =>
-    '<blockquote class="blockquote">';
+  md.renderer.rules.blockquote_open = () => '<blockquote class="blockquote">';
+
+  md.renderer.rules.link_open = (tokens, idx) => {
+    const title = tokens[idx].title
+      ? ` title="${escapeHtml(replaceEntities(tokens[idx].title))}"`
+      : '';
+    const href = escapeHtml(tokens[idx].href);
+    const isExternal = href.charAt(0) !== '/';
+    const target = isExternal ? 'target="_blank"' : '';
+    const rel = isExternal ? 'rel="external nofollow noopener noreferrer"' : '';
+    return `<a ${rel} href="${href}"${title}${target}>`;
+  };
 
   const html = md.render(mdFile);
   return { html, toc };
