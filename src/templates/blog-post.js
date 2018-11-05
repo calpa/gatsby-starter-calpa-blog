@@ -142,8 +142,16 @@ class BlogPost extends Component {
 
           <div className="m-change-page" style={bgWhite}>
             <p>更多文章：</p>
-            {previous && <a href={getUrl(previous)}>previous.title</a>}
-            {next && <a href={getUrl(next)}>next.title</a>}
+            {previous && (
+              <p>
+                <a href={getUrl(previous)}>{previous.title}</a>
+              </p>
+            )}
+            {next && (
+              <p>
+                <a href={getUrl(next)}>{next.title}</a>
+              </p>
+            )}
           </div>
         </div>
 
