@@ -1,7 +1,6 @@
 module.exports = {
   title: 'Calpa 的技術博客',
-  maxPages: 12, // TODO: Update this automatically
-  maxPostInPage: 6,
+  maxPostsInPage: 10,
   meta: {
     description: 'Calpa 的技術博客，開發日常，以及遇到的坑',
     keyword: 'calpa, blog, JavaScript',
@@ -62,11 +61,6 @@ module.exports = {
       title: '關於作者',
     },
   ],
-  contentful: {
-    API_SPACE_ID: 'n3ctvxixp1mr',
-    API_TOKEN:
-      '22acebb1f8d8c45324d922831c49a56d2b2d317d1f72c9d6326c462046ecc13a',
-  },
   redirectors: [
     {
       fromPath: '/',

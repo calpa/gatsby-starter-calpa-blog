@@ -17,23 +17,26 @@ const PageItem = ({ number, content }) => (
 
 const getPageNumber = pathname => pathname.split('/')[2];
 
-const Pagination = ({ pathname, pageCount }) => (
-  <nav aria-label="Page navigation example">
-    <ul className="pagination justify-content-center">
-      <PageItem
-        number={handlePreviousPage(getPageNumber(pathname))}
-        content="Previous"
-      />
-      <li className="page-item">
-        <Dropdown pages={getPages(pageCount)} text={getPageNumber(pathname)} />
-      </li>
-      <PageItem
-        number={handleNextPage(getPageNumber(pathname))}
-        content="Next"
-      />
-    </ul>
-  </nav>
-);
+const Pagination = ({ pathname, pageCount }) => {
+  const currentPageNumber = getPageNumber(pathname);
+  return (
+    <nav aria-label="Page navigation example">
+      <ul className="pagination justify-content-center">
+        <PageItem
+          number={handlePreviousPage(currentPageNumber)}
+          content="Previous"
+        />
+        <li className="page-item">
+          <Dropdown pages={getPages(pageCount)} text={currentPageNumber} />
+        </li>
+        <PageItem
+          number={handleNextPage(currentPageNumber, pageCount)}
+          content="Next"
+        />
+      </ul>
+    </nav>
+  );
+};
 
 PageItem.propTypes = {
   number: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
@@ -42,6 +45,7 @@ PageItem.propTypes = {
 
 Pagination.propTypes = {
   pathname: PropTypes.string.isRequired,
+  pageCount: PropTypes.number.isRequired,
 };
 
 export default Pagination;
