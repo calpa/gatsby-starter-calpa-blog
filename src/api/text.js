@@ -57,7 +57,7 @@ const getContent = async (mdFile) => {
   md.renderer.rules.table_close = () => '</table></div>';
 
   md.renderer.rules.blockquote_open = () =>
-    '<blockquote style="background:#eee">';
+    '<blockquote class="blockquote">';
 
   const html = md.render(mdFile);
   return { html, toc };

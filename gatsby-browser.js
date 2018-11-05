@@ -1,31 +1,13 @@
-import React from 'react';
+/* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
-import { Provider } from 'react-redux';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faCircle, faChevronUp } from '@fortawesome/free-solid-svg-icons';
-import { faEnvelope, faComment } from '@fortawesome/free-regular-svg-icons';
-import {
-  faGithub,
-  faZhihu,
-  faFacebookF,
-} from '@fortawesome/free-brands-svg-icons';
-
-import createStore from './src/state/createStore';
 
 import { url, gaTrackId, gaOptimizeId } from './data/config';
 
-library.add(
-  faCircle,
-  faComment,
-  faChevronUp,
-  faEnvelope,
-  faGithub,
-  faZhihu,
-  faFacebookF,
-);
+import installFontAwesome from './src/api/installFontAwesome';
 
-const isLocalDevelopment = () =>
-  window && window.location && window.location.origin !== url;
+installFontAwesome();
+
+const isLocalDevelopment = () => window && window.location && window.location.origin !== url;
 
 if (isLocalDevelopment() === false) {
   ReactGA.initialize(gaTrackId);
@@ -44,16 +26,10 @@ console.log(
   'background: #6cf; padding:5px 0;',
 );
 
-export const wrapRootElement = ({ element }) => {
-  const store = createStore();
-
-  const ConnectedRootElement = <Provider store={store}>{element}</Provider>;
-
-  return ConnectedRootElement;
-};
-
 export const onRouteUpdate = (state) => {
   if (isLocalDevelopment() !== true) {
     ReactGA.pageview(state.location.pathname);
+  } else {
+    console.log('isLocalDevelopment is true, so ReactGA is not activated');
   }
 };

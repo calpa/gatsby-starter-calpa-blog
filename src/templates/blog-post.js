@@ -21,7 +21,6 @@ import SEO from '../components/SEO';
 
 import TableOfContent from '../components/TableOfContent';
 import Header from '../components/Header';
-import ChangePageButton from '../components/ChangePageButton';
 
 import ShareBox from '../components/ShareBox';
 
@@ -130,7 +129,7 @@ class BlogPost extends Component {
           <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
-              href="https://github.com/calpa/blog"
+              href="https://github.com/calpa/gatsby-starter-calpa-blog"
               title="關注和 Star 本博客"
             />
             或者
@@ -143,10 +142,8 @@ class BlogPost extends Component {
 
           <div className="m-change-page" style={bgWhite}>
             <p>更多文章：</p>
-            {previous && (
-              <ChangePageButton url={getUrl(previous)} title={previous.title} />
-            )}
-            {next && <ChangePageButton url={getUrl(next)} title={next.title} />}
+            {previous && <a href={getUrl(previous)}>previous.title</a>}
+            {next && <a href={getUrl(next)}>next.title</a>}
           </div>
         </div>
 

@@ -1,27 +1,53 @@
 ## Calpa's Blog
 
-[![GitHub license](https://img.shields.io/github/license/calpa/blog.svg)](https://github.com/calpa/blog/blob/master/LICENSE)
-[![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/blog/pulls)
-[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
-[![Greenkeeper badge](https://badges.greenkeeper.io/calpa/blog.svg)](https://greenkeeper.io/)
-[![Build Status](https://travis-ci.org/travis-ci/travis-web.svg?branch=master)](https://github.com/calpa/blog/blob/master/.travis.yml)
-[![CodeFactor](https://www.codefactor.io/repository/github/calpa/blog/badge)](https://www.codefactor.io/repository/github/calpa/blog)
+[![GitHub license](https://img.shields.io/github/license/calpa/gatsby-starter-calpa-blog.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/LICENSE)
+[![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/pulls)
+[![Twitter](https://img.shields.io/twitter/url/https/github.com/calpa/gatsby-starter-calpa-blog.svg?style=social)](https://twitter.com/intent/tweet?text=Wow:&url=https%3A%2F%2Fgithub.com%2Fcalpa%2Fblog)
+[![Greenkeeper badge](https://badges.greenkeeper.io/calpa/gatsby-starter-calpa-blog.svg)](https://greenkeeper.io/)
+[![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
+[![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
 
-[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hant.md) | [English](README.md)
+[繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
 Starter of Calpa's Blog.
 
-If you like [my blog](https://calpa.me), please star it. Many thanks.
+If you like [my blog](https://calpa.me), please don't hesitate to star it. Many thanks.
 
 ## Feature
 
-1. Responsive Design
+### Structure
+
+1. GatsbyJS v2, faster than faster
+1. Google Analytics
+1. Offline support
+1. Web App Manifest
+1. Page pagination
+1. Netlify optimization
+1. Awesome comment component (powered by [Gitalk](https://github.com/gitalk/gitalk))
+1. Search Engine Optimization (SEO)
 1. Parse Markdown in high speed (powered by [remarkable](https://github.com/jonschlinkert/remarkable))
 1. Support to sitemap
-1. Font Awesome is auto loaded (powererd by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+
+### Design
+
+1. Lazy loading (powered by [lozad.js](https://github.com/ApoorvSaxena/lozad.js))
+1. Responsive Web Design
+1. Font Awesome is auto loaded (powered by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+1. Scroll smoothly (powered by [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
+1. Show system components (powered by [storybook](https://github.com/storybooks/storybook))
+
+### Data Souce
+
 1. Source from Contentful, a flexible and easy-to-use content management system
+1. For now, not just Contentful content source, you can use any database
+
+### Customization for developers
+
+1. SEO
+1. Styled using SCSS
+1. Data Source
 
 ## Prerequisites
 
@@ -43,7 +69,7 @@ npm install --global gatsby-cli
 2. Create new Gatsby project using this starter, `awesome-blog` is your blog's folder
 
 ```
-gatsby new awesome-blog https://github.com/calpa/blog
+gatsby new awesome-blog https://github.com/calpa/gatsby-starter-calpa-blog
 ```
 
 3. Open the folder
@@ -62,6 +88,7 @@ cd awesome-blog
    1. add the following config into `.env.development` file
 
    ```
+   API_BASE_URL = 'https://cdn.contentful.com'
    API_SPACE_ID = Your Contentful Space ID
    API_TOKEN = Your Content Delivery (Preview) API - access token
    ```
@@ -74,7 +101,7 @@ Edit the export object in `data/config`
 
 Note: [To look up theme_color hex code, click here.](https://www.colorhexa.com/)
 
-```
+```JavaScript
 module.exports = {
   title: 'your blog title here',
   maxPages: 12
@@ -104,7 +131,7 @@ module.exports = {
 
 Plugins in the configuration file:
 
-```
+```JavaScript
 gaOptimizeId: 'GTM-WHP7SC5',
 gaTrackId: 'UA-84737574-3',
 navbarList: [
@@ -135,7 +162,7 @@ redirectors: [
 
 Gitalk plugin configuration
 
-```
+```JavaScript
 gitalk: {
     clientID: '18255f031b5e11edd98a',
     clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
@@ -201,10 +228,6 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 
   Auto Deploy
 
-## TODO
-
-1. Update the number of post pages automatically.
-
 ## Troubleshooting
 
 - For `window is defined`, wrap the require in check for window:
@@ -221,6 +244,8 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 ## Contributing
 
 Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
+
+And don't hesitate to put your star and watch this starter project.
 
 ## Contact
 

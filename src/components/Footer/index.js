@@ -11,12 +11,29 @@ const Footer = () => (
       <div className="row">
         <div className="col-sm-12 text-center">
           <p className="architecture">
-            Build with <ExternalLink href="https://www.gatsbyjs.org/" title="GatsbyJS" /> and <ExternalLink href="https://reactjs.org/" title={`React ${React.version}`} />.
-            Hosted on <ExternalLink href="https://www.netlify.com/" title="Netlify" />.<br />
-            The code is open source and available at <ExternalLink href="https://github.com/calpa/blog" title="Github" />.
+            Build with&nbsp;
+            <ExternalLink href="https://www.gatsbyjs.org/" title="GatsbyJS" />
+            &nbsp;and&nbsp;
+            <ExternalLink
+              href="https://reactjs.org/"
+              title={`React ${React.version}`}
+            />
+            .&nbsp;Hosted on&nbsp;
+            <ExternalLink href="https://www.netlify.com/" title="Netlify" />
+            <br />
+            The code is open source and available at&nbsp;
+            <ExternalLink
+              href="https://github.com/calpa/gatsby-starter-calpa-blog"
+              title="calpa/gatsby-starter-calpa-blog"
+            />
           </p>
           <p className="copyright">
-            Copyright &copy; {config.title} {new Date().getFullYear()} Theme by Calpa Liu
+            Copyright&nbsp;
+            <ExternalLink href="https://calpa.me/" title="&copy;Calpa" />
+            &nbsp;
+            {config.title}
+            {new Date().getFullYear()}
+            &nbsp;Theme by Calpa Liu
           </p>
         </div>
       </div>

@@ -16,7 +16,7 @@
     "dayjs": "^1.7.5",
     "dotenv": "^6.0.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "gatsby": "^2.0.0",
+    "gatsby": "^2.0.38",
     "gatsby-link": "^2.0.1",
     "gatsby-plugin-catch-links": "^2.0.2",
     "gatsby-plugin-feed": "^2.0.5",
@@ -70,7 +70,9 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/",
-    "commit": "npx git-cz"
+    "commit": "npx git-cz",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",
@@ -81,11 +83,16 @@
     "eslint-plugin-react": "^7.11.1",
     "gh-pages": "^2.0.0",
     "husky": "^1.0.0-rc.14",
-    "lint-staged": "^7.2.2",
+    "lint-staged": "^8.0.4",
     "prettier": "^1.7.4",
     "stylelint": "^9.5.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-scss": "^3.3.0"
+    "stylelint-scss": "^3.3.0",
+    "@storybook/react": "^4.0.2",
+    "@storybook/addon-actions": "^4.0.2",
+    "@storybook/addon-links": "^4.0.2",
+    "@storybook/addons": "^4.0.2",
+    "@babel/core": "^7.1.2"
   },
   "lint-staged": {
     "linters": {
