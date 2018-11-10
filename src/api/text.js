@@ -67,7 +67,7 @@ const getContent = async (mdFile) => {
     const href = escapeHtml(tokens[idx].href);
     const isExternal = href.charAt(0) !== '/';
     const target = isExternal ? 'target="_blank"' : '';
-    const rel = isExternal ? 'rel="external nofollow noopener noreferrer"' : '';
+    const rel = isExternal ? 'rel="external nofollow noopener"' : '';
     return `<a ${rel} href="${href}"${title}${target}>`;
   };
 
