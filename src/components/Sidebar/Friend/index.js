@@ -9,12 +9,12 @@ import './index.scss';
 const Friend = () => (
   <div className="friend">
     <p>友情鏈接</p>
-    {friends.map(friend =>
-    (
+    {friends.map(friend => (
       <ExternalLink
         href={friend.href}
         title={friend.title}
         key={friend.title}
+        rel="noopener"
       />
     ))}
   </div>
