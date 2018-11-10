@@ -20,6 +20,10 @@ module.exports = {
   githubUsername: 'calpa',
   friends: [
     {
+      title: '太空船博客',
+      href: 'https://www.boatsky.com/',
+    },
+    {
       title: '娜酱骑士团',
       href: 'http://blog.shanamaid.top/',
     },
