@@ -228,10 +228,6 @@ gitalk: {
 
   自动部署
 
-## TODO
-
-1. 自动更新帖子页数。
-
 ## 故障排除
 
 - 对于 `window is defined`, 引包前检查 window :
