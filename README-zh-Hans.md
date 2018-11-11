@@ -11,7 +11,7 @@
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
-Calpa 技术博客的脚手架
+透过这个腳手架，你可以快速建立一个如同 [Calpa's Blog](https://calpa.me) 的博客系统。
 
 ## 功能
 
@@ -227,10 +227,6 @@ gitalk: {
 - Netlify
 
   自动部署
-
-## TODO
-
-1. 自动更新帖子页数。
 
 ## 故障排除
 

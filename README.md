@@ -1,4 +1,4 @@
-## Calpa's Blog
+## Gatsby Starter - Calpa's Blog
 
 [![GitHub license](https://img.shields.io/github/license/calpa/gatsby-starter-calpa-blog.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/LICENSE)
 [![Accept Pull Requests](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/calpa/gatsby-starter-calpa-blog/pulls)
@@ -11,9 +11,9 @@
 
 ![HomePage](https://i.imgur.com/6Xd4yVQ.png)
 
-Starter of Calpa's Blog.
+Build a blog system like [Calpa's Blog](https://calpa.me) in ease.
 
-If you like [my blog](https://calpa.me), please don't hesitate to star it. Many thanks.
+If you like this project, please don't hesitate to star it. Thank you.
 
 ## Feature
 
