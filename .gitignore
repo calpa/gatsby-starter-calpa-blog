@@ -9,3 +9,6 @@ yarn-error.log
 
 # Local keys
 .env.development
+
+# Calpa's Blog Config
+data/secret/[^i]*

@@ -1,4 +1,3 @@
-const fs = require('fs');
 const asyncForEach = require('../src/api/asyncForEach');
 const getPosts = require('./getPosts');
 const { getContent } = require('../src/api/text');
@@ -33,20 +32,6 @@ const makeNode = async ({ contentType, createNode }) => {
   });
 };
 
-const createConfigFile = async (data) => {
-  // TODO: Validate the configJSON
-  const configJSON = data.items[0].fields.blog || {};
-
-  console.log('current config');
-
-  console.log(configJSON);
-  try {
-    await fs.writeFile('./data/secret/config.json', JSON.stringify(configJSON));
-  } catch (err) {
-    console.error(err);
-  }
-};
-
 const createHeader = async (createNode) => {
   const { data } = await getPosts('headers');
   data.items.forEach((datum) => {
@@ -73,7 +58,4 @@ module.exports = async ({ actions }) => {
 
   // Make changable headers
   await createHeader(createNode);
-
-  const { data } = await getPosts('configuration');
-  createConfigFile(data);
 };
