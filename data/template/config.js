@@ -6,7 +6,7 @@ module.exports = {
     keyword: 'calpa, blog, JavaScript',
     theme_color: '#384f7c',
     favicon: 'https://i.imgur.com/PO9Y4fT.jpg',
-    google_site_verification: 'riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io',
+    google_site_verification: '',
   },
   name: 'calpa',
   email: 'calpaliu@gmail.com',
@@ -18,51 +18,14 @@ module.exports = {
   wordings: ['江南憶，最憶是杭州', '一名愛寫文章的前端工程師'],
   zhihuUsername: 'piao-xue-wu-ying',
   githubUsername: 'calpa',
-  friends: [
-    {
-      title: '太空船博客',
-      href: 'https://www.boatsky.com/',
-    },
-    {
-      title: '娜酱骑士团',
-      href: 'http://blog.shanamaid.top/',
-    },
-    {
-      title: 'Clarence Blog',
-      href: 'https://clarencec.github.io/',
-    },
-    {
-      title: 'F2EX',
-      href: 'http://f2ex.cn/',
-    },
-    {
-      title: '晚晴幽草轩',
-      href: 'https://jeffjade.com/',
-    },
-    {
-      title: 'MacPlay',
-      href: 'https://macplay.github.io/',
-    },
-  ],
+  friends: [],
   // Plugins
   gaOptimizeId: 'GTM-WHP7SC5',
   gaTrackId: 'UA-84737574-3',
   navbarList: [
     {
       href: '/stats/',
-      title: '網站數據',
-    },
-    {
-      href: '/tags/',
-      title: '分類',
-    },
-    {
-      href: '/guestbook/',
-      title: '留言簿',
-    },
-    {
-      href: '/2018/05/01/about-calpa-liu/',
-      title: '關於作者',
+      title: 'Blog Stats',
     },
   ],
   redirectors: [
@@ -78,5 +41,10 @@ module.exports = {
     owner: 'calpa',
     admin: ['calpa'],
     distractionFreeMode: true,
+  },
+  stats: {
+    title: '過去三十日數據',
+    description: '過去三十日數據',
+    image: 'https://i.imgur.com/VjBWiSt.png',
   },
 };

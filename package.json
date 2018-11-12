@@ -40,8 +40,6 @@
     "react-dom": "^16.5.1",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
-    "react-redux": "^5.0.7",
-    "redux": "^4.0.0",
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2",
     "smooth-scroll": "^15.0.0",
@@ -59,8 +57,9 @@
     }
   },
   "scripts": {
-    "start": "npm run develop",
-    "build": "gatsby build --prefix-paths",
+    "start": "npm run fetch:config && npm run develop",
+    "build": "npm run fetch:config && gatsby build --prefix-paths",
+    "fetch:config": "NODE_ENV=development node ./scripts/index.js",
     "postbuild": "rimraf public/**/*.map",
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",

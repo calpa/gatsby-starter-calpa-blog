@@ -7,8 +7,10 @@ import GithubCorner from '../GithubCorner';
 
 import NavItem from './NavItem';
 import { gotoPage } from '../../api/url';
-import { navbarList } from '../../../data/config';
 import './index.scss';
+import { config } from '../../../data';
+
+const { navbarList } = config;
 
 const NavbarClass = [
   'navbar',

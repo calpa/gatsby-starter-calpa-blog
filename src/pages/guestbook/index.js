@@ -13,7 +13,7 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import wrapLayout from '../../api/layout';
-import { gitalk } from '../../../data/config';
+import { gitalk } from '../../../data';
 
 import './index.scss';
 

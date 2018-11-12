@@ -9,3 +9,7 @@ yarn-error.log
 
 # Local keys
 .env.development
+
+# Calpa's Blog Config
+data/template/config.json
+data/template/raw-config.js

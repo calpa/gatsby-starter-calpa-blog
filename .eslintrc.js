@@ -11,12 +11,7 @@ const eslintrc = {
       "config",
       "react-helmet",
       "prop-types"
-    ],
-    "import/resolver": {
-      webpack: {
-        config: path.join(__dirname, "webpack.config.js")
-      }
-    }
+    ]
   },
   rules: {
     "react/jsx-filename-extension": [1, { extensions: [".js", ".jsx"] }],

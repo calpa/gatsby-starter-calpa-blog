@@ -32,14 +32,7 @@ const makeNode = async ({ contentType, createNode }) => {
   });
 };
 
-module.exports = async ({ actions }) => {
-  const { createNode } = actions;
-  // Create nodes here, generally by downloading data
-  // from a remote API.
-
-  await makeNode({ contentType: 'blogPost', createNode });
-
-  // Make changable headers
+const createHeader = async (createNode) => {
   const { data } = await getPosts('headers');
   data.items.forEach((datum) => {
     const node = {
@@ -54,4 +47,15 @@ module.exports = async ({ actions }) => {
     };
     createNode(node);
   });
+};
+
+module.exports = async ({ actions }) => {
+  const { createNode } = actions;
+  // Create nodes here, generally by downloading data
+  // from a remote API.
+
+  await makeNode({ contentType: 'blogPost', createNode });
+
+  // Make changable headers
+  await createHeader(createNode);
 };

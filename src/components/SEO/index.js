@@ -3,7 +3,7 @@ import Helmet from 'react-helmet';
 
 import PropTypes from 'prop-types';
 
-import config from '../../../data/config';
+import config from '../../../data';
 
 const schemaOrgJSONLD = ({
   url,

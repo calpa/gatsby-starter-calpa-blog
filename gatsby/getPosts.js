@@ -24,7 +24,9 @@ const getPosts = async (contentType) => {
 };
 
 if (API_SPACE_ID && API_TOKEN) {
+  console.log('has API_SPACE_ID and API_TOKEN');
   module.exports = getPosts;
 } else {
+  console.log('use mock posts');
   module.exports = getMockPosts;
 }

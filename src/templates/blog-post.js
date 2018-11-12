@@ -27,12 +27,14 @@ import ShareBox from '../components/ShareBox';
 import { getUrl } from '../api/url';
 import wrapLayout from '../api/layout';
 
-import {
-  url, name, iconUrl, gitalk,
-} from '../../data/config';
+import { config } from '../../data';
 
 // Styles
 import './blog-post.scss';
+
+const {
+  url, name, iconUrl, gitalk,
+} = config;
 
 const bgWhite = { padding: '10px 15px', background: 'white' };
 

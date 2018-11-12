@@ -1,9 +1,11 @@
 /* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
 
-import { url, gaTrackId, gaOptimizeId } from './data/config';
+import { config } from './data';
 
 import installFontAwesome from './src/api/installFontAwesome';
+
+const { url, gaTrackId, gaOptimizeId } = config;
 
 installFontAwesome();
 

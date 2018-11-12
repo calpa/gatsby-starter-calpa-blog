@@ -1,5 +1,7 @@
 import dayjs from 'dayjs';
-import { maxPostsInPage } from '../../data/config';
+import { config } from '../../data';
+
+const { maxPostsInPage } = config;
 
 // Prevent webpack window problem
 const isBrowser = () => typeof window !== 'undefined';
