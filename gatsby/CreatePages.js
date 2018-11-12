@@ -2,7 +2,7 @@ const path = require('path');
 const dayjs = require('dayjs');
 const { config } = require('../data');
 
-const { redirectors, maxPostsInPage } = config;
+const { redirectors = [], maxPostsInPage } = config;
 
 module.exports = ({ graphql, boundActionCreators }) => {
   const { createPage, createRedirect } = boundActionCreators;
