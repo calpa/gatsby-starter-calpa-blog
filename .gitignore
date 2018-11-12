@@ -11,4 +11,5 @@ yarn-error.log
 .env.development
 
 # Calpa's Blog Config
-data/secret/[^i]*
+data/template/config.json
+data/template/raw-config.js
