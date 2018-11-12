@@ -1,3 +1,4 @@
+const fs = require('fs');
 const asyncForEach = require('../src/api/asyncForEach');
 const getPosts = require('./getPosts');
 const { getContent } = require('../src/api/text');
@@ -32,14 +33,21 @@ const makeNode = async ({ contentType, createNode }) => {
   });
 };
 
-module.exports = async ({ actions }) => {
-  const { createNode } = actions;
-  // Create nodes here, generally by downloading data
-  // from a remote API.
+const createConfigFile = async (data) => {
+  // TODO: Validate the configJSON
+  const configJSON = data.items[0].fields.blog || {};
 
-  await makeNode({ contentType: 'blogPost', createNode });
+  console.log('current config');
 
-  // Make changable headers
+  console.log(configJSON);
+  try {
+    await fs.writeFile('./data/secret/config.json', JSON.stringify(configJSON));
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+const createHeader = async (createNode) => {
   const { data } = await getPosts('headers');
   data.items.forEach((datum) => {
     const node = {
@@ -54,4 +62,18 @@ module.exports = async ({ actions }) => {
     };
     createNode(node);
   });
+};
+
+module.exports = async ({ actions }) => {
+  const { createNode } = actions;
+  // Create nodes here, generally by downloading data
+  // from a remote API.
+
+  await makeNode({ contentType: 'blogPost', createNode });
+
+  // Make changable headers
+  await createHeader(createNode);
+
+  const { data } = await getPosts('configuration');
+  createConfigFile(data);
 };
