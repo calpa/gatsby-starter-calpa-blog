@@ -8,7 +8,7 @@ import Header from '../../components/Header';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
-import { url } from '../../../data/config';
+import { url } from '../../../data';
 
 import wrapLayout from '../../api/layout';
 

@@ -5,14 +5,14 @@ import SEO from '../components/SEO';
 
 import wrapLayout from '../api/layout';
 
+import { config } from '../../data';
+
+const { stats } = config;
+
 class StatsPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      title: '過去三十日數據',
-      description: '過去三十日數據',
-      image: 'https://i.imgur.com/pimaXpl.png',
-    };
+    this.state = stats;
   }
 
   componentDidMount() {
@@ -21,14 +21,15 @@ class StatsPage extends Component {
   }
 
   render() {
+    const { image, title, description } = this.state;
     return (
       <div className="container">
         <div className="row">
           <div className="col">
             <img
-              data-src={this.state.image}
+              data-src={image}
               className="lozad"
-              alt={this.state.title}
+              alt={title}
               style={{ maxHeight: '40rem' }}
             />
           </div>
@@ -36,10 +37,10 @@ class StatsPage extends Component {
 
         <SEO
           url="/stats/"
-          title={this.state.title}
-          description={this.state.description}
-          image={this.state.image}
-          siteTitleAlt={this.state.title}
+          title={title}
+          description={description}
+          image={image}
+          siteTitleAlt={title}
           isPost={false}
         />
       </div>

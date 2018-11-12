@@ -3,19 +3,21 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-import {
+import { config } from '../../../data';
+
+import Information from './Information';
+import Subscription from './Subscription';
+
+import './index.scss';
+
+const {
   wordings,
   githubUsername,
   zhihuUsername,
   email,
   iconUrl,
   about,
-} from '../../../data/config';
-
-import Information from './Information';
-import Subscription from './Subscription';
-
-import './index.scss';
+} = config;
 
 const Icon = ({ href, icon }) => (
   <a
