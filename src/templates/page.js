@@ -7,7 +7,7 @@ import Card from '../components/Card';
 import Sidebar from '../components/Sidebar';
 import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
-import { parseDate, getPath } from '../api';
+import { parseDate, getPath, getMaxPages } from '../api';
 import { getFirstParagraph } from '../api/text';
 import wrapLayout from '../api/layout';
 import ShareBox from '../components/ShareBox';
@@ -54,7 +54,7 @@ const Page = ({ data, location }) => (
         ))}
       </div>
       <Pagination
-        pageCount={data.allPosts.edges.length / maxPostsInPage}
+        pageCount={getMaxPages(data.allPosts.edges.length)}
         pathname={location.pathname}
       />
     </div>
