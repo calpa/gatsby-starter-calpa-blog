@@ -13,9 +13,11 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import wrapLayout from '../../api/layout';
-import { gitalk } from '../../../data';
+import { config } from '../../../data';
 
 import './index.scss';
+
+const { gitalk, url } = config;
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
@@ -29,7 +31,10 @@ class Guestbook extends Component {
 
   componentDidMount() {
     // Gitalk
-    const GitTalkInstance = new Gitalk(gitalk);
+    const GitTalkInstance = new Gitalk({
+      ...gitalk,
+      id: `${url}/guestbook/`,
+    });
     GitTalkInstance.render('gitalk-container');
   }
 
