@@ -25,7 +25,7 @@ const getPath = () => (isBrowser() ? window.location.pathname : '');
 const getMaxPages = amount => Math.ceil(amount / maxPostsInPage);
 
 // Array.fill() is added by trial and error
-const getPages = amount => new Array(getMaxPages(amount)).fill().map((_, index) => `/page/${index + 1}`);
+const getPages = amount => new Array(amount).fill().map((_, index) => `/page/${index + 1}`);
 
 const overflow = () => getCurrentPage() === getMaxPages();
 
