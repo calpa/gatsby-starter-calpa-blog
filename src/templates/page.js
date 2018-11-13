@@ -12,6 +12,10 @@ import { getFirstParagraph } from '../api/text';
 import wrapLayout from '../api/layout';
 import ShareBox from '../components/ShareBox';
 
+import { config } from '../../data/index';
+
+const { maxPostsInPage } = config;
+
 const getTitle = (pageNumber = '1') => {
   if (pageNumber === '1') {
     return '首頁';
