@@ -37,7 +37,7 @@
     "md5": "^2.2.1",
     "node-sass": "^4.9.3",
     "react": "^16.6.3",
-    "react-dom": "^16.5.1",
+    "react-dom": "^16.6.3",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "remarkable": "^1.7.1",
