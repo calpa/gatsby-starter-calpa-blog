@@ -49,6 +49,26 @@ If you like this project, please don't hesitate to star it. Thank you.
 1. Styled using SCSS
 1. Data Source
 
+## Get Started
+
+### Deploy with Netlify
+
+Use the button below to build and deploy your own copy of the repository:
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/calpa/gatsby-starter-calpa-blog" target="_blank"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template.
+
+Next, it will build and deploy the new site on Netlify, bringing you to the blog system when the build is complete.
+
+You may use Contentful as your content management system.
+
+### Code with Codesandbox
+
+Use the button below to code with the blog system:
+
+[![Edit blog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/calpa/gatsby-starter-calpa-blog/tree/master/)
+
 ## Prerequisites
 
 1. Git
