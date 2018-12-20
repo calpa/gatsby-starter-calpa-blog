@@ -48,7 +48,27 @@
 1. 使用 SCSS 來自定義樣式
 1. 數據來源
 
-如果你喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。以下是如何使用這個博客系統的教程：
+## 快速入門
+
+### 使用 Netlify 部署
+
+你可以使用以下按鈕來構建和部署博客的一個副本：
+
+<a href="https://app.netlify.com/start/deploy?repository=https://github.com/calpa/gatsby-starter-calpa-blog" target="_blank"><img src="https://www.netlify.com/img/deploy/button.svg" alt="Deploy to Netlify"></a>
+
+在你點擊上面的按鈕之後，你就會賦予 Netlify 取得你的 Github 授權，以及選擇倉庫名稱。Netlify 會自動創建一個倉庫，並且複製那裡的文件。
+
+之後，它會自動構建和部署一個新的網站，為你帶來一個完整的博客系統。
+
+你也可以使用 Contentful 作為你的內容管理系統。
+
+### 使用 Codesandbox 來寫代碼
+
+你可以使用以下按鈕來嘗試修改博客系統的代碼：
+
+[![Edit blog](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/calpa/gatsby-starter-calpa-blog/tree/master/)
+
+如果你喜歡 [我的博客](https://calpa.me)，請給個 star，多謝。
 
 ## 前提
 
