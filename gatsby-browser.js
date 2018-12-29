@@ -1,6 +1,5 @@
 /* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
-import SmoothScroll from 'smooth-scroll';
 import { config } from './data';
 
 import installFontAwesome from './src/api/installFontAwesome';
@@ -48,6 +47,8 @@ export const shouldUpdateScroll = ({
     && prevRouterProps.location.pathname === location.pathname
   ) {
     if (window) {
+      // eslint-disable-next-line global-require
+      const SmoothScroll = require('smooth-scroll');
       const header = document.getElementById('header');
       const scroll = new SmoothScroll('#header', { offset: 60 });
       if (header) {

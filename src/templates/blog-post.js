@@ -214,7 +214,10 @@ export const pageQuery = graphql`
         }
       }
     }
-    latestPosts: allPostMarkdown(limit: 6) {
+    latestPosts: allPostMarkdown(
+      limit: 6
+      sort: { fields: [createdDate], order: DESC }
+    ) {
       totalCount
       ...post
     }
