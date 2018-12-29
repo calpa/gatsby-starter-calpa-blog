@@ -12,7 +12,6 @@ import Sidebar from '../../components/Sidebar';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
-import wrapLayout from '../../api/layout';
 import { config } from '../../../data';
 
 import './index.scss';
@@ -40,7 +39,7 @@ class Guestbook extends Component {
 
   render() {
     const { totalCount, edges } = this.data.latestPosts;
-    const url = getPath();
+    const guestbookURL = getPath();
 
     const description = '留言簿';
     const image = 'https://i.imgur.com/kjt2x52.png';
@@ -55,7 +54,7 @@ class Guestbook extends Component {
         <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
           <h2>
             留言簿
-            <ShareBox url={url} />
+            <ShareBox url={guestbookURL} />
           </h2>
           <div id="gitalk-container" className="col-12" />
         </div>
@@ -72,7 +71,7 @@ class Guestbook extends Component {
   }
 }
 
-export default wrapLayout(Guestbook);
+export default Guestbook;
 
 export const query = graphql`
   query GuestbookQuery {

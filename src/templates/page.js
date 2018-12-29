@@ -9,12 +9,7 @@ import SEO from '../components/SEO';
 import Pagination from '../components/Pagination';
 import { parseDate, getPath, getMaxPages } from '../api';
 import { getFirstParagraph } from '../api/text';
-import wrapLayout from '../api/layout';
 import ShareBox from '../components/ShareBox';
-
-import { config } from '../../data/index';
-
-const { maxPostsInPage } = config;
 
 const getTitle = (pageNumber = '1') => {
   if (pageNumber === '1') {
@@ -71,7 +66,7 @@ const Page = ({ data, location }) => (
   </div>
 );
 
-export default wrapLayout(Page);
+export default Page;
 
 export const pageQuery = graphql`
   query getNextPage($limit: Int, $skip: Int) {

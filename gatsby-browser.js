@@ -1,11 +1,13 @@
 /* eslint-disable import/prefer-default-export */
 import ReactGA from 'react-ga';
-
+import SmoothScroll from 'smooth-scroll';
 import { config } from './data';
 
 import installFontAwesome from './src/api/installFontAwesome';
 
-const { url, gaTrackId, gaOptimizeId } = config;
+const {
+  url, gaTrackId, gaOptimizeId, transitionDelay = 100,
+} = config;
 
 installFontAwesome();
 
@@ -34,4 +36,31 @@ export const onRouteUpdate = (state) => {
   } else {
     console.log('isLocalDevelopment is true, so ReactGA is not activated');
   }
+};
+
+// Transition (2018-12-29)
+export const shouldUpdateScroll = ({
+  prevRouterProps,
+  routerProps: { location },
+}) => {
+  if (
+    prevRouterProps
+    && prevRouterProps.location.pathname === location.pathname
+  ) {
+    if (window) {
+      const header = document.getElementById('header');
+      const scroll = new SmoothScroll('#header', { offset: 60 });
+      if (header) {
+        setTimeout(() => scroll.animateScroll(header), transitionDelay);
+      }
+    }
+    return false;
+  }
+
+  if (location.action === 'PUSH') {
+    if (window) {
+      setTimeout(() => window.scrollTo(0, 0), transitionDelay);
+    }
+  }
+  return false;
 };

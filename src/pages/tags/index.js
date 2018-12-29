@@ -1,3 +1,4 @@
+/* eslint-disable no-shadow */
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 
@@ -9,8 +10,6 @@ import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';
 
 import { url } from '../../../data';
-
-import wrapLayout from '../../api/layout';
 
 const splitTag = (raw = '') => raw.split(', ');
 
@@ -138,7 +137,7 @@ class TagPage extends Component {
 
   render() {
     const { showAllTags, tags } = this.state;
-    const { data, location } = this.props;
+    const { data } = this.props;
     const { header } = data;
 
     const rawTags = Object.keys(tags);
@@ -187,7 +186,6 @@ class TagPage extends Component {
           <TagSession
             tag={tag}
             articles={tags[tag].filter((v, i, a) => a.indexOf(v) === i)}
-            isActive={decodeURI(location.hash) === `#${tag}`}
             key={tag}
           />
         ))}
@@ -247,4 +245,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default wrapLayout(TagPage);
+export default TagPage;
