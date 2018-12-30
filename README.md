@@ -261,6 +261,20 @@ There are two configurable headers, [Homepage](https://calpa.me) and [tags page]
 - `npm run reset` to clear the local cache
 - Check [GatsbyJS Debugging Docs](https://www.gatsbyjs.org/docs/debugging-html-builds/)
 
+## Scripts
+
+1. Backup config.js as raw-config.js, create config.json (npm start)
+
+```
+node ./scripts/index.js
+```
+
+2. Delete raw-config.js and create config.js (do this before you commit)
+
+```
+node ./scripts/revertConfig.js
+```
+
 ## Contributing
 
 Please read [CONTRIBUTING.md](.github/CONTRIBUTING.md) for more information.
