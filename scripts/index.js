@@ -1,33 +1,33 @@
 const fs = require('fs');
+const success = require('./success');
+
 const getPosts = require('../gatsby/getPosts');
+const renameConfigFile = require('./renameConfigFile');
 
-const createConfigFile = async () => {
-  const { data } = await getPosts('configuration');
-
-  // TODO: Validate the configJSON
-  const configJSON = data.items[0].fields.blog || {};
-
-  const hasConfig = await fs.existsSync('./data/template/config.js');
-  if (hasConfig) {
-    try {
-      await fs.rename(
-        './data/template/config.js',
-        './data/template/raw-config.js',
-      );
-    } catch (err) {
-      console.error(err);
-    }
-  } else {
-    console.log('no config.js here');
-  }
-
+const createJSON = async (object) => {
   try {
-    await fs.writeFile(
+    success('create data/template/config.json');
+    await fs.writeFileSync(
       './data/template/config.json',
-      JSON.stringify(configJSON),
+      JSON.stringify(object, null, 2),
     );
   } catch (err) {
     console.error(err);
+  }
+};
+
+const createConfigFile = async () => {
+  const { data } = await getPosts('configuration');
+  const object = data.items[0].fields.blog;
+
+  const hasConfig = await fs.existsSync('./data/template/config.js');
+
+  if (hasConfig) {
+    await renameConfigFile();
+
+    await createJSON(object);
+  } else {
+    success('config.js had already renamed as config.json');
   }
 };
 

@@ -25,7 +25,6 @@ import Header from '../components/Header';
 import ShareBox from '../components/ShareBox';
 
 import { getUrl } from '../api/url';
-import wrapLayout from '../api/layout';
 
 import { config } from '../../data';
 
@@ -215,11 +214,14 @@ export const pageQuery = graphql`
         }
       }
     }
-    latestPosts: allPostMarkdown(limit: 6) {
+    latestPosts: allPostMarkdown(
+      limit: 6
+      sort: { fields: [createdDate], order: DESC }
+    ) {
       totalCount
       ...post
     }
   }
 `;
 
-export default wrapLayout(BlogPost);
+export default BlogPost;

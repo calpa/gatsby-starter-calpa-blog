@@ -1,3 +1,4 @@
+/* eslint-disable max-len */
 /* eslint max-len: 1 */
 const dayjs = require('dayjs');
 const Remarkable = require('remarkable');
@@ -32,6 +33,12 @@ module.exports = {
     'gatsby-plugin-sass',
     'gatsby-plugin-catch-links',
     'gatsby-plugin-webpack-bundle-analyzer',
+    {
+      resolve: 'gatsby-plugin-layout',
+      options: {
+        component: require.resolve('./src/components/Layout/layout.js'),
+      },
+    },
     {
       resolve: 'gatsby-plugin-sitemap',
     },

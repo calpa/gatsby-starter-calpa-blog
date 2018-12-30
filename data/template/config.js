@@ -1,4 +1,4 @@
-module.exports = {
+const blog = {
   title: 'Calpa 的技術博客',
   maxPostsInPage: 10,
   meta: {
@@ -48,3 +48,16 @@ module.exports = {
     image: 'https://i.imgur.com/VjBWiSt.png',
   },
 };
+
+// Contentful API model
+const data = {
+  items: [
+    {
+      fields: {
+        blog,
+      },
+    },
+  ],
+};
+
+module.exports = { data };

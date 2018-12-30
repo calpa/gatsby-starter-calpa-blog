@@ -2,16 +2,20 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const Tag = ({ name, count }) => (
-  <a href={`/tags#${name}`} key={name} className="header-tag">{name} {count || ''}</a>
+  <a href={`/tags/#${name}`} key={name} className="header-tag">
+    {name}
+    &nbsp;
+    {count}
+  </a>
 );
 
 Tag.propTypes = {
   name: PropTypes.string.isRequired,
-  count: PropTypes.number,
+  count: PropTypes.number || PropTypes.string,
 };
 
 Tag.defaultProps = {
-  count: 0,
+  count: '',
 };
 
 export default Tag;

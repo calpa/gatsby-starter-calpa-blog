@@ -1,4 +1,4 @@
-const { posts, headers, configs } = require('../data');
+const { posts, headers, config } = require('../data');
 
 const getMockPosts = (type) => {
   switch (type) {
@@ -7,7 +7,8 @@ const getMockPosts = (type) => {
     case 'headers':
       return headers;
     case 'configs':
-      return configs;
+    case 'configuration':
+      return config;
     default:
       return posts;
   }

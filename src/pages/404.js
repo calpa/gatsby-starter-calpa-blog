@@ -1,8 +1,7 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 
 import { Link, graphql } from 'gatsby';
-
-import wrapLayout from '../api/layout';
 
 const NotFoundPage = ({ data }) => (
   <div className="container">
@@ -31,4 +30,4 @@ export const pageQuery = graphql`
   }
 `;
 
-export default wrapLayout(NotFoundPage);
+export default NotFoundPage;

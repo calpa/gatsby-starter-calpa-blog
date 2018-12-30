@@ -3,8 +3,6 @@ import lozad from 'lozad';
 
 import SEO from '../components/SEO';
 
-import wrapLayout from '../api/layout';
-
 import { config } from '../../data';
 
 const { stats } = config;
@@ -48,4 +46,4 @@ class StatsPage extends Component {
   }
 }
 
-export default wrapLayout(StatsPage);
+export default StatsPage;
