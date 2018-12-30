@@ -10,7 +10,7 @@ import { gotoPage } from '../../api/url';
 import './index.scss';
 import { config } from '../../../data';
 
-const { navbarList } = config;
+const { navbarList = [] } = config;
 
 const NavbarClass = [
   'navbar',

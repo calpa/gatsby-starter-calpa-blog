@@ -6,7 +6,7 @@ import { config } from '../../../../data';
 
 import './index.scss';
 
-const { friends } = config;
+const { friends = [] } = config;
 
 const Friend = () => (
   <div className="friend">

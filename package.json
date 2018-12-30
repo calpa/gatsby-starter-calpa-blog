@@ -74,7 +74,8 @@
     "reset": "rimraf pubilc/ .cache/",
     "commit": "npx git-cz",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "build-storybook": "build-storybook",
+    "revert": "node ./scripts/revertConfig.js"
   },
   "devDependencies": {
     "babel-plugin-transform-runtime": "^6.23.0",

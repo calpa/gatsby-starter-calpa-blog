@@ -18,13 +18,14 @@ const createJSON = async (object) => {
 
 const createConfigFile = async () => {
   const { data } = await getPosts('configuration');
+  const object = data.items[0].fields.blog;
 
   const hasConfig = await fs.existsSync('./data/template/config.js');
 
   if (hasConfig) {
     await renameConfigFile();
 
-    await createJSON(data);
+    await createJSON(object);
   } else {
     success('config.js had already renamed as config.json');
   }

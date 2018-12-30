@@ -272,7 +272,7 @@ node ./scripts/index.js
 2. Delete raw-config.js and create config.js (do this before you commit)
 
 ```
-node ./scripts/revertConfig.js
+npm run revert
 ```
 
 ## Contributing

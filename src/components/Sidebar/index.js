@@ -11,7 +11,7 @@ import Subscription from './Subscription';
 import './index.scss';
 
 const {
-  wordings,
+  wordings = [],
   githubUsername,
   zhihuUsername,
   email,
