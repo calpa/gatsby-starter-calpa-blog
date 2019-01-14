@@ -42,7 +42,7 @@
     "react-dom": "^16.6.3",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
-    "react-transition-group": "^2.5.2",
+    "react-transition-group": "^2.5.3",
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2",
     "smooth-scroll": "^15.0.0",
