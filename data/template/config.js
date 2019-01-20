@@ -28,12 +28,6 @@ const blog = {
       title: 'Blog Stats',
     },
   ],
-  redirectors: [
-    {
-      fromPath: '/',
-      toPath: '/page/1/',
-    },
-  ],
   gitalk: {
     clientID: '18255f031b5e11edd98a',
     clientSecret: '2ff6331da9e53f9a91bcc991d38d550c85026714',
@@ -47,6 +41,12 @@ const blog = {
     description: '過去三十日數據',
     image: 'https://i.imgur.com/VjBWiSt.png',
   },
+  carouselItems: [
+    {
+      src: 'https://i.imgur.com/gw91CuI.webp',
+      target: '/stats/',
+    },
+  ],
 };
 
 // Contentful API model

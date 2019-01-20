@@ -11,7 +11,7 @@ const Tag = ({ name, count }) => (
 
 Tag.propTypes = {
   name: PropTypes.string.isRequired,
-  count: PropTypes.number || PropTypes.string,
+  count: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
 };
 
 Tag.defaultProps = {

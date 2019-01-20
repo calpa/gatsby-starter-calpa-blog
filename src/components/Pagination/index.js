@@ -15,7 +15,12 @@ const PageItem = ({ number, content }) => (
   </li>
 );
 
-const getPageNumber = pathname => pathname.split('/')[2];
+const getPageNumber = (pathname) => {
+  if (typeof pathname === 'number') {
+    return `${pathname}`;
+  }
+  return pathname.split('/')[2];
+};
 
 const Pagination = ({ pathname, pageCount }) => {
   const currentPageNumber = getPageNumber(pathname);
@@ -44,7 +49,8 @@ PageItem.propTypes = {
 };
 
 Pagination.propTypes = {
-  pathname: PropTypes.string.isRequired,
+  pathname: PropTypes.oneOfType([PropTypes.string, PropTypes.number])
+    .isRequired,
   pageCount: PropTypes.number.isRequired,
 };
 
