@@ -27,7 +27,7 @@
     "gatsby-plugin-nprogress": "^2.0.8",
     "gatsby-plugin-offline": "^2.0.22",
     "gatsby-plugin-react-helmet": "^3.0.6",
-    "gatsby-plugin-sass": "^2.0.7",
+    "gatsby-plugin-sass": "^2.0.10",
     "gatsby-plugin-sentry": "^1.0.0",
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
