@@ -31,7 +31,7 @@
     "gatsby-plugin-sentry": "^1.0.0",
     "gatsby-plugin-sitemap": "^2.0.5",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
-    "gatsby-source-filesystem": "^2.0.12",
+    "gatsby-source-filesystem": "^2.0.20",
     "gitalk": "^1.4.0",
     "han-css": "^3.3.0",
     "highlight.js": "^9.12.0",
