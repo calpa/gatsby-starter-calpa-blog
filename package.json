@@ -46,7 +46,9 @@
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2",
     "smooth-scroll": "^15.0.0",
-    "webpack": "^4.19.0"
+    "webpack": "^4.19.0",
+    "@bit/calpa.blog.ui.tag": "0.0.4",
+    "@bit/calpa.blog.ui.github-corner": "0.0.1"
   },
   "keywords": [
     "gatsby"

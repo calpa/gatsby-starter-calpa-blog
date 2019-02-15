@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 
-import Tag from '../Tag';
+import Tag from '@bit/calpa.blog.ui.tag';
 
 import { parseImgur } from '../../api/images';
 
@@ -47,7 +47,9 @@ const Card = ({
           <div className="content">
             <div className="stats">
               <span className="date">{date}</span>
-              {finalTags.map(tag => <Tag name={tag} key={tag} />)}
+              {finalTags.map(tag => (
+                <Tag name={tag} key={tag} />
+              ))}
             </div>
             <Link to={postUrl} href={postUrl}>
               <h4 className="title">{title}</h4>
@@ -62,6 +64,13 @@ const Card = ({
     </div>
   );
 };
+
+CardHeader.propTypes = {
+  url: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  backgroundColor: PropTypes.string.isRequired,
+};
+
 Card.propTypes = {
   title: PropTypes.string.isRequired,
   date: PropTypes.string.isRequired,

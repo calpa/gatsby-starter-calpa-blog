@@ -4,7 +4,8 @@ import PropTypes from 'prop-types';
 
 import { Link, graphql } from 'gatsby';
 import dayjs from 'dayjs';
-import Tag from '../../components/Tag';
+import Tag from '@bit/calpa.blog.ui.tag';
+
 import Header from '../../components/Header';
 import ShareBox from '../../components/ShareBox';
 import SEO from '../../components/SEO';

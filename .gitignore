@@ -2,7 +2,13 @@
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
 .cache/
+
+# Bit
+# https://bitsrc.io/
+.bitmap
+
 # Build directory
+dist/
 public/
 .DS_Store
 yarn-error.log

@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import ReactGA from 'react-ga';
 
-import GithubCorner from '../GithubCorner';
+import GithubCorner from '@bit/calpa.blog.ui.github-corner';
 
 import NavItem from './NavItem';
 import { gotoPage } from '../../api/url';
