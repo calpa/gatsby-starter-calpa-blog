@@ -38,7 +38,7 @@ If you like this project, please don't hesitate to star it. Thank you.
 1. Scroll smoothly (powered by [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
 1. Show system components (powered by [storybook](https://github.com/storybooks/storybook))
 
-### Data Souce
+### Data Source
 
 1. Source from Contentful, a flexible and easy-to-use content management system
 1. For now, not just Contentful content source, you can use any database
