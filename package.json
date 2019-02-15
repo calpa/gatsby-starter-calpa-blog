@@ -46,7 +46,7 @@
     "remarkable": "^1.7.1",
     "rimraf": "^2.6.2",
     "smooth-scroll": "^15.0.0",
-    "webpack": "^4.19.0"
+    "webpack": "4.29.3"
   },
   "keywords": [
     "gatsby"
