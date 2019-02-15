@@ -36,7 +36,6 @@ If you like this project, please don't hesitate to star it. Thank you.
 1. Responsive Web Design
 1. Font Awesome is auto loaded (powered by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
 1. Scroll smoothly (powered by [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
-1. Show system components (powered by [storybook](https://github.com/storybooks/storybook))
 
 ### Data Source
 

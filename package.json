@@ -75,11 +75,10 @@
     "functions": "netlify-lambda serve functions",
     "reset": "rimraf pubilc/ .cache/",
     "commit": "npx git-cz",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
     "revert": "node ./scripts/revertConfig.js"
   },
   "devDependencies": {
+    "@babel/core": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^5.6.1",
     "eslint-config-airbnb": "^17.1.0",
@@ -92,12 +91,7 @@
     "prettier": "^1.7.4",
     "stylelint": "^9.5.0",
     "stylelint-config-recommended-scss": "^3.2.0",
-    "stylelint-scss": "^3.4.0",
-    "@storybook/react": "^4.0.2",
-    "@storybook/addon-actions": "^4.0.2",
-    "@storybook/addon-links": "^4.0.2",
-    "@storybook/addons": "^4.0.2",
-    "@babel/core": "^7.1.2"
+    "stylelint-scss": "^3.4.0"
   },
   "lint-staged": {
     "linters": {
