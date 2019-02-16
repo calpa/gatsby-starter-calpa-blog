@@ -34,6 +34,16 @@ module.exports = {
     'gatsby-plugin-catch-links',
     'gatsby-plugin-webpack-bundle-analyzer',
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/content`,
+        name: 'pages',
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-remark',
+    },
+    {
       resolve: 'gatsby-plugin-layout',
       options: {
         component: require.resolve('./src/components/Layout/layout.js'),
