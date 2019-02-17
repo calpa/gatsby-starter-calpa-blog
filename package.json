@@ -61,7 +61,7 @@
     }
   },
   "scripts": {
-    "start": "npm run fetch:config && npm run develop",
+    "start": "npm run develop",
     "build": "npm run fetch:config && gatsby build --prefix-paths",
     "fetch:config": "NODE_ENV=development node ./scripts/index.js",
     "postbuild": "rimraf public/**/*.map",

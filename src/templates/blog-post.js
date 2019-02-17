@@ -11,7 +11,6 @@ import dayjs from 'dayjs';
 import 'gitalk/dist/gitalk.css';
 
 import { parseChineseDate, getPath } from '../api';
-import { getFirstParagraph } from '../api/text';
 import { parseImgur } from '../api/images';
 
 import ExternalLink from '../components/ExternalLink';
@@ -19,12 +18,9 @@ import Sidebar from '../components/Sidebar';
 import Content from '../components/Content';
 import SEO from '../components/SEO';
 
-import TableOfContent from '../components/TableOfContent';
 import Header from '../components/Header';
 
 import ShareBox from '../components/ShareBox';
-
-import { getUrl } from '../api/url';
 
 import { config } from '../../data';
 
@@ -85,47 +81,28 @@ class BlogPost extends Component {
   render() {
     const { previous, node, next } = this.data.content.edges[0];
 
+    const { html, frontmatter, fields } = node;
+
+    const { slug } = fields;
+
     const {
-      title,
-      headerImgur,
-      createdDate,
-      content,
-      id,
-      toc,
-      tags,
-      jueJinLikeIconLink,
-      jueJinPostLink,
-    } = node;
+      title, id, date, image,
+    } = frontmatter;
 
     const { totalCount, edges } = this.data.latestPosts;
-
-    let finalTags = [];
-    if (tags) {
-      finalTags = tags.split(',').map((item) => {
-        if (item) {
-          return item.trim();
-        }
-        return '';
-      });
-    }
-    const image = parseImgur(headerImgur, 'large');
-    const header = parseImgur(headerImgur, 'header');
 
     return (
       <div className="row post order-2">
         <Header
-          img={header}
+          img={parseImgur(image)}
           title={title}
-          tags={finalTags}
           authorName={name}
           authorImage={iconUrl}
-          subTitle={parseChineseDate(createdDate)}
-          jueJinLikeIconLink={jueJinLikeIconLink}
-          jueJinPostLink={jueJinPostLink}
+          subTitle={parseChineseDate(date)}
         />
         <Sidebar totalCount={totalCount} posts={edges} post />
-        <div className="col-lg-6 col-md-12 col-sm-12 order-10 d-flex flex-column content">
-          <Content post={content} uuid={id} title={title} />
+        <div className="col-lg-8 col-md-12 col-sm-12 order-10 content">
+          <Content post={html} uuid={id} title={title} />
 
           <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
@@ -145,25 +122,22 @@ class BlogPost extends Component {
             <p>更多文章：</p>
             {previous && (
               <p>
-                <a href={getUrl(previous)}>{previous.title}</a>
+                <a href={previous.fields.slug}>{previous.frontmatter.title}</a>
               </p>
             )}
             {next && (
               <p>
-                <a href={getUrl(next)}>{next.title}</a>
+                <a href={next.fields.slug}>{next.frontmatter.title}</a>
               </p>
             )}
           </div>
         </div>
 
-        <ShareBox url={url + getUrl(node)} />
-        <TableOfContent toc={toc} />
+        <ShareBox url={slug} />
         <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
         <SEO
           title={title}
-          url={getPath()}
-          description={getFirstParagraph(content)}
-          image={image}
+          url={slug}
           siteTitleAlt="Calpa's Blog"
           isPost={false}
         />
@@ -173,53 +147,50 @@ class BlogPost extends Component {
 }
 
 export const pageQuery = graphql`
-  fragment post on PostMarkdownConnection {
-    edges {
-      node {
-        id
-        title
-        url
-        createdDate
-      }
+  fragment post on MarkdownRemark {
+    fields {
+      slug
     }
-  }
-
-  fragment postLink on PostMarkdown {
-    title
-    url
-    createdDate
+    frontmatter {
+      id
+      title
+      url
+      date
+    }
   }
 
   query BlogPostQuery($index: Int) {
-    content: allPostMarkdown(
-      sort: { fields: createdDate, order: DESC }
-      limit: 1
+    content: allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
       skip: $index
+      limit: 1
     ) {
-      ...post
       edges {
         node {
-          content: html
-          headerImgur
-          toc
-          tags
-          jueJinLikeIconLink
-          jueJinPostLink
+          html
+          ...post
         }
+
         previous {
-          ...postLink
+          ...post
         }
+
         next {
-          ...postLink
+          ...post
         }
       }
     }
-    latestPosts: allPostMarkdown(
+
+    latestPosts: allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
       limit: 6
-      sort: { fields: [createdDate], order: DESC }
     ) {
       totalCount
-      ...post
+      edges {
+        node {
+          ...post
+        }
+      }
     }
   }
 `;

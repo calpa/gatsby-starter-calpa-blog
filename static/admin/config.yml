@@ -20,3 +20,9 @@ collections:
       - { label: "Description", name: "description", widget: "text" }
       - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
+      - {
+          label: "Template Key",
+          name: "templateKey",
+          widget: "string",
+          default: "blog-post",
+        }

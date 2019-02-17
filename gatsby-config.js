@@ -1,25 +1,3 @@
-/* eslint-disable max-len */
-/* eslint max-len: 1 */
-const dayjs = require('dayjs');
-const Remarkable = require('remarkable');
-
-const extractData = (site, edge) => {
-  const url = `${site.siteMetadata.siteUrl}/${dayjs(
-    edge.node.createdDate,
-  ).format('YYYY/MM/DD')}/${edge.node.url}`;
-
-  const md = new Remarkable({});
-  const description = md.render(edge.node.content);
-
-  return {
-    title: edge.node.title,
-    description,
-    date: dayjs(edge.node.createdDate).format('MMMM DD, YYYY, h:mm A'),
-    url,
-    guid: url,
-  };
-};
-
 module.exports = {
   pathPrefix: '/',
   siteMetadata: {
@@ -60,42 +38,6 @@ module.exports = {
     },
     {
       resolve: 'gatsby-plugin-nprogress',
-    },
-    {
-      resolve: 'gatsby-plugin-feed',
-      options: {
-        query: `
-         {
-          site {
-            siteMetadata {
-              title,
-              description,
-              siteUrl
-              site_url: siteUrl
-            }
-          }
-        }`,
-        feeds: [
-          {
-            serialize: ({ query: { site, allPostMarkdown } }) => allPostMarkdown.edges.map(edge => extractData(site, edge)),
-            query: `
-              {
-                  allPostMarkdown(limit: 10,sort: {fields: [createdDate], order: DESC}) {
-                    edges {
-                      node {
-                        content
-                        title
-                        url
-                        createdDate
-                      }
-                    }
-                  }
-                }
-            `,
-            output: '/feed.xml',
-          },
-        ],
-      },
     },
     {
       resolve: 'gatsby-plugin-manifest',
