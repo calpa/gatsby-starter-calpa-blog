@@ -32,6 +32,7 @@
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-source-filesystem": "^2.0.12",
+    "gatsby-transformer-remark": "^2.2.5",
     "gitalk": "^1.4.0",
     "han-css": "^3.3.0",
     "highlight.js": "^9.12.0",
@@ -60,10 +61,8 @@
     }
   },
   "scripts": {
-    "start": "npm run fetch:config && npm run develop",
-    "build": "npm run fetch:config && gatsby build --prefix-paths",
-    "fetch:config": "NODE_ENV=development node ./scripts/index.js",
-    "postbuild": "rimraf public/**/*.map",
+    "start": "npm run develop",
+    "build": "gatsby build --prefix-paths",
     "develop": "gatsby develop",
     "develop:remote": "gatsby develop -p 8080 -H 0.0.0.0",
     "deploy": "npm run build && gh-pages -d public",
