@@ -10,6 +10,10 @@ tags:
   - ZEIT
 ---
 
+## 前言
+
+如果你想要部署自己的前端項目的話，那麼 Netlify 提供了一個一站式的解決方法，讓你可以持續部署，以及自動開啟 HTTPS。如果你想要部署 Node.js 應用的話，那麼 ZEIT 會是另外一個解決方案。
+
 ## Netlify
 
 ![Netlify](https://i.imgur.com/U8fCFmE.jpg)
