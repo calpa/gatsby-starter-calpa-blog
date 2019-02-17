@@ -38,7 +38,7 @@ const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 // Parse url
-const getURL = node => node.frontmatter.url || node.fields.slug;
+const getURL = node => node.frontmatter.slug || node.fields.slug;
 
 class BlogPost extends Component {
   constructor(props) {
@@ -57,7 +57,7 @@ class BlogPost extends Component {
 
     const issueDate = '2018-03-01';
     const idDate = '2018-09-09'; // 修理遺留代碼錯誤
-    const { createdDate, title } = this.data.content.edges[0].node;
+    const { createdDate, title } = this.data.content.edges[0].node.frontmatter;
     let { id } = this.data.content.edges[0].node;
 
     let finalTitle = title;
@@ -157,7 +157,7 @@ export const pageQuery = graphql`
     frontmatter {
       id
       title
-      url
+      slug
       date
     }
   }

@@ -18,7 +18,7 @@ module.exports = ({ actions, graphql }) => {
             frontmatter {
               tags
               templateKey
-              url
+              slug
             }
           }
         }
@@ -34,18 +34,20 @@ module.exports = ({ actions, graphql }) => {
 
     return posts.forEach((edge, index) => {
       const { id, frontmatter, fields } = edge.node;
-      const { url, tags, templateKey } = frontmatter;
+      const { slug, tags, templateKey } = frontmatter;
 
       // 允许自定义地址
       let $path = fields.slug;
-      if (url) {
-        $path = url;
+      if (slug) {
+        $path = slug;
       }
+
+      const component = templateKey || 'blog-post';
 
       createPage({
         path: $path,
         tags,
-        component: path.resolve(`src/templates/${String(templateKey)}.js`),
+        component: path.resolve(`src/templates/${String(component)}.js`),
         // additional data can be passed via context
         context: {
           id,
