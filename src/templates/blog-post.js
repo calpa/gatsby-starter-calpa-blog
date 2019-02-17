@@ -37,6 +37,9 @@ const bgWhite = { padding: '10px 15px', background: 'white' };
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
+// Parse url
+const getURL = node => node.frontmatter.url || node.fields.slug;
+
 class BlogPost extends Component {
   constructor(props) {
     super(props);
@@ -122,12 +125,12 @@ class BlogPost extends Component {
             <p>更多文章：</p>
             {previous && (
               <p>
-                <a href={previous.fields.slug}>{previous.frontmatter.title}</a>
+                <a href={getURL(previous)}>{previous.frontmatter.title}</a>
               </p>
             )}
             {next && (
               <p>
-                <a href={next.fields.slug}>{next.frontmatter.title}</a>
+                <a href={getURL(next)}>{next.frontmatter.title}</a>
               </p>
             )}
           </div>

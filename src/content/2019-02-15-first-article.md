@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: 0
 title: First Article
-url: first-article
+url: /2019/02/15/first-article
 date: 2019-02-15T03:48:03.125Z
 description: Description
 tags:
