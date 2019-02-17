@@ -10,9 +10,9 @@ const LatestPost = ({ posts }) => (
     <p>最新文章</p>
     {posts.map(({ node }) => (
       <Link
-        to={node.fields.slug}
-        key={node.fields.slug}
-        href={node.fields.slug}
+        to={node.frontmatter.url || node.frontmatter.slug || node.fields.slug}
+        key={node.frontmatter.url || node.frontmatter.slug || node.fields.slug}
+        href={node.frontmatter.url || node.frontmatter.slug || node.fields.slug}
       >
         {node.frontmatter.title}
       </Link>
