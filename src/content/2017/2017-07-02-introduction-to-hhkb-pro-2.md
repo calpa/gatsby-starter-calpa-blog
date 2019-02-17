@@ -2,8 +2,8 @@
 templateKey: blog-post
 id: 20170702a
 title: 神兵利器 -- HHKB Pro 2 開箱文
-date: 2018-07-02T03:48:03.125Z
-slug: /2018/07/02/introduction-to-hhkb-pro-2/
+date: 2017-07-02T03:48:03.125Z
+slug: /2017/07/02/introduction-to-hhkb-pro-2/
 description: 我一開始拿到 Happy Hacking KeyBoard Pro 2 時，我就問為什麼鍵盤可以完全沒有字的，那叫我如何輸入。。。雖然我可以盲打（不看鍵盤直接輸入），但也許我未必可以有能力使用這樣的鍵盤。但寫了一天代碼之後，我才發現，原來這一切都是自己的猜疑而已。這個鍵盤打起來就是一個字，爽。
 tags:
   - Keyboard

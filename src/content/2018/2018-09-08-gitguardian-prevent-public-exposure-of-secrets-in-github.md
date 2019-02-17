@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 9a
+id: 20180908a
 title: GitGuardian - 開箱即用的 GitHub 敏感信息洩露自動提示平台
 slug: /2018/09/08/gitguardian-prevent-public-exposure-of-secrets-in-github/
 date: 2018-09-08T03:48:03.125Z

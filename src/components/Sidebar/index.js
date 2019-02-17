@@ -6,7 +6,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { config } from '../../../data';
 
 import Information from './Information';
-import Subscription from './Subscription';
 
 import './index.scss';
 
@@ -54,7 +53,6 @@ const Sidebar = ({ post, totalCount, posts }) => (
         icon={['fab', 'github']}
       />
       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
-      <Subscription />
       <Information totalCount={totalCount} posts={posts} />
     </div>
   </header>
