@@ -15,14 +15,16 @@ collections:
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
       - { label: "Id", name: "id", widget: "string", default: "1" }
+      - { label: "Slug", name: "slug", widget: "string" }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
-      - { label: "Body", name: "body", widget: "markdown" }
       - { label: "Tags", name: "tags", widget: "list" }
       - {
           label: "Template Key",
+          hint: "如果你不知道是什麼模板的話，請輸入 blog-post",
           name: "templateKey",
           widget: "string",
           default: "blog-post",
         }
+      - { label: "Body", name: "body", widget: "markdown" }
