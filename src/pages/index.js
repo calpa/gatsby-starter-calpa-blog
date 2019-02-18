@@ -13,7 +13,7 @@ const Page = ({ data, location }) => {
       <Sidebar totalCount={totalCount} posts={edges} post />
       <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
         {data.content.edges.map(({ node }) => (
-          <Card {...node.frontmatter} />
+          <Card {...node.frontmatter} key={node.fields.slug} />
         ))}
       </div>
       <div className="col-xl-2 col-lg-1 order-3" />

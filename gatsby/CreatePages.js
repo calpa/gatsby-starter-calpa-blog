@@ -32,9 +32,17 @@ module.exports = ({ actions, graphql }) => {
 
     const posts = result.data.allMarkdownRemark.edges;
 
-    return posts.forEach((edge, index) => {
-      const { id, frontmatter, fields } = edge.node;
+    const tagSet = new Set();
+
+    // 創建文章頁面
+    posts.forEach(({ node }, index) => {
+      const { id, frontmatter, fields } = node;
       const { slug, tags, templateKey } = frontmatter;
+
+      // 讀取標籤
+      if (tags) {
+        tags.forEach(item => tagSet.add(item));
+      }
 
       // 允许自定义地址
       let $path = fields.slug;
@@ -52,6 +60,17 @@ module.exports = ({ actions, graphql }) => {
         context: {
           id,
           index,
+        },
+      });
+    });
+
+    // 創建標籤頁面
+    return tagSet.forEach((tag) => {
+      createPage({
+        path: `/tag/${tag}`,
+        component: path.resolve('src/templates/tag.js'),
+        context: {
+          tag,
         },
       });
     });

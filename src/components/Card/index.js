@@ -41,8 +41,8 @@ const Card = ({
         <div className="content">
           <div className="stats">
             <span className="date">{date.split('T')[0]}</span>
-            {tags.map(tag => (
-              <Tag name={tag} key={tag} />
+            {tags.map(name => (
+              <Tag name={name} key={name} />
             ))}
           </div>
           <Link to={url} href={url}>
@@ -65,14 +65,14 @@ Card.propTypes = {
   headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string,
   description: PropTypes.string.isRequired,
-  tags: PropTypes.string,
+  tags: PropTypes.arrayOf(PropTypes.string),
 };
 
 CardHeader.propTypes = Card.propTypes;
 
 Card.defaultProps = {
   headerImage: '',
-  tags: '',
+  tags: [],
   date: '',
   headerBackgroundColor: '',
 };
