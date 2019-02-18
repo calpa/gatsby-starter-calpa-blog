@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20170107a
+id: https://calpa.me/2017/01/08/hello-world/
 title: Hello, World!
 slug: /2017/01/07/hello-world/
 date: 2017-01-07T03:48:03.125Z

@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20171108a
+id: https://calpa.me/2017/11/08/you-dont-know-javascript-eslint-config/
 title: 你可能不知道的 JavaScript 代碼規範
 slug: /2017/11/08/you-dont-know-javascript-eslint-config/
 date: 2017-11-08T03:48:03.125Z

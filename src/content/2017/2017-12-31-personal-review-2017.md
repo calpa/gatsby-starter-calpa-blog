@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20181022a
+id: https://calpa.me/2017/12/31/personal-review-2017/
 title: 又到了年度總結的季節 ﹣ 我的 2017 前端開發回顧
 slug: /2017/12/31/personal-review-2017/
 date: 2017-12-31T03:48:03.125Z

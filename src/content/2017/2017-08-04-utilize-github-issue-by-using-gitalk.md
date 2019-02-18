@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20181022a
+id: https://calpa.me/2017/08/04/utilize-github-issue-by-using-gitalk/
 title: 善用 Github Issue 的開源評論插件 -- Gitalk
 slug: /2017/08/04/utilize-github-issue-by-using-gitalk/
 date: 2017-08-04T03:48:03.125Z
