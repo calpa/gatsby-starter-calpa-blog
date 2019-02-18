@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20181224b
+id: 5SIw48tWTK8SU4giyUqcSI
 title: 從博客系統回顧我的 2018 年前端生涯
 slug: /2018/12/24/front-end-blog-system-review-2018/
 date: 2018-12-24T03:48:03.125Z

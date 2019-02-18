@@ -5,12 +5,9 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
-import md5 from 'md5';
-import dayjs from 'dayjs';
-
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate, getPath } from '../api';
+import { parseChineseDate } from '../api';
 import { parseImgur } from '../api/images';
 
 import ExternalLink from '../components/ExternalLink';
@@ -27,9 +24,7 @@ import { config } from '../../data';
 // Styles
 import './blog-post.scss';
 
-const {
-  url, name, iconUrl, gitalk,
-} = config;
+const { name, iconUrl, gitalk } = config;
 
 const bgWhite = { padding: '10px 15px', background: 'white' };
 
@@ -47,35 +42,12 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
-    // Gitalk
-    // Due to Github Issue tags length is limited,
-    // Then we need to hack the id
-
-    // 一開始的時候是直接調用 document.title 作為 id
-    // 不過在 2018年 3月 1日 Github 有標籤字數限制
-    // 2018年 9月 9日後直接使用 id
-
-    const issueDate = '2018-03-01';
-    const idDate = '2018-09-09'; // 修理遺留代碼錯誤
-    const { createdDate, title } = this.data.content.edges[0].node.frontmatter;
-    let { id } = this.data.content.edges[0].node;
-
-    let finalTitle = title;
-    if (dayjs(createdDate).isAfter(issueDate)) {
-      finalTitle = `${title} | Calpa's Blog`; // For Create Github Issue
-
-      if (dayjs(createdDate).isBefore(idDate)) {
-        id = md5(title);
-      }
-    } else {
-      const pathname = getPath();
-      const lastSymbol = pathname[pathname.length - 1] === '/' ? '' : '/';
-      id = `${url}${pathname}${lastSymbol}`;
-    }
+    const { frontmatter } = this.data.content.edges[0].node;
+    const { title, id } = frontmatter;
 
     const GitTalkInstance = new Gitalk({
       ...gitalk,
-      title: finalTitle,
+      title,
       id,
     });
     GitTalkInstance.render('gitalk-container');
