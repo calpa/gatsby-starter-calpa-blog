@@ -63,7 +63,7 @@ Card.propTypes = {
   date: PropTypes.string,
   url: PropTypes.string.isRequired,
   headerImage: PropTypes.string,
-  headerBackgroundColor: PropTypes.string.isRequired,
+  headerBackgroundColor: PropTypes.string,
   description: PropTypes.string.isRequired,
   tags: PropTypes.string,
 };
@@ -74,6 +74,7 @@ Card.defaultProps = {
   headerImage: '',
   tags: '',
   date: '',
+  headerBackgroundColor: '',
 };
 
 export default Card;

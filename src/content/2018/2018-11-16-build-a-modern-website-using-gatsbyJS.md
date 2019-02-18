@@ -127,14 +127,6 @@ GatsbyJS 擁有的豐富插件讓開發者可以無痛地安裝，移除插件�
 
 另外，為了避免重複造輪子，我們會使用組件化的開發方式。
 
-### Storybook
-
-Storybook 可以提供一個快速入門的網站，展示系統裡面的組件。
-
-![Imgur](https://i.imgur.com/psjI0wd.gif)
-
-由於系統是使用 React，你可以快速地安裝 Storybook 插件，例如在你的項目裡面使用 npx 命令：`npx -p @storybook/cli sb init`
-
 ### Webpack
 
 這個在現代化前端工程裡面很常見，這裡簡單說一下：它打包不同的 html, js, css 文件，然後把他們壓縮，加密，劣化，讓我們可以放到 CDN 上面。

@@ -39,7 +39,6 @@ tags:
 1. 自動加載 Font Awesome (基於 [react-fontawesome][6])
 1. 流暢滑動設計 (基於 [smooth-scroll][7])
 1. 分頁設計
-1. 展示博客系統的組件 (基於 [storybook][8])
 
 ### 數據來源
 
@@ -260,7 +259,6 @@ gitalk: {
 [5]: https://github.com/ApoorvSaxena/lozad.js
 [6]: https://github.com/FortAwesome/react-fontawesome
 [7]: https://github.com/cferdinandi/smooth-scroll
-[8]: https://github.com/storybooks/storybook
 [9]: https://www.contentful.com/ "Contentful"
 [10]: https://www.gatsbyjs.org/
 [11]: https://www.contentful.com/developers/docs/references/content-preview-api/

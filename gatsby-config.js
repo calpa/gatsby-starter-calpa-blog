@@ -20,6 +20,16 @@ module.exports = {
     },
     {
       resolve: 'gatsby-transformer-remark',
+      options: {
+        plugins: [
+          {
+            resolve: 'gatsby-remark-prismjs',
+            options: {
+              showLineNumbers: true,
+            },
+          },
+        ],
+      },
     },
     {
       resolve: 'gatsby-plugin-layout',

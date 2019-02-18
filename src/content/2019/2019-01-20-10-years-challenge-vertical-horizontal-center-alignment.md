@@ -18,7 +18,7 @@ tags:
 
 這裡我們用的 HTML 代碼很簡單，只有一個父組件和一個子組件。
 
-```
+```html
 <div class="container">
 	<div class="child">
 		2008<br/>
@@ -33,22 +33,22 @@ tags:
 
 我們可以使用父組件絕對定位，加子組件相對定位，同時改變子組件的 top 位置，來垂直置中。然後用 text-align: center 來水平置中。
 
-```
+```scss
 .container {
-	width: 300px;
-	height: 300px;
-	background: white;
-	border: 1px solid black;
+  width: 300px;
+  height: 300px;
+  background: white;
+  border: 1px solid black;
 
-	position: relative;
+  position: relative;
 
-	.child {
-		position: absolute;
-		top: 50%;
-		transform: translateY(-50%);
-		text-align: center;
-		width: 100%;
-	}
+  .child {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+    width: 100%;
+  }
 }
 ```
 
@@ -64,20 +64,20 @@ tags:
 
 CSS 代碼如下：
 
-```
+```scss
 .container {
-	width: 300px;
-	height: 300px;
-	background: black;
+  width: 300px;
+  height: 300px;
+  background: black;
 
-	display: flex;
-	// justify-content: center;
-	// align-items: center;
+  display: flex;
+  // justify-content: center;
+  // align-items: center;
 
-	.child {
-		margin: auto;
-		color: white;
-	}
+  .child {
+    margin: auto;
+    color: white;
+  }
 }
 ```
 
