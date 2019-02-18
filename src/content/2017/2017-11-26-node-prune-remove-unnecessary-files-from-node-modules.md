@@ -6,9 +6,8 @@ date: 2017-11-26T03:48:03.125Z
 slug: /2017/11/26/node-prune-remove-unnecessary-files-from-node-modules/
 description: 如果你有試過打包整個 Node 項目到服務器上，那麼你發現自己的項目體積比較大，其中一個原因是 `node_modules` 文件夾包含很多不必要的檔案。在使用 npm 安裝不同插件時，往往會包含很多不必要的文件夾，例如`example`, `doc`。要麼我們就是手動刪除它們，要麼我們就是自己寫一個自動腳本。而開發 Koa、Co、Express 的 TJ 大神則提供了一個簡單輕巧的工具。我們可以學習一下他的思路，以及使用這個工具。
 tags:
-  - Keyboard
-  - HHKB
-  - 工具
+  - Node.js
+  - JavaScript
 ---
 
 ## 前言

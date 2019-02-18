@@ -2,8 +2,8 @@
 templateKey: blog-post
 id: 20170702a
 title: React 應用輕量化（一）Source Map
-date: 2018-08-27T03:48:03.125Z
-slug: /2018/08/27/introduction-to-hhkb-pro-2/
+date: 2017-08-27T03:48:03.125Z
+slug: /2017/08/27/react-app-optimization-1-source-map
 description: create-react-app 提供了很方便的創建 React 應用途徑。它已經把 webpack, Babel, Autoprefixer, ESLint, Jest 等常用工具打包進去。可以說是一個非常方便，好用的製造 React 應用工具。當我打算把包裝好的檔案推上去的時候，我卻發現打包之後的檔案大小有點大，因此我就開始優化這個網頁應用了。第一點我優化的地方就是 Source Map。
 tags:
   - React

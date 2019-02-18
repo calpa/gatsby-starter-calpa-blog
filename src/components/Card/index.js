@@ -60,7 +60,7 @@ const Card = ({
 
 Card.propTypes = {
   title: PropTypes.string.isRequired,
-  date: PropTypes.string.isRequired,
+  date: PropTypes.string,
   url: PropTypes.string.isRequired,
   headerImage: PropTypes.string,
   headerBackgroundColor: PropTypes.string.isRequired,
@@ -73,6 +73,7 @@ CardHeader.propTypes = Card.propTypes;
 Card.defaultProps = {
   headerImage: '',
   tags: '',
+  date: '',
 };
 
 export default Card;

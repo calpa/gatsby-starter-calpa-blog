@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
 id: using-namecheap-renew-domain-name-2018
-title: 關於作者
+title: 博客域名續期
 slug: /2018/02/13/using-namecheap-renew-domain-name-2018/
 date: 2018-02-13T03:48:03.125Z
 description: 在域名過期之前的大約一個月，Namecheap 這一家域名公司就已經提醒我要續期了。現在我的域名是使用 Namecheap 這一家公司，無論是收費還是服務，都是不錯的。如無意外的話，我應該會繼續用這一家公司，避免搬運域名的麻煩工序。

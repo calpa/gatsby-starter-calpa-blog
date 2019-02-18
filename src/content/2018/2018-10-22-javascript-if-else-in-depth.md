@@ -1,9 +1,9 @@
 ---
 templateKey: blog-post
-id: 20181122a
+id: 20181022a
 title: 深入淺出代碼優化﹣if/else
-slug: /2018/11/22/javascript-if-else-in-depth/
-date: 2018-11-22T03:48:03.125Z
+slug: /2018/10/22/javascript-if-else-in-depth/
+date: 2018-10-22T03:48:03.125Z
 description: 對於代碼裡面的 if else，我們可以使用邏輯判斷式，或更好的三元判斷式來優化代碼。除了可以降低維護項目的成本之外，還可以提升代碼可讀性。就讓我們從最簡單的 if else 例子開始吧。
 tags:
   - JavaScript
