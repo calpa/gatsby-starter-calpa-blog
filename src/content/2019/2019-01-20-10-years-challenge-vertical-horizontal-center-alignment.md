@@ -6,8 +6,8 @@ slug: /2019/01/20/10-years-challenge-vertical-horizontal-center-alignment/
 date: 2019-01-20T03:48:03.125Z
 description: 相比起當年的水平置中手法，現在達到相同效果的方法多了很多，例如 Flex, Grid 等。就讓我們趁著 Facebook 回顧當年今日的浪潮重溫一下吧。
 tags:
-  - Nelify
-  - ZEIT
+  - CSS
+  - 回顧
 ---
 
 ## 前言

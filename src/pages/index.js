@@ -36,6 +36,7 @@ export const pageQuery = graphql`
       date
       tags
       description
+      headerImage
     }
   }
   query BlogQuery {
