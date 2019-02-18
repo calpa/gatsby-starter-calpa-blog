@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20170724a
+id: https://calpa.me/2017/07/24/six-steps-to-debug-before-directly-ask-question/
 title: 項目代碼調試：提問前要做的六個步驟
 slug: /2017/07/24/six-steps-to-debug-before-directly-ask-question/
 date: 2017-07-24T03:48:03.125Z

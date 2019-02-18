@@ -1,6 +1,6 @@
 ---
 templateKey: blog-post
-id: 20180310a
+id: 9f0a92e6be07e6513b33a4dd292e77e4
 title: "Gitalk Error: Validation Failed. 442 報錯解決方法"
 slug: /2018/03/10/gitalk-error-validation-failed-442-solution/
 date: 2018-03-10T03:48:03.125Z
