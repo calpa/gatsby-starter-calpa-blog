@@ -18,9 +18,7 @@
   "title": "Calpa 的技術博客",
   "gitalk": {
     "repo": "calpa.github.io",
-    "admin": [
-      "calpa"
-    ],
+    "admin": ["calpa"],
     "owner": "calpa",
     "clientID": "18255f031b5e11edd98a",
     "clientSecret": "2ff6331da9e53f9a91bcc991d38d550c85026714",
@@ -55,10 +53,7 @@
     }
   ],
   "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-  "wordings": [
-    "江南憶，最憶是杭州",
-    "一名愛寫文章的前端工程師"
-  ],
+  "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
     {
@@ -66,12 +61,12 @@
       "title": "網站數據"
     },
     {
-      "href": "/tags/",
-      "title": "分類"
-    },
-    {
       "href": "/guestbook/",
       "title": "留言簿"
+    },
+    {
+      "href": "/tags/",
+      "title": "Tags"
     },
     {
       "href": "/2018/05/01/about-calpa-liu/",

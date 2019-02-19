@@ -1,11 +1,15 @@
 ---
 templateKey: blog-post
+id: 20190120c
 title: GatsbyJS 入門（三）：從零開始架構 React 靜態網站
-date: 2019-02-17T08:18:06.459Z
+slug: /2019/01/16/gatsbyjs-introduction-start-project-command-line/
+date: 2019-01-16T03:48:03.125Z
 description: GatsbyJS 提供了一個簡單易用的命令行工具，我們可以透過它來構建一個基本的 React 網站，並實時看到修改代碼所帶來的變化。
 tags:
-  - ''
+  - GatsbyJS
+  - ReactJS
 ---
+
 ## 命令行工具
 
 ![Gatsby-CLI][1]
@@ -21,7 +25,6 @@ npm install --global gatsby-cli
 你可以運行 `gatsby --help` 來閱讀 GatsbyJS 命令行工具提供的指令，以及選項。
 
 ## 創建一個最基本的 Gatsby 網站
-
 
 ![Imgur][2]
 
@@ -70,9 +73,9 @@ GatsbyJS 命令行工具提供的 `gatsby new` 命令可以讓我們創建我們
 ![src_pages_indexjs][11]
 
 ```javascript
-import React from 'react';
+import React from "react";
 
-export default () => <div>Hello world</div>
+export default () => <div>Hello world</div>;
 ```
 
 ### 改 Hello World
@@ -82,9 +85,9 @@ export default () => <div>Hello world</div>
 這個時候，你就會看到網站自動把網站裡面的`Hello world` 改為 `Hello Gatsby`。
 
 ```javascript
-import React from 'react';
+import React from "react";
 
-export default () => <div>Hello world</div>
+export default () => <div>Hello world</div>;
 ```
 
 Gatsby 使用熱模塊重載來加速你的開發流程。當你運行 Gatsby 的開發服務器時，它會監聽網站的文件。每當你保存文件，你的改動就會自動在瀏覽器裡面反映出來，無需手動重刷頁面，或者重啟服務器。
@@ -92,11 +95,11 @@ Gatsby 使用熱模塊重載來加速你的開發流程。當你運行 Gatsby �
 我們可以為這個頁面加入一點樣式，讓我們可以更加明顯地看到修改後的變化。
 
 ```javascript
-import React from "react"
+import React from "react";
 
 export default () => (
   <div style={{ color: `purple`, fontSize: `72px` }}>Hello Gatsby!</div>
-)
+);
 ```
 
 有興趣了解原理的同學，可以了解一下 `webpack-dev-server`。
@@ -126,7 +129,7 @@ export default () => (
 
 ## 頁面之間的跳轉
 
-我們現在項目裡面只有首頁和 `about` 頁面，我們可以透過 GatsbyJS 的 React Router用 `<Link />` 組件來達到低延遲的跳轉。
+我們現在項目裡面只有首頁和 `about` 頁面，我們可以透過 GatsbyJS 的 React Router 用 `<Link />` 組件來達到低延遲的跳轉。
 
 首先把我們的 `src/pages/index.js` 改為以下代碼：
 
@@ -136,7 +139,7 @@ import { Link } from "gatsby"
 
 export default () => (
   <div style={{ color: `purple` }}>
-    <Link to="/contact/">Contact</Link> 
+    <Link to="/contact/">Contact</Link>
     <p>What a world.</p>
     <img src="https://source.unsplash.com/random/400x200" alt="" />
   </div>
@@ -161,7 +164,7 @@ import { Link } from "gatsby"
 
 export default () => (
   <div style={{ color: `purple` }}>
-    <Link to="/about/">About</Link> 
+    <Link to="/about/">About</Link>
     <p>What a world.</p>
     <img src="https://source.unsplash.com/random/400x200" alt="" />
   </div>
@@ -200,7 +203,7 @@ export default function Component() {
 
 ```
 import React from 'react';
- 
+
 export default function Component() {
   /* 這部分會繼續使用 Babel 轉譯 */
   return (
@@ -234,12 +237,11 @@ npm install babel-plugin-react-require --save-dev
 ## 參考資料
 
 1. [GatsbyJS 入門（一）：打造開箱即用的現代化前端網站
-](/2018/11/16/build-a-modern-website-using-gatsbyJS)
+   ](/2018/11/16/build-a-modern-website-using-gatsbyJS)
 1. [GatsbyJS 入門（二）：如何以 Starter 快速架構網站](/2018/11/23/gatsbyjs-2-how-to-use-starter-to-initiate-project)
 1. [gatsbyjs/gatsby-starter-hello-world - Github][4]
-2. [calpa/gatsby-starter-calpa-blog - Github][6]
-3. [官方教程][12]
-
+1. [calpa/gatsby-starter-calpa-blog - Github][6]
+1. [官方教程][12]
 
 [1]: https://i.imgur.com/8YrGHQY.jpg
 [2]: https://i.imgur.com/GHnGAlk.jpg

@@ -81,6 +81,17 @@
     color: white;
   }
 
+  .author-image {
+    width: 1.25rem;
+    height: 1.25rem;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+  }
+
+  .author-name {
+    margin-right: 0.5rem;
+  }
+
   // Medium devices (tablets, less than 992px)
   @media (max-width: 991.98px) {
     .u-title {
@@ -101,17 +112,6 @@
         margin-right: auto;
       }
 
-      .author-image {
-        width: 1.25rem;
-        height: 1.25rem;
-        border-radius: 50%;
-        margin-right: 0.5rem;
-      }
-
-      .author-name {
-        margin-right: 0.5rem;
-      }
-
       .text {
         margin-right: 0.5rem;
       }
@@ -127,10 +127,6 @@
   @media (min-width: 992px) {
     .u-subtitle {
       font-size: 1rem;
-    }
-
-    .m-left {
-      display: none;
     }
   }
 

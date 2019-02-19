@@ -5,13 +5,9 @@
 import React, { Component } from 'react';
 import { graphql } from 'gatsby';
 
-import md5 from 'md5';
-import dayjs from 'dayjs';
-
 import 'gitalk/dist/gitalk.css';
 
-import { parseChineseDate, getPath } from '../api';
-import { parseImgur } from '../api/images';
+import { parseChineseDate } from '../api';
 
 import ExternalLink from '../components/ExternalLink';
 import Sidebar from '../components/Sidebar';
@@ -27,9 +23,7 @@ import { config } from '../../data';
 // Styles
 import './blog-post.scss';
 
-const {
-  url, name, iconUrl, gitalk,
-} = config;
+const { name, iconUrl, gitalk } = config;
 
 const bgWhite = { padding: '10px 15px', background: 'white' };
 
@@ -38,7 +32,7 @@ const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
 
 // Parse url
-const getURL = node => node.frontmatter.url || node.fields.slug;
+const getURL = node => node.frontmatter.slug || node.fields.slug;
 
 class BlogPost extends Component {
   constructor(props) {
@@ -47,36 +41,13 @@ class BlogPost extends Component {
   }
 
   componentDidMount() {
-    // Gitalk
-    // Due to Github Issue tags length is limited,
-    // Then we need to hack the id
-
-    // 一開始的時候是直接調用 document.title 作為 id
-    // 不過在 2018年 3月 1日 Github 有標籤字數限制
-    // 2018年 9月 9日後直接使用 id
-
-    const issueDate = '2018-03-01';
-    const idDate = '2018-09-09'; // 修理遺留代碼錯誤
-    const { createdDate, title } = this.data.content.edges[0].node;
-    let { id } = this.data.content.edges[0].node;
-
-    let finalTitle = title;
-    if (dayjs(createdDate).isAfter(issueDate)) {
-      finalTitle = `${title} | Calpa's Blog`; // For Create Github Issue
-
-      if (dayjs(createdDate).isBefore(idDate)) {
-        id = md5(title);
-      }
-    } else {
-      const pathname = getPath();
-      const lastSymbol = pathname[pathname.length - 1] === '/' ? '' : '/';
-      id = `${url}${pathname}${lastSymbol}`;
-    }
+    const { frontmatter, id: graphqlId } = this.data.content.edges[0].node;
+    const { title, id } = frontmatter;
 
     const GitTalkInstance = new Gitalk({
       ...gitalk,
-      title: finalTitle,
-      id,
+      title,
+      id: id || graphqlId,
     });
     GitTalkInstance.render('gitalk-container');
   }
@@ -84,20 +55,20 @@ class BlogPost extends Component {
   render() {
     const { previous, node, next } = this.data.content.edges[0];
 
-    const { html, frontmatter, fields } = node;
+    const {
+      html, frontmatter, fields, excerpt,
+    } = node;
 
     const { slug } = fields;
 
-    const {
-      title, id, date, image,
-    } = frontmatter;
+    const { date, headerImage, title } = frontmatter;
 
     const { totalCount, edges } = this.data.latestPosts;
 
     return (
       <div className="row post order-2">
         <Header
-          img={parseImgur(image)}
+          img={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
           title={title}
           authorName={name}
           authorImage={iconUrl}
@@ -105,7 +76,7 @@ class BlogPost extends Component {
         />
         <Sidebar totalCount={totalCount} posts={edges} post />
         <div className="col-lg-8 col-md-12 col-sm-12 order-10 content">
-          <Content post={html} uuid={id} title={title} />
+          <Content post={html} />
 
           <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
@@ -134,15 +105,19 @@ class BlogPost extends Component {
               </p>
             )}
           </div>
+
+          <div id="gitalk-container" />
         </div>
 
         <ShareBox url={slug} />
-        <div id="gitalk-container" className="col-sm-8 col-12 order-12" />
+
         <SEO
           title={title}
           url={slug}
           siteTitleAlt="Calpa's Blog"
           isPost={false}
+          description={excerpt}
+          image={headerImage || 'https://i.imgur.com/M795H8A.jpg'}
         />
       </div>
     );
@@ -157,8 +132,9 @@ export const pageQuery = graphql`
     frontmatter {
       id
       title
-      url
+      slug
       date
+      headerImage
     }
   }
 
@@ -170,7 +146,9 @@ export const pageQuery = graphql`
     ) {
       edges {
         node {
+          id
           html
+          excerpt
           ...post
         }
 
