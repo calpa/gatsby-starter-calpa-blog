@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import Tag from '../components/Tag';
+import SEO from '../components/SEO';
 
 // eslint-disable-next-line react/prop-types
 const TagPage = ({ data }) => {
@@ -39,6 +40,15 @@ const TagPage = ({ data }) => {
           <Tag name={item} key={item} />
         ))}
       </div>
+
+      <SEO
+        title="Tags"
+        url="/tags/"
+        siteTitleAlt="Calpa's Blog"
+        isPost={false}
+        description="Tags Page"
+        image="https://i.imgur.com/M795H8A.jpg"
+      />
     </div>
   );
 };

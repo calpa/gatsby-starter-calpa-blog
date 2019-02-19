@@ -48,7 +48,7 @@ const Card = ({
           <Link to={url} href={url}>
             <h4 className="title">{title}</h4>
           </Link>
-          <p className="d-none d-md-block">{description}</p>
+          <p>{description}</p>
           <Link to={url} href={url}>
             ....繼續閱讀全文內容
           </Link>

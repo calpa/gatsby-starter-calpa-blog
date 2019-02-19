@@ -1,9 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Card from '../components/Card';
+import SEO from '../components/SEO';
 
 // eslint-disable-next-line react/prop-types
-const TagPage = ({ data }) => {
+const TagPage = ({ data, pageContext }) => {
   const { edges } = data.allMarkdownRemark;
   return (
     <div className="container">
@@ -21,6 +22,15 @@ const TagPage = ({ data }) => {
       {edges.map(({ node }) => (
         <Card {...node.frontmatter} key={node.id} />
       ))}
+
+      <SEO
+        title={pageContext.tag}
+        url={`/tag/${pageContext.tag}`}
+        siteTitleAlt="Calpa's Blog"
+        isPost={false}
+        description={pageContext.tag}
+        image="https://i.imgur.com/M795H8A.jpg"
+      />
     </div>
   );
 };
