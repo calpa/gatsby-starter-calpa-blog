@@ -9,7 +9,12 @@ import ShareBox from '../components/ShareBox';
 const Page = ({ data, location }) => {
   const { totalCount, edges } = data.latestPosts;
   return (
-    <div className="row homepage">
+    <div
+      className="row homepage"
+      style={{
+        marginTop: 20,
+      }}
+    >
       <Sidebar totalCount={totalCount} posts={edges} post />
       <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
         {data.content.edges.map(({ node }) => (

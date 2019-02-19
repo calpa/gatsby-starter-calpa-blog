@@ -6,7 +6,18 @@ import Card from '../components/Card';
 const TagPage = ({ data }) => {
   const { edges } = data.allMarkdownRemark;
   return (
-    <div>
+    <div className="container">
+      <div
+        className="row"
+        style={{
+          fontSize: 20,
+          margin: 15,
+        }}
+      >
+        {edges.length}
+        &nbsp;Articles in Total
+      </div>
+
       {edges.map(({ node }) => (
         <Card {...node.frontmatter} key={node.id} />
       ))}
