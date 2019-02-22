@@ -107,8 +107,7 @@ class BlogPost extends Component {
 
           <div id="gitalk-container" />
         </div>
-
-        <TableOfContent __html={tableOfContents} />
+        {tableOfContents && <TableOfContent __html={tableOfContents} />}
 
         <ShareBox url={slug} />
 
