@@ -49,15 +49,15 @@ collections:
             name: "friends"
             widget: "list"
             fields:
-              - { label: "href", name: "href", widget: "string" }
               - { label: "title", name: "title", widget: "string" }
+              - { label: "href", name: "href", widget: "string" }
 
           - label: "navbarList"
             name: "navbarList"
             widget: "list"
             fields:
-              - { label: "href", name: "href", widget: "string" }
               - { label: "title", name: "title", widget: "string" }
+              - { label: "href", name: "href", widget: "string" }
 
           - label: "redirectors"
             name: "redirectors"
