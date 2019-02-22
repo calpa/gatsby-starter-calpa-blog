@@ -33,7 +33,7 @@
     "gatsby-remark-autolink-headers": "^2.0.14",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.22",
-    "gatsby-transformer-remark": "^2.2.5",
+    "gatsby-transformer-remark": "^2.2.6",
     "gitalk": "^1.4.0",
     "han-css": "^3.3.0",
     "highlight.js": "^9.12.0",
