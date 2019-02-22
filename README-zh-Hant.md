@@ -6,10 +6,11 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/calpa/gatsby-starter-calpa-blog.svg)](https://greenkeeper.io/)
 [![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69c4fc63-9bed-44e4-aee4-77ceb456f770/deploy-status)](https://app.netlify.com/sites/calpa/deploys)
 
 [繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
 
-![HomePage](https://i.imgur.com/6Xd4yVQ.png)
+![Home Page](https://i.imgur.com/lVUwIZC.png)
 
 透過這個 Starter，你可以快速建立一個如同 [Calpa's Blog](https://calpa.me) 的博客系統。
 
@@ -36,10 +37,7 @@
 
 ### 數據來源
 
-本地修改：`/src/content/*.md`
-
-線上修改：
-  Netlify-cms 提供了一個很方便的後台系統，只需要部署到 Netlify 後，打開你的域名，後面加 `/admin/`，如：https://calpa.me/admin/
+你可以直接修改 `/src/content/*.md`，或者是使用 [Netlify-cms](https://www.netlifycms.org) 來編輯文章。
 
 ### 可自定的地方
 
@@ -60,8 +58,6 @@
 在你點擊上面的按鈕之後，你就會賦予 Netlify 取得你的 Github 授權，以及選擇倉庫名稱。Netlify 會自動創建一個倉庫，並且複製那裡的文件。
 
 之後，它會自動構建和部署一個新的網站，為你帶來一個完整的博客系統。
-
-你也可以使用 Contentful 作為你的內容管理系統。
 
 ### 使用 Codesandbox 來寫代碼
 
@@ -104,7 +100,6 @@ cd awesome-blog
 
    1. `npm start` 啟動熱重載開發服務器 (基於[Gatsby](https://www.gatsbyjs.org/))
    2. `open http://localhost:8000` 在您喜歡的瀏覽器中打開
-
 
 ## 配置
 
@@ -185,7 +180,6 @@ gitalk: {
 }
 ```
 
-
 ## 部署
 
 [Calpa 的博客](https://calpa.me) 目前正在使用[Netlify](https://www.netlify.com/)，當然，您可以使用 Github Pages 作為替代方案。
@@ -220,5 +214,3 @@ gitalk: {
 如果您對此項目感興趣，請隨時聯系[Calpa Liu](calpaliu@gmail.com)。
 
 感謝您的貢獻...... :)
-
-[1]: https://www.contentful.com/ "Contentful"

@@ -6,10 +6,11 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/calpa/gatsby-starter-calpa-blog.svg)](https://greenkeeper.io/)
 [![Build Status](https://api.travis-ci.org/calpa/gatsby-starter-calpa-blog.svg?branch=master)](https://github.com/calpa/gatsby-starter-calpa-blog/blob/master/.travis.yml)
 [![CodeFactor](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog/badge)](https://www.codefactor.io/repository/github/calpa/gatsby-starter-calpa-blog)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/69c4fc63-9bed-44e4-aee4-77ceb456f770/deploy-status)](https://app.netlify.com/sites/calpa/deploys)
 
 [繁體中文](README-zh-Hant.md) | [简体中文](README-zh-Hans.md) | [English](README.md)
 
-![HomePage](https://i.imgur.com/6Xd4yVQ.png)
+![Home Page](https://i.imgur.com/lVUwIZC.png)
 
 Build a blog system like [Calpa's Blog](https://calpa.me) in ease.
 
@@ -39,8 +40,7 @@ If you like this project, please don't hesitate to star it. Thank you.
 
 ### Data Source
 
-1. Source from Contentful, a flexible and easy-to-use content management system
-1. For now, not just Contentful content source, you can use any database
+You can edit the posts in `/src/content/*.md`, or using Netlify-cms to edit the posts.
 
 ### Customization for developers
 
@@ -59,8 +59,6 @@ Use the button below to build and deploy your own copy of the repository:
 After clicking that button, you’ll authenticate with GitHub and choose a repository name. Netlify will then automatically create a repository in your GitHub account with a copy of the files from the template.
 
 Next, it will build and deploy the new site on Netlify, bringing you to the blog system when the build is complete.
-
-You may use Contentful as your content management system.
 
 ### Code with Codesandbox
 
@@ -101,7 +99,6 @@ cd awesome-blog
 
    1. `npm start` to start the hot-reloading development server (powered by [Gatsby](https://www.gatsbyjs.org/))
    1. `open http://localhost:8000` to open the site in your favorite browser
-
 
 ## Configuration
 
@@ -181,7 +178,6 @@ gitalk: {
   },
 }
 ```
-
 
 ## Deploy
 
