@@ -45,6 +45,27 @@ collections:
               widget: "string",
               required: false,
             }
+          - label: "friends"
+            name: "friends"
+            widget: "list"
+            fields:
+              - { label: "href", name: "href", widget: "string" }
+              - { label: "title", name: "title", widget: "string" }
+
+          - label: "navbarList"
+            name: "navbarList"
+            widget: "list"
+            fields:
+              - { label: "href", name: "href", widget: "string" }
+              - { label: "title", name: "title", widget: "string" }
+
+          - label: "redirectors"
+            name: "redirectors"
+            widget: "list"
+            fields:
+              - { label: "fromPath", name: "fromPath", widget: "string" }
+              - { label: "toPath", name: "toPath", widget: "string" }
+
           - label: "meta"
             name: "meta"
             widget: "object"
