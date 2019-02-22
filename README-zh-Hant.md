@@ -23,7 +23,7 @@
 1. Web App Manifest
 1. Netlify 網站優化
 1. 精美評論區 (powered by [Gitalk](https://github.com/gitalk/gitalk))
-1. 高速解析 Markdown (基於[remarkable](https://github.com/jonschlinkert/remarkable))
+1. 高速解析 Markdown (基於[gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/))
 1. 支持站點地圖
 
 ### 設計
@@ -36,8 +36,10 @@
 
 ### 數據來源
 
-1. 源自 [Contentful][1]，壹個靈活且易於使用的內容管理系統
-1. 經過系統更新後，你可以使用任意的數據庫
+本地修改：`/src/content/*.md`
+
+線上修改：
+  Netlify-cms 提供了一個很方便的後台系統，只需要部署到 Netlify 後，打開你的域名，後面加 `/admin/`，如：https://calpa.me/admin/
 
 ### 可自定的地方
 
@@ -103,18 +105,6 @@ cd awesome-blog
    1. `npm start` 啟動熱重載開發服務器 (基於[Gatsby](https://www.gatsbyjs.org/))
    2. `open http://localhost:8000` 在您喜歡的瀏覽器中打開
 
-5. 連接 [Contentful][1] 服務器
-
-   1. 將以下配置添加到`.env.development`文件中
-
-   ```
-   API_SPACE_ID = Your Contentful Space ID
-   API_TOKEN = Your Content Delivery (Preview) API - access token
-   ```
-
-   如果您使用的是[Contentful 的預覽 API](https://www.contentful.com/developers/docs/references/content-preview-api/)，那麽所有未發布的內容都將可用。
-
-   1. 您也可以使用其他服務器，只要你提供給 GraphQL 的數據符合系統數據結構。
 
 ## 配置
 
@@ -195,47 +185,6 @@ gitalk: {
 }
 ```
 
-## 內容模型
-
-1. 帖子
-
-要創建帖子，只需提供以下對象模型：
-
-```json
-{
-  "name": "Post",
-  "fields": {
-    "title": "Post Title",
-    "headerImgur": "header Image Link",
-    "headerBackgroundColor": "#66ccff",
-    "tags": "tag1, tag2, tag3",
-    "url": "awesome-post",
-    "createdDate": "new Date() or other dayjs supported datetime value",
-    "content": "your markdown content",
-    "jueJinLikeIconLink": "掘金 Badge Icon Url",
-    "jueJinPostLink": "掘金 Post Url"
-  }
-}
-```
-
-2. Headers
-
-有兩個可配置的 Headers ，分別為 [主頁](https://calpa.me) 和 [標簽頁](https://calpa.me/tags/)頂部的 #header 。
-
-```json
-{
-  "name": "Headers",
-  "fields": {
-    "purpose": "Tags or Home",
-    "headerImage": "header Image",
-    "createdDate": "new Date() or other dayjs supported datetime value",
-    "title": "Display Title",
-    "titleVisible": "Do you want to show your title in the header?",
-    "subTitle": "Display a smaller wordings",
-    "subTitleVisible": "Do you want to show a smaller wordings in the header?"
-  }
-}
-```
 
 ## 部署
 

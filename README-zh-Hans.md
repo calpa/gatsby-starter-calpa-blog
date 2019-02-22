@@ -23,7 +23,7 @@
 1. Web App Manifest
 1. Netlify 网站优化
 1. 精美评论区 (powered by [Gitalk](https://github.com/gitalk/gitalk))
-1. 高速解析 Markdown (基于[remarkable](https://github.com/jonschlinkert/remarkable))
+1. 高速解析 Markdown (基于[gatsby-transformer-remark](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/))
 1. 支持站点地图
 
 ### 设计
@@ -36,8 +36,10 @@
 
 ### 数据来源
 
-1. 源自 [Contentful][1]，壹个灵活且易于使用的内容管理系统
-1. 经过系统更新后，你可以使用任意的数据库
+本地修改：`/src/content/*.md`
+
+线上修改：
+  Netlify-cms 提供了一个很方便的后台系统，只需要部署到 Netlify 后，打开你的域名，后面加 `/admin/`，如：https://calpa.me/admin/
 
 ### 可自定的地方
 
