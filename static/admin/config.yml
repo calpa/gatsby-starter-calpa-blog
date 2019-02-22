@@ -8,14 +8,34 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: "Configuration"
+    label: "Configuration"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "src/data/template/config.json"
+        fields:
+          - { label: "url", name: "url", widget: string }
   - name: "blog"
     label: "Blog"
     folder: "src/content"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Id", name: "id", widget: "string", hint: "use for Gitalk id" }
-      - { label: "Slug", name: "slug", widget: "string" }
+      - {
+          label: "Id",
+          name: "id",
+          widget: "string",
+          hint: "use for Gitalk id",
+          required: false,
+        }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "不填寫的話，就用 yyy-mm-dd-title",
+          required: false,
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
