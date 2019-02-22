@@ -29,17 +29,5 @@ $black: #404040;
         }
       }
     }
-    // Level 3
-    ul {
-      li a {
-        color: $black;
-
-        &:hover {
-          color: lighten($black, 10%);
-        }
-        font-size: 0.85em;
-        padding-left: 5px;
-      }
-    }
   }
 }
