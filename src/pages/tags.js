@@ -8,14 +8,22 @@ import SEO from '../components/SEO';
 const TagPage = ({ data }) => {
   const { allMarkdownRemark } = data;
 
-  const TagSet = new Set();
+  const mapping = {};
 
   allMarkdownRemark.edges.forEach(({ node }) => {
     const { tags } = node.frontmatter;
-    tags.forEach(name => TagSet.add(name));
+    tags.forEach((name) => {
+      if (mapping[name]) {
+        mapping[name] += 1;
+      } else {
+        mapping[name] = 1;
+      }
+    });
   });
 
-  const tags = Array.from(TagSet);
+  const tags = Array.from(Object.keys(mapping)).sort(
+    (b, a) => mapping[a] - mapping[b],
+  );
 
   return (
     <div className="container">
@@ -37,12 +45,12 @@ const TagPage = ({ data }) => {
         }}
       >
         {tags.map(item => (
-          <Tag name={item} key={item} />
+          <Tag name={item} key={item} count={mapping[item]} />
         ))}
       </div>
 
       <SEO
-        title="Tags"
+        title="標籤"
         url="/tags/"
         siteTitleAlt="Calpa's Blog"
         isPost={false}

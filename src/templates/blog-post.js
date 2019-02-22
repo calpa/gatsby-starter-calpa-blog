@@ -15,7 +15,7 @@ import Content from '../components/Content';
 import SEO from '../components/SEO';
 
 import Header from '../components/Header';
-
+import TableOfContent from '../components/TableOfContent';
 import ShareBox from '../components/ShareBox';
 
 import { config } from '../../data';
@@ -56,7 +56,7 @@ class BlogPost extends Component {
     const { previous, node, next } = this.data.content.edges[0];
 
     const {
-      html, frontmatter, fields, excerpt,
+      html, frontmatter, fields, excerpt, tableOfContents,
     } = node;
 
     const { slug } = fields;
@@ -75,9 +75,8 @@ class BlogPost extends Component {
           subTitle={parseChineseDate(date)}
         />
         <Sidebar totalCount={totalCount} posts={edges} post />
-        <div className="col-lg-8 col-md-12 col-sm-12 order-10 content">
+        <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
           <Content post={html} />
-
           <div className="m-message" style={bgWhite}>
             如果你覺得我的文章對你有幫助的話，希望可以推薦和交流一下。歡迎
             <ExternalLink
@@ -108,6 +107,7 @@ class BlogPost extends Component {
 
           <div id="gitalk-container" />
         </div>
+        {tableOfContents && <TableOfContent __html={tableOfContents} />}
 
         <ShareBox url={slug} />
 
@@ -148,6 +148,7 @@ export const pageQuery = graphql`
         node {
           id
           html
+          tableOfContents
           excerpt
           ...post
         }

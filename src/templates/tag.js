@@ -6,6 +6,7 @@ import SEO from '../components/SEO';
 // eslint-disable-next-line react/prop-types
 const TagPage = ({ data, pageContext }) => {
   const { edges } = data.allMarkdownRemark;
+  const { tag } = pageContext;
   return (
     <div className="container">
       <div
@@ -16,7 +17,8 @@ const TagPage = ({ data, pageContext }) => {
         }}
       >
         {edges.length}
-        &nbsp;Articles in Total
+        &nbsp;Articles in&nbsp;
+        {tag}
       </div>
 
       {edges.map(({ node }) => (
@@ -24,11 +26,11 @@ const TagPage = ({ data, pageContext }) => {
       ))}
 
       <SEO
-        title={pageContext.tag}
-        url={`/tag/${pageContext.tag}`}
+        title={tag}
+        url={`/tag/${tag}`}
         siteTitleAlt="Calpa's Blog"
         isPost={false}
-        description={pageContext.tag}
+        description={tag}
         image="https://i.imgur.com/M795H8A.jpg"
       />
     </div>
@@ -39,7 +41,10 @@ export default TagPage;
 
 export const pageQuery = graphql`
   query tagQuery($tag: [String!]) {
-    allMarkdownRemark(filter: { frontmatter: { tags: { in: $tag } } }) {
+    allMarkdownRemark(
+      sort: { order: DESC, fields: frontmatter___date }
+      filter: { frontmatter: { tags: { in: $tag } } }
+    ) {
       edges {
         node {
           id

@@ -8,14 +8,98 @@ media_folder: static/assets
 public_folder: assets
 
 collections:
+  - name: "Configuration"
+    label: "Configuration"
+    files:
+      - label: "Site Configuration"
+        name: "site"
+        file: "data/template/config.json"
+        fields:
+          - { label: "url", name: "url", widget: "string" }
+          - { label: "name", name: "name", widget: "string" }
+          - { label: "about", name: "about", widget: "string" }
+          - { label: "email", name: "email", widget: "string" }
+          - { label: "title", name: "title", widget: "string" }
+          - { label: "iconUrl", name: "iconUrl", widget: "string" }
+          - {
+              label: "License",
+              name: "License",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "gaTrackId",
+              name: "gaTrackId",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "gaOptimizeId",
+              name: "gaOptimizeId",
+              widget: "string",
+              required: false,
+            }
+          - {
+              label: "zhihuUsername",
+              name: "zhihuUsername",
+              widget: "string",
+              required: false,
+            }
+          - label: "friends"
+            name: "friends"
+            widget: "list"
+            fields:
+              - { label: "title", name: "title", widget: "string" }
+              - { label: "href", name: "href", widget: "string" }
+
+          - label: "navbarList"
+            name: "navbarList"
+            widget: "list"
+            fields:
+              - { label: "title", name: "title", widget: "string" }
+              - { label: "href", name: "href", widget: "string" }
+
+          - label: "redirectors"
+            name: "redirectors"
+            widget: "list"
+            fields:
+              - { label: "fromPath", name: "fromPath", widget: "string" }
+              - { label: "toPath", name: "toPath", widget: "string" }
+
+          - label: "meta"
+            name: "meta"
+            widget: "object"
+            fields:
+              - { label: "favicon", name: "favicon", widget: "string" }
+              - { label: "keyword", name: "keyword", widget: "string" }
+              - { label: "description", name: "description", widget: "string" }
+              - { label: "theme_color", name: "theme_color", widget: "string" }
+              - {
+                  label: "google_site_verification",
+                  name: "google_site_verification",
+                  widget: "string",
+                }
+
   - name: "blog"
     label: "Blog"
     folder: "src/content"
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { label: "Id", name: "id", widget: "string", hint: "use for Gitalk id" }
-      - { label: "Slug", name: "slug", widget: "string" }
+      - {
+          label: "Id",
+          name: "id",
+          widget: "string",
+          hint: "use for Gitalk id",
+          required: false,
+        }
+      - {
+          label: "Slug",
+          name: "slug",
+          widget: "string",
+          hint: "不填寫的話，就用 yyy-mm-dd-title",
+          required: false,
+        }
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Description", name: "description", widget: "text" }
