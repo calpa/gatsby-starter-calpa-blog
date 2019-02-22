@@ -13,7 +13,7 @@ collections:
     files:
       - label: "Site Configuration"
         name: "site"
-        file: "src/data/template/config.json"
+        file: "data/template/config.json"
         fields:
           - { label: "url", name: "url", widget: string }
   - name: "blog"
