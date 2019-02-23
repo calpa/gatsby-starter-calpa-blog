@@ -10,14 +10,15 @@ tags:
   - React
   - XSS
   - GatsbyJS
-headerImage: 'https://i.imgur.com/M795H8A.jpg'
+headerImage: "https://i.imgur.com/M795H8A.jpg"
 templateKey: blog-post
 ---
+
 ## 前言
 
 Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked 等一些解析 Markdown 工具來獲取 HTML，然後透過 React 原生的 dangerouslySetInnerHTML 方法直接放到組件裡面。
 
-> Markdown 是一種輕量級標記式語言，創始人為約翰·格魯伯（英語：John Gruber）。它允許人們「使用易讀易寫的純文字格式編寫文件，然後轉換成有效的XHTML（或者HTML）文件」。這種語言吸收了很多在電子郵件中已有的純文字標記的特性。 - Wikipedia
+> Markdown 是一種輕量級標記式語言，創始人為約翰·格魯伯（英語：John Gruber）。它允許人們「使用易讀易寫的純文字格式編寫文件，然後轉換成有效的 XHTML（或者 HTML）文件」。這種語言吸收了很多在電子郵件中已有的純文字標記的特性。 - Wikipedia
 
 我們可以透過 Remarkable.js 來解析 Markdown 語言，並生成 HTML。
 
@@ -27,7 +28,7 @@ Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked
 
 它在 Github 上獲得了超過 4000 個 Star 數目。Facebook，Docusaurus 及其他公司也在用 Remarkable.js。
 
-### 安裝方法
+### remakable 安裝方法
 
 透過 npm 直接搜索 remarkable 就可以安裝它了。
 
@@ -37,7 +38,7 @@ npm install remarkable --save
 
 另外，你也可以使用 cdn 來在你的 HTML 文件插入 remakable。
 
-```
+```javascript
 // cdn.js
 <script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 
@@ -45,7 +46,7 @@ npm install remarkable --save
 <script src="https://cdn.jsdelivr.net/npm/remarkable@1.7.1/index.min.js"></script>
 ```
 
-### 使用方法
+### remakable 使用方法
 
 首先利用 require 或 import 語法獲取 Remakable 方法，然後透過 new 生成一個 Remarkable 對象。
 
@@ -53,11 +54,11 @@ npm install remarkable --save
 
 代碼如下：
 
-```
-var Remarkable = require('remarkable');
+```javascript
+var Remarkable = require("remarkable");
 var md = new Remarkable();
 
-console.log(md.render('# Remarkable rulezz!'));
+console.log(md.render("# Remarkable rulezz!"));
 // => <h1>Remarkable rulezz!</h1>
 ```
 
@@ -69,12 +70,12 @@ console.log(md.render('# Remarkable rulezz!'));
 
 highlight.js 可以識別 185 種語言的代碼，並且支持 89 種樣式。比如說筆者很喜歡的 Solarized Light，Github Gist。
 
-```
-var Remarkable = require('remarkable');
-var hljs       = require('highlight.js') // https://highlightjs.org/
+```javascript
+var Remarkable = require("remarkable");
+var hljs = require("highlight.js"); // https://highlightjs.org/
 
 var md = new Remarkable({
-  highlight: function (str, lang) {
+  highlight: function(str, lang) {
     // 如果 highlight.js 支持我們編寫的語言
     if (lang && hljs.getLanguage(lang)) {
       try {
@@ -86,20 +87,20 @@ var md = new Remarkable({
       return hljs.highlightAuto(str).value;
     } catch (err) {}
 
-    return '';
+    return "";
   }
 });
 ```
 
 ## dangerouslySetInnerHTML
 
-React 提供 dangerouslySetInnerHTML 方法，用以取代瀏覽器 DOM 裡面的 innerHTML 方法。一般來說，直接把代碼看成 HTML 是一個危險的舉動，因為它很容易暴露跨網站指令碼 (XSS) 攻擊的風險。所以，React 會需要我們傳入一個對象，使用 __html 值來提醒我們這個是危險的舉動。
+React 提供 dangerouslySetInnerHTML 方法，用以取代瀏覽器 DOM 裡面的 innerHTML 方法。一般來說，直接把代碼看成 HTML 是一個危險的舉動，因為它很容易暴露跨網站指令碼 (XSS) 攻擊的風險。所以，React 會需要我們傳入一個對象，使用 \_\_html 值來提醒我們這個是危險的舉動。
 
 使用方法：
 
 ```javascript
 function createMarkup() {
-  return {__html: 'First &middot; Second'};
+  return { __html: "First &middot; Second" };
 }
 
 function MyComponent() {
@@ -110,11 +111,11 @@ function MyComponent() {
 測試用的 XSS 代碼：
 
 ```html
-<div style="color:rgb(''&#0;x:expression(alert(1))"></div> 
+<div style="color:rgb(''&#0;x:expression(alert(1))"></div>
 
-<img/src=%00 id=confirm(1) onerror=eval(id) 
+<img/src=%00 id=confirm(1) onerror=eval(id)
 
-<div id=confirm(1) onmouseover=eval(id)>X</div> 
+<div id=confirm(1) onmouseover=eval(id)>X</div>
 
 <span/onmouseover=confirm(1)>X</span>
 ```
@@ -123,15 +124,15 @@ function MyComponent() {
 
 如果你是使用 gatsbyjs 框架的話，那麼你可以直接安裝 gatsby-transformer-remark 來安裝 remarkjs。
 
-###　安裝方法
+### remarkjs 安裝方法
 
 首先你需要透過 npm 安裝 gatsby-transformer-remark。
 
-```
+```bash
 npm install --save gatsby-transformer-remark
 ```
 
-然後在 gatsby-config.js 裡面的　plugins 插入以下代碼片段：
+然後在 gatsby-config.js 裡面的　 plugins 插入以下代碼片段：
 
 ```json
 plugins: [
@@ -153,9 +154,9 @@ plugins: [
 ],
 ```
 
-### 使用方法
+### remarkjs 使用方法
 
-gatsby-transformer-remark 會讀取 `md`，以及 `markdown` 文件，並生成 `MarkdownRemark` 節點，供 GraphQL 使用。
+gatsby-transformer-remark 插件會讀取 `md`，以及 `markdown` 文件，並生成 `MarkdownRemark` 節點，供 GraphQL 使用。
 
 MarkdownRemark 已經具有 `html`，節錄 `excerpt`，目錄 `tableOfContents` 等比較常用的屬性，可以直接讀取。
 
