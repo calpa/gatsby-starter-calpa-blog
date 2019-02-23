@@ -16,6 +16,8 @@ templateKey: blog-post
 
 Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked 等一些解析 Markdown 工具來獲取 HTML，然後透過 React 原生的 dangerouslySetInnerHTML 方法直接放到組件裡面。
 
+> Markdown是一種輕量級標記式語言，創始人為約翰·格魯伯（英語：John Gruber）。它允許人們「使用易讀易寫的純文字格式編寫文件，然後轉換成有效的XHTML（或者HTML）文件」。這種語言吸收了很多在電子郵件中已有的純文字標記的特性。 - Wikipedia
+
 ## 解析 Markdown 的工具
 
 ### remakable
@@ -43,6 +45,12 @@ npm install remarkable --save
 ```
 
 ## 使用方法
+
+首先利用 require 或 import 語法獲取 Remakable 方法，然後透過 new 生成一個 Remarkable 對象。
+
+透過它提供的 render 方法，我們可以直接獲取 HTML。
+
+代碼如下：
 
 ```
 var Remarkable = require('remarkable');
