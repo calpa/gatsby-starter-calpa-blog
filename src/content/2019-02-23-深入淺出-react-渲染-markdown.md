@@ -1,5 +1,5 @@
 ---
-slug: react-markdown-in-ease
+slug: how-to-use-react-to-render-markdown-articles
 title: React 渲染 Markdown 的方法
 date: 2019-02-23T00:42:10.915Z
 description: >-
