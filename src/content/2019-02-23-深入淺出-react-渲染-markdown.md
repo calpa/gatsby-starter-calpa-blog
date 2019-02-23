@@ -1,4 +1,5 @@
 ---
+slug: 深入淺出 React 渲染 Markdown
 title: 深入淺出 React 渲染 Markdown
 date: 2019-02-23T00:42:10.915Z
 description: >-
@@ -14,6 +15,28 @@ templateKey: blog-post
 ## 前言
 
 Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked 等一些解析 Markdown 工具來獲取 HTML，然後透過 React 原生的 dangerouslySetInnerHTML 方法直接放到組件裡面。
+
+## 解析 Markdown 的工具
+
+### remakable
+
+Remarkable.js 是一個高速的 markdown 語法分析器。它支持 Commonmark，安裝不同插件，例如語法高亮。
+
+它在 Github 上獲得了超過 4000 個 Star 數目。Facebook，Docusaurus 及其他公司也在用 Remarkable.js。
+
+### 安裝方法
+
+透過 npm 直接搜索 remarkable 就可以安裝它了。
+
+```
+npm install remarkable --save
+```
+
+另外，你也可以使用 cdn 來在你的 HTML 文件插入 <script> 標籤。
+
+cdnjs.com: https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js
+
+jsdelivr: https://cdn.jsdelivr.net/npm/remarkable@1.7.1/index.min.js
 
 ## dangerouslySetInnerHTML
 
@@ -42,3 +65,8 @@ function MyComponent() {
 
 <span/onmouseover=confirm(1)>X</span>
 ```
+
+## 參考資料
+
+1. [DOM Elements - React](https://reactjs.org/docs/dom-elements.html)
+1. [jonschlinkert/remarkable - Github](https://github.com/jonschlinkert/remarkable)
