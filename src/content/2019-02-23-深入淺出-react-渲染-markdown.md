@@ -1,6 +1,6 @@
 ---
-slug: 深入淺出 React 渲染 Markdown
-title: 深入淺出 React 渲染 Markdown
+slug: react-markdown-in-ease
+title: React 渲染 Markdown 的方法
 date: 2019-02-23T00:42:10.915Z
 description: >-
   Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked 等一些解析 Markdown 工具來獲取 HTML，然後透過
@@ -9,7 +9,7 @@ tags:
   - Markdown
   - React
   - XSS
-headerImage: '""'
+headerImage: 'https://i.imgur.com/M795H8A.jpg'
 templateKey: blog-post
 ---
 ## 前言
