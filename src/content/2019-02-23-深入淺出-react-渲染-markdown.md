@@ -16,13 +16,13 @@ templateKey: blog-post
 
 Markdown 提供了編寫文章的方便，我們可以透過 Remarkable，Marked 等一些解析 Markdown 工具來獲取 HTML，然後透過 React 原生的 dangerouslySetInnerHTML 方法直接放到組件裡面。
 
-> Markdown是一種輕量級標記式語言，創始人為約翰·格魯伯（英語：John Gruber）。它允許人們「使用易讀易寫的純文字格式編寫文件，然後轉換成有效的XHTML（或者HTML）文件」。這種語言吸收了很多在電子郵件中已有的純文字標記的特性。 - Wikipedia
+> Markdown 是一種輕量級標記式語言，創始人為約翰·格魯伯（英語：John Gruber）。它允許人們「使用易讀易寫的純文字格式編寫文件，然後轉換成有效的XHTML（或者HTML）文件」。這種語言吸收了很多在電子郵件中已有的純文字標記的特性。 - Wikipedia
 
-## 解析 Markdown 的工具
+我們可以透過 Remarkable.js 來解析 Markdown 語言，並生成 HTML。
 
-### remakable
+## remakable
 
-Remarkable.js 是一個高速的 markdown 語法分析器。它支持 Commonmark，安裝不同插件，例如語法高亮。
+它是一個高速的 markdown 語法分析器。它支持 Commonmark，安裝不同插件，例如語法高亮。
 
 它在 Github 上獲得了超過 4000 個 Star 數目。Facebook，Docusaurus 及其他公司也在用 Remarkable.js。
 
@@ -44,7 +44,7 @@ npm install remarkable --save
 <script src="https://cdn.jsdelivr.net/npm/remarkable@1.7.1/index.min.js"></script>
 ```
 
-## 使用方法
+### 使用方法
 
 首先利用 require 或 import 語法獲取 Remakable 方法，然後透過 new 生成一個 Remarkable 對象。
 
@@ -58,6 +58,38 @@ var md = new Remarkable();
 
 console.log(md.render('# Remarkable rulezz!'));
 // => <h1>Remarkable rulezz!</h1>
+```
+
+## 語法高亮
+
+如果你有留意這篇文章的代碼例子的話，你會發現這些語句都有不同的顏色，這就是語法高亮。
+
+透過填充 Remakable 構建方法裡面的 highlight 值，就可以完成語法高亮了。
+
+highlight.js 可以識別 185 種語言的代碼，並且支持 89 種樣式。比如說筆者很喜歡的 Solarized Light，Github Gist。
+
+P.S. 此處應該上圖。
+
+```
+var Remarkable = require('remarkable');
+var hljs       = require('highlight.js') // https://highlightjs.org/
+
+var md = new Remarkable({
+  highlight: function (str, lang) {
+    // 如果 highlight.js 支持我們編寫的語言
+    if (lang && hljs.getLanguage(lang)) {
+      try {
+        return hljs.highlight(lang, str).value;
+      } catch (err) {}
+    }
+
+    try {
+      return hljs.highlightAuto(str).value;
+    } catch (err) {}
+
+    return '';
+  }
+});
 ```
 
 ## dangerouslySetInnerHTML
