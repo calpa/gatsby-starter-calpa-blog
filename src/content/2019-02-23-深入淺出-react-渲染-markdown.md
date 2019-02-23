@@ -157,3 +157,4 @@ plugins: [
 
 1. [DOM Elements - React](https://reactjs.org/docs/dom-elements.html)
 1. [jonschlinkert/remarkable - Github](https://github.com/jonschlinkert/remarkable)
+1. [gatsby-transformer-remark 官方文檔](https://www.gatsbyjs.org/packages/gatsby-transformer-remark/)
