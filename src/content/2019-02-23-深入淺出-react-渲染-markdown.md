@@ -60,7 +60,7 @@ console.log(md.render('# Remarkable rulezz!'));
 // => <h1>Remarkable rulezz!</h1>
 ```
 
-## 語法高亮
+### 語法高亮
 
 如果你有留意這篇文章的代碼例子的話，你會發現這些語句都有不同的顏色，這就是語法高亮。
 
