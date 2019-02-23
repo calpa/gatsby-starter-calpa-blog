@@ -153,6 +153,33 @@ plugins: [
 ],
 ```
 
+### 使用方法
+
+gatsby-transformer-remark 會讀取 `md`，以及 `markdown` 文件，並生成 `MarkdownRemark` 節點，供 GraphQL 使用。
+
+MarkdownRemark 已經具有 `html`，節錄 `excerpt`，目錄 `tableOfContents` 等比較常用的屬性，可以直接讀取。
+
+你可以通過 allMarkdownRemark 來獲取所有 markdown 文章，然後透過 `edges.node.html` 來獲取編譯後的 HTML 代碼。
+
+```graphql
+{
+  allMarkdownRemark {
+    edges {
+      node {
+        html
+        headings {
+          depth
+          value
+        }
+        frontmatter {
+          title
+        }
+      }
+    }
+  }
+}
+```
+
 ## 參考資料
 
 1. [DOM Elements - React](https://reactjs.org/docs/dom-elements.html)
