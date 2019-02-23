@@ -48,16 +48,17 @@
   $height: 500px;
   $width: 1920px;
 
-  background-repeat: no-repeat;
   @media (min-width: 768px) {
     min-height: $height;
-    background-size: $width $height;
   }
 
   @media (max-width: 767.98px) {
     background-size: cover;
   }
-  background-position: center top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: center;
+  background-position-y: center;
 
   margin-bottom: 10px;
 
