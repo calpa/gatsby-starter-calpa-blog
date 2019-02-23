@@ -32,11 +32,25 @@ Remarkable.js 是一個高速的 markdown 語法分析器。它支持 Commonmark
 npm install remarkable --save
 ```
 
-另外，你也可以使用 cdn 來在你的 HTML 文件插入 <script> 標籤。
+另外，你也可以使用 cdn 來在你的 HTML 文件插入 remakable。
 
-cdnjs.com: https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js
+```
+// cdn.js
+<script src="https://cdnjs.cloudflare.com/ajax/libs/remarkable/1.7.1/remarkable.min.js"></script>
 
-jsdelivr: https://cdn.jsdelivr.net/npm/remarkable@1.7.1/index.min.js
+// jsdelivr
+<script src="https://cdn.jsdelivr.net/npm/remarkable@1.7.1/index.min.js"></script>
+```
+
+使用方法
+
+```
+var Remarkable = require('remarkable');
+var md = new Remarkable();
+
+console.log(md.render('# Remarkable rulezz!'));
+// => <h1>Remarkable rulezz!</h1>
+```
 
 ## dangerouslySetInnerHTML
 
