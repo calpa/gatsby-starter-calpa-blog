@@ -9,6 +9,7 @@ tags:
   - Markdown
   - React
   - XSS
+  - GatsbyJS
 headerImage: 'https://i.imgur.com/M795H8A.jpg'
 templateKey: blog-post
 ---
@@ -68,8 +69,6 @@ console.log(md.render('# Remarkable rulezz!'));
 
 highlight.js 可以識別 185 種語言的代碼，並且支持 89 種樣式。比如說筆者很喜歡的 Solarized Light，Github Gist。
 
-P.S. 此處應該上圖。
-
 ```
 var Remarkable = require('remarkable');
 var hljs       = require('highlight.js') // https://highlightjs.org/
@@ -118,6 +117,40 @@ function MyComponent() {
 <div id=confirm(1) onmouseover=eval(id)>X</div> 
 
 <span/onmouseover=confirm(1)>X</span>
+```
+
+## GatsbyJS
+
+如果你是使用 gatsbyjs 框架的話，那麼你可以直接安裝 gatsby-transformer-remark 來安裝 remarkjs。
+
+###　安裝方法
+
+首先你需要透過 npm 安裝 gatsby-transformer-remark。
+
+```
+npm install --save gatsby-transformer-remark
+```
+
+然後在 gatsby-config.js 裡面的　plugins 插入以下代碼片段：
+
+```json
+plugins: [
+  {
+    resolve: `gatsby-transformer-remark`,
+    options: {
+      // CommonMark 模式 (default: true)
+      commonmark: true,
+      // 筆錄模式 (default: true)
+      footnotes: true,
+      // Pedantic mode (default: true)
+      pedantic: true,
+      // GitHub 風格的 Markdown 模式 (default: true)
+      gfm: true,
+      // 插件配置
+      plugins: [],
+    },
+  },
+],
 ```
 
 ## 參考資料
