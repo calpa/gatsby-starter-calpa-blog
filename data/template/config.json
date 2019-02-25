@@ -1,5 +1,5 @@
 {
-  "url": "https://calpa.me",
+  "License": "by",
   "meta": {
     "favicon": "https://i.imgur.com/PO9Y4fT.jpg",
     "keyword": "calpa, blog, JavaScript",
@@ -8,89 +8,66 @@
     "google_site_verification": "riZBcestky7i9xY__A-5J-2EE65T75X1u-zgbss37Io"
   },
   "name": "calpa",
+  "gaTrackId": "UA-84737574-3",
   "about": "/2018/05/01/about-calpa-liu/",
-  "email": "calpaliu@gmail.com",
-  "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
-    "title": "過去三十日數據",
-    "description": "過去三十日數據"
-  },
-  "title": "Calpa 的技術博客",
-  "gitalk": {
-    "repo": "calpa.github.io",
-    "admin": ["calpa"],
-    "owner": "calpa",
-    "clientID": "18255f031b5e11edd98a",
-    "clientSecret": "2ff6331da9e53f9a91bcc991d38d550c85026714",
-    "pagerDirection": "first",
-    "distractionFreeMode": true
-  },
-  "License": "by",
+  "navbarList": [
+    {
+      "title": "網站數據",
+      "href": "/2018/12/24/front-end-blog-system-review-2018/"
+    },
+    {
+      "title": "留言簿",
+      "href": "/guestbook/"
+    },
+    {
+      "title": "標籤",
+      "href": "/tags/"
+    },
+    {
+      "title": "關於作者",
+      "href": "/2018/05/01/about-calpa-liu/"
+    }
+  ],
+  "url": "https://calpa.me",
+  "gaOptimizeId": "GTM-WHP7SC5",
+  "redirectors": [
+    {
+      "fromPath": "/",
+      "toPath": "/page/1/"
+    },
+    {
+      "fromPath": "/about/",
+      "toPath": "/2018/05/01/about-calpa-liu/"
+    }
+  ],
   "friends": [
     {
-      "href": "https://www.boatsky.com/",
-      "title": "太空船博客"
+      "title": "太空船博客",
+      "href": "https://www.boatsky.com/"
     },
     {
-      "href": "http://blog.shanamaid.top/",
-      "title": "娜酱骑士团"
+      "title": "娜酱骑士团",
+      "href": "http://blog.shanamaid.top/"
     },
     {
-      "href": "https://clarencec.github.io/",
-      "title": "Clarence Blog"
+      "title": "Clarence Blog",
+      "href": "https://clarencec.github.io/"
     },
     {
-      "href": "http://f2ex.cn/",
-      "title": "F2EX"
+      "title": "F2EX",
+      "href": "http://f2ex.cn/"
     },
     {
-      "href": "https://jeffjade.com/",
-      "title": "晚晴幽草轩"
+      "title": "晚晴幽草轩",
+      "href": "https://jeffjade.com/"
     },
     {
-      "href": "https://macplay.github.io/",
-      "title": "MacPlay"
+      "title": "MacPlay",
+      "href": "https://macplay.github.io/"
     }
   ],
   "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-  "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
-  "gaTrackId": "UA-84737574-3",
-  "navbarList": [
-    {
-      "href": "/2018/12/24/front-end-blog-system-review-2018/",
-      "title": "網站數據"
-    },
-    {
-      "href": "/guestbook/",
-      "title": "留言簿"
-    },
-    {
-      "href": "/tags/",
-      "title": "Tags"
-    },
-    {
-      "href": "/2018/05/01/about-calpa-liu/",
-      "title": "關於作者"
-    }
-  ],
-  "redirectors": [
-    {
-      "toPath": "/page/1/",
-      "fromPath": "/"
-    },
-    {
-      "toPath": "/2018/05/01/about-calpa-liu/",
-      "fromPath": "/about/"
-    }
-  ],
-  "gaOptimizeId": "GTM-WHP7SC5",
-  "carouselItems": [
-    {
-      "src": "https://i.imgur.com/gw91CuI.jpg",
-      "target": "/stats/"
-    }
-  ],
-  "zhihuUsername": "piao-xue-wu-ying",
-  "githubUsername": "calpa",
-  "maxPostsInPage": 10
+  "title": "Calpa 的技術博客",
+  "email": "calpaliu@gmail.com",
+  "zhihuUsername": "piao-xue-wu-ying"
 }
