@@ -75,10 +75,6 @@
   ],
   "redirectors": [
     {
-      "toPath": "/page/1/",
-      "fromPath": "/"
-    },
-    {
       "toPath": "/2018/05/01/about-calpa-liu/",
       "fromPath": "/about/"
     }
