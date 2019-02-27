@@ -10,15 +10,12 @@
   "name": "calpa",
   "about": "/2018/05/01/about-calpa-liu/",
   "email": "calpaliu@gmail.com",
-  "stats": {
-    "image": "https://i.imgur.com/VjBWiSt.png",
-    "title": "過去三十日數據",
-    "description": "過去三十日數據"
-  },
   "title": "Calpa 的技術博客",
   "gitalk": {
     "repo": "calpa.github.io",
-    "admin": ["calpa"],
+    "admin": [
+      "calpa"
+    ],
     "owner": "calpa",
     "clientID": "18255f031b5e11edd98a",
     "clientSecret": "2ff6331da9e53f9a91bcc991d38d550c85026714",
@@ -27,6 +24,18 @@
   },
   "License": "by",
   "friends": [
+    {
+      "href": "https://gine.me/page/1",
+      "title": "Mayne's Blog"
+    },
+    {
+      "href": "https://ruterly.com/",
+      "title": "Ruter's Blog"
+    },
+    {
+      "href": "https://www.ahonn.me/",
+      "title": "Ahonn's Blog"
+    },
     {
       "href": "https://www.boatsky.com/",
       "title": "太空船博客"
@@ -53,7 +62,10 @@
     }
   ],
   "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
-  "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
+  "wordings": [
+    "GatsbyJS, ReactJS",
+    "全週期開發者"
+  ],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
     {
@@ -80,12 +92,6 @@
     }
   ],
   "gaOptimizeId": "GTM-WHP7SC5",
-  "carouselItems": [
-    {
-      "src": "https://i.imgur.com/gw91CuI.jpg",
-      "target": "/stats/"
-    }
-  ],
   "zhihuUsername": "piao-xue-wu-ying",
   "githubUsername": "calpa",
   "maxPostsInPage": 10

@@ -45,6 +45,18 @@ collections:
               widget: "string",
               required: false,
             }
+          - {
+              label: "githubUsername",
+              name: "githubUsername",
+              widget: "string",
+              required: false
+            }
+          - {
+              label: "maxPostsInPage",
+              name: "maxPostsInPage",
+              widget: "string",
+              required: false
+            }
           - label: "friends"
             name: "friends"
             widget: "list"

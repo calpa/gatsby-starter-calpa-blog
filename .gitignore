@@ -9,3 +9,6 @@ yarn-error.log
 
 # Local keys
 .env.development
+
+# VS Code
+.vscode/
