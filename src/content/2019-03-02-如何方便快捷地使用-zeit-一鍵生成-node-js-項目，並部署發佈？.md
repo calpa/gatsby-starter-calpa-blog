@@ -1,5 +1,5 @@
 ---
-slug: now-quick-start-a-simple-way-to-skip-the-boilerplate-and-start-new-projects
+slug: zeit-deploy-nodejs-application-free-plan
 title: 如何方便快捷地使用 ZEIT 一鍵部署 Node.js 項目？
 date: 2019-03-04T01:00:00.000Z
 description: >-
