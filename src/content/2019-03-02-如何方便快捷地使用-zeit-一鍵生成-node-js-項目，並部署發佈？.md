@@ -1,6 +1,6 @@
 ---
-slug: zeit-deploy-nodejs-application-free-plan
-title: 如何方便快捷地使用 ZEIT 一鍵部署 Node.js 項目？
+slug: how-to-deploy-nodejs-application-via-zeit-free-plan
+title: 如何透過 ZEIT 方便快捷地部署免費的 Node.js 項目？
 date: 2019-03-04T01:00:00.000Z
 description: >-
   ZEIT 平台提供了免費的網站空間平台給開發者，我們可以透過 ZEIT 平台來部署 Node.js, Express.js, Koa.js
