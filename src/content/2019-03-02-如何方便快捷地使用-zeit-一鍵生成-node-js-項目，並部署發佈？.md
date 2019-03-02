@@ -3,8 +3,8 @@ slug: now-quick-start-a-simple-way-to-skip-the-boilerplate-and-start-new-project
 title: 如何方便快捷地使用 ZEIT 一鍵生成 Node.js 項目，並部署發佈？
 date: 2019-03-04T08:45:26.772Z
 description: >-
-  ZEIT 在 3月1日發佈了 Now Quick Start 的功能，讓我們可以從超過 40 個項目模板選取自己所需要的基本代碼，比如說 Node.js,
-  Express.js, Koa.js，就讓我們更加簡單地寫代碼吧。
+  ZEIT 在上週發佈 Now Quick Start 的功能，可以透過命令行或平台網站選取超過 40 個項目模板，比如說 Node.js,
+  Express.js, Koa.js。如果你有寫過 Node.js 應用，又想找個免費空間部署這些應用的話，那麼 ZEIT 會是一個不錯的選擇。
 tags:
   - ZEIT
   - NOW
@@ -14,7 +14,9 @@ tags:
 headerImage: 'https://i.imgur.com/Lgfa2Eu.png'
 templateKey: blog-post
 ---
-ZEIT 在 3月1日發佈了 Now Quick Start 的功能，讓我們可以從超過 40 個項目模板選取自己所需要的基本代碼，比如說 Node.js, Express.js, Koa.js，就讓我們更加簡單地寫代碼吧。
+## 前言
+
+ZEIT 在上週發佈 Now Quick Start 的功能，可以透過命令行或平台網站選取超過 40 個項目模板，比如說 Node.js, Express.js, Koa.js。如果你有寫過 Node.js 應用，又想找個免費空間部署這些應用的話，那麼 ZEIT 會是一個不錯的選擇。
 
 ![Get started from templates](https://i.imgur.com/BUOnJID.png)
 
@@ -70,7 +72,18 @@ npm install -g now
 
 ## 部署
 
-只需要在命令行輸入 `now` 命令就可以了。
+我們只需要在命令行輸入 `now` 命令就可以了。
 
 ![All](https://i.imgur.com/0aBGW0B.jpg)
 
+ZEIT 會對於我們提交的這個版本生成一條唯一的地址，比如說 https://nodejs-koa-2uzmvez4q.now.sh/
+
+打開之後就會見到 Hello from koa.js! 的返回信息。
+
+## 後記
+
+筆者最近在學習如何使用 Node.js 打造全棧項目，那麼透過 ZEIT 這個平台，我就可以多多寫 Node.js 應用了。
+
+## 參考資料
+
+1. [Introducing Quick Start and New Onboarding Process](https://zeit.co/blog/introducing-quick-start-and-new-onboarding-process)
