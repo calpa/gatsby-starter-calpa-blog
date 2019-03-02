@@ -1,6 +1,6 @@
 ---
 slug: now-quick-start-a-simple-way-to-skip-the-boilerplate-and-start-new-projects
-title: 如何方便快捷地使用 ZEIT 一鍵生成 Node.js 項目，並部署發佈？
+title: 如何方便快捷地使用 ZEIT 一鍵生成 Node.js 項目，並一鍵發佈？
 date: 2019-03-04T08:45:26.772Z
 description: >-
   ZEIT 在上週發佈 Now Quick Start 的功能，可以透過命令行或平台網站選取超過 40 個項目模板，比如說 Node.js,
