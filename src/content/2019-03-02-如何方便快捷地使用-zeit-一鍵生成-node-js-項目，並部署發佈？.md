@@ -50,7 +50,7 @@ ZEIT 在上週發佈 Now Quick Start 的功能，可以透過命令行或平台�
 
 ### 安裝方法
 
-你可以透過[ZEIT 官網](https://zeit.co/download)提供 Now Desktop 安裝桌面應用。當你安裝的時候，你也一拼安裝命令行工具了。
+你可以透過 [ZEIT 官網](https://zeit.co/download)提供 Now Desktop 安裝桌面應用。當你安裝的時候，你也一拼安裝命令行工具了。
 
 ![Now Desktop](https://i.imgur.com/yVgAhe3.png)
 
