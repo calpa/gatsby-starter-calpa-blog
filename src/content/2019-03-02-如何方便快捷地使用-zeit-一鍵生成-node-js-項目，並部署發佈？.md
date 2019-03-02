@@ -1,6 +1,6 @@
 ---
 slug: now-quick-start-a-simple-way-to-skip-the-boilerplate-and-start-new-projects
-title: 如何方便快捷地使用 ZEIT 一鍵生成 Node.js 項目，並一鍵發佈？
+title: 如何方便快捷地使用 ZEIT 一鍵部署 Node.js 項目？
 date: 2019-03-04T01:00:00.000Z
 description: >-
   ZEIT 平台提供了免費的網站空間平台給開發者，我們可以透過 ZEIT 平台來部署 Node.js, Express.js, Koa.js
