@@ -1,7 +1,7 @@
 ---
 templateKey: blog-post
-id: 20181022a
-title: 五分鐘減輕你的前端應用 ﹣ day.js 篇
+id: 5j0nC7bLx6IQiW8aUAAoo4
+title: 如何使用輕量級的 day.js 處理複雜日期？
 slug: /2018/09/19/five-minutes-to-reduce-application-weight-dayjs/
 date: 2018-09-19T03:48:03.125Z
 description: day.js 可以提供處理日期的方法，並且和 Moment.js 擁有一模一樣的方法。使用輕量 day.js 能夠大大省下用戶需要加載的體積，加速網站加載速度。
