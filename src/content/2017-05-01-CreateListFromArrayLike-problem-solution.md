@@ -2,7 +2,7 @@
 templateKey: blog-post
 id: https://calpa.me/2017/05/01/CreateListFromArrayLike-problem-solution/
 title: CreateListFromArrayLike called on non-object 報錯的解決方法
-slug: CreateListFromArrayLike-problem-solution
+slug: /2017/05/01/CreateListFromArrayLike-problem-solution/
 date: 2017-05-01T03:48:03.125Z
 description: 如果你遇到 CreateListFromArrayLike 的報錯的話，那麼可以看看代碼裡面調用 apply 方法的地方，call 是用0個或者更多的參數，而 apply 則是用一個數組。
 tags:
