@@ -62,17 +62,19 @@ npm install -g now
 
 ### 使用方法
 
-之後你在命令行輸入 `now init` 就可以看到下面的提示：
-
-它會提示當前的更新信息，然後讓你選擇超過 40 個模板的其中一個。
-
-比如說我現在正在學習 koa.js，想要部署 koa.js 應用，那麼我可以選擇 nodejs-koa。
+在命令行輸入 `now init` 就會看到下面的提示：
 
 ![now init](https://i.imgur.com/d0Tdhi8.jpg)
+
+它會提示當前的 Now 版本信息，然後讓你選擇超過 40 個模板的其中一個模板。
+
+比如說我現在正在學習 koa.js，想要部署 koa.js 應用，那麼我可以選擇 nodejs-koa。
 
 ## 部署
 
 我們只需要在命令行輸入 `now` 命令就可以了。
+
+這一次使用的命令如下，總共不超過十行輸入：
 
 ![All](https://i.imgur.com/0aBGW0B.jpg)
 
