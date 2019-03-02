@@ -11,7 +11,7 @@ tags:
   - React
   - 免費
   - 實用
-headerImage: '""'
+headerImage: 'https://i.imgur.com/Lgfa2Eu.png'
 templateKey: blog-post
 ---
 ZEIT 在 3月1日發佈了 Now Quick Start 的功能，讓我們可以從超過 40 個項目模板選取自己所需要的基本代碼，比如說 Node.js, Express.js, Koa.js，就讓我們更加簡單地寫代碼吧。
