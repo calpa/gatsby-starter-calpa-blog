@@ -29,6 +29,9 @@ module.exports = {
               showLineNumbers: true,
             },
           },
+          {
+            resolve: 'gatsby-remark-external-links',
+          },
         ],
       },
     },
