@@ -1,10 +1,10 @@
 ---
 templateKey: blog-post
-id: 20181022a
-title: 五分鐘減輕你的前端應用 ﹣ day.js 篇
+id: 5j0nC7bLx6IQiW8aUAAoo4
+title: 如何使用輕量級的 day.js 處理複雜日期？
 slug: /2018/09/19/five-minutes-to-reduce-application-weight-dayjs/
 date: 2018-09-19T03:48:03.125Z
-description: 對於代碼裡面的 if else，我們可以使用邏輯判斷式，或更好的三元判斷式來優化代碼。除了可以降低維護項目的成本之外，還可以提升代碼可讀性。就讓我們從最簡單的 if else 例子開始吧。
+description: day.js 可以提供處理日期的方法，並且和 Moment.js 擁有一模一樣的方法。使用輕量 day.js 能夠大大省下用戶需要加載的體積，加速網站加載速度。
 tags:
   - JavaScript
   - 前端
@@ -12,7 +12,7 @@ tags:
 
 ## 前言
 
-在處理時間日期的時候，除了使用原生的函數之外，便是強大的 Moment.js。不過，它的重量經常是打包體積過大問題的兇手。因而，轉而使用輕量的 day.js 的話，能夠大大省下用戶需要加載的體積，加速網站加載速度。
+day.js 可以提供處理日期的方法，並且和 Moment.js 擁有一模一樣的方法。使用輕量 day.js 能夠大大省下用戶需要加載的體積，加速網站加載速度。
 
 ## 特點
 

@@ -31,6 +31,7 @@
     "gatsby-plugin-sitemap": "^2.0.3",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-remark-autolink-headers": "^2.0.14",
+    "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.2.4",
     "gatsby-source-filesystem": "^2.0.12",
     "gatsby-transformer-remark": "^2.2.5",
