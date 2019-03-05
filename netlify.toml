@@ -1,2 +1,3 @@
 [build]
-  functions = "./api"
+  publish = "public"
+  command = "npm run build"
