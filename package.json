@@ -24,7 +24,7 @@
     "gatsby-plugin-manifest": "^2.0.23",
     "gatsby-plugin-netlify": "^2.0.12",
     "gatsby-plugin-nprogress": "^2.0.10",
-    "gatsby-plugin-offline": "^2.0.20",
+    "gatsby-plugin-offline": "^2.0.25",
     "gatsby-plugin-react-helmet": "^3.0.5",
     "gatsby-plugin-sass": "^2.0.7",
     "gatsby-plugin-sentry": "^1.0.0",
