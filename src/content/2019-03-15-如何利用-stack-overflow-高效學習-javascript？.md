@@ -18,3 +18,12 @@ templateKey: blog-post
 然後在左上角的搜尋欄裡面輸入 JavaScript。
 
 ![Imgur](https://i.imgur.com/UuOBZ96.png)
+
+如果你有看過現在大廠的面試題目的話，你就會有種似曾相識的感覺。
+
+比如說：
+How do JavaScript closures work? - 閉包
+What is the most efficient way to deep clone an object in JavaScript? - 深度克隆
+What is the difference between call and apply? - call 和 apply 之間的區別
+Can (a== 1 && a ==2 && a==3) ever evaluate to true?
+
