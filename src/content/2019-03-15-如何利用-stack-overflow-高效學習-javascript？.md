@@ -2,9 +2,7 @@
 slug: learn-javascript-through-stackoverflow
 title: 如何利用 Stack Overflow 高效學習 JavaScript？
 date: 2019-03-15T02:38:23.251Z
-description: >-
-  帶著問題去學習，會比單純看書的效果好得多。而 Stack Overflow
-  網站雲集世界上不同程序員遇到的問題，我們可以透過它來高效學習技能，比如說前端工程師的技能：JavaScript。
+description: 帶著問題去學習，會比單純看書的效果好得多。而 Stack Overflow 網站雲集世界上不同程序員遇到的問題，我們可以透過它來高效學習技能，比如說前端工程師的技能：JavaScript。
 tags:
   - JavaScript
 headerImage: 'https://i.imgur.com/VvGbog9.jpg'
@@ -12,7 +10,7 @@ templateKey: blog-post
 ---
 帶著問題去學習，會比單純看書的效果好得多。而 Stack Overflow 網站雲集世界上不同程序員遇到的問題，我們可以透過它來高效學習技能，比如說前端工程師的技能：JavaScript。
 
-> Stack Overflow 是一個程式設計領域的問答網站，直至2018年9月，Stack Overflow有超過 9,400,000 名註冊用戶和超過 16,000,000 個問題，其中最常見的主題有JavaScript、Java、C#、PHP、Android、Python、jQuery和HTML。 - 維基百科
+> Stack Overflow 是一個程式設計領域的問答網站，直至 2018 年 9 月，Stack Overflow 有超過 9,400,000 名註冊用戶和超過 16,000,000 個問題，其中最常見的主題有 JavaScript、Java、C#、PHP、Android、Python、jQuery 和 HTML。 - 維基百科
 
 首先打開 [Stack Overflow](https://stackoverflow.com/) 的網站。
 
@@ -30,9 +28,9 @@ templateKey: blog-post
 
 ### 閉包
 
-[How do JavaScript closures work?](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work#)
-
 ![Imgur](https://i.imgur.com/FeCXyhd.jpg)
+
+[How do JavaScript closures work?](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work#)
 
 ### 深度克隆
 
@@ -46,7 +44,7 @@ templateKey: blog-post
 
 ![Question](https://i.imgur.com/01s1CAg.jpg)
 
-[What is the difference between call and apply?] (https://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply)
+[What is the difference between call and apply?](https://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply)
 
 ### Object.toString 函數
 
