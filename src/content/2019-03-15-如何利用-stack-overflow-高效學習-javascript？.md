@@ -19,11 +19,16 @@ templateKey: blog-post
 
 ![Imgur](https://i.imgur.com/UuOBZ96.png)
 
-如果你有看過現在大廠的面試題目的話，你就會有種似曾相識的感覺。
+操作方法：
+
+對於每條問題先寫下自己的答案，然後點進去看答案，然後對比兩者之間的差異，然後記錄不同的地方。
 
 比如說：
-How do JavaScript closures work? - 閉包
-What is the most efficient way to deep clone an object in JavaScript? - 深度克隆
-What is the difference between call and apply? - call 和 apply 之間的區別
-Can (a== 1 && a ==2 && a==3) ever evaluate to true?
+1. How do JavaScript closures work? - 閉包
+1. What is the most efficient way to deep clone an object in JavaScript? - 深度克隆
+1. What is the difference between call and apply? - call 和 apply 之間的區別
+1. Can (a== 1 && a ==2 && a==3) ever evaluate to true? - Object.
 
+## 後記
+
+祝大家面試順利，我也是時候啟程去下一站了。
