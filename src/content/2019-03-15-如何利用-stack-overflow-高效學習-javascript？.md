@@ -22,16 +22,40 @@ templateKey: blog-post
 
 ![Imgur](https://i.imgur.com/UuOBZ96.png)
 
-操作方法：
+## 操作方法
 
 對於每條問題先寫下自己的答案，然後點進去看答案，然後對比兩者之間的差異，然後記錄不同的地方。
 
-比如說：
-1. How do JavaScript closures work? - 閉包
-1. What is the most efficient way to deep clone an object in JavaScript? - 深度克隆
-1. What is the difference between call and apply? - call 和 apply 之間的區別
-1. Can (a== 1 && a ==2 && a==3) ever evaluate to true? - Object.
+## 常見例子
+
+### 閉包
+
+[How do JavaScript closures work?](https://stackoverflow.com/questions/111102/how-do-javascript-closures-work#)
+
+![Imgur](https://i.imgur.com/FeCXyhd.jpg)
+
+### 深度克隆
+
+![Question](https://i.imgur.com/iaHkBWo.jpg)
+
+![Answer](https://i.imgur.com/259FhdV.jpg)
+
+[What is the most efficient way to deep clone an object in JavaScript?](https://stackoverflow.com/questions/122102/what-is-the-most-efficient-way-to-deep-clone-an-object-in-javascript)
+
+### call 和 apply 之間的區別
+
+![Question](https://i.imgur.com/01s1CAg.jpg)
+
+[What is the difference between call and apply?] (https://stackoverflow.com/questions/1986896/what-is-the-difference-between-call-and-apply)
+
+### Object.toString 函數
+
+![Question](https://i.imgur.com/TMZfz9A.jpg)
+
+[Can (a== 1 && a ==2 && a==3) ever evaluate to true?](https://stackoverflow.com/questions/48270127/can-a-1-a-2-a-3-ever-evaluate-to-true)
 
 ## 後記
 
 祝大家面試順利，我也是時候啟程去下一站了。
+
+杭州的小夥伴，再見了。
