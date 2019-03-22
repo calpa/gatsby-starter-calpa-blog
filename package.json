@@ -42,7 +42,7 @@
     "md5": "^2.2.1",
     "node-sass": "^4.9.3",
     "prismjs": "^1.15.0",
-    "react": "^16.6.3",
+    "react": "^16.8.5",
     "react-dom": "^16.6.3",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
