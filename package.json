@@ -34,7 +34,7 @@
     "gatsby-remark-external-links": "0.0.4",
     "gatsby-remark-prismjs": "^3.2.6",
     "gatsby-source-filesystem": "^2.0.28",
-    "gatsby-transformer-remark": "^2.2.5",
+    "gatsby-transformer-remark": "^2.3.8",
     "gitalk": "^1.4.0",
     "han-css": "^3.3.0",
     "highlight.js": "^9.12.0",
