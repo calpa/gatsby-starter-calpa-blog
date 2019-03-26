@@ -28,7 +28,7 @@
     "gatsby-plugin-react-helmet": "^3.0.11",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-sentry": "^1.0.0",
-    "gatsby-plugin-sitemap": "^2.0.3",
+    "gatsby-plugin-sitemap": "^2.0.10",
     "gatsby-plugin-webpack-bundle-analyzer": "^1.0.3",
     "gatsby-remark-autolink-headers": "^2.0.14",
     "gatsby-remark-external-links": "0.0.4",
