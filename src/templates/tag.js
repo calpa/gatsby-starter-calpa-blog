@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Card from '../components/Card';
 import SEO from '../components/SEO';
+import Sidebar from '../components/Sidebar';
 
 // eslint-disable-next-line react/prop-types
 const TagPage = ({ data, pageContext }) => {
@@ -12,18 +13,30 @@ const TagPage = ({ data, pageContext }) => {
       <div
         className="row"
         style={{
-          fontSize: 20,
           margin: 15,
         }}
       >
-        {edges.length}
-        &nbsp;Articles in&nbsp;
-        {tag}
-      </div>
+        <Sidebar />
 
-      {edges.map(({ node }) => (
-        <Card {...node.frontmatter} key={node.id} />
-      ))}
+        <div className="col-xl-10 col-lg-7 col-md-12 col-xs-12 order-2">
+          <div
+            className="col-12"
+            style={{
+              fontSize: 20,
+              margin: 15,
+            }}
+          >
+            {edges.length}
+            &nbsp;Articles in&nbsp;
+            {tag}
+          </div>
+          {edges.map(({ node }) => (
+            <Card {...node.frontmatter} key={node.id} />
+          ))}
+        </div>
+
+        <div className="col-xl-2 col-lg-1 order-3" />
+      </div>
 
       <SEO
         title={tag}

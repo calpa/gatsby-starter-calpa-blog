@@ -11,9 +11,9 @@ const Information = ({ totalCount, posts }) => (
   <div className="d-none d-lg-block information my-2">
     <hr />
     <p>
-      共
+      共&nbsp;
       {totalCount}
-      篇文章
+      &nbsp;篇文章
     </p>
     <hr />
     <LatestPost posts={posts} />
@@ -24,6 +24,11 @@ const Information = ({ totalCount, posts }) => (
 
 Information.propTypes = {
   totalCount: PropTypes.number.isRequired,
+  posts: PropTypes.array,
+};
+
+Information.defaultProps = {
+  posts: [],
 };
 
 export default Information;

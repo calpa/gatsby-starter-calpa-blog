@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
+import Sidebar from '../components/Sidebar';
 import Tag from '../components/Tag';
 import SEO from '../components/SEO';
 
@@ -30,25 +31,17 @@ const TagPage = ({ data }) => {
       <div
         className="row"
         style={{
-          fontSize: 20,
           margin: 15,
         }}
       >
-        {tags.length}
-        &nbsp;Tags in Total
-      </div>
+        <Sidebar />
 
-      <div
-        className="row"
-        style={{
-          marginLeft: 5,
-        }}
-      >
-        {tags.map(item => (
-          <Tag name={item} key={item} count={mapping[item]} />
-        ))}
+        <div className="col order-2">
+          {tags.map(item => (
+            <Tag name={item} key={item} count={mapping[item]} />
+          ))}
+        </div>
       </div>
-
       <SEO
         title="標籤"
         url="/tags/"

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'gatsby';
+import { Link, StaticQuery, graphql } from 'gatsby';
 import PropTypes from 'prop-types';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -31,12 +31,8 @@ const Icon = ({ href, icon }) => (
   </a>
 );
 
-const Sidebar = ({ post, totalCount, posts }) => (
-  <header
-    className={`intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1 ${
-      post === true ? 'order-11' : 'order-1'
-    }`}
-  >
+const Sidebar = ({ totalCount, latestPosts }) => (
+  <header className="intro-header site-heading text-center col-xl-2 col-lg-3 col-xs-12 order-lg-1">
     <div className="about-me">
       <Link to={about} href={about} className="name">
         <img className="avatar" src={iconUrl} alt="Calpa" />
@@ -53,7 +49,7 @@ const Sidebar = ({ post, totalCount, posts }) => (
         icon={['fab', 'github']}
       />
       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
-      <Information totalCount={totalCount} posts={posts} />
+      <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>
 );
@@ -64,14 +60,50 @@ Icon.propTypes = {
 };
 
 Sidebar.propTypes = {
-  post: PropTypes.bool,
   totalCount: PropTypes.number,
-  posts: PropTypes.array // eslint-disable-line
+  latestPosts: PropTypes.array, //eslint-disable-line
 };
 
 Sidebar.defaultProps = {
-  post: false,
   totalCount: 0,
+  latestPosts: [],
 };
 
-export default Sidebar;
+export default () => (
+  <StaticQuery
+    query={graphql`
+      fragment cardData on MarkdownRemark {
+        fields {
+          slug
+        }
+        frontmatter {
+          id
+          title
+          url: slug
+          date
+          tags
+          description
+          headerImage
+        }
+      }
+
+      query SidebarQuery {
+        all: allMarkdownRemark {
+          totalCount
+        }
+
+        limited: allMarkdownRemark(
+          sort: { order: DESC, fields: frontmatter___date }
+          limit: 6
+        ) {
+          latestPosts: edges {
+            node {
+              ...cardData
+            }
+          }
+        }
+      }
+    `}
+    render={data => <Sidebar {...data.all} {...data.limited} />}
+  />
+);

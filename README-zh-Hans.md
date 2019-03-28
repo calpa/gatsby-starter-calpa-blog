@@ -30,10 +30,9 @@
 ### 设计
 
 1. 响应式设计
-1. 懒加载（图片） (基于 [lozad.js](https://github.com/ApoorvSaxena/lozad.js))
-1. 自动加载 Font Awesome (基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
-1. 流畅滑动设计 (基于 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
-1. 分页设计
+2. 分页设计
+3. 自动加载 Font Awesome (基于 [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
+4. 流畅滑动设计 (基于 [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
 
 ### 数据来源
 

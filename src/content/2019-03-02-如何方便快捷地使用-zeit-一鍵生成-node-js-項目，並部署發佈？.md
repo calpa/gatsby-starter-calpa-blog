@@ -13,7 +13,9 @@ tags:
   - 實用
 headerImage: 'https://i.imgur.com/Lgfa2Eu.png'
 templateKey: blog-post
+id: a13adea8-84f6-5965-904e-9a2f5a5f1c1e
 ---
+
 ## 前言
 
 ZEIT 平台提供了免費的網站空間平台給開發者，我們可以透過 ZEIT 平台來部署 Node.js, Express.js, Koa.js 等應用。如果你有寫過 Node.js 應用，又想找個免費空間部署這些應用的話，那麼 ZEIT 會是一個不錯的選擇。
@@ -73,22 +75,22 @@ npm install -g now
 這個命令行工具就會自動生成一個 `index.js`，返回 'Hello from koa.js!' 的字句的 DEMO。
 
 ```js
-const Koa = require('koa')
+const Koa = require('koa');
 
-const app = new Koa()
+const app = new Koa();
 
 app.use(async (ctx, next) => {
-  const start = Date.now()
-  await next()
-  const ms = Date.now() - start
-  ctx.set('X-Response-Time', `${ms}ms`)
-})
+  const start = Date.now();
+  await next();
+  const ms = Date.now() - start;
+  ctx.set('X-Response-Time', `${ms}ms`);
+});
 
-app.use(async ctx => {
-  ctx.body = 'Hello from koa.js!'
-})
+app.use(async (ctx) => {
+  ctx.body = 'Hello from koa.js!';
+});
 
-module.exports = app.callback()
+module.exports = app.callback();
 ```
 
 命令行工具會同時生成 `now.json`，它是項目當前在平台上面的設置。
@@ -96,12 +98,8 @@ module.exports = app.callback()
 ```json
 {
   "version": 2,
-  "builds": [
-    { "src": "index.js", "use": "@now/node" }
-  ],
-  "routes": [
-    { "src": "/(.*)", "dest": "/index.js" }
-  ]
+  "builds": [{ "src": "index.js", "use": "@now/node" }],
+  "routes": [{ "src": "/(.*)", "dest": "/index.js" }]
 }
 ```
 
@@ -133,11 +131,11 @@ ZEIT 2.0 版本提供了兩個計劃，免費和付費。
 
 每天可以有 1000 次的構建指令，構建項目所需要的費用也是不需要的。
 
-不過它對於每一次匿名函數所運行的時間有所限制，每一次不能超過 10秒。而每天只會輸出 1000 行的日誌。每個文件最大只能夠是 100MB，總共佔用的地方不能超過 100GB。
+不過它對於每一次匿名函數所運行的時間有所限制，每一次不能超過 10 秒。而每天只會輸出 1000 行的日誌。每個文件最大只能夠是 100MB，總共佔用的地方不能超過 100GB。
 
 那麼對於規模小的項目來說，其實也用不著那麼大的空間，所以一般來說不會超出上限。
 
-如果你喜歡這個平台的話，而又覺得上述的限制影響了項目的功能，那麼你可以使用付費的無限計劃。起步價為一個月美金 $0.99。
+如果你喜歡這個平台的話，而又覺得上述的限制影響了項目的功能，那麼你可以使用付費的無限計劃。起步價為一個月美金 \$0.99。
 
 ## 後記
 
