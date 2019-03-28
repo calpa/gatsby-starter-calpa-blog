@@ -66,12 +66,13 @@ Icon.propTypes = {
 Sidebar.propTypes = {
   post: PropTypes.bool,
   totalCount: PropTypes.number,
-  posts: PropTypes.array // eslint-disable-line
+  posts: PropTypes.array, //eslint-disable-line
 };
 
 Sidebar.defaultProps = {
   post: false,
   totalCount: 0,
+  posts: [],
 };
 
 export default Sidebar;

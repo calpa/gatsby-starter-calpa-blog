@@ -1,4 +1,5 @@
 const path = require('path');
+const createPaginatedPages = require('gatsby-paginate');
 
 module.exports = ({ actions, graphql }) => {
   const { createPage } = actions;
@@ -19,6 +20,13 @@ module.exports = ({ actions, graphql }) => {
               tags
               templateKey
               slug
+              id
+              title
+              url: slug
+              date
+              tags
+              description
+              headerImage
             }
           }
         }
@@ -26,16 +34,31 @@ module.exports = ({ actions, graphql }) => {
     }
   `).then((result) => {
     if (result.errors) {
-      result.errors.forEach(e => console.error(e.toString()));
       return Promise.reject(result.errors);
     }
 
-    const posts = result.data.allMarkdownRemark.edges;
+    const { edges = [] } = result.data.allMarkdownRemark;
 
     const tagSet = new Set();
 
+    createPaginatedPages({
+      edges,
+      createPage,
+      pageTemplate: 'src/templates/index.js',
+      context: {
+        totalCount: edges.length,
+      },
+      pathPrefix: 'pages',
+      buildPath: (index, pathPrefix) => {
+        if (index > 1) {
+          return `${pathPrefix}/${index}`;
+        }
+        return '/';
+      },
+    });
+
     // 創建文章頁面
-    posts.forEach(({ node }, index) => {
+    edges.forEach(({ node }, index) => {
       const { id, frontmatter, fields } = node;
       const { slug, tags, templateKey } = frontmatter;
 
