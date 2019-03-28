@@ -63,8 +63,6 @@ class BlogPost extends Component {
 
     const { date, headerImage, title } = frontmatter;
 
-    const { totalCount, edges } = this.data.latestPosts;
-
     return (
       <div className="row post order-2">
         <Header
@@ -74,7 +72,7 @@ class BlogPost extends Component {
           authorImage={iconUrl}
           subTitle={parseChineseDate(date)}
         />
-        <Sidebar totalCount={totalCount} posts={edges} post />
+        <Sidebar />
         <div className="col-xl-7 col-lg-6 col-md-12 col-sm-12 order-10 content">
           <Content post={html} />
           <div className="m-message" style={bgWhite}>
@@ -158,18 +156,6 @@ export const pageQuery = graphql`
         }
 
         next {
-          ...post
-        }
-      }
-    }
-
-    latestPosts: allMarkdownRemark(
-      sort: { order: DESC, fields: frontmatter___date }
-      limit: 6
-    ) {
-      totalCount
-      edges {
-        node {
           ...post
         }
       }
