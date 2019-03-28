@@ -25,14 +25,11 @@ import './blog-post.scss';
 
 const { name, iconUrl, gitalk } = config;
 
-const bgWhite = { padding: '10px 15px', background: 'white' };
+const bgWhite = { padding: '10px 30px', background: 'white' };
 
 // Prevent webpack window problem
 const isBrowser = typeof window !== 'undefined';
 const Gitalk = isBrowser ? require('gitalk') : undefined;
-
-// Parse url
-const getURL = node => node.frontmatter.slug || node.fields.slug;
 
 class BlogPost extends Component {
   constructor(props) {
@@ -53,7 +50,7 @@ class BlogPost extends Component {
   }
 
   render() {
-    const { previous, node, next } = this.data.content.edges[0];
+    const { node } = this.data.content.edges[0];
 
     const {
       html, frontmatter, fields, excerpt, tableOfContents,
@@ -87,20 +84,6 @@ class BlogPost extends Component {
               title="關注我的 Github"
             />
             。
-          </div>
-
-          <div className="m-change-page" style={bgWhite}>
-            <p>更多文章：</p>
-            {previous && (
-              <p>
-                <a href={getURL(previous)}>{previous.frontmatter.title}</a>
-              </p>
-            )}
-            {next && (
-              <p>
-                <a href={getURL(next)}>{next.frontmatter.title}</a>
-              </p>
-            )}
           </div>
 
           <div id="gitalk-container" />

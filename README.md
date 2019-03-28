@@ -33,7 +33,7 @@ If you like this project, please don't hesitate to star it. Thank you.
 
 ### Design
 
-1. Lazy loading (powered by [lozad.js](https://github.com/ApoorvSaxena/lozad.js))
+1. Pagination
 1. Responsive Web Design
 1. Font Awesome is auto loaded (powered by [react-fontawesome](https://github.com/FortAwesome/react-fontawesome))
 1. Scroll smoothly (powered by [smooth-scroll](https://github.com/cferdinandi/smooth-scroll))
