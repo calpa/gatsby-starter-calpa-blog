@@ -44,7 +44,7 @@
     "node-sass": "^4.9.3",
     "prismjs": "^1.15.0",
     "react": "^16.8.6",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.8.6",
     "react-ga": "^2.5.3",
     "react-helmet": "^5.2.0",
     "react-transition-group": "^2.5.2",
