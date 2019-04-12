@@ -16,7 +16,7 @@
     "dayjs": "^1.7.5",
     "dotenv": "^7.0.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
-    "gatsby": "^2.2.1",
+    "gatsby": "^2.3.21",
     "gatsby-link": "^2.0.16",
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-catch-links": "^2.0.13",
