@@ -10,7 +10,7 @@ import './index.scss';
 if (typeof window !== 'undefined') {
   // Make scroll behavior of internal links smooth
   // eslint-disable-next-line global-require
-  require('smooth-scroll')('a[href*="#"]', { offset: 60 });
+  require('smooth-scroll')('a', { offset: 60 });
 }
 
 const Layout = ({ children, location }) => (

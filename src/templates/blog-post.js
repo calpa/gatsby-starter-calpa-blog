@@ -15,7 +15,7 @@ import Content from '../components/Content';
 import SEO from '../components/SEO';
 
 import Header from '../components/Header';
-import TableOfContent from '../components/TableOfContent';
+// import TableOfContent from '../components/TableOfContent';
 import ShareBox from '../components/ShareBox';
 
 import { config } from '../../data';
@@ -53,7 +53,7 @@ class BlogPost extends Component {
     const { node } = this.data.content.edges[0];
 
     const {
-      html, frontmatter, fields, excerpt, tableOfContents,
+      html, frontmatter, fields, excerpt,
     } = node;
 
     const { slug } = fields;
@@ -88,7 +88,6 @@ class BlogPost extends Component {
 
           <div id="gitalk-container" />
         </div>
-        {tableOfContents && <TableOfContent __html={tableOfContents} />}
 
         <ShareBox url={slug} />
 
