@@ -16,6 +16,7 @@ const {
   email,
   iconUrl,
   about,
+  facebook,
 } = config;
 
 const Icon = ({ href, icon }) => (
@@ -49,6 +50,9 @@ const Sidebar = ({ totalCount, latestPosts }) => (
         icon={['fab', 'github']}
       />
       <Icon href={`mailto:${email}`} icon={['far', 'envelope']} />
+      {facebook
+        && <Icon href={`https://www.facebook.com/${facebook}/`} icon={['fab', 'facebook']} />
+      }
       <Information totalCount={totalCount} posts={latestPosts} />
     </div>
   </header>
