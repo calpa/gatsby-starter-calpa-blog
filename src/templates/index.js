@@ -50,7 +50,7 @@ const Page = ({ pageContext, location }) => {
         <Sidebar />
         <div className="col-xl-6 col-lg-7 col-md-12 col-xs-12 order-2">
           {group.map(({ node }) => (
-            <Card {...node.frontmatter} key={node.fields.slug} />
+            <Card {...node.frontmatter} url={node.frontmatter.slug ? node.frontmatter.slug : node.fields.slug} key={node.fields.slug} />
           ))}
 
           <div

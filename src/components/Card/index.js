@@ -26,7 +26,7 @@ const Card = ({
   headerImage,
   headerBackgroundColor,
   description,
-  tags,
+  tags = [],
 }) => (
   <div className="col-sm-12 pb-4">
     <div className="custom-card">
