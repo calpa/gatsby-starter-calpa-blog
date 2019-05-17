@@ -128,7 +128,6 @@ export const pageQuery = graphql`
         node {
           id
           html
-          tableOfContents
           excerpt
           ...post
         }

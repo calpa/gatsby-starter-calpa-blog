@@ -28,38 +28,14 @@
   "License": "by",
   "friends": [
     {
-      "href": "https://www.boatsky.com/",
-      "title": "太空船博客"
-    },
-    {
-      "href": "http://blog.shanamaid.top/",
-      "title": "娜酱骑士团"
-    },
-    {
-      "href": "https://clarencec.github.io/",
-      "title": "Clarence Blog"
-    },
-    {
-      "href": "http://f2ex.cn/",
-      "title": "F2EX"
-    },
-    {
-      "href": "https://jeffjade.com/",
-      "title": "晚晴幽草轩"
-    },
-    {
-      "href": "https://macplay.github.io/",
-      "title": "MacPlay"
+      "href": "https://calpa.me",
+      "title": "Calpa's Blog"
     }
   ],
   "iconUrl": "https://i.imgur.com/kjt2x52.jpg",
   "wordings": ["GatsbyJS, ReactJS", "全週期開發者"],
   "gaTrackId": "UA-84737574-3",
   "navbarList": [
-    {
-      "href": "/2018/12/24/front-end-blog-system-review-2018/",
-      "title": "網站數據"
-    },
     {
       "href": "/guestbook/",
       "title": "留言簿"
