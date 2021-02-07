@@ -190,7 +190,7 @@ gitalk: {
   "name": "Post",
   "fields": {
     "title": "Post Title",
-    "headerImgur": "header Image Link",
+    "headerImage": "header Image Link",
     "headerBackgroundColor": "#66ccff",
     "tags": "tag1, tag2, tag3",
     "url": "awesome-post",
