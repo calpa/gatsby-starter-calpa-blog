@@ -80,7 +80,7 @@
   "devDependencies": {
     "@babel/core": "^7.1.2",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "eslint": "^5.6.1",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-webpack": "^0.10.1",
     "eslint-plugin-import": "^2.7.0",
