@@ -15,7 +15,7 @@
     "babel-plugin-transform-regenerator": "^6.26.0",
     "dayjs": "^1.7.5",
     "dotenv": "^7.0.0",
-    "gatsby": "^2.2.1",
+    "gatsby": "^5.12.4",
     "gatsby-link": "^2.0.16",
     "gatsby-paginate": "^1.0.17",
     "gatsby-plugin-catch-links": "^2.0.13",
