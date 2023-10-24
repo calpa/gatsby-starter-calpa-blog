@@ -81,7 +81,7 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "eslint": "^8.29.0",
     "eslint-config-airbnb": "^19.0.4",
-    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-import-resolver-webpack": "^0.13.8",
     "eslint-plugin-import": "^2.26.0",
     "eslint-plugin-jsx-a11y": "^6.6.1",
     "eslint-plugin-react": "^7.31.11",
