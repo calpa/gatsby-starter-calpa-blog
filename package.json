@@ -49,7 +49,7 @@
     "react-transition-group": "^2.5.2",
     "rimraf": "^2.6.2",
     "smooth-scroll": "^16.0.0",
-    "webpack": "^4.19.0"
+    "webpack": "^5.106.0"
   },
   "keywords": [
     "gatsby"
